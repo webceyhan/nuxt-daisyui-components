@@ -12,6 +12,6 @@ export type BrandColor =
     | 'accent'
     | 'ghost';
 
-export type StateColor = 'info' | 'success' | 'warning' | 'error';
+export type StateColor = 'default' | 'info' | 'success' | 'warning' | 'error';
 
 export type Color = BrandColor | StateColor;
