@@ -15,7 +15,7 @@ const menus = [
       // { label: "Accordion", href: "/accordion" },
       // { label: "Alert", href: "/alert" },
       // { label: "Avatar", href: "/avatar" },
-      // { label: "Badge", href: "/badge" },
+      { label: "Badge", href: "/badge" },
       // { label: "Card", href: "/card" },
       // { label: "Carousel", href: "/carousel" },
       // { label: "Chat bubble", href: "/chat-bubble" },
