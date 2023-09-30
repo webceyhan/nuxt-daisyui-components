@@ -3,7 +3,7 @@ const menus = [
   {
     title: "Actions",
     links: [
-      // { label: "Button", href: "/button" },
+      { label: "Button", href: "/button" },
       // { label: "Dropdown", href: "/dropdown" },
       // { label: "Modal", href: "/modal" },
       // { label: "Swap", href: "/swap" },

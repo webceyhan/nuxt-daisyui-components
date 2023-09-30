@@ -1,0 +1,178 @@
+<script setup lang="ts">
+const mainColors: any[] = [undefined, "primary", "secondary", "accent"];
+const brandColors: any[] = [...mainColors, "neutral", "ghost", "link"];
+const stateColors: any[] = ["info", "success", "warning", "error"];
+
+const sizes: { label: string; value: string }[] = [
+  { value: "lg", label: "large" },
+  { value: "md", label: "normal" },
+  { value: "sm", label: "small" },
+  { value: "xs", label: "tiny" },
+];
+</script>
+
+<template>
+  <div>
+    <h1 class="text-4xl font-bold mb-8">Button</h1>
+
+    <p>Buttons allow the user to take actions or make choices.</p>
+
+    <component-preview>
+      <template #title>Button</template>
+
+      <ui-button>Button</ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Buttons with brand colors</template>
+
+      <ui-button v-for="(color, i) of brandColors" :key="i" v-bind="{ color }">
+        {{ color ?? "default" }}
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Active buttons</template>
+
+      <ui-button v-for="(color, i) of brandColors" :key="i" v-bind="{ color }" active>
+        {{ color ?? "default" }}
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Buttons with state colors</template>
+
+      <ui-button v-for="(color, i) of stateColors" :key="i" v-bind="{ color }">
+        {{ color }}
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Outline buttons</template>
+
+      <ui-button v-for="(color, i) of mainColors" :key="i" v-bind="{ color }" outline>
+        {{ color ?? "default" }}
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Outline buttons with state colors</template>
+
+      <ui-button v-for="(color, i) of stateColors" :key="i" v-bind="{ color }" outline>
+        {{ color }}
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Button sizes</template>
+
+      <ui-button v-for="(size, i) of sizes" :key="i" :size="size.value">
+        {{ size.label }}
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Wide button</template>
+
+      <ui-button wide>Wide</ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Buttons with different HTML tags</template>
+
+      <a role="button" class="btn">Link</a>
+      <ui-button type="submit" class="btn">Button</ui-button>
+      <input type="button" value="Input" class="btn" />
+      <input type="submit" value="Submit" class="btn" />
+      <input type="radio" aria-label="Radio" class="btn" />
+      <input type="checkbox" aria-label="Checkbox" class="btn" />
+      <input type="reset" value="Reset" class="btn" />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Disabled buttons</template>
+
+      <ui-button disabled>Disabled using attribute</ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Square button</template>
+
+      <ui-button square>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </ui-button>
+      <ui-button square outline>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Circle button</template>
+
+      <ui-button circle>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </ui-button>
+      <ui-button circle outline>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          ></path>
+        </svg>
+      </ui-button>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Button block</template>
+
+      <ui-button block>block</ui-button>
+    </component-preview>
+  </div>
+</template>

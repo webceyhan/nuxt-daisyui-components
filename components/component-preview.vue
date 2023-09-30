@@ -1,0 +1,18 @@
+<template>
+  <div class="text-base-content my-6 lg:my-12">
+    <h4 class="pb-2 text-sm font-bold">
+      <span class="opacity-20 mr-1">#</span>
+      <slot name="title" />
+    </h4>
+
+    <div class="grid">
+      <div class="bg-base-300 rounded-b-box rounded-tr-box relative overflow-x-auto">
+        <div
+          class="border-base-300 bg-base-100 rounded-b-box rounded-tr-box flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden border bg-cover bg-top p-4"
+        >
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
