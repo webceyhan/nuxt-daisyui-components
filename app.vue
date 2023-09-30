@@ -6,7 +6,7 @@ const menus = [
       { label: "Button", href: "/button" },
       { label: "Dropdown", href: "/dropdown" },
       { label: "Modal", href: "/modal" },
-      // { label: "Swap", href: "/swap" },
+      { label: "Swap", href: "/swap" },
     ],
   },
   {
