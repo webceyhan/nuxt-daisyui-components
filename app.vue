@@ -12,7 +12,7 @@ const menus = [
   {
     title: "Data display",
     links: [
-      // { label: "Accordion", href: "/accordion" },
+      { label: "Accordion", href: "/accordion" },
       // { label: "Alert", href: "/alert" },
       // { label: "Avatar", href: "/avatar" },
       { label: "Badge", href: "/badge" },
