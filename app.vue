@@ -5,7 +5,7 @@ const menus = [
     links: [
       { label: "Button", href: "/button" },
       { label: "Dropdown", href: "/dropdown" },
-      // { label: "Modal", href: "/modal" },
+      { label: "Modal", href: "/modal" },
       // { label: "Swap", href: "/swap" },
     ],
   },
