@@ -22,7 +22,7 @@ const menus = [
       { label: "Badge", href: "/badge" },
       { label: "Card", href: "/card" },
       { label: "Carousel", href: "/carousel" },
-      // { label: "Chat bubble", href: "/chat-bubble" },
+      { label: "Chat bubble", href: "/chat" },
       // { label: "Collapse", href: "/collapse" },
       // { label: "Countdown", href: "/countdown" },
       // { label: "Kbd", href: "/kbd" },
