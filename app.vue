@@ -99,7 +99,7 @@ const menus = [
 
         <!-- menu links -->
         <li v-for="(link, i) of menu.links" :key="i">
-          <NuxtLink :href="link.href">
+          <NuxtLink :href="link.href" active-class="active">
             <span>{{ link.label }}</span>
           </NuxtLink>
         </li>
