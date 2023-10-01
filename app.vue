@@ -89,6 +89,9 @@ const menus = [
     <!-- sidebar -->
     <aside class="bg-base-100 w-80">
       <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
+        <!-- divider -->
+        <li v-if="i > 0" />
+
         <!-- menu title -->
         <li class="menu-title flex flex-row gap-4">
           <span>{{ menu.title }}</span>
