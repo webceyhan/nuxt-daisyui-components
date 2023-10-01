@@ -21,7 +21,7 @@ const menus = [
       { label: "Avatar", href: "/avatar" },
       { label: "Badge", href: "/badge" },
       { label: "Card", href: "/card" },
-      // { label: "Carousel", href: "/carousel" },
+      { label: "Carousel", href: "/carousel" },
       // { label: "Chat bubble", href: "/chat-bubble" },
       // { label: "Collapse", href: "/collapse" },
       // { label: "Countdown", href: "/countdown" },
