@@ -20,7 +20,7 @@ const menus = [
       { label: "Alert", href: "/alert" },
       { label: "Avatar", href: "/avatar" },
       { label: "Badge", href: "/badge" },
-      // { label: "Card", href: "/card" },
+      { label: "Card", href: "/card" },
       // { label: "Carousel", href: "/carousel" },
       // { label: "Chat bubble", href: "/chat-bubble" },
       // { label: "Collapse", href: "/collapse" },
