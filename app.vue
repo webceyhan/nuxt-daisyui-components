@@ -2,6 +2,8 @@
 const menus = [
   {
     title: "Actions",
+    icon: "cursor-fill",
+    iconClass: "text-fuchsia-600",
     links: [
       { label: "Button", href: "/button" },
       { label: "Dropdown", href: "/dropdown" },
@@ -11,6 +13,8 @@ const menus = [
   },
   {
     title: "Data display",
+    icon: "window",
+    iconClass: "text-teal-600",
     links: [
       { label: "Accordion", href: "/accordion" },
       { label: "Alert", href: "/alert" },
@@ -32,6 +36,8 @@ const menus = [
   },
   {
     title: "Data input",
+    icon: "pencil-square",
+    iconClass: "text-rose-600",
     links: [
       // { label: "Checkbox", href: "/checkbox" },
       // { label: "File input", href: "/file-input" },
@@ -46,6 +52,8 @@ const menus = [
   },
   {
     title: "Layout",
+    icon: "grid-fill",
+    iconClass: "text-blue-600",
     links: [
       // { label: "Artboard", href: "/artboard" },
       // { label: "Divider", href: "/divider" },
@@ -61,6 +69,8 @@ const menus = [
   },
   {
     title: "Navigation",
+    icon: "link-45deg",
+    iconClass: "text-cyan-600",
     links: [
       // { label: "Breadcrumbs", href: "/breadcrumbs" },
       // { label: "Bottom navigation", href: "/bottom-navigation" },
@@ -74,6 +84,8 @@ const menus = [
   },
   {
     title: "Mockup",
+    icon: "phone",
+    iconClass: "text-lime-600",
     links: [
       // { label: "Browser", href: "/browser" },
       // { label: "Code", href: "/code" },
@@ -88,6 +100,7 @@ const menus = [
   <div class="container flex my-10 gap-10">
     <!-- sidebar -->
     <aside class="bg-base-100 w-80">
+      <!-- logo -->
       <div
         class="flex bg-base-100 sticky top-0 z-20 items-center gap-2 bg-opacity-90 px-4 py-2 backdrop-blur"
       >
@@ -119,12 +132,14 @@ const menus = [
         <i class="text-lg font-serif opacity-50">for Nuxt</i>
       </div>
 
+      <!-- navigation -->
       <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
         <!-- divider -->
         <li />
 
         <!-- menu title -->
-        <li class="menu-title flex flex-row gap-4">
+        <li class="menu-title flex flex-row items-center gap-4">
+          <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
           <span>{{ menu.title }}</span>
         </li>
 
