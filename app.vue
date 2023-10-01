@@ -88,9 +88,40 @@ const menus = [
   <div class="container flex my-10 gap-10">
     <!-- sidebar -->
     <aside class="bg-base-100 w-80">
+      <div
+        class="flex bg-base-100 sticky top-0 z-20 items-center gap-2 bg-opacity-90 px-4 py-2 backdrop-blur"
+      >
+        <NuxtLink href="/" class="flex-0 btn btn-ghost px-2">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 415 415"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="82.5"
+              y="290"
+              width="250"
+              height="125"
+              rx="62.5"
+              fill="#1AD1A5"
+            ></rect>
+            <circle cx="207.5" cy="135" r="130" fill="black" fill-opacity=".3"></circle>
+            <circle cx="207.5" cy="135" r="125" fill="white"></circle>
+            <circle cx="207.5" cy="135" r="56" fill="#FF9903"></circle>
+          </svg>
+          <div class="font-title inline-flex text-lg md:text-2xl">
+            <span class="lowercase">daisy</span>
+            <span class="uppercase text-[#1AD1A5]">UI</span>
+          </div>
+        </NuxtLink>
+
+        <i class="text-lg font-serif opacity-50">for Nuxt</i>
+      </div>
+
       <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
         <!-- divider -->
-        <li v-if="i > 0" />
+        <li />
 
         <!-- menu title -->
         <li class="menu-title flex flex-row gap-4">
