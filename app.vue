@@ -85,7 +85,7 @@ const menus = [
 </script>
 
 <template>
-  <div class="container flex mx-auto my-10 gap-10">
+  <div class="container flex my-10 gap-10">
     <!-- sidebar -->
     <aside class="bg-base-100 w-80">
       <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
