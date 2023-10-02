@@ -26,7 +26,7 @@ const menus = [
       { label: "Collapse", href: "/collapse" },
       { label: "Countdown", href: "/countdown" },
       { label: "Kbd", href: "/kbd" },
-      // { label: "Loading", href: "/loading" },
+      { label: "Loading", href: "/loading" },
       // { label: "Progress", href: "/progress" },
       // { label: "Radial progress", href: "/radial-progress" },
       // { label: "Stat", href: "/stat" },
