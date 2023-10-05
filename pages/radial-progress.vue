@@ -1,0 +1,59 @@
+<script setup lang="ts">
+const values = [0, 20, 60, 80, 100];
+</script>
+
+<template>
+  <div>
+    <h1 class="text-4xl font-bold mb-8">Radial progress</h1>
+
+    <p>
+      Radial progress can be used to show the progress of a task or to show the passing of
+      time.
+    </p>
+    
+    <br>
+
+    <p>
+      Radial progress needs `--value` CSS variable to work.
+      <br />
+      To change the size, use `--size` CSS variable which has a default value of `4rem`.
+      <br />
+      To change the thickness, use `--thickness` CSS variable which is 10% of the size by
+      default.
+    </p>
+
+    <component-preview>
+      <template #title> Radial progress </template>
+
+      <ui-radial-progress :value="70" />
+    </component-preview>
+
+    <component-preview>
+      <template #title> Different values</template>
+
+      <ui-radial-progress v-for="value of values" :key="value" :value="value" />
+    </component-preview>
+
+    <component-preview>
+      <template #title> Custom color </template>
+
+      <ui-radial-progress :value="70" class="text-primary" />
+    </component-preview>
+
+    <component-preview>
+      <template #title> With background color and border </template>
+
+      <ui-radial-progress
+        :value="70"
+        class="bg-primary text-primary-content border-4 border-primary"
+      />
+    </component-preview>
+
+    <component-preview>
+      <template #title> Custom size and custom thickness </template>
+
+      <ui-radial-progress :value="70" size="12rem" thickness="2px" />
+      <ui-radial-progress :value="70" size="12rem" thickness="2rem" />
+    </component-preview>
+  </div>
+</template>

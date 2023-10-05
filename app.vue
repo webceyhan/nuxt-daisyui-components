@@ -28,7 +28,7 @@ const menus = [
       { label: "Kbd", href: "/kbd" },
       { label: "Loading", href: "/loading" },
       { label: "Progress", href: "/progress" },
-      // { label: "Radial progress", href: "/radial-progress" },
+      { label: "Radial progress", href: "/radial-progress" },
       // { label: "Stat", href: "/stat" },
       // { label: "Table", href: "/table" },
       // { label: "Tooltip", href: "/tooltip" },
