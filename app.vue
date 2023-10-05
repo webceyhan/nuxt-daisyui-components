@@ -30,7 +30,7 @@ const menus = [
       { label: "Progress", href: "/progress" },
       { label: "Radial progress", href: "/radial-progress" },
       { label: "Stat", href: "/stat" },
-      // { label: "Table", href: "/table" },
+      { label: "Table", href: "/table" },
       // { label: "Tooltip", href: "/tooltip" },
     ],
   },
