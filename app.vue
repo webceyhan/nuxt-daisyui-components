@@ -31,7 +31,7 @@ const menus = [
       { label: "Radial progress", href: "/radial-progress" },
       { label: "Stat", href: "/stat" },
       { label: "Table", href: "/table" },
-      // { label: "Tooltip", href: "/tooltip" },
+      { label: "Tooltip", href: "/tooltip" },
     ],
   },
   {
