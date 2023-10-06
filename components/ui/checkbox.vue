@@ -28,7 +28,6 @@ interface Props {
   color?: CheckboxColor;
   checked?: boolean;
   disabled?: boolean;
-  inderterminate?: boolean;
 }
 
 defineEmits(["update:checked"]);
@@ -43,9 +42,8 @@ withDefaults(defineProps<Props>(), {
   <input
     type="checkbox"
     :class="['checkbox', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
-    @change="$emit('update:checked', !checked)"
+    @change="$emit('update:checked', ($event.target as HTMLInputElement).checked)"
     :checked="checked"
     :disabled="disabled"
-    :indeterminate="inderterminate"
   />
 </template>
