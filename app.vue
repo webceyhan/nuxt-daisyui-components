@@ -39,7 +39,7 @@ const menus = [
     icon: "pencil-square",
     iconClass: "text-rose-600",
     links: [
-      // { label: "Checkbox", href: "/checkbox" },
+      { label: "Checkbox", href: "/checkbox" },
       // { label: "File input", href: "/file-input" },
       // { label: "Radio", href: "/radio" },
       // { label: "Range", href: "/range" },
