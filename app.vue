@@ -40,7 +40,7 @@ const menus = [
     iconClass: "text-rose-600",
     links: [
       { label: "Checkbox", href: "/checkbox" },
-      // { label: "File input", href: "/file-input" },
+      { label: "File input", href: "/file-input" },
       // { label: "Radio", href: "/radio" },
       // { label: "Range", href: "/range" },
       // { label: "Rating", href: "/rating" },
