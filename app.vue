@@ -57,7 +57,7 @@ const menus = [
     links: [
       { label: "Artboard", href: "/artboard" },
       { label: "Divider", href: "/divider" },
-      // { label: "Drawer", href: "/drawer" },
+      { label: "Drawer", href: "/drawer" },
       // { label: "Footer", href: "/footer" },
       // { label: "Hero", href: "/hero" },
       // { label: "Indicator", href: "/indicator" },
