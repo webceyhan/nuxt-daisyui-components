@@ -31,7 +31,7 @@ withDefaults(defineProps<Props>(), {
     <!-- aside -->
     <aside :class="['drawer-side h-full', asideClass]">
       <label :for="id" class="drawer-overlay" />
-      <slot name="sidebar" />
+      <slot name="aside" />
     </aside>
   </div>
 </template>

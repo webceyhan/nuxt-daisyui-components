@@ -13,7 +13,7 @@
       <template #title>Drawer </template>
 
       <ui-drawer class="h-56" aside-class="absolute">
-        <template #sidebar>
+        <template #aside>
           <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             <li><a>Sidebar Item 1</a></li>
             <li><a>Sidebar Item 2</a></li>
@@ -28,7 +28,7 @@
       <ui-drawer id="drawer-2" class="h-56 lg:drawer-open" aside-class="absolute">
         <label for="drawer-2" class="btn lg:hidden">Open</label>
 
-        <template #sidebar>
+        <template #aside>
           <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             <li><a>Sidebar Item 1</a></li>
             <li><a>Sidebar Item 2</a></li>
@@ -74,7 +74,7 @@
         <!-- Page content here -->
         <div class="flex justify-center items-center flex-grow py-10">Content</div>
 
-        <template #sidebar>
+        <template #aside>
           <ul class="menu p-4 w-80 min-h-full bg-base-200">
             <!-- Sidebar content here -->
             <li><a>Sidebar Item 1</a></li>
@@ -95,7 +95,7 @@
       >
         <label for="drawer-4" class="btn">Open</label>
 
-        <template #sidebar>
+        <template #aside>
           <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             <li><a>Sidebar Item 1</a></li>
             <li><a>Sidebar Item 2</a></li>
