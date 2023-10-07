@@ -56,7 +56,7 @@ const menus = [
     iconClass: "text-blue-600",
     links: [
       { label: "Artboard", href: "/artboard" },
-      // { label: "Divider", href: "/divider" },
+      { label: "Divider", href: "/divider" },
       // { label: "Drawer", href: "/drawer" },
       // { label: "Footer", href: "/footer" },
       // { label: "Hero", href: "/hero" },
