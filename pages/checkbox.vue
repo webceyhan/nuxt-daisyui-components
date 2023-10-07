@@ -30,7 +30,7 @@ const checked = ref(true);
     <component-preview>
       <template #title>With label and form-control</template>
 
-      <ui-form-control label="Remember me">
+      <ui-form-control label="Remember me" inline>
         <ui-checkbox v-model:checked="checked" />
       </ui-form-control>
     </component-preview>
@@ -40,7 +40,7 @@ const checked = ref(true);
         <span class="capitalize"> {{ color }} </span> color
       </template>
 
-      <ui-form-control label="Remember me">
+      <ui-form-control label="Remember me" inline>
         <ui-checkbox :color="color" v-model:checked="checked" />
       </ui-form-control>
     </component-preview>
