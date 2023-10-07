@@ -47,7 +47,7 @@ const menus = [
       { label: "Select", href: "/select" },
       { label: "Text input", href: "/text-input" },
       { label: "Textarea", href: "/textarea" },
-      // { label: "Toggle", href: "/toggle" },
+      { label: "Toggle", href: "/toggle" },
     ],
   },
   {
