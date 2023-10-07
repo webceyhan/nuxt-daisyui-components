@@ -1,9 +1,4 @@
-<script setup lang="ts">
-
-
-
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div>
@@ -16,16 +11,13 @@
     <component-preview v-for="i in 6" :key="i">
       <template #title>Artboard size {{ i }}</template>
 
-      <ui-artboard :size="(`phone-${i}`)"  />
-        
+      <ui-artboard :size="`phone-${i}`" />
     </component-preview>
 
     <component-preview v-for="i in 6" :key="i">
       <template #title>Artboard horizontal size {{ i }}</template>
 
-      <ui-artboard :size="(`phone-${i}`)"  horizontal/>
-        
+      <ui-artboard :size="`phone-${i}`" horizontal />
     </component-preview>
-
   </div>
 </template>
