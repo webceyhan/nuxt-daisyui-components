@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface Props {
   label?: string;
+  alt?: string;
   inline?: boolean;
 }
 
@@ -17,10 +18,13 @@ defineProps<Props>();
 
     <!-- block (input, textarea, select..) -->
     <template v-else>
-      <label class="label">
-        <span v-if="label" class="label-text">{{ label }}</span>
+      <label v-if="label" class="label">
+        <span class="label-text">{{ label }}</span>
       </label>
       <slot />
+      <label v-if="alt" class="label">
+        <span class="label-text-alt">{{ alt }}</span>
+      </label>
     </template>
   </div>
 </template>
