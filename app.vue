@@ -45,7 +45,7 @@ const menus = [
       { label: "Range", href: "/range" },
       { label: "Rating", href: "/rating" },
       { label: "Select", href: "/select" },
-      // { label: "Text input", href: "/text-input" },
+      { label: "Text input", href: "/text-input" },
       // { label: "Textarea", href: "/textarea" },
       // { label: "Toggle", href: "/toggle" },
     ],
