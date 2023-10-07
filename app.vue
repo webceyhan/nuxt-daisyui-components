@@ -41,7 +41,7 @@ const menus = [
     links: [
       { label: "Checkbox", href: "/checkbox" },
       { label: "File input", href: "/file-input" },
-      // { label: "Radio", href: "/radio" },
+      { label: "Radio", href: "/radio" },
       // { label: "Range", href: "/range" },
       // { label: "Rating", href: "/rating" },
       // { label: "Select", href: "/select" },
