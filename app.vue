@@ -97,64 +97,64 @@ const menus = [
 </script>
 
 <template>
-  <div class="container flex my-10 gap-10">
-    <!-- sidebar -->
-    <aside class="bg-base-100 w-80">
-      <!-- logo -->
-      <div
-        class="flex bg-base-100 sticky top-0 z-20 items-center gap-2 bg-opacity-90 px-4 py-2 backdrop-blur"
-      >
-        <NuxtLink href="/" class="flex-0 btn btn-ghost px-2">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 415 415"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="82.5"
-              y="290"
-              width="250"
-              height="125"
-              rx="62.5"
-              fill="#1AD1A5"
-            ></rect>
-            <circle cx="207.5" cy="135" r="130" fill="black" fill-opacity=".3"></circle>
-            <circle cx="207.5" cy="135" r="125" fill="white"></circle>
-            <circle cx="207.5" cy="135" r="56" fill="#FF9903"></circle>
-          </svg>
-          <div class="font-title inline-flex text-lg md:text-2xl">
-            <span class="lowercase">daisy</span>
-            <span class="uppercase text-[#1AD1A5]">UI</span>
-          </div>
-        </NuxtLink>
+  <ui-drawer id="app-drawer" class="lg:drawer-open" aside-class="z-40">
+    <template #aside>
+      <div class="bg-base-100 w-80">
+        <!-- logo -->
+        <daisyui-logo class="sticky top-0 z-20" />
 
-        <i class="text-lg font-serif opacity-50">for Nuxt</i>
+        <!-- navigation -->
+        <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
+          <!-- divider -->
+          <li />
+
+          <!-- menu title -->
+          <li class="menu-title flex flex-row items-center gap-4">
+            <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
+            <span>{{ menu.title }}</span>
+          </li>
+
+          <!-- menu links -->
+          <li v-for="(link, i) of menu.links" :key="i">
+            <NuxtLink :href="link.href" active-class="active">
+              <span>{{ link.label }}</span>
+            </NuxtLink>
+          </li>
+        </ul>
       </div>
+    </template>
 
-      <!-- navigation -->
-      <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
-        <!-- divider -->
-        <li />
+    <div
+      class="bg-base-100 text-base-content sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 shadow-sm"
+    >
+      <nav class="navbar w-full">
+        <!-- drawer toggle -->
+        <label for="app-drawer" class="btn btn-square btn-ghost drawer-button lg:hidden">
+          <svg
+            width="20"
+            height="20"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </label>
 
-        <!-- menu title -->
-        <li class="menu-title flex flex-row items-center gap-4">
-          <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
-          <span>{{ menu.title }}</span>
-        </li>
-
-        <!-- menu links -->
-        <li v-for="(link, i) of menu.links" :key="i">
-          <NuxtLink :href="link.href" active-class="active">
-            <span>{{ link.label }}</span>
-          </NuxtLink>
-        </li>
-      </ul>
-    </aside>
+        <!-- logo -->
+        <daisyui-logo class="lg:hidden" />
+      </nav>
+    </div>
 
     <!-- main content -->
-    <main class="flex-1 w-full max-w-4xl flex-grow">
+    <main class="w-full max-w-4xl px-6 pb-16 xl:pr-2">
       <NuxtPage />
     </main>
-  </div>
+  </ui-drawer>
 </template>
