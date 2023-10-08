@@ -29,7 +29,7 @@ withDefaults(defineProps<Props>(), {
     </div>
 
     <!-- aside -->
-    <aside :class="['drawer-side h-full', asideClass]">
+    <aside :class="['drawer-side', asideClass]">
       <label :for="id" class="drawer-overlay" />
       <slot name="aside" />
     </aside>

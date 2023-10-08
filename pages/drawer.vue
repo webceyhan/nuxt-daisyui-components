@@ -12,7 +12,7 @@
     <component-preview>
       <template #title>Drawer </template>
 
-      <ui-drawer class="h-56" aside-class="absolute">
+      <ui-drawer class="h-56" aside-class="absolute h-full">
         <template #aside>
           <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             <li><a>Sidebar Item 1</a></li>
@@ -25,7 +25,7 @@
     <component-preview>
       <template #title>Responsive </template>
 
-      <ui-drawer id="drawer-2" class="h-56 lg:drawer-open" aside-class="absolute">
+      <ui-drawer id="drawer-2" class="h-56 lg:drawer-open" aside-class="absolute h-full">
         <label for="drawer-2" class="btn lg:hidden">Open</label>
 
         <template #aside>
@@ -41,7 +41,7 @@
       <template #title>Navbar menu for desktop + sidebar drawer for mobile </template>
       <template #description> Change screen size to show/hide menu </template>
 
-      <ui-drawer id="drawer-3" class="h-56" aside-class="absolute">
+      <ui-drawer id="drawer-3" class="h-56" aside-class="absolute h-full">
         <!-- Navbar -->
         <div class="w-full navbar bg-base-300">
           <div class="flex-none">
@@ -90,7 +90,7 @@
       <ui-drawer
         id="drawer-4"
         class="h-56"
-        aside-class="absolute ml-[-54rem] w-[stretch]"
+        aside-class="absolute h-full ml-[-54rem] w-[stretch]"
         align-end
       >
         <label for="drawer-4" class="btn">Open</label>
