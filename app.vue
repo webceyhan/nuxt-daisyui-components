@@ -58,7 +58,7 @@ const menus = [
       { label: "Artboard", href: "/artboard" },
       { label: "Divider", href: "/divider" },
       { label: "Drawer", href: "/drawer" },
-      // { label: "Footer", href: "/footer" },
+      { label: "Footer", href: "/footer" },
       // { label: "Hero", href: "/hero" },
       // { label: "Indicator", href: "/indicator" },
       // { label: "Join", href: "/join" },
