@@ -33,9 +33,14 @@ withDefaults(defineProps<Props>(), {
         'tab-lifted': lifted,
         'tab-bordered': bordered,
         'tab-disabled': disabled,
+        indicator: !!$slots.indicator,
       },
     ]"
   >
+    <span v-if="$slots.indicator" class="indicator-item">
+      <slot name="indicator" />
+    </span>
+
     <slot />
   </button>
 </template>

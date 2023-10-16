@@ -4,6 +4,9 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 export type Position = 'top' | 'bottom' | 'left' | 'right';
 
+export type Alignment = 'start' | 'center' | 'end';
+export type VerticalAlignment = 'top' | 'middle' | 'bottom';
+
 export type BrandColor =
     | 'default'
     | 'neutral'

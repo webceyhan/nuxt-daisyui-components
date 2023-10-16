@@ -60,7 +60,7 @@ const menus = [
       { label: "Drawer", href: "/drawer" },
       { label: "Footer", href: "/footer" },
       { label: "Hero", href: "/hero" },
-      // { label: "Indicator", href: "/indicator" },
+      { label: "Indicator", href: "/indicator" },
       // { label: "Join", href: "/join" },
       // { label: "Mask", href: "/mask" },
       // { label: "Stack", href: "/stack" },
