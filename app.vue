@@ -79,7 +79,7 @@ const menus = [
       // { label: "Navbar", href: "/navbar" },
       // { label: "Pagination", href: "/pagination" },
       // { label: "Steps", href: "/steps" },
-      // { label: "Tab", href: "/tab" },
+      { label: "Tab", href: "/tab" },
     ],
   },
   {
