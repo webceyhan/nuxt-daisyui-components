@@ -63,7 +63,7 @@ const menus = [
       { label: "Indicator", href: "/indicator" },
       { label: "Join", href: "/join" },
       { label: "Mask", href: "/mask" },
-      // { label: "Stack", href: "/stack" },
+      { label: "Stack", href: "/stack" },
       // { label: "Toast", href: "/toast" },
     ],
   },
