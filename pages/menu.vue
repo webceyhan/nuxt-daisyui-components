@@ -264,13 +264,13 @@ const megeMenu = [
           <a>Item 1</a>
         </ui-menu-item>
 
-        <ui-menu-item title="Parent" collapsible>
+        <ui-menu-item title="Parent" collapsible open>
           <ul>
             <ui-menu-item v-for="i in 2">
               <a> level 2 item {{ i }}</a>
             </ui-menu-item>
 
-            <ui-menu-item title="Parent" collapsible>
+            <ui-menu-item title="Parent" collapsible open>
               <ul>
                 <ui-menu-item v-for="i in 2">
                   <a> level 3 item {{ i }}</a>
@@ -297,7 +297,7 @@ const megeMenu = [
           </a>
         </ui-menu-item>
 
-        <ui-menu-item collapsible>
+        <ui-menu-item collapsible open>
           <template #title>
             <ui-icon name="folder" />
             My Files
@@ -311,7 +311,7 @@ const megeMenu = [
               </a>
             </ui-menu-item>
 
-            <ui-menu-item collapsible>
+            <ui-menu-item collapsible open>
               <template #title>
                 <ui-icon name="folder" />
                 Images
@@ -325,7 +325,7 @@ const megeMenu = [
                   </a>
                 </ui-menu-item>
 
-                <ui-menu-item collapsible>
+                <ui-menu-item collapsible open>
                   <template #title>
                     <ui-icon name="folder" />
                     Others
@@ -427,11 +427,11 @@ const megeMenu = [
           <a>Item 1</a>
         </ui-menu-item>
 
-        <ui-menu-item title="Parent item" collapsible>
+        <ui-menu-item title="Parent item" collapsible open>
           <ul>
             <ui-menu-item><a>level 2 item 1</a></ui-menu-item>
             <ui-menu-item><a>level 2 item 2</a></ui-menu-item>
-            <ui-menu-item title="Parent" collapsible>
+            <ui-menu-item title="Parent" collapsible open>
               <ul>
                 <li><a>item 1</a></li>
                 <li><a>item 2</a></li>

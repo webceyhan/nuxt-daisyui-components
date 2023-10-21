@@ -6,9 +6,7 @@ interface Props {
   collapsible?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  open: true,
-});
+defineProps<Props>();
 </script>
 
 <template>
