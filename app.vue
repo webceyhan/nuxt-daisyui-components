@@ -77,7 +77,7 @@ const menus = [
       { label: "Link", href: "/link" },
       { label: "Menu", href: "/menu" },
       { label: "Navbar", href: "/navbar" },
-      // { label: "Pagination", href: "/pagination" },
+      { label: "Pagination", href: "/pagination" },
       // { label: "Steps", href: "/steps" },
       { label: "Tab", href: "/tab" },
     ],
