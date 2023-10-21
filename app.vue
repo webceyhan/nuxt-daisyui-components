@@ -87,7 +87,7 @@ const menus = [
     icon: "phone",
     iconClass: "text-lime-600",
     links: [
-      // { label: "Browser", href: "/browser" },
+      { label: "Browser", href: "/mockup-browser" },
       // { label: "Code", href: "/code" },
       // { label: "Phone", href: "/phone" },
       // { label: "Window", href: "/window" },
