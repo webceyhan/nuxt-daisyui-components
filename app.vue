@@ -74,7 +74,7 @@ const menus = [
     links: [
       { label: "Breadcrumbs", href: "/breadcrumbs" },
       { label: "Bottom navigation", href: "/bottom-navigation" },
-      // { label: "Link", href: "/link" },
+      { label: "Link", href: "/link" },
       // { label: "Menu", href: "/menu" },
       // { label: "Navbar", href: "/navbar" },
       // { label: "Pagination", href: "/pagination" },
