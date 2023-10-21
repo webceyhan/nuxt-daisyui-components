@@ -90,7 +90,7 @@ const menus = [
       { label: "Browser", href: "/mockup-browser" },
       { label: "Code", href: "/mockup-code" },
       { label: "Phone", href: "/mockup-phone" },
-      // { label: "Window", href: "/window" },
+      { label: "Window", href: "/mockup-window" },
     ],
   },
 ];
