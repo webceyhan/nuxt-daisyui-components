@@ -76,7 +76,7 @@ const menus = [
       { label: "Bottom navigation", href: "/bottom-navigation" },
       { label: "Link", href: "/link" },
       { label: "Menu", href: "/menu" },
-      // { label: "Navbar", href: "/navbar" },
+      { label: "Navbar", href: "/navbar" },
       // { label: "Pagination", href: "/pagination" },
       // { label: "Steps", href: "/steps" },
       { label: "Tab", href: "/tab" },
