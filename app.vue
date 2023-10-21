@@ -89,7 +89,7 @@ const menus = [
     links: [
       { label: "Browser", href: "/mockup-browser" },
       { label: "Code", href: "/mockup-code" },
-      // { label: "Phone", href: "/phone" },
+      { label: "Phone", href: "/mockup-phone" },
       // { label: "Window", href: "/window" },
     ],
   },
