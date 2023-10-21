@@ -73,7 +73,7 @@ const menus = [
     iconClass: "text-cyan-600",
     links: [
       { label: "Breadcrumbs", href: "/breadcrumbs" },
-      // { label: "Bottom navigation", href: "/bottom-navigation" },
+      { label: "Bottom navigation", href: "/bottom-navigation" },
       // { label: "Link", href: "/link" },
       // { label: "Menu", href: "/menu" },
       // { label: "Navbar", href: "/navbar" },
