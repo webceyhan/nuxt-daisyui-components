@@ -88,7 +88,7 @@ const menus = [
     iconClass: "text-lime-600",
     links: [
       { label: "Browser", href: "/mockup-browser" },
-      // { label: "Code", href: "/code" },
+      { label: "Code", href: "/mockup-code" },
       // { label: "Phone", href: "/phone" },
       // { label: "Window", href: "/window" },
     ],
