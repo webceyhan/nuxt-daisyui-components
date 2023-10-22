@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type InputColor = Exclude<Color, "neutral">;
+type InputColor = Color | "ghost";
 
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "textarea-xs",
@@ -15,11 +15,11 @@ const COLOR_CLASS_MAP: ClassMap<InputColor> = {
   primary: "textarea-primary",
   secondary: "textarea-secondary",
   accent: "textarea-accent",
-  ghost: "textarea-ghost",
   info: "textarea-info",
   success: "textarea-success",
   warning: "textarea-warning",
   error: "textarea-error",
+  ghost: "textarea-ghost",
 };
 </script>
 

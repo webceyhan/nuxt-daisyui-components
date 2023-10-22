@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type ButtonColor = Color | "link";
+type ButtonColor = Color | "neutral" | "ghost" | "link";
 
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "btn-xs",
@@ -12,15 +12,15 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
 
 const COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
   default: undefined, // default
-  neutral: "btn-neutral",
   primary: "btn-primary",
   secondary: "btn-secondary",
   accent: "btn-accent",
-  ghost: "btn-ghost",
   info: "btn-info",
   success: "btn-success",
   warning: "btn-warning",
   error: "btn-error",
+  neutral: "btn-neutral",
+  ghost: "btn-ghost",
   link: "btn-link",
 };
 </script>

@@ -1,8 +1,6 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type ToggleColor = Exclude<Color, "neutral" | "ghost">;
-
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "toggle-xs",
   sm: "toggle-sm",
@@ -10,7 +8,7 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   lg: "toggle-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<ToggleColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "toggle-primary",
   secondary: "toggle-secondary",
@@ -25,7 +23,7 @@ const COLOR_CLASS_MAP: ClassMap<ToggleColor> = {
 <script setup lang="ts">
 interface Props {
   size?: Size;
-  color?: ToggleColor;
+  color?: Color;
   checked?: boolean;
   disabled?: boolean;
 }

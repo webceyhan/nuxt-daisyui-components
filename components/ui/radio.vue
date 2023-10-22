@@ -1,8 +1,6 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type RadioColor = Exclude<Color, "neutral" | "ghost">;
-
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "radio-xs",
   sm: "radio-sm",
@@ -10,7 +8,7 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   lg: "radio-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<RadioColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "radio-primary",
   secondary: "radio-secondary",
@@ -28,7 +26,7 @@ interface Props {
   value?: string;
   modelValue?: string;
   size?: Size;
-  color?: RadioColor;
+  color?: Color;
   checked?: boolean;
   disabled?: boolean;
 }

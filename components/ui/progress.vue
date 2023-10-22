@@ -1,9 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color } from "./types";
 
-type ProgressColor = Exclude<Color, "neutral" | "ghost">;
-
-const COLOR_CLASS_MAP: ClassMap<ProgressColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "progress-primary",
   secondary: "progress-secondary",
@@ -19,7 +17,7 @@ const COLOR_CLASS_MAP: ClassMap<ProgressColor> = {
 interface Props {
   value?: number;
   max?: number;
-  color?: ProgressColor;
+  color?: Color;
 }
 
 withDefaults(defineProps<Props>(), {

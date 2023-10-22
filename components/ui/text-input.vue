@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type InputColor = Exclude<Color, "neutral">;
+type InputColor = Color | "ghost";
 
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "input-xs",
@@ -15,11 +15,11 @@ const COLOR_CLASS_MAP: ClassMap<InputColor> = {
   primary: "input-primary",
   secondary: "input-secondary",
   accent: "input-accent",
-  ghost: "input-ghost",
   info: "input-info",
   success: "input-success",
   warning: "input-warning",
   error: "input-error",
+  ghost: "input-ghost",
 };
 </script>
 

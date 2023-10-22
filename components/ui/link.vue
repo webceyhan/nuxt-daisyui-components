@@ -1,11 +1,10 @@
 <script lang="ts">
 import { ClassMap, Color } from "./types";
 
-type LinkColor = Exclude<Color, "ghost">;
+type LinkColor = Color | "neutral";
 
 const COLOR_CLASS_MAP: ClassMap<LinkColor> = {
   default: undefined, // default
-  neutral: "link-neutral",
   primary: "link-primary",
   secondary: "link-secondary",
   accent: "link-accent",
@@ -13,6 +12,7 @@ const COLOR_CLASS_MAP: ClassMap<LinkColor> = {
   success: "link-success",
   warning: "link-warning",
   error: "link-error",
+  neutral: "link-neutral",
 };
 </script>
 

@@ -1,6 +1,8 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
+type BadgeColor = Color | "neutral" | "ghost";
+
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "badge-xs",
   sm: "badge-sm",
@@ -8,24 +10,24 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   lg: "badge-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+const COLOR_CLASS_MAP: ClassMap<BadgeColor> = {
   default: undefined, // default
-  neutral: "badge-neutral",
   primary: "badge-primary",
   secondary: "badge-secondary",
   accent: "badge-accent",
-  ghost: "badge-ghost",
   info: "badge-info",
   success: "badge-success",
   warning: "badge-warning",
   error: "badge-error",
+  neutral: "badge-neutral",
+  ghost: "badge-ghost",
 };
 </script>
 
 <script setup lang="ts">
 interface Props {
   size?: Size;
-  color?: Color;
+  color?: BadgeColor;
   outline?: boolean;
 }
 

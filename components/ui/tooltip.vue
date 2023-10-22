@@ -1,9 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color, Position } from "./types";
 
-type TooltipColor = Exclude<Color, "neutral" | "ghost">;
-
-const COLOR_CLASS_MAP: ClassMap<TooltipColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "tooltip-primary",
   secondary: "tooltip-secondary",
@@ -26,7 +24,7 @@ const POSITION_CLASS_MAP: ClassMap<Position> = {
 interface Props {
   value: string;
   open?: boolean;
-  color?: TooltipColor;
+  color?: Color;
   position?: Position;
 }
 

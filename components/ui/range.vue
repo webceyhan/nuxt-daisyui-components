@@ -1,8 +1,6 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type RangeColor = Exclude<Color, "neutral" | "ghost">;
-
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "range-xs",
   sm: "range-sm",
@@ -10,7 +8,7 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   lg: "range-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<RangeColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "range-primary",
   secondary: "range-secondary",
@@ -30,7 +28,7 @@ interface Props {
   value?: string | number;
   modelValue?: string | number;
   size?: Size;
-  color?: RangeColor;
+  color?: Color;
   disabled?: boolean;
 }
 

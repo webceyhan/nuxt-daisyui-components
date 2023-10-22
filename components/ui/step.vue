@@ -1,11 +1,10 @@
 <script lang="ts">
 import { ClassMap, Color } from "./types";
 
-type StepColor = Exclude<Color, "ghost">;
+type StepColor = Color | "neutral";
 
 const COLOR_CLASS_MAP: ClassMap<StepColor> = {
   default: undefined, // default
-  neutral: "step-neutral",
   primary: "step-primary",
   secondary: "step-secondary",
   accent: "step-accent",
@@ -13,6 +12,7 @@ const COLOR_CLASS_MAP: ClassMap<StepColor> = {
   success: "step-success",
   warning: "step-warning",
   error: "step-error",
+  neutral: "step-neutral",
 };
 </script>
 

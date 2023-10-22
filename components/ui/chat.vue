@@ -3,14 +3,12 @@ import { ClassMap, Color } from "./types";
 
 type ChatAlign = "start" | "end";
 
-type ChatColor = Exclude<Color, "neutral" | "ghost">;
-
 const ALIGN_MAP: ClassMap<ChatAlign> = {
   start: "chat-start",
   end: "chat-end",
 };
 
-const COLOR_CLASS_MAP: ClassMap<ChatColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "chat-bubble-primary",
   secondary: "chat-bubble-secondary",
@@ -24,8 +22,8 @@ const COLOR_CLASS_MAP: ClassMap<ChatColor> = {
 
 <script setup lang="ts">
 interface Props {
+  color?: Color;
   align?: ChatAlign;
-  color?: ChatColor;
 }
 
 withDefaults(defineProps<Props>(), {

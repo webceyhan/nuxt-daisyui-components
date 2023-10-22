@@ -5,19 +5,14 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg';
 export type Position = 'top' | 'bottom' | 'left' | 'right';
 
 export type Alignment = 'start' | 'center' | 'end';
+
 export type VerticalAlignment = 'top' | 'middle' | 'bottom';
 
-export type BrandColor =
-    | 'default'
-    | 'neutral'
-    | 'primary'
-    | 'secondary'
-    | 'accent'
-    | 'ghost';
+export type BrandColor = 'primary' | 'secondary' | 'accent';
 
-export type StateColor = 'default' | 'info' | 'success' | 'warning' | 'error';
+export type StateColor = 'info' | 'success' | 'warning' | 'error';
 
-export type Color = BrandColor | StateColor;
+export type Color = 'default' | BrandColor | StateColor;
 
 export type Mask =
     | 'squircle'

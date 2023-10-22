@@ -1,8 +1,6 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type CheckboxColor = Exclude<Color, "neutral" | "ghost">;
-
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "checkbox-xs",
   sm: "checkbox-sm",
@@ -10,7 +8,7 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   lg: "checkbox-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<CheckboxColor> = {
+const COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "checkbox-primary",
   secondary: "checkbox-secondary",
@@ -25,7 +23,7 @@ const COLOR_CLASS_MAP: ClassMap<CheckboxColor> = {
 <script setup lang="ts">
 interface Props {
   size?: Size;
-  color?: CheckboxColor;
+  color?: Color;
   checked?: boolean;
   disabled?: boolean;
 }
