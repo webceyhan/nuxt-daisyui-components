@@ -27,6 +27,8 @@ const COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
 
 <script setup lang="ts">
 interface Props {
+  label?: string;
+  icon?: string;
   size?: Size;
   color?: ButtonColor;
   outline?: boolean;
@@ -59,6 +61,10 @@ withDefaults(defineProps<Props>(), {
       },
     ]"
   >
-    <slot />
+    <slot>
+      <ui-icon v-if="icon" :name="icon" class="text-[1.4em]" />
+
+      <span v-if="label">{{ label }}</span>
+    </slot>
   </button>
 </template>

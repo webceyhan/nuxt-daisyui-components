@@ -58,3 +58,10 @@ export const COLLAPSE_INDICATORS: CollapseIndicator[] = [
 export const ALIGNMENTS: Alignment[] = ['start', 'center', 'end'];
 
 export const POSITIONS: Position[] = ['top', 'bottom', 'left', 'right'];
+
+export const STATE_ICONS: string[] = [
+    'info-circle',
+    'check-circle',
+    'exclamation-triangle',
+    'x-circle',
+];
