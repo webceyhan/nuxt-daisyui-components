@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { BRAND_COLORS } from "~/constants";
+import { BRAND_COLORS, POSITIONS } from "~/constants";
+
+const spacings = {
+  top: "mt-32",
+  bottom: "mb-32",
+  right: "my-16 mr-16",
+  left: "my-16 ml-16",
+};
 </script>
 
 <template>
@@ -37,57 +44,20 @@ import { BRAND_COLORS } from "~/constants";
 
     <h3 class="text-2xl">Positions</h3>
 
-    <component-preview>
-      <template #title>Dropdown bottom</template>
+    <component-preview v-for="position of POSITIONS">
+      <template #title>Dropdown {{ position }}</template>
 
-      <ui-dropdown class="mb-32" label="click">
+      <ui-dropdown :class="spacings[position]" label="click" :position="position">
         <li><a>Item 1</a></li>
         <li><a>Item 2</a></li>
       </ui-dropdown>
 
-      <ui-dropdown class="mb-32" label="align to end" align-to-end>
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ui-dropdown>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Dropdown top</template>
-
-      <ui-dropdown class="mt-32" position="top" label="click">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ui-dropdown>
-
-      <ui-dropdown class="mt-32" position="top" label="align to end" align-to-end>
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ui-dropdown>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Dropdown left</template>
-
-      <ui-dropdown class="mb-16" position="left" label="click">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ui-dropdown>
-
-      <ui-dropdown class="mt-16" position="left" label="align to end" align-to-end>
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ui-dropdown>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Dropdown right</template>
-
-      <ui-dropdown class="mb-16" position="right" label="click">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
-      </ui-dropdown>
-
-      <ui-dropdown class="mt-16" position="right" label="align to end" align-to-end>
+      <ui-dropdown
+        :class="spacings[position]"
+        label="align to end"
+        :position="position"
+        align-to-end
+      >
         <li><a>Item 1</a></li>
         <li><a>Item 2</a></li>
       </ui-dropdown>

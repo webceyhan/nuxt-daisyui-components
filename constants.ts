@@ -3,6 +3,7 @@ import {
     BrandColor,
     CollapseIndicator,
     Color,
+    Position,
     Size,
     StateColor,
 } from './components/ui/types';
@@ -55,3 +56,5 @@ export const COLLAPSE_INDICATORS: CollapseIndicator[] = [
 ];
 
 export const ALIGNMENTS: Alignment[] = ['start', 'center', 'end'];
+
+export const POSITIONS: Position[] = ['top', 'bottom', 'left', 'right'];
