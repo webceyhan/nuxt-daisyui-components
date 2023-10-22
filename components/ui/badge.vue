@@ -26,6 +26,7 @@ const COLOR_CLASS_MAP: ClassMap<BadgeColor> = {
 
 <script setup lang="ts">
 interface Props {
+  label?: string;
   size?: Size;
   color?: BadgeColor;
   outline?: boolean;
@@ -48,6 +49,8 @@ withDefaults(defineProps<Props>(), {
       },
     ]"
   >
-    <slot />
+    <slot>
+      {{ label }}
+    </slot>
   </span>
 </template>

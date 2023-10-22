@@ -10,6 +10,8 @@ import {
 
 export const SIZES: Size[] = ['xs', 'sm', 'md', 'lg'];
 
+export const TEXT_SIZES: string[] = [ 'text-sm', 'text-base', 'text-lg', 'text-xl'];
+
 export const BRAND_COLORS: BrandColor[] = [
     'default',
     'primary',
