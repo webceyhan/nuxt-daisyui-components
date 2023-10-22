@@ -1,4 +1,10 @@
-import { BrandColor, Color, Size, StateColor } from './components/ui/types';
+import {
+    BrandColor,
+    CollapseIndicator,
+    Color,
+    Size,
+    StateColor,
+} from './components/ui/types';
 
 export const SIZES: Size[] = ['xs', 'sm', 'md', 'lg'];
 
@@ -39,4 +45,10 @@ export const BRAND_COLORS_WITH_NEUTRAL: any[] = [...BRAND_COLORS, 'neutral'];
 export const BRAND_COLORS_WITH_NEUTRAL_AND_GHOST: any[] = [
     ...BRAND_COLORS_WITH_NEUTRAL,
     'ghost',
+];
+
+export const COLLAPSE_INDICATORS: CollapseIndicator[] = [
+    'none',
+    'arrow',
+    'plus',
 ];

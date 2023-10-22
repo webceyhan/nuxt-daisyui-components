@@ -14,6 +14,8 @@ export type StateColor = 'info' | 'success' | 'warning' | 'error';
 
 export type Color = BrandColor | StateColor;
 
+export type CollapseIndicator = "none" | "arrow" | "plus";
+
 export type Mask =
     | 'squircle'
     | 'heart'

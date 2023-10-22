@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { COLLAPSE_INDICATORS } from '~/constants';
+</script>
 
 <template>
   <div>
@@ -18,27 +20,13 @@
       </ui-accordion>
     </component-preview>
 
-    <component-preview>
-      <template #title>Accordion with arrow icon</template>
+    <component-preview v-for="indicator of COLLAPSE_INDICATORS">
+      <template #title>Accordion with {{indicator}} indicator</template>
 
       <ui-accordion
         name="my-accordion-2"
         v-for="i of [1, 2, 3]"
-        icon="arrow"
-        :open="i < 2"
-      >
-        <template #title>Click to open this one and close others</template>
-        <p>hello</p>
-      </ui-accordion>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Accordion with plus/minus icon</template>
-
-      <ui-accordion
-        name="my-accordion-3"
-        v-for="i of [1, 2, 3]"
-        icon="plus"
+        :indicator="indicator"
         :open="i < 2"
       >
         <template #title>Click to open this one and close others</template>

@@ -1,9 +1,7 @@
 <script lang="ts">
-import { ClassMap } from "./types";
+import { ClassMap, CollapseIndicator } from "./types";
 
-type Icon = "none" | "arrow" | "plus";
-
-const ICON_CLASS_MAP: ClassMap<Icon> = {
+const INDICATOR_CLASS_MAP: ClassMap<CollapseIndicator> = {
   none: undefined, // default
   arrow: "collapse-arrow",
   plus: "collapse-plus",
@@ -14,16 +12,16 @@ const ICON_CLASS_MAP: ClassMap<Icon> = {
 interface Props {
   name?: string;
   open?: boolean;
-  icon?: Icon;
+  indicator?: CollapseIndicator;
 }
 
 withDefaults(defineProps<Props>(), {
-  icon: "none",
+  indicator: "none",
 });
 </script>
 
 <template>
-  <div :class="['collapse bg-base-200', ICON_CLASS_MAP[icon]]">
+  <div :class="['collapse bg-base-200', INDICATOR_CLASS_MAP[indicator]]">
     <!-- internal toggle -->
     <input type="radio" :name="name" :checked="open" />
 
