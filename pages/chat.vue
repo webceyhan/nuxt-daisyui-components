@@ -27,7 +27,7 @@ const bubbleWithColors = [
 
       <div class="w-full">
         <ui-chat> It's over Anakin, <br />I have the high ground. </ui-chat>
-        <ui-chat align="end"> You underestimate my power! </ui-chat>
+        <ui-chat alignment="end"> You underestimate my power! </ui-chat>
       </div>
     </component-preview>
 
@@ -76,7 +76,7 @@ const bubbleWithColors = [
           </template>
         </ui-chat>
 
-        <ui-chat align="end">
+        <ui-chat alignment="end">
           <template #avatar>
             <div class="w-10 rounded-full">
               <img src="/img/avatar.jpg" />
@@ -136,7 +136,7 @@ const bubbleWithColors = [
         <ui-chat
           v-for="(chat, i) of bubbleWithColors"
           :color="COLORS[i]"
-          :align="chat?.end ? 'end' : 'start'"
+          :alignment="chat?.end ? 'end' : 'start'"
         >
           {{ chat.text }}
         </ui-chat>

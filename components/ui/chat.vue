@@ -1,9 +1,9 @@
 <script lang="ts">
-import { ClassMap, Color } from "./types";
+import { Alignment, ClassMap, Color } from "./types";
 
-type ChatAlign = "start" | "end";
+type ChatAlignment = Exclude<Alignment, "center">;
 
-const ALIGN_MAP: ClassMap<ChatAlign> = {
+const ALIGNMENT_CLASS_MAP: ClassMap<ChatAlignment> = {
   start: "chat-start",
   end: "chat-end",
 };
@@ -23,17 +23,17 @@ const COLOR_CLASS_MAP: ClassMap<Color> = {
 <script setup lang="ts">
 interface Props {
   color?: Color;
-  align?: ChatAlign;
+  alignment?: ChatAlignment;
 }
 
 withDefaults(defineProps<Props>(), {
-  align: "start",
+  alignment: "start",
   color: "default",
 });
 </script>
 
 <template>
-  <div :class="['chat', ALIGN_MAP[align]]">
+  <div :class="['chat', ALIGNMENT_CLASS_MAP[alignment]]">
     <!-- avatar -->
     <div v-if="$slots.avatar" class="chat-image avatar">
       <slot name="avatar" />
