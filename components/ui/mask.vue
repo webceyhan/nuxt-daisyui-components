@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Mask } from "./types";
 
-const MASK_CLASS_MAP: ClassMap<Mask> = {
+export const MASK_CLASS_MAP: ClassMap<Mask> = {
   squircle: "mask-squircle",
   heart: "mask-heart",
   hexagon: "mask-hexagon",
