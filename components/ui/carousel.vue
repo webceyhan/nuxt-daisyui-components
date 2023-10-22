@@ -1,9 +1,7 @@
 <script lang="ts">
-import { ClassMap } from "./types";
+import { Alignment, ClassMap } from "./types";
 
-type Snap = "start" | "center" | "end";
-
-const SNAP_CLASS_MAP: ClassMap<Snap> = {
+const SNAP_CLASS_MAP: ClassMap<Alignment> = {
   start: undefined,
   center: "carousel-center",
   end: "carousel-end",
@@ -12,7 +10,7 @@ const SNAP_CLASS_MAP: ClassMap<Snap> = {
 
 <script setup lang="ts">
 interface Props {
-  snap?: Snap;
+  snap?: Alignment;
   vertical?: boolean;
 }
 

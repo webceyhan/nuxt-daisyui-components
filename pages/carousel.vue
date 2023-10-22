@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ALIGNMENTS } from "~/constants";
+
 const items = [1, 2, 3, 4, 5, 6, 7];
 const wideItems = [1, 2, 3, 4];
 </script>
@@ -9,30 +11,10 @@ const wideItems = [1, 2, 3, 4];
 
     <p>Carousel show images or content in a scrollable area.</p>
 
-    <component-preview>
-      <template #title>Snap to start (default)</template>
+    <component-preview v-for="snap of ALIGNMENTS">
+      <template #title>Snap to {{ snap }}</template>
 
-      <ui-carousel class="rounded-box">
-        <ui-carousel-item v-for="item of items">
-          <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
-        </ui-carousel-item>
-      </ui-carousel>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Snap to center</template>
-
-      <ui-carousel snap="center" class="rounded-box">
-        <ui-carousel-item v-for="item of items">
-          <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
-        </ui-carousel-item>
-      </ui-carousel>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Snap to end</template>
-
-      <ui-carousel snap="end" class="rounded-box">
+      <ui-carousel :snap="snap" class="rounded-box">
         <ui-carousel-item v-for="item of items">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
         </ui-carousel-item>

@@ -1,4 +1,5 @@
 import {
+    Alignment,
     BrandColor,
     CollapseIndicator,
     Color,
@@ -52,3 +53,5 @@ export const COLLAPSE_INDICATORS: CollapseIndicator[] = [
     'arrow',
     'plus',
 ];
+
+export const ALIGNMENTS: Alignment[] = ['start', 'center', 'end'];
