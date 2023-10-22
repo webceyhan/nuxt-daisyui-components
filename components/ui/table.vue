@@ -4,7 +4,7 @@ import { ClassMap, Size } from "./types";
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "table-xs",
   sm: "table-sm",
-  md: "table-md", // default
+  md: undefined, // default
   lg: "table-lg",
 };
 </script>

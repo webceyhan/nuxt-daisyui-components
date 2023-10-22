@@ -1,12 +1,6 @@
 <script setup lang="ts">
+import { SIZES } from "~/constants";
 import { records, recordsWithVisuals, recordsXs, pinnedRows } from "./table-data";
-
-const sizes: { label: string; value: string }[] = [
-  { value: "lg", label: "large" },
-  { value: "md", label: "normal" },
-  { value: "sm", label: "small" },
-  { value: "xs", label: "tiny" },
-];
 
 const columns = (rows: any[]) => Object.keys(rows[0]);
 
@@ -154,20 +148,22 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
       </ui-table>
     </component-preview>
 
-    <component-preview>
-      <template #title>Table xs</template>
+    <h3 class="text-2xl">Sizes</h3>
+
+    <component-preview v-for="size of SIZES">
+      <template #title>Table {{ size }}</template>
 
       <div class="overflow-x-auto">
-        <ui-table size="xs">
+        <ui-table :size="size">
           <thead>
             <tr>
-              <th v-for="(column, i) of columns(recordsXs)">
+              <th v-for="(column, i) of columns(records)">
                 {{ i ? column : "" }}
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(record, i) of recordsXs">
+            <tr v-for="(record, i) of records">
               <component :is="tagFor(key)" v-for="(val, key) of record">
                 {{ val }}
               </component>
