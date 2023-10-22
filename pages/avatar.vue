@@ -12,7 +12,7 @@
     <component-preview>
       <template #title>Avatar in custom sizes</template>
 
-      <ui-avatar v-for="size of ['w-32', 'w-20', 'w-16', 'w-8']" :key="size">
+      <ui-avatar v-for="size of ['w-32', 'w-20', 'w-16', 'w-8']">
         <div :class="[size, 'rounded']">
           <img src="/img/avatar.jpg" />
         </div>
@@ -22,10 +22,7 @@
     <component-preview>
       <template #title>Avatar rounded</template>
 
-      <ui-avatar
-        v-for="roundSize of ['rounded', 'rounded-xl', 'rounded-full']"
-        :key="roundSize"
-      >
+      <ui-avatar v-for="roundSize of ['rounded', 'rounded-xl', 'rounded-full']">
         <div :class="['w-24', roundSize]">
           <img src="/img/avatar.jpg" />
         </div>
@@ -35,10 +32,7 @@
     <component-preview>
       <template #title>Avatar with mask</template>
 
-      <ui-avatar
-        v-for="maskType of ['mask-squircle', 'mask-hexagon', 'mask-triangle']"
-        :key="maskType"
-      >
+      <ui-avatar v-for="maskType of ['mask-squircle', 'mask-hexagon', 'mask-triangle']">
         <div :class="['w-24 mask', maskType]">
           <img src="/img/avatar.jpg" />
         </div>
@@ -49,7 +43,7 @@
       <template #title>Avatar group</template>
 
       <ui-avatar-group class="-space-x-6">
-        <ui-avatar v-for="i of [1, 2, 3, 4]" :key="i">
+        <ui-avatar v-for="i of [1, 2, 3, 4]">
           <div class="w-12">
             <img src="/img/avatar.jpg" />
           </div>
@@ -61,7 +55,7 @@
       <template #title>Avatar group with counter</template>
 
       <ui-avatar-group class="-space-x-6">
-        <ui-avatar v-for="i of [1, 2, 3]" :key="i">
+        <ui-avatar v-for="i of [1, 2, 3]">
           <div class="w-12">
             <img src="/img/avatar.jpg" />
           </div>
@@ -91,7 +85,6 @@
 
       <ui-avatar
         v-for="(presence, i) of [{ online: true }, { offline: true }]"
-        :key="i"
         v-bind="presence"
       >
         <div class="w-24 rounded-full">

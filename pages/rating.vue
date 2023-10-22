@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { SIZES } from "~/constants";
 
 const value = ref(3);
 </script>
@@ -50,8 +50,7 @@ const value = ref(3);
 
       <div class="flex flex-col items-center gap-2">
         <ui-rating
-          v-for="size of sizes"
-          :key="size"
+          v-for="size of SIZES"
           :size="size"
           :value="2"
           mask="star-2"

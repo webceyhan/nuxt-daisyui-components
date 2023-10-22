@@ -23,7 +23,7 @@ const keyboard = [
     <component-preview>
       <template #title>Kbd sizes</template>
 
-      <ui-kbd v-for="(size, i) of sizes" :key="i" :size="size"> Shift </ui-kbd>
+      <ui-kbd v-for="(size, i) of sizes" :size="size"> Shift </ui-kbd>
     </component-preview>
 
     <component-preview>
@@ -55,7 +55,7 @@ const keyboard = [
       <template #title>A full keyboard</template>
 
       <div v-for="(row, i) of keyboard" class="flex justify-center gap-1 my-1 w-full">
-        <ui-kbd v-for="k of row" :key="k">
+        <ui-kbd v-for="k of row">
           {{ k }}
         </ui-kbd>
       </div>

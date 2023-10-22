@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const colors: any[] = [
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { COLORS, SIZES } from "~/constants";
 
 const checked = ref(true);
 </script>
@@ -35,21 +25,20 @@ const checked = ref(true);
       </ui-form-control>
     </component-preview>
 
-    <component-preview v-for="color of colors" :key="color">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
-
-      <ui-form-control label="Remember me" inline>
-        <ui-checkbox :color="color" v-model:checked="checked" />
-      </ui-form-control>
+    <component-preview>
+      <template #title> Colors </template>
+      <div class="flex flex-col">
+        <ui-form-control v-for="color of COLORS" label="Remember me" inline>
+          <ui-checkbox :color="color" v-model:checked="checked" />
+        </ui-form-control>
+      </div>
     </component-preview>
 
     <component-preview>
       <template #title> Sizes</template>
 
       <div class="flex flex-col items-center gap-2">
-        <ui-checkbox v-for="size of sizes" :key="size" :size="size" checked />
+        <ui-checkbox v-for="size of SIZES" :size="size" checked />
       </div>
     </component-preview>
 

@@ -12,7 +12,7 @@
     <component-preview>
       <template #title>Accordion using radio inputs</template>
 
-      <ui-accordion name="my-accordion-1" v-for="i of [1, 2, 3]" :key="i" :open="i < 2">
+      <ui-accordion name="my-accordion-1" v-for="i of [1, 2, 3]" :open="i < 2">
         <template #title>Click to open this one and close others</template>
         <p>hello</p>
       </ui-accordion>
@@ -24,7 +24,6 @@
       <ui-accordion
         name="my-accordion-2"
         v-for="i of [1, 2, 3]"
-        :key="i"
         icon="arrow"
         :open="i < 2"
       >
@@ -39,7 +38,6 @@
       <ui-accordion
         name="my-accordion-3"
         v-for="i of [1, 2, 3]"
-        :key="i"
         icon="plus"
         :open="i < 2"
       >
@@ -57,7 +55,6 @@
       <div class="join join-vertical w-full">
         <ui-accordion
           v-for="i of [1, 2, 3]"
-          :key="i"
           name="my-accordion-4"
           class="join-item"
           icon="arrow"

@@ -1,14 +1,13 @@
 <script setup lang="ts">
-const mainColors: any[] = [undefined, "primary", "secondary", "accent"];
-const brandColors: any[] = [...mainColors, "neutral", "ghost", "link"];
-const stateColors: any[] = ["info", "success", "warning", "error"];
+import {
+  BRAND_COLORS,
+  BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
+  SIZES,
+  STATE_COLORS,
+} from "~/constants";
 
-const sizes: { label: string; value: string }[] = [
-  { value: "lg", label: "large" },
-  { value: "md", label: "normal" },
-  { value: "sm", label: "small" },
-  { value: "xs", label: "tiny" },
-];
+// for buttons only
+const BRAND_COLORS_FOR_BUTTON: any[] = [...BRAND_COLORS_WITH_NEUTRAL_AND_GHOST, "link"];
 </script>
 
 <template>
@@ -26,7 +25,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Buttons with brand colors</template>
 
-      <ui-button v-for="(color, i) of brandColors" :key="i" v-bind="{ color }">
+      <ui-button v-for="color of BRAND_COLORS_FOR_BUTTON" :color="color">
         {{ color ?? "default" }}
       </ui-button>
     </component-preview>
@@ -34,7 +33,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Active buttons</template>
 
-      <ui-button v-for="(color, i) of brandColors" :key="i" v-bind="{ color }" active>
+      <ui-button v-for="color of BRAND_COLORS_FOR_BUTTON" :color="color" active>
         {{ color ?? "default" }}
       </ui-button>
     </component-preview>
@@ -42,7 +41,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Buttons with state colors</template>
 
-      <ui-button v-for="(color, i) of stateColors" :key="i" v-bind="{ color }">
+      <ui-button v-for="color of STATE_COLORS" :color="color">
         {{ color }}
       </ui-button>
     </component-preview>
@@ -50,7 +49,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Outline buttons</template>
 
-      <ui-button v-for="(color, i) of mainColors" :key="i" v-bind="{ color }" outline>
+      <ui-button v-for="color of BRAND_COLORS" :color="color" outline>
         {{ color ?? "default" }}
       </ui-button>
     </component-preview>
@@ -58,7 +57,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Outline buttons with state colors</template>
 
-      <ui-button v-for="(color, i) of stateColors" :key="i" v-bind="{ color }" outline>
+      <ui-button v-for="color of STATE_COLORS" :color="color" outline>
         {{ color }}
       </ui-button>
     </component-preview>
@@ -66,8 +65,8 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Button sizes</template>
 
-      <ui-button v-for="(size, i) of sizes" :key="i" :size="size.value">
-        {{ size.label }}
+      <ui-button v-for="size of SIZES" :size="size">
+        {{ size }}
       </ui-button>
     </component-preview>
 

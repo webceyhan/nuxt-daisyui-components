@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const brandColors: any[] = ["primary", "secondary", "accent"];
-const stateColors: any[] = ["info", "success", "warning", "error"];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { BRAND_COLORS, SIZES, STATE_COLORS } from "~/constants";
 
 const checked = ref(true);
 </script>
@@ -31,7 +28,7 @@ const checked = ref(true);
       <template #title> Checkboxes with brand colors </template>
 
       <div class="flex flex-col items-center gap-2">
-        <ui-form-control v-for="(color, i) of brandColors" label="Remember me" inline>
+        <ui-form-control v-for="color of BRAND_COLORS" label="Remember me" inline>
           <ui-toggle :color="color" v-model:checked="checked" />
         </ui-form-control>
       </div>
@@ -41,7 +38,7 @@ const checked = ref(true);
       <template #title> Checkboxes with state colors </template>
 
       <div class="flex flex-col items-center gap-2">
-        <ui-form-control v-for="(color, i) of stateColors" label="Remember me" inline>
+        <ui-form-control v-for="color of STATE_COLORS" label="Remember me" inline>
           <ui-toggle :color="color" v-model:checked="checked" />
         </ui-form-control>
       </div>
@@ -51,7 +48,7 @@ const checked = ref(true);
       <template #title> Sizes</template>
 
       <div class="flex flex-col items-center gap-2">
-        <ui-toggle v-for="size of sizes" :key="size" :size="size" checked />
+        <ui-toggle v-for="size of SIZES" :size="size" checked />
       </div>
     </component-preview>
 

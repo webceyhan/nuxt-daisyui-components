@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const mainColors = ["neutral", "primary", "secondary", "accent"];
-const stateColors = ["info", "success", "warning", "error"];
-const colors: any[] = [...mainColors, ...stateColors];
+import { COLORS } from "~/constants";
 </script>
 
 <template>
@@ -27,10 +25,12 @@ const colors: any[] = [...mainColors, ...stateColors];
       </p>
     </component-preview>
 
-    <component-preview v-for="color of colors">
-      <template #title>{{ color }} color</template>
+    <component-preview>
+      <template #title>Colors</template>
 
-      <ui-link :color="color">I'm a simple link</ui-link>
+      <div class="flex flex-col gap-2">
+        <ui-link v-for="color of COLORS" :color="color">I'm a simple link</ui-link>
+      </div>
     </component-preview>
 
     <component-preview>

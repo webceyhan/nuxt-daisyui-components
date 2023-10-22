@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { SIZES } from "~/constants";
 
 const items = [
   { label: "Home", icon: "house" },
@@ -134,7 +134,7 @@ const megeMenu = [
       <template #title>Menu sizes</template>
 
       <div class="flex flex-col gap-4">
-        <ui-menu v-for="size of sizes" class="bg-base-200 w-56 rounded-box" :size="size">
+        <ui-menu v-for="size of SIZES" class="bg-base-200 w-56 rounded-box" :size="size">
           <ui-menu-item v-for="i in 2">
             <a>{{ size }} Item {{ i }}</a>
           </ui-menu-item>

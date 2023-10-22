@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const colors: any[] = [
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { COLORS, SIZES } from "~/constants";
 
 const value = ref("");
 </script>
@@ -46,7 +36,7 @@ const value = ref("");
       </ui-form-control>
     </component-preview>
 
-    <component-preview v-for="color of colors" :key="color">
+    <component-preview v-for="color of COLORS">
       <template #title>
         <span class="capitalize"> {{ color }} </span> color
       </template>
@@ -59,8 +49,7 @@ const value = ref("");
 
       <div class="flex flex-col w-full items-center gap-2">
         <ui-textarea
-          v-for="size of sizes"
-          :key="size"
+          v-for="size of SIZES"
           :size="size"
           class="w-full"
           v-model="value"

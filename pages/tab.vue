@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const sizes = [
-  { value: "xs", label: "Tiny" },
-  { value: "sm", label: "Small" },
-  { value: "md", label: "Normal" },
-  { value: "lg", label: "Large" },
-];
+import { SIZES } from "~/constants";
 
 const links = [
   { label: "Tab 1", active: false },
@@ -59,10 +54,10 @@ const links = [
       <template #title>Sizes</template>
 
       <div class="flex flex-col items-center gap-3">
-        <ui-tabs v-for="size of sizes">
-          <ui-tab v-for="link of links" :active="link.active" lifted>{{
-            size.label
-          }}</ui-tab>
+        <ui-tabs v-for="size of SIZES">
+          <ui-tab v-for="link of links" :active="link.active" lifted :size="size">
+            {{ size }}
+          </ui-tab>
         </ui-tabs>
       </div>
     </component-preview>

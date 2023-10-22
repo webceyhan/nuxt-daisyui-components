@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { STATE_COLORS } from "~/constants";
+
+const stateContents = [
+  { icon: "info-cirle", text: "New software update available." },
+  { icon: "check-circle", text: "Your purchase has been confirmed!" },
+  { icon: "exclamation-triangle", text: "Warning: Invalid email address!" },
+  { icon: "x-circle", text: "Error! Task failed successfully." },
+];
+</script>
 
 <template>
   <div>
@@ -15,39 +24,12 @@
       </ui-alert>
     </component-preview>
 
-    <component-preview>
-      <template #title>Info color</template>
+    <component-preview v-for="(color, i) of STATE_COLORS">
+      <template #title>{{ color }} color</template>
 
-      <ui-alert color="info">
-        <ui-icon name="info-circle" />
-        <span>New software update available.</span>
-      </ui-alert>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Success color</template>
-
-      <ui-alert color="success">
-        <ui-icon name="check-circle" />
-        <span>Your purchase has been confirmed!</span>
-      </ui-alert>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Warning color</template>
-
-      <ui-alert color="warning">
-        <ui-icon name="exclamation-triangle" />
-        <span>Warning: Invalid email address!</span>
-      </ui-alert>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Error color</template>
-
-      <ui-alert color="error">
-        <ui-icon name="x-circle" />
-        <span>Error! Task failed successfully.</span>
+      <ui-alert :color="color">
+        <ui-icon :name="stateContents[i].text" />
+        <span>{{ stateContents[i].text }}</span>
       </ui-alert>
     </component-preview>
 

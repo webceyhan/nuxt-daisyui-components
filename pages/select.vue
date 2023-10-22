@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const colors: any[] = [
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { COLORS, SIZES } from "~/constants";
 
 const options: string[] = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
 const selected = ref(undefined);
@@ -28,7 +18,7 @@ const selectedFruit = ref(undefined);
 
       <ui-select v-model="selected">
         <option disabled selected>Pick your favorite Simpson</option>
-        <option v-for="option of options" :key="option" :value="option">
+        <option v-for="option of options" :value="option">
           {{ option }}
         </option>
       </ui-select>
@@ -76,7 +66,7 @@ const selectedFruit = ref(undefined);
       </ui-form-control>
     </component-preview>
 
-    <component-preview v-for="color of colors" :key="color">
+    <component-preview v-for="color of COLORS">
       <template #title>
         <span class="capitalize"> {{ color }} </span> color
       </template>
@@ -94,13 +84,7 @@ const selectedFruit = ref(undefined);
       <template #title> Sizes</template>
 
       <div class="flex flex-col w-full items-center gap-2">
-        <ui-select
-          v-for="size of sizes"
-          :key="size"
-          :size="size"
-          bordered
-          v-model="selectedFruit"
-        >
+        <ui-select v-for="size of SIZES" :size="size" bordered v-model="selectedFruit">
           <option disabled selected>{{ size }}</option>
           <option v-for="opt of ['apple', 'orange', 'tomato']" :value="opt">
             {{ size }} {{ opt }}

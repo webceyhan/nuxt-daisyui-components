@@ -8,11 +8,11 @@ export type Alignment = 'start' | 'center' | 'end';
 
 export type VerticalAlignment = 'top' | 'middle' | 'bottom';
 
-export type BrandColor = 'primary' | 'secondary' | 'accent';
+export type BrandColor = 'default' | 'primary' | 'secondary' | 'accent';
 
 export type StateColor = 'info' | 'success' | 'warning' | 'error';
 
-export type Color = 'default' | BrandColor | StateColor;
+export type Color = BrandColor | StateColor;
 
 export type Mask =
     | 'squircle'

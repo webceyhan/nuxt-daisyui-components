@@ -1,18 +1,7 @@
 <script setup lang="ts">
+import { SIZES, TEXT_COLORS } from "~/constants";
+
 const animations: any[] = ["spinner", "dots", "ring", "ball", "bars", "infinity"];
-
-const sizes: any[] = ["lg", "md", "sm", "xs"];
-
-const colors: any[] = [
-  "text-primary",
-  "text-secondary",
-  "text-accent",
-  "text-neutral",
-  "text-info",
-  "text-success",
-  "text-warning",
-  "text-error",
-];
 </script>
 
 <template>
@@ -24,13 +13,13 @@ const colors: any[] = [
     <component-preview v-for="animation of animations">
       <template #title>Loading {{ animation }}</template>
 
-      <ui-loading v-for="size of sizes" :key="size" v-bind="{ animation, size }" />
+      <ui-loading v-for="size of SIZES" v-bind="{ animation, size }" />
     </component-preview>
 
     <component-preview>
       <template #title>Loading with colors</template>
 
-      <ui-loading v-for="color of colors" :key="color" :class="color" />
+      <ui-loading v-for="color of TEXT_COLORS" :class="color" />
     </component-preview>
   </div>
 </template>

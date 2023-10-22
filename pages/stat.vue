@@ -69,7 +69,7 @@ const stats = [
       <template #title> Aligned to start</template>
 
       <ui-stats class="shadow">
-        <ui-stat v-for="(stat, i) of stats" :key="i">
+        <ui-stat v-for="(stat, i) of stats">
           <template #figure>
             <ui-icon :name="stat.icon" class="text-secondary text-2xl" />
           </template>
@@ -84,7 +84,7 @@ const stats = [
       <template #title> Centered items</template>
 
       <ui-stats class="shadow">
-        <ui-stat v-for="(stat, i) of stats" :key="i" class="place-items-center">
+        <ui-stat v-for="(stat, i) of stats" class="place-items-center">
           <template #figure>
             <ui-icon :name="stat.icon" class="text-secondary text-2xl" />
           </template>
@@ -99,7 +99,7 @@ const stats = [
       <template #title> Vertical</template>
 
       <ui-stats class="shadow" vertical>
-        <ui-stat v-for="(stat, i) of stats" :key="i">
+        <ui-stat v-for="(stat, i) of stats">
           <template #title>{{ stat.title }}</template>
           {{ stat.value }}
           <template #desc> {{ stat.desc }} </template>
@@ -113,7 +113,7 @@ const stats = [
       >
 
       <ui-stats class="shadow lg:stats-horizontal" vertical>
-        <ui-stat v-for="(stat, i) of stats" :key="i">
+        <ui-stat v-for="(stat, i) of stats">
           <template #title>{{ stat.title }}</template>
           {{ stat.value }}
           <template #desc> {{ stat.desc }} </template>

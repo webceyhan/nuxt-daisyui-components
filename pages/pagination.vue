@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { SIZES } from "~/constants";
 </script>
 
 <template>
@@ -23,7 +23,7 @@ const sizes: any[] = ["xs", "sm", "md", "lg"];
       <template #title>Sizes</template>
 
       <div class="flex flex-col gap-2 items-center">
-        <ui-join v-for="size of sizes">
+        <ui-join v-for="size of SIZES">
           <ui-button v-for="i in 4" :size="size" :active="i == 2">{{ i }}</ui-button>
         </ui-join>
       </div>

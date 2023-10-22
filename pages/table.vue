@@ -25,14 +25,14 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
       <ui-table>
         <thead>
           <tr>
-            <th v-for="(column, i) of columns(records)" :key="i">
+            <th v-for="(column, i) of columns(records)">
               {{ i ? column : "" }}
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(record, i) of records" :key="i">
-            <component :is="tagFor(key)" v-for="(val, key) of record" :key="key">
+          <tr v-for="(record, i) of records">
+            <component :is="tagFor(key)" v-for="(val, key) of record">
               {{ val }}
             </component>
           </tr>
@@ -46,14 +46,14 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
       <ui-table>
         <thead>
           <tr>
-            <th v-for="(column, i) of columns(records)" :key="i">
+            <th v-for="(column, i) of columns(records)">
               {{ i ? column : "" }}
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(record, i) of records" :key="i" :class="{ 'bg-base-200': i === 0 }">
-            <component :is="tagFor(key)" v-for="(val, key) of record" :key="key">
+          <tr v-for="(record, i) of records" :class="{ 'bg-base-200': i === 0 }">
+            <component :is="tagFor(key)" v-for="(val, key) of record">
               {{ val }}
             </component>
           </tr>
@@ -67,14 +67,14 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
       <ui-table>
         <thead>
           <tr>
-            <th v-for="(column, i) of columns(records)" :key="i">
+            <th v-for="(column, i) of columns(records)">
               {{ i ? column : "" }}
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(record, i) of records" :key="i" class="hover">
-            <component :is="tagFor(key)" v-for="(val, key) of record" :key="key">
+          <tr v-for="(record, i) of records" class="hover">
+            <component :is="tagFor(key)" v-for="(val, key) of record">
               {{ val }}
             </component>
           </tr>
@@ -88,14 +88,14 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
       <ui-table zebra>
         <thead>
           <tr>
-            <th v-for="(column, i) of columns(records)" :key="i">
+            <th v-for="(column, i) of columns(records)">
               {{ i ? column : "" }}
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(record, i) of records" :key="i">
-            <component :is="tagFor(key)" v-for="(val, key) of record" :key="key">
+          <tr v-for="(record, i) of records">
+            <component :is="tagFor(key)" v-for="(val, key) of record">
               {{ val }}
             </component>
           </tr>
@@ -116,7 +116,6 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
             </th>
             <th
               v-for="(column, i) of ['name', 'job', 'favorite color']"
-              :key="i"
               class="capitalize"
             >
               {{ column }}
@@ -124,7 +123,7 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(record, i) of recordsWithVisuals" :key="i">
+          <tr v-for="(record, i) of recordsWithVisuals">
             <th>
               <label>
                 <input type="checkbox" class="checkbox" />
@@ -162,14 +161,14 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
         <ui-table size="xs">
           <thead>
             <tr>
-              <th v-for="(column, i) of columns(recordsXs)" :key="i">
+              <th v-for="(column, i) of columns(recordsXs)">
                 {{ i ? column : "" }}
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(record, i) of recordsXs" :key="i">
-              <component :is="tagFor(key)" v-for="(val, key) of record" :key="key">
+            <tr v-for="(record, i) of recordsXs">
+              <component :is="tagFor(key)" v-for="(val, key) of record">
                 {{ val }}
               </component>
             </tr>
@@ -183,14 +182,14 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
 
       <div class="overflow-x-auto h-96">
         <ui-table pin-rows>
-          <template v-for="(rows, key) of pinnedRows" :key="key">
+          <template v-for="(rows, key) of pinnedRows">
             <thead>
               <tr>
                 <th>{{ key }}</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(row, i) of rows" :key="i">
+              <tr v-for="(row, i) of rows">
                 <td>{{ row }}</td>
               </tr>
             </tbody>
@@ -206,11 +205,7 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
         <ui-table size="xs" pin-rows pin-cols>
           <thead>
             <tr>
-              <component
-                :is="tagFor(column)"
-                v-for="(column, i) of columns(recordsXs)"
-                :key="i"
-              >
+              <component :is="tagFor(column)" v-for="(column, i) of columns(recordsXs)">
                 {{ i ? column : "" }}
               </component>
               <th></th>
@@ -218,7 +213,7 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
           </thead>
 
           <tbody>
-            <tr v-for="(record, i) of recordsXs" :key="i">
+            <tr v-for="(record, i) of recordsXs">
               <component :is="tagFor(k)" v-for="(val, k) of record">
                 {{ val }}
               </component>
@@ -228,11 +223,7 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
 
           <tfoot>
             <tr>
-              <component
-                :is="tagFor(column)"
-                v-for="(column, i) of columns(recordsXs)"
-                :key="i"
-              >
+              <component :is="tagFor(column)" v-for="(column, i) of columns(recordsXs)">
                 {{ i ? column : "" }}
               </component>
               <th></th>

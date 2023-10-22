@@ -8,13 +8,13 @@
       Artboard provides fixed size container to display a demo content on mobile size.
     </p>
 
-    <component-preview v-for="i in 6" :key="i">
+    <component-preview v-for="i in 6">
       <template #title>Artboard size {{ i }}</template>
 
       <ui-artboard :size="`phone-${i}`" />
     </component-preview>
 
-    <component-preview v-for="i in 6" :key="i">
+    <component-preview v-for="i in 6">
       <template #title>Artboard horizontal size {{ i }}</template>
 
       <ui-artboard :size="`phone-${i}`" horizontal />

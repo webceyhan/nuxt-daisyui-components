@@ -1,14 +1,10 @@
 <script setup lang="ts">
-const mainColors: any[] = ["default", "primary", "secondary", "accent"];
-const brandColors: any[] = [...mainColors, "neutral", "ghost"];
-const stateColors: any[] = ["info", "success", "warning", "error"];
-
-const sizes: { label: string; value: string }[] = [
-  { value: "lg", label: "large" },
-  { value: "md", label: "normal" },
-  { value: "sm", label: "small" },
-  { value: "xs", label: "tiny" },
-];
+import {
+  BRAND_COLORS,
+  BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
+  SIZES,
+  STATE_COLORS,
+} from "~/constants";
 </script>
 
 <template>
@@ -26,7 +22,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Badge with brand icons</template>
 
-      <ui-badge v-for="(color, i) of brandColors" :key="i" v-bind="{ color }">
+      <ui-badge v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST" :color="color">
         {{ color }}
       </ui-badge>
     </component-preview>
@@ -34,7 +30,7 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Outline badge</template>
 
-      <ui-badge v-for="(color, i) of mainColors" :key="i" v-bind="{ color }" outline>
+      <ui-badge v-for="color of BRAND_COLORS" :color="color" outline>
         {{ color }}
       </ui-badge>
     </component-preview>
@@ -42,26 +38,19 @@ const sizes: { label: string; value: string }[] = [
     <component-preview>
       <template #title>Badge sizes</template>
 
-      <ui-badge v-for="(size, i) of sizes" :key="i" :size="size.value">
-        987,654
-      </ui-badge>
+      <ui-badge v-for="size of SIZES" :size="size"> 987,654 </ui-badge>
     </component-preview>
 
     <component-preview>
       <template #title>Empty badge</template>
 
-      <ui-badge v-for="(size, i) of sizes" :key="i" :size="size.value" color="primary" />
+      <ui-badge v-for="size of SIZES" :size="size" color="primary" />
     </component-preview>
 
     <component-preview>
       <template #title>Badge with state colors</template>
 
-      <ui-badge
-        v-for="(color, i) of stateColors"
-        :key="i"
-        v-bind="{ color }"
-        class="gap-2"
-      >
+      <ui-badge v-for="color of STATE_COLORS" :color="color" class="gap-2">
         <ui-icon name="x" />
         {{ color }}
       </ui-badge>

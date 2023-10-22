@@ -1,14 +1,11 @@
 <script setup lang="ts">
+import { SIZES, TEXT_COLORS } from "~/constants";
+
 const items = [
   { label: "Home", icon: "house" },
   { label: "Warnings", icon: "info-circle", active: true },
   { label: "Statics", icon: "reception-4" },
 ];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
-
-const brandColors = ["text-primary", "text-secondary", "text-accent"];
-const stateColors = ["text-info", "text-success", "text-warning", "text-error"];
 
 const customColors = [
   "bg-pink-200 text-pink-600",
@@ -36,22 +33,9 @@ const customColors = [
     </component-preview>
 
     <component-preview>
-      <template #title>Bottom Navigation with brand colors</template>
+      <template #title>Bottom Navigation with colors</template>
 
-      <ui-bottom-nav class="relative" v-for="color of brandColors">
-        <ui-bottom-nav-item
-          v-for="item of items"
-          :icon="item.icon"
-          :active="item.active"
-          :class="color"
-        />
-      </ui-bottom-nav>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Bottom Navigation with state colors</template>
-
-      <ui-bottom-nav class="relative" v-for="color of stateColors">
+      <ui-bottom-nav class="relative" v-for="color of TEXT_COLORS">
         <ui-bottom-nav-item
           v-for="item of items"
           :icon="item.icon"
@@ -91,7 +75,7 @@ const customColors = [
     <component-preview>
       <template #title>Sizes</template>
 
-      <ui-bottom-nav class="relative" v-for="size of sizes" :size="size">
+      <ui-bottom-nav class="relative" v-for="size of SIZES" :size="size">
         <ui-bottom-nav-item
           v-for="item of items"
           :icon="item.icon"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const mainColors: any[] = ["default", "primary", "secondary", "accent"];
+import { BRAND_COLORS } from "~/constants";
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const mainColors: any[] = ["default", "primary", "secondary", "accent"];
     <component-preview>
       <template #title>Dropdown with colors</template>
 
-      <ui-dropdown class="mb-32" v-for="(color, i) of mainColors" :key="i">
+      <ui-dropdown class="mb-32" v-for="color of BRAND_COLORS">
         <template #trigger>
           <ui-button :color="color">{{ color }}</ui-button>
         </template>

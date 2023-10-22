@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const colors: any[] = [
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { COLORS, SIZES } from "~/constants";
 
 const sizeValue = ref("md");
 const colorValue = ref("red");
@@ -24,26 +14,20 @@ const colorValue = ref("red");
     <component-preview>
       <template #title>Radio</template>
 
-      <ui-radio
-        name="radio-flags"
-        v-for="(flag, i) of [true, false]"
-        :key="i"
-        :checked="flag"
-      />
+      <ui-radio name="radio-flags" v-for="(flag, i) of [true, false]" :checked="flag" />
     </component-preview>
 
-    <component-preview v-for="color of colors" :key="color">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
+    <component-preview>
+      <template #title> Colors </template>
 
-      <ui-radio
-        v-for="(checked, i) of [true, false]"
-        :key="i"
-        :name="`radio-${color}`"
-        :checked="checked"
-        :color="color"
-      />
+      <div class="flex flex-col items-center gap-2" v-for="color of COLORS">
+        <ui-radio
+          v-for="(checked, i) of [true, false]"
+          :name="`radio-${color}`"
+          :checked="checked"
+          :color="color"
+        />
+      </div>
     </component-preview>
 
     <component-preview>
@@ -51,9 +35,8 @@ const colorValue = ref("red");
 
       <div class="flex flex-col items-center gap-2">
         <ui-radio
-          v-for="size of sizes"
+          v-for="size of SIZES"
           name="radio-sizes"
-          :key="size"
           :size="size"
           :value="size"
           v-model="sizeValue"
@@ -73,12 +56,7 @@ const colorValue = ref("red");
       <template #title>With label and form-control and custom colors!</template>
 
       <div class="flex flex-col w-52">
-        <ui-form-control
-          v-for="label of ['red', 'blue']"
-          :key="label"
-          :label="`${label} pill`"
-          inline
-        >
+        <ui-form-control v-for="label of ['red', 'blue']" :label="`${label} pill`" inline>
           <ui-radio
             name="radio-with-label"
             :class="{

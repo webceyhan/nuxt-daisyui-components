@@ -13,7 +13,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Snap to start (default)</template>
 
       <ui-carousel class="rounded-box">
-        <ui-carousel-item v-for="item of items" :key="item">
+        <ui-carousel-item v-for="item of items">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
         </ui-carousel-item>
       </ui-carousel>
@@ -23,7 +23,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Snap to center</template>
 
       <ui-carousel snap="center" class="rounded-box">
-        <ui-carousel-item v-for="item of items" :key="item">
+        <ui-carousel-item v-for="item of items">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
         </ui-carousel-item>
       </ui-carousel>
@@ -33,7 +33,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Snap to end</template>
 
       <ui-carousel snap="end" class="rounded-box">
-        <ui-carousel-item v-for="item of items" :key="item">
+        <ui-carousel-item v-for="item of items">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
         </ui-carousel-item>
       </ui-carousel>
@@ -43,7 +43,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Carousel with full width items</template>
 
       <ui-carousel class="w-64 rounded-box">
-        <ui-carousel-item v-for="item of items" :key="item" class="w-full">
+        <ui-carousel-item v-for="item of items" class="w-full">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" class="w-full" />
         </ui-carousel-item>
       </ui-carousel>
@@ -53,7 +53,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Vertical carousel</template>
 
       <ui-carousel class="h-96 rounded-box" vertical>
-        <ui-carousel-item v-for="item of items" :key="item" class="h-full">
+        <ui-carousel-item v-for="item of items" class="h-full">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" />
         </ui-carousel-item>
       </ui-carousel>
@@ -63,7 +63,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Carousel with half width items</template>
 
       <ui-carousel class="w-96 rounded-box">
-        <ui-carousel-item v-for="item of items" :key="item" class="w-1/2">
+        <ui-carousel-item v-for="item of items" class="w-1/2">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" class="w-full" />
         </ui-carousel-item>
       </ui-carousel>
@@ -73,7 +73,7 @@ const wideItems = [1, 2, 3, 4];
       <template #title>Full-bleed carousel</template>
 
       <ui-carousel snap="center" class="max-w-md p-4 space-x-4 bg-neutral rounded-box">
-        <ui-carousel-item v-for="item of items" :key="item">
+        <ui-carousel-item v-for="item of items">
           <img :src="`/img/caro${item}.jpeg`" alt="Burger" class="rounded-box" />
         </ui-carousel-item>
       </ui-carousel>
@@ -87,13 +87,13 @@ const wideItems = [1, 2, 3, 4];
       </template>
 
       <ui-carousel class="w-full">
-        <ui-carousel-item v-for="id of wideItems" :key="id" :id="`item${id}`">
+        <ui-carousel-item v-for="id of wideItems" :id="`item${id}`">
           <img :src="`/img/caro-wide${id}.jpeg`" class="w-full" />
         </ui-carousel-item>
       </ui-carousel>
 
       <div class="flex justify-center w-full py-2 gap-2">
-        <a v-for="id of wideItems" :key="id" :href="`#item${id}`" class="btn btn-xs">
+        <a v-for="id of wideItems" :href="`#item${id}`" class="btn btn-xs">
           {{ id }}
         </a>
       </div>
@@ -109,7 +109,6 @@ const wideItems = [1, 2, 3, 4];
       <ui-carousel class="w-full">
         <ui-carousel-item
           v-for="id of wideItems"
-          :key="id"
           :id="`slide${id}`"
           class="relative w-full"
         >

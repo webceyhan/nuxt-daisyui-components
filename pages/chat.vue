@@ -1,26 +1,15 @@
 <script setup lang="ts">
-const mainColors: any[] = [undefined, "primary", "secondary", "accent"];
-const brandColors: any[] = [...mainColors, "neutral", "ghost", "link"];
-const stateColors: any[] = ["info", "success", "warning", "error"];
-
-const sizes: { label: string; value: string }[] = [
-  { value: "lg", label: "large" },
-  { value: "md", label: "normal" },
-  { value: "sm", label: "small" },
-  { value: "xs", label: "tiny" },
-];
+import { COLORS } from "~/constants";
 
 const bubbleWithColors = [
-  { color: "primary", text: "What kind of nonsense is this" },
-  { color: "secondary", text: "Put me on the Council and not make me a Master!??" },
-  {
-    color: "accent",
-    text: "That's never been done in the history of the Jedi. It's insulting!",
-  },
-  { color: "info", text: "Calm down, Anakin.", end: true },
-  { color: "success", text: "You have been given a great honor.", end: true },
-  { color: "warning", text: "To be on the Council at your age.", end: true },
-  { color: "error", text: "It's never happened before.", end: true },
+  { text: "Hey!" },
+  { text: "What kind of nonsense is this" },
+  { text: "Put me on the Council and not make me a Master!??" },
+  { text: "That's never been done in the history of the Jedi. It's insulting!" },
+  { text: "Calm down, Anakin.", end: true },
+  { text: "You have been given a great honor.", end: true },
+  { text: "To be on the Council at your age.", end: true },
+  { text: "It's never happened before.", end: true },
 ];
 </script>
 
@@ -145,8 +134,8 @@ const bubbleWithColors = [
 
       <div class="w-full">
         <ui-chat
-          v-for="chat of bubbleWithColors"
-          :color="(chat.color as any)"
+          v-for="(chat, i) of bubbleWithColors"
+          :color="COLORS[i]"
           :align="chat?.end ? 'end' : 'start'"
         >
           {{ chat.text }}

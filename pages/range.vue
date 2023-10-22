@@ -1,15 +1,5 @@
 <script setup lang="ts">
-const colors: any[] = [
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
-
-const sizes: any[] = ["xs", "sm", "md", "lg"];
+import { COLORS, SIZES } from "~/constants";
 </script>
 
 <template>
@@ -37,7 +27,7 @@ const sizes: any[] = ["xs", "sm", "md", "lg"];
       </div>
     </component-preview>
 
-    <component-preview v-for="color of colors" :key="color">
+    <component-preview v-for="color of COLORS">
       <template #title>
         <span class="capitalize"> {{ color }} </span> color
       </template>
@@ -49,7 +39,7 @@ const sizes: any[] = ["xs", "sm", "md", "lg"];
       <template #title> Sizes</template>
 
       <div class="flex flex-col w-full items-center gap-4">
-        <ui-range v-for="(size, i) of sizes" :key="i" :size="size" :value="40 + i * 10" />
+        <ui-range v-for="(size, i) of SIZES" :size="size" :value="40 + i * 10" />
       </div>
     </component-preview>
 

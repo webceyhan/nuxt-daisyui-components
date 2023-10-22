@@ -1,14 +1,5 @@
 <script setup lang="ts">
-const colors: any[] = [
-  "default",
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
+import { COLORS } from "~/constants";
 
 const steps = [0, 10, 40, 70, 100];
 </script>
@@ -22,16 +13,11 @@ const steps = [0, 10, 40, 70, 100];
       time.
     </p>
 
-    <component-preview v-for="color of colors">
+    <component-preview v-for="color of COLORS">
       <template #title> {{ color }} color </template>
 
       <div class="flex flex-col gap-2 items-center">
-        <ui-progress
-          class="w-56"
-          v-for="value of steps"
-          :key="value"
-          v-bind="{ value, color }"
-        />
+        <ui-progress class="w-56" v-for="value of steps" v-bind="{ value, color }" />
       </div>
     </component-preview>
   </div>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { TEXT_COLORS } from "~/constants";
+
 const values = [0, 20, 60, 80, 100];
 </script>
 
@@ -10,8 +12,8 @@ const values = [0, 20, 60, 80, 100];
       Radial progress can be used to show the progress of a task or to show the passing of
       time.
     </p>
-    
-    <br>
+
+    <br />
 
     <p>
       Radial progress needs `--value` CSS variable to work.
@@ -31,13 +33,13 @@ const values = [0, 20, 60, 80, 100];
     <component-preview>
       <template #title> Different values</template>
 
-      <ui-radial-progress v-for="value of values" :key="value" :value="value" />
+      <ui-radial-progress v-for="value of values" :value="value" />
     </component-preview>
 
     <component-preview>
-      <template #title> Custom color </template>
+      <template #title> Colors </template>
 
-      <ui-radial-progress :value="70" class="text-primary" />
+      <ui-radial-progress v-for="color of TEXT_COLORS" :value="70" :class="color" />
     </component-preview>
 
     <component-preview>

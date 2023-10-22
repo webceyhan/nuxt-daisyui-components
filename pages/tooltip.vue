@@ -1,14 +1,7 @@
 <script setup lang="ts">
+import { COLORS } from "~/constants";
+
 const positions: any[] = ["top", "bottom", "left", "right"];
-const colors: any[] = [
-  "primary",
-  "secondary",
-  "accent",
-  "info",
-  "success",
-  "warning",
-  "error",
-];
 </script>
 
 <template>
@@ -39,7 +32,7 @@ const colors: any[] = [
 
     <h3 class="text-2xl">Positions</h3>
 
-    <component-preview v-for="position of positions" :key="position">
+    <component-preview v-for="position of positions">
       <template #title>
         <span class="capitalize">{{ position }}</span>
       </template>
@@ -51,7 +44,7 @@ const colors: any[] = [
       </div>
     </component-preview>
 
-    <component-preview v-for="color of colors" :key="color">
+    <component-preview v-for="color of COLORS">
       <template #title>
         <span class="capitalize">{{ color }}</span> color
       </template>

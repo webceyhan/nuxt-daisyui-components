@@ -1,8 +1,4 @@
 <script setup lang="ts">
-const mainColors: any[] = ["default", "primary", "secondary", "accent"];
-const brandColors: any[] = [...mainColors, "neutral", "ghost"];
-const stateColors: any[] = ["info", "success", "warning", "error"];
-
 const steps: any[] = [
   { label: "Register", color: "primary" },
   { label: "Choose plan", color: "primary" },
