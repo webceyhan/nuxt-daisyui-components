@@ -1,7 +1,9 @@
 <script lang="ts">
 import { ClassMap, StateColor } from "./types";
 
-const COLOR_CLASS_MAP: ClassMap<StateColor> = {
+type AlertColor = "default" | StateColor;
+
+const COLOR_CLASS_MAP: ClassMap<AlertColor> = {
   default: undefined, // default
   info: "alert-info",
   success: "alert-success",
@@ -12,7 +14,7 @@ const COLOR_CLASS_MAP: ClassMap<StateColor> = {
 
 <script setup lang="ts">
 interface Props {
-  color?: StateColor;
+  color?: AlertColor;
 }
 
 withDefaults(defineProps<Props>(), {
