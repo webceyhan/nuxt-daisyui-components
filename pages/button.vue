@@ -24,40 +24,31 @@ import {
     </component-preview>
 
     <component-preview>
-      <template #title>Buttons with brand colors</template>
+      <template #title>Sizes</template>
+
+      <ui-button v-for="size of SIZES" :label="size" :size="size" />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Colors</template>
 
       <ui-button
         v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
         :label="color"
         :color="color"
       />
-    </component-preview>
 
-    <component-preview>
-      <template #title>Active buttons</template>
-
-      <ui-button
-        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
-        :label="color"
-        :color="color"
-        active
-      />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Buttons with state colors</template>
+      <div class="w-full" />
 
       <ui-button v-for="color of STATE_COLORS" :label="color" :color="color" />
     </component-preview>
 
     <component-preview>
-      <template #title>Outline buttons</template>
+      <template #title>Outlined</template>
 
       <ui-button v-for="color of BRAND_COLORS" :label="color" :color="color" outline />
-    </component-preview>
 
-    <component-preview>
-      <template #title>Outline buttons with state colors</template>
+      <div class="w-full" />
 
       <ui-button
         v-for="(color, i) of STATE_COLORS"
@@ -69,25 +60,18 @@ import {
     </component-preview>
 
     <component-preview>
-      <template #title>Button sizes</template>
+      <template #title>Active</template>
 
-      <ui-button v-for="size of SIZES" :label="size" :size="size" />
+      <ui-button
+        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
+        :label="color"
+        :color="color"
+        active
+      />
     </component-preview>
 
     <component-preview>
-      <template #title>Buttons with different HTML tags</template>
-
-      <a role="button" class="btn">Link</a>
-      <ui-button type="submit" class="btn">Button</ui-button>
-      <input type="button" value="Input" class="btn" />
-      <input type="submit" value="Submit" class="btn" />
-      <input type="radio" aria-label="Radio" class="btn" />
-      <input type="checkbox" aria-label="Checkbox" class="btn" />
-      <input type="reset" value="Reset" class="btn" />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Disabled buttons</template>
+      <template #title>Disabled</template>
 
       <ui-button disabled>Disabled using attribute</ui-button>
     </component-preview>
@@ -113,6 +97,16 @@ import {
       <template #title>Block</template>
 
       <ui-button label="block button" block />
+    </component-preview>
+
+    <component-preview>
+      <template #title>With different HTML tags</template>
+
+      <a role="button" class="btn">Link</a>
+      <ui-button type="submit" class="btn">Button</ui-button>
+      <ui-button type="reset" class="btn">Button</ui-button>
+      <input type="radio" aria-label="Radio" class="btn" />
+      <input type="checkbox" aria-label="Checkbox" class="btn" />      
     </component-preview>
   </div>
 </template>
