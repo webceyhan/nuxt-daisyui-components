@@ -1,7 +1,7 @@
 <script lang="ts">
-import { ClassMap, CollapseIndicator } from "./types";
+import { ClassMap, Indicator } from "./types";
 
-const INDICATOR_CLASS_MAP: ClassMap<CollapseIndicator> = {
+const INDICATOR_CLASS_MAP: ClassMap<Indicator> = {
   none: undefined, // default
   arrow: "collapse-arrow",
   plus: "collapse-plus",
@@ -12,7 +12,7 @@ const INDICATOR_CLASS_MAP: ClassMap<CollapseIndicator> = {
 interface Props {
   open?: boolean;
   toggle?: boolean;
-  indicator?: CollapseIndicator;
+  indicator?: Indicator;
 }
 
 withDefaults(defineProps<Props>(), {

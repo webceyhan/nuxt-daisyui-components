@@ -4,6 +4,8 @@ export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 export type Shape = 'rectangle' | 'square' | 'circle';
 
+export type Indicator = 'none' | 'arrow' | 'plus';
+
 export type Position = 'top' | 'bottom' | 'left' | 'right';
 
 export type Alignment = 'start' | 'center' | 'end';
@@ -15,8 +17,6 @@ export type BrandColor = 'default' | 'primary' | 'secondary' | 'accent';
 export type StateColor = 'info' | 'success' | 'warning' | 'error';
 
 export type Color = BrandColor | StateColor;
-
-export type CollapseIndicator = 'none' | 'arrow' | 'plus';
 
 export type Mask =
     | 'squircle'
