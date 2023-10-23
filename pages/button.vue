@@ -6,9 +6,6 @@ import {
   STATE_COLORS,
   STATE_ICONS,
 } from "~/constants";
-
-// for buttons only
-const BRAND_COLORS_FOR_BUTTON: any[] = [...BRAND_COLORS_WITH_NEUTRAL_AND_GHOST, "link"];
 </script>
 
 <template>
@@ -28,14 +25,18 @@ const BRAND_COLORS_FOR_BUTTON: any[] = [...BRAND_COLORS_WITH_NEUTRAL_AND_GHOST, 
     <component-preview>
       <template #title>Buttons with brand colors</template>
 
-      <ui-button v-for="color of BRAND_COLORS_FOR_BUTTON" :label="color" :color="color" />
+      <ui-button
+        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
+        :label="color"
+        :color="color"
+      />
     </component-preview>
 
     <component-preview>
       <template #title>Active buttons</template>
 
       <ui-button
-        v-for="color of BRAND_COLORS_FOR_BUTTON"
+        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
         :label="color"
         :color="color"
         active
