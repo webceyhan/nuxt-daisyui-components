@@ -12,8 +12,6 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
 <script setup lang="ts">
 interface Props {
   size?: Size;
-  active?: boolean;
-  disabled?: boolean;
   horizontal?: boolean;
 }
 
@@ -29,8 +27,6 @@ withDefaults(defineProps<Props>(), {
       'menu',
       SIZE_CLASS_MAP[size],
       {
-        active,
-        disabled,
         'menu-horizontal': horizontal,
       },
     ]"
