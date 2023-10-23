@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color, Size, Shape } from "./types";
 
-type ButtonColor = Color | "neutral" | "ghost";
+export type ButtonColor = Color | "neutral" | "ghost";
 
 const SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "btn-xs",

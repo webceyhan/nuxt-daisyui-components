@@ -1,9 +1,10 @@
 <script lang="ts">
 import { ClassMap, Position } from "./types";
+import { ButtonColor } from "./button.vue";
 
 const POSITION_CLASS_MAP: ClassMap<Position> = {
   top: "dropdown-top",
-  bottom: "dropdown-bottom",
+  bottom: undefined, // default
   left: "dropdown-left",
   right: "dropdown-right",
 };
@@ -12,13 +13,17 @@ const POSITION_CLASS_MAP: ClassMap<Position> = {
 <script setup lang="ts">
 interface Props {
   label?: string;
+  icon?: string;
+  iconEnd?: string;
+  color?: ButtonColor;
+  position?: Position;
   open?: boolean;
   hover?: boolean;
-  position?: Position;
   alignToEnd?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
+  iconEnd: "chevron-down",
   position: "bottom",
 });
 </script>
@@ -37,10 +42,7 @@ withDefaults(defineProps<Props>(), {
   >
     <!-- trigger button -->
     <slot name="trigger">
-      <label tabindex="0" class="btn m-1 space-x-2">
-        {{ label }}
-        <ui-icon name="chevron-down" />
-      </label>
+      <ui-button v-bind="{ label, icon, iconEnd, color }" />
     </slot>
 
     <!-- dropdown content -->

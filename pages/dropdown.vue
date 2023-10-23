@@ -27,16 +27,22 @@ const spacings = {
         <li><a>Item 1</a></li>
         <li><a>Item 2</a></li>
       </ui-dropdown>
+
+      <ui-dropdown class="mb-32" label="no indicator" icon-end="none">
+        <li><a>Item 1</a></li>
+        <li><a>Item 2</a></li>
+      </ui-dropdown>
     </component-preview>
 
     <component-preview>
       <template #title>Dropdown with colors</template>
 
-      <ui-dropdown class="mb-32" v-for="color of BRAND_COLORS">
-        <template #trigger>
-          <ui-button :color="color">{{ color }}</ui-button>
-        </template>
-
+      <ui-dropdown
+        v-for="color of BRAND_COLORS"
+        :label="color"
+        :color="color"
+        class="mb-32"
+      >
         <li><a>Item 1</a></li>
         <li><a>Item 2</a></li>
       </ui-dropdown>
@@ -54,8 +60,8 @@ const spacings = {
 
       <ui-dropdown
         :class="spacings[position]"
-        label="align to end"
         :position="position"
+        label="align to end"
         align-to-end
       >
         <li><a>Item 1</a></li>
