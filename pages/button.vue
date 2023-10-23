@@ -21,6 +21,7 @@ import {
       <ui-button>Button</ui-button>
       <ui-button label="With Label" />
       <ui-button label="With Icon" icon="pen" />
+      <ui-button label="With Icon End" icon-end="pen" />
     </component-preview>
 
     <component-preview>

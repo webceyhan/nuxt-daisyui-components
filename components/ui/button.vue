@@ -35,6 +35,7 @@ interface Props {
   label?: string;
   href?: string;
   icon?: string;
+  iconEnd?: string;
   size?: Size;
   shape?: Shape;
   color?: ButtonColor;
@@ -73,6 +74,8 @@ withDefaults(defineProps<Props>(), {
       <ui-icon v-if="icon" :name="icon" class="text-[1.4em]" />
 
       <span v-if="label">{{ label }}</span>
+
+      <ui-icon v-if="iconEnd" :name="iconEnd" class="text-[1.4em]" />
     </slot>
   </component>
 </template>
