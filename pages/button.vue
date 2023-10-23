@@ -102,11 +102,11 @@ import {
     <component-preview>
       <template #title>With different HTML tags</template>
 
-      <a role="button" class="btn">Link</a>
-      <ui-button type="submit" class="btn">Button</ui-button>
-      <ui-button type="reset" class="btn">Button</ui-button>
-      <input type="radio" aria-label="Radio" class="btn" />
-      <input type="checkbox" aria-label="Checkbox" class="btn" />      
+      <ui-button href="#" label="link" />
+      <ui-button type="submit" label="submit" />
+      <ui-button type="reset" label="reset" />
+      <input type="radio" aria-label="radio" class="btn"/>
+      <input type="checkbox" aria-label="checkbox" class="btn"/>
     </component-preview>
   </div>
 </template>

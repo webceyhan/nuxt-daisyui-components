@@ -33,6 +33,7 @@ const SHAPE_CLASS_MAP: ClassMap<Shape> = {
 <script setup lang="ts">
 interface Props {
   label?: string;
+  href?: string;
   icon?: string;
   size?: Size;
   shape?: Shape;
@@ -51,7 +52,10 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <button
+  <component
+    :is="href ? 'a' : 'button'"
+    :role="href ? 'button' : undefined"
+    :href="href"
     :class="[
       'btn',
       SIZE_CLASS_MAP[size],
@@ -70,5 +74,5 @@ withDefaults(defineProps<Props>(), {
 
       <span v-if="label">{{ label }}</span>
     </slot>
-  </button>
+  </component>
 </template>
