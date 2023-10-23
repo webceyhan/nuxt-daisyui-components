@@ -2,6 +2,7 @@
 import {
   BRAND_COLORS,
   BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
+  SHAPES,
   SIZES,
   STATE_COLORS,
   STATE_ICONS,
@@ -74,12 +75,6 @@ import {
     </component-preview>
 
     <component-preview>
-      <template #title>Wide button</template>
-
-      <ui-button label="wide" wide />
-    </component-preview>
-
-    <component-preview>
       <template #title>Buttons with different HTML tags</template>
 
       <a role="button" class="btn">Link</a>
@@ -98,23 +93,26 @@ import {
     </component-preview>
 
     <component-preview>
-      <template #title>Square button</template>
+      <template #title>Shapes</template>
 
-      <ui-button icon="x" class="text-2xl" square />
-      <ui-button icon="x" class="text-2xl" square outline />
+      <div v-for="shape of SHAPES" class="flex flex-col gap-3 m-5">
+        {{ shape }}
+
+        <ui-button icon="x" class="text-2xl" :shape="shape" />
+        <ui-button icon="x" class="text-2xl" :shape="shape" outline />
+      </div>
     </component-preview>
 
     <component-preview>
-      <template #title>Circle button</template>
+      <template #title>Wide</template>
 
-      <ui-button icon="x" class="text-2xl" circle />
-      <ui-button icon="x" class="text-2xl" circle outline />
+      <ui-button label="wide" wide />
     </component-preview>
 
     <component-preview>
-      <template #title>Button block</template>
+      <template #title>Block</template>
 
-      <ui-button label="block" block />
+      <ui-button label="block button" block />
     </component-preview>
   </div>
 </template>

@@ -4,13 +4,21 @@ import {
     CollapseIndicator,
     Color,
     Position,
+    Shape,
     Size,
     StateColor,
 } from './components/ui/types';
 
 export const SIZES: Size[] = ['xs', 'sm', 'md', 'lg'];
 
-export const TEXT_SIZES: string[] = [ 'text-sm', 'text-base', 'text-lg', 'text-xl'];
+export const TEXT_SIZES: string[] = [
+    'text-sm',
+    'text-base',
+    'text-lg',
+    'text-xl',
+];
+
+export const SHAPES: Shape[] = ['rectangle', 'square', 'circle'];
 
 export const BRAND_COLORS: BrandColor[] = [
     'default',
