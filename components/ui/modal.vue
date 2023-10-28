@@ -20,7 +20,7 @@ interface Props {
 
 defineEmits(["update:open"]);
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   verticalAlignment: "middle",
 });
 </script>
@@ -31,7 +31,7 @@ withDefaults(defineProps<Props>(), {
     :class="['modal', VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
     @close="$emit('update:open', false)"
   >
-    <div class="modal-box" :class="class">
+    <div :class="['modal-box', props.class]">
       <!-- top close button -->
       <form v-if="dismissable" method="dialog" novalidate>
         <ui-button
