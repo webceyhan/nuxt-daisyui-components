@@ -82,9 +82,7 @@ const megeMenu = [
       <template #title>Menu with icon only</template>
 
       <ui-menu class="bg-base-200 rounded-box">
-        <ui-menu-item v-for="item of items">
-          <ui-icon :name="item.icon" />
-        </ui-menu-item>
+        <ui-menu-item v-for="item of items" :icon="item.icon" />
       </ui-menu>
     </component-preview>
 
@@ -92,9 +90,7 @@ const megeMenu = [
       <template #title>Menu with icon only (horizontal)</template>
 
       <ui-menu class="bg-base-200 rounded-box" horizontal>
-        <ui-menu-item v-for="item of items">
-          <ui-icon :name="item.icon" />
-        </ui-menu-item>
+        <ui-menu-item v-for="item of items" :icon="item.icon" />
       </ui-menu>
     </component-preview>
 
@@ -146,10 +142,11 @@ const megeMenu = [
       <template #title>Menu with icons</template>
 
       <ui-menu class="bg-base-200 w-56 rounded-box">
-        <ui-menu-item v-for="(item, i) of items">
-          <ui-icon :name="item.icon" />
-          Item {{ i + 1 }}
-        </ui-menu-item>
+        <ui-menu-item
+          v-for="(item, i) of items"
+          :label="`Item ${i + 1}`"
+          :icon="item.icon"
+        />
       </ui-menu>
     </component-preview>
 
@@ -243,10 +240,7 @@ const megeMenu = [
       <template #title>File tree</template>
 
       <ui-menu class="bg-base-200 rounded-lg max-w-xs w-full">
-        <ui-menu-item>
-          <ui-icon name="file-pdf" />
-          resume.pdf
-        </ui-menu-item>
+        <ui-menu-item icon="file-pdf" label="resume.pdf" />
 
         <ui-menu-sub collapsible open>
           <template #title>
@@ -254,10 +248,11 @@ const megeMenu = [
             My Files
           </template>
 
-          <ui-menu-item v-for="i in 2">
-            <ui-icon name="file-earmark" />
-            Project-final-{{ i }}.psd
-          </ui-menu-item>
+          <ui-menu-item
+            v-for="i in 2"
+            icon="file-earmark"
+            :label="`Project-final-${i}.psd`"
+          />
 
           <ui-menu-sub collapsible open>
             <template #title>
@@ -265,10 +260,7 @@ const megeMenu = [
               Images
             </template>
 
-            <ui-menu-item v-for="i in 2">
-              <ui-icon name="image" />
-              Screenshot{{ i }}.png
-            </ui-menu-item>
+            <ui-menu-item v-for="i in 2" icon="image" :label="`Screenshot${i}.png`" />
 
             <ui-menu-sub collapsible open>
               <template #title>
@@ -276,18 +268,12 @@ const megeMenu = [
                 Others
               </template>
 
-              <ui-menu-item>
-                <ui-icon name="image" />
-                Screenshot3.png
-              </ui-menu-item>
+              <ui-menu-item icon="image" label="Screenshot3.png" />
             </ui-menu-sub>
           </ui-menu-sub>
         </ui-menu-sub>
 
-        <ui-menu-item>
-          <ui-icon name="file-pdf" />
-          reports-final-2.pdf
-        </ui-menu-item>
+        <ui-menu-item icon="file-pdf" label="reports-final-2.pdf" />
       </ui-menu>
     </component-preview>
 
