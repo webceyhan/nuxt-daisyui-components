@@ -19,18 +19,15 @@ const spacings = {
       <template #title>Dropdown with/without label</template>
 
       <ui-dropdown class="mb-32">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
 
       <ui-dropdown class="mb-32" label="with label">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
 
       <ui-dropdown class="mb-32" label="no indicator" icon-end="none">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
 
@@ -43,8 +40,7 @@ const spacings = {
         :color="color"
         class="mb-32"
       >
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
 
@@ -54,8 +50,7 @@ const spacings = {
       <template #title>Dropdown {{ position }}</template>
 
       <ui-dropdown :class="spacings[position]" label="click" :position="position">
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
 
       <ui-dropdown
@@ -64,8 +59,7 @@ const spacings = {
         label="align to end"
         align-to-end
       >
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
 
@@ -73,8 +67,7 @@ const spacings = {
       <template #title>Dropdown on hover</template>
 
       <ui-dropdown class="mb-32" label="hover" hover>
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
 
@@ -82,8 +75,7 @@ const spacings = {
       <template #title>Force open</template>
 
       <ui-dropdown class="mb-32" label="button" open>
-        <li><a>Item 1</a></li>
-        <li><a>Item 2</a></li>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
   </div>

@@ -46,11 +46,8 @@ withDefaults(defineProps<Props>(), {
     </slot>
 
     <!-- dropdown content -->
-    <ul
-      tabindex="0"
-      class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-    >
+    <ui-menu tabindex="0" class="dropdown-content w-56 z-[1] shadow">
       <slot />
-    </ul>
+    </ui-menu>
   </div>
 </template>
