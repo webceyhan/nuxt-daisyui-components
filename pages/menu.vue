@@ -98,11 +98,12 @@ const megeMenu = [
       <template #title>Menu with icon only with tooltip</template>
 
       <ui-menu class="bg-base-200 rounded-box">
-        <ui-menu-item v-for="item of items">
-          <a class="tooltip tooltip-right" :data-tip="item.label">
-            <ui-icon :name="item.icon" />
-          </a>
-        </ui-menu-item>
+        <ui-menu-item
+          v-for="item of items"
+          :icon="item.icon"
+          :tooltip="item.label"
+          tooltip-position="right"
+        />
       </ui-menu>
     </component-preview>
 
@@ -110,11 +111,7 @@ const megeMenu = [
       <template #title>Menu with icon only (horizontal) with tooltip</template>
 
       <ui-menu class="bg-base-200 rounded-box mt-6" horizontal>
-        <ui-menu-item v-for="item of items">
-          <a class="tooltip" :data-tip="item.label">
-            <ui-icon :name="item.icon" />
-          </a>
-        </ui-menu-item>
+        <ui-menu-item v-for="item of items" :icon="item.icon" :tooltip="item.label" />
       </ui-menu>
     </component-preview>
 

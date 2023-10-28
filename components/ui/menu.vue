@@ -7,18 +7,20 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   md: undefined, // default
   lg: "menu-lg",
 };
-</script>
 
-<script setup lang="ts">
-interface Props {
+export interface MenuProps {
   size?: Size;
   horizontal?: boolean;
 }
+</script>
 
-withDefaults(defineProps<Props>(), {
+<script setup lang="ts">
+const props = withDefaults(defineProps<MenuProps>(), {
   size: "md",
   color: "default",
 });
+
+provide("menu", props);
 </script>
 
 <template>
