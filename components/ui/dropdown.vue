@@ -29,6 +29,10 @@ withDefaults(defineProps<Props>(), {
   iconEnd: "chevron-down",
   position: "bottom",
 });
+
+const close = () => {
+  (document.activeElement as HTMLElement)?.blur();
+};
 </script>
 
 <template>
@@ -49,7 +53,12 @@ withDefaults(defineProps<Props>(), {
     </slot>
 
     <!-- dropdown content -->
-    <ui-menu tabindex="0" class="dropdown-content w-56 z-[1] shadow" :size="size">
+    <ui-menu
+      tabindex="0"
+      class="dropdown-content w-56 z-[1] shadow"
+      :size="size"
+      @click.native="close"
+    >
       <slot />
     </ui-menu>
   </div>
