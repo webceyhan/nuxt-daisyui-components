@@ -26,6 +26,10 @@ const spacings = {
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
 
+      <ui-dropdown class="mb-32" label="with icon" icon="house">
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" icon="pen" />
+      </ui-dropdown>
+
       <ui-dropdown class="mb-32" label="no indicator" icon-end="none">
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
