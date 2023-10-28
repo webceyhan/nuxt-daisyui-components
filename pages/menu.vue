@@ -150,20 +150,17 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icons and badge (responsive)</template>
 
-      <ui-menu class="bg-base-200 rounded-box lg:menu-horizontal">
-        <ui-menu-item>
-          <ui-icon name="house" />
-          Inbox
-          <ui-badge>99+</ui-badge>
+      <ui-menu class="bg-base-200 rounded-box lg:menu-horizontal w-64">
+        <ui-menu-item icon="house" label="Inbox" badge="99+" />
+        <ui-menu-item icon="info-circle" label="Updates">
+          <template #badge>
+            <ui-badge label="NEW" color="warning" />
+          </template>
         </ui-menu-item>
-        <ui-menu-item>
-          <ui-icon name="info-circle" />
-          Updates
-          <ui-badge color="warning">NEW</ui-badge>
-        </ui-menu-item>
-        <ui-menu-item>
-          Stats
-          <ui-badge color="info" size="xs" />
+        <ui-menu-item label="Stats">
+          <template #badge>
+            <ui-badge color="info" size="xs" />
+          </template>
         </ui-menu-item>
       </ui-menu>
     </component-preview>

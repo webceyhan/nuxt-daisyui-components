@@ -5,6 +5,7 @@ interface Props {
   label?: string;
   href?: string;
   icon?: string;
+  badge?: string;
   tooltip?: string;
   active?: boolean;
   disabled?: boolean;
@@ -27,9 +28,17 @@ const menu = inject<MenuProps>("menu");
       }"
     >
       <slot>
-        <ui-icon v-if="icon" :name="icon" />
+        <slot name="icon">
+          <ui-icon v-if="icon" :name="icon" />
+        </slot>
 
-        <span v-if="label">{{ label }}</span>
+        <slot name="label">
+          <span v-if="label">{{ label }}</span>
+        </slot>
+
+        <slot name="badge">
+          <ui-badge v-if="badge" :label="badge" />
+        </slot>
       </slot>
     </a>
   </li>
