@@ -186,7 +186,7 @@ const megeMenu = [
       <template #title>Menu with title</template>
 
       <ui-menu class="bg-base-200 w-56 rounded-box">
-        <ui-menu-item label="Title" as-title />
+        <ui-menu-title label="Title" />
         <ui-menu-item v-for="i in 3" :label="`item ${i}`" />
       </ui-menu>
     </component-preview>

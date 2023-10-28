@@ -1,18 +1,15 @@
 <script setup lang="ts">
 interface Props {
   label?: string;
-  href?: string;
-  active?: boolean;
-  disabled?: boolean;
 }
 
 defineProps<Props>();
 </script>
 
 <template>
-  <li :class="{ disabled }">
-    <a :href="href" :class="{ active }">
+  <li>
+    <h2 class="menu-title">
       <slot> {{ label }} </slot>
-    </a>
+    </h2>
   </li>
 </template>
