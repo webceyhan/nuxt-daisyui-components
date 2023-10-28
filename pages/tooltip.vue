@@ -14,7 +14,7 @@ const positions: any[] = ["top", "bottom", "left", "right"];
       <template #title>Tooltip</template>
 
       <div class="my-6">
-        <ui-tooltip value="hello">
+        <ui-tooltip text="hello">
           <ui-button>Hover me</ui-button>
         </ui-tooltip>
       </div>
@@ -24,7 +24,7 @@ const positions: any[] = ["top", "bottom", "left", "right"];
       <template #title>Force open</template>
 
       <div class="my-6">
-        <ui-tooltip value="hello" open>
+        <ui-tooltip text="hello" open>
           <ui-button>Force open</ui-button>
         </ui-tooltip>
       </div>
@@ -38,7 +38,7 @@ const positions: any[] = ["top", "bottom", "left", "right"];
       </template>
 
       <div class="my-6">
-        <ui-tooltip value="hello" :position="position" open>
+        <ui-tooltip text="hello" :position="position" open>
           <ui-button>{{ position }}</ui-button>
         </ui-tooltip>
       </div>
@@ -50,7 +50,7 @@ const positions: any[] = ["top", "bottom", "left", "right"];
       </template>
 
       <div class="my-6">
-        <ui-tooltip value="hello" :color="color" open>
+        <ui-tooltip text="hello" :color="color" open>
           <ui-button :color="color">{{ color }}</ui-button>
         </ui-tooltip>
       </div>

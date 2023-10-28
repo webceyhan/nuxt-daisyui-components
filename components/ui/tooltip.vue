@@ -23,7 +23,7 @@ const POSITION_CLASS_MAP: ClassMap<Position> = {
 <script setup lang="ts">
 interface Props {
   as?: string;
-  value: string;
+  text: string;
   open?: boolean;
   color?: Color;
   position?: Position;
@@ -47,7 +47,7 @@ withDefaults(defineProps<Props>(), {
         'tooltip-open': open,
       },
     ]"
-    :data-tip="value"
+    :data-tip="text"
   >
     <slot />
   </component>
