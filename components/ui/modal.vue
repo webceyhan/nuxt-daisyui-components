@@ -1,9 +1,7 @@
 <script lang="ts">
-import { ClassMap } from "./types";
+import { ClassMap, VerticalAlignment } from "./types";
 
-type Alignment = "top" | "middle" | "bottom";
-
-const ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+const VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
   top: "modal-top",
   middle: undefined, // default
   bottom: "modal-bottom",
@@ -16,20 +14,20 @@ interface Props {
   open?: boolean;
   backdrop?: boolean;
   dismissable?: boolean;
-  alignment?: Alignment;
+  verticalAlignment?: VerticalAlignment;
 }
 
 defineEmits(["update:open"]);
 
 withDefaults(defineProps<Props>(), {
-  alignment: "middle",
+  verticalAlignment: "middle",
 });
 </script>
 
 <template>
   <dialog
     :open="open"
-    :class="['modal', ALIGNMENT_CLASS_MAP[alignment]]"
+    :class="['modal', VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
     @close="$emit('update:open', false)"
   >
     <div class="modal-box" :class="class">

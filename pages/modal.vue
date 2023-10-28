@@ -1,13 +1,16 @@
 <script setup lang="ts">
+import { VERTICAL_ALIGNMENTS } from "~/constants";
+
 const showModel1 = ref(false);
 const showModel2 = ref(false);
 const showModel3 = ref(false);
 const showModel4 = ref(false);
-const showModel5 = ref(false);
-const showModel6 = ref(false);
-const showModel7 = ref(false);
 
-const alignments = ["top", "middle", "bottom"];
+const verticalAlignedModels = reactive({
+  top: false,
+  middle: false,
+  bottom: false,
+});
 </script>
 
 <template>
@@ -76,26 +79,21 @@ const alignments = ["top", "middle", "bottom"];
     <component-preview>
       <template #title>Vertical alignments</template>
 
-      <ui-button @click="showModel5 = true">align top</ui-button>
+      <template v-for="alignment of VERTICAL_ALIGNMENTS">
+        <ui-button
+          :label="alignment"
+          @click="verticalAlignedModels[alignment] = true"
+        />
 
-      <ui-modal v-model:open="showModel5" alignment="top" backdrop>
-        <template #title>Hello!</template>
-        <p>Press ESC key or click the button below to close</p>
-      </ui-modal>
-
-      <ui-button @click="showModel6 = true">align middle</ui-button>
-
-      <ui-modal v-model:open="showModel6" alignment="middle" backdrop>
-        <template #title>Hello!</template>
-        <p>Press ESC key or click the button below to close</p>
-      </ui-modal>
-
-      <ui-button @click="showModel7 = true">align bottom</ui-button>
-
-      <ui-modal v-model:open="showModel7" alignment="bottom" backdrop>
-        <template #title>Hello!</template>
-        <p>Press ESC key or click the button below to close</p>
-      </ui-modal>
+        <ui-modal
+          v-model:open="verticalAlignedModels[alignment]"
+          :vertical-alignment="alignment"
+          backdrop
+        >
+          <template #title>Hello!</template>
+          <p>Press ESC key or click the button below to close</p>
+        </ui-modal>
+      </template>
     </component-preview>
   </div>
 </template>

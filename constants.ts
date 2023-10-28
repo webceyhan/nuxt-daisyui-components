@@ -1,12 +1,13 @@
 import {
     Alignment,
     BrandColor,
-    CollapseIndicator,
     Color,
+    Indicator,
     Position,
     Shape,
     Size,
     StateColor,
+    VerticalAlignment,
 } from './components/ui/types';
 
 export const SIZES: Size[] = ['xs', 'sm', 'md', 'lg'];
@@ -59,13 +60,15 @@ export const BRAND_COLORS_WITH_NEUTRAL_AND_GHOST: any[] = [
     'ghost',
 ];
 
-export const COLLAPSE_INDICATORS: CollapseIndicator[] = [
-    'none',
-    'arrow',
-    'plus',
-];
+export const COLLAPSE_INDICATORS: Indicator[] = ['none', 'arrow', 'plus'];
 
 export const ALIGNMENTS: Alignment[] = ['start', 'center', 'end'];
+
+export const VERTICAL_ALIGNMENTS: VerticalAlignment[] = [
+    'top',
+    'middle',
+    'bottom',
+];
 
 export const POSITIONS: Position[] = ['top', 'bottom', 'left', 'right'];
 
