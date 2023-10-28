@@ -31,6 +31,8 @@ provide("menu", props);
       {
         'menu-horizontal': horizontal,
       },
+      // pre-styling
+      'bg-base-200 rounded-box',
     ]"
   >
     <slot />

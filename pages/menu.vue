@@ -63,7 +63,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-item v-for="i in 3" :label="`Item ${i}`" />
       </ui-menu>
     </component-preview>
@@ -73,7 +73,7 @@ const megeMenu = [
         Responsive: vertical on small screen, horizontal on large screen
       </template>
 
-      <ui-menu class="bg-base-200 rounded-box lg:menu-horizontal">
+      <ui-menu class="lg:menu-horizontal">
         <ui-menu-item v-for="i in 3" :label="`Item ${i}`" />
       </ui-menu>
     </component-preview>
@@ -81,7 +81,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icon only</template>
 
-      <ui-menu class="bg-base-200 rounded-box">
+      <ui-menu class=" ">
         <ui-menu-item v-for="item of items" :icon="item.icon" />
       </ui-menu>
     </component-preview>
@@ -89,7 +89,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icon only (horizontal)</template>
 
-      <ui-menu class="bg-base-200 rounded-box" horizontal>
+      <ui-menu class=" " horizontal>
         <ui-menu-item v-for="item of items" :icon="item.icon" />
       </ui-menu>
     </component-preview>
@@ -97,7 +97,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icon only with tooltip</template>
 
-      <ui-menu class="bg-base-200 rounded-box">
+      <ui-menu class=" ">
         <ui-menu-item v-for="item of items" :icon="item.icon" :tooltip="item.label" />
       </ui-menu>
     </component-preview>
@@ -105,7 +105,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icon only (horizontal) with tooltip</template>
 
-      <ui-menu class="bg-base-200 rounded-box mt-6" horizontal>
+      <ui-menu class="mt-6" horizontal>
         <ui-menu-item v-for="item of items" :icon="item.icon" :tooltip="item.label" />
       </ui-menu>
     </component-preview>
@@ -114,7 +114,7 @@ const megeMenu = [
       <template #title>Menu sizes</template>
 
       <div class="flex flex-col gap-4">
-        <ui-menu v-for="size of SIZES" class="bg-base-200 w-56 rounded-box" :size="size">
+        <ui-menu v-for="size of SIZES" class="w-56" :size="size">
           <ui-menu-item v-for="i in 2"> {{ size }} Item {{ i }} </ui-menu-item>
         </ui-menu>
       </div>
@@ -123,7 +123,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with disabled items</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-item v-for="i in 3" :disabled="i > 1">
           {{ i > 1 ? "disabled" : "enabled" }} item
         </ui-menu-item>
@@ -133,7 +133,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icons</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-item
           v-for="(item, i) of items"
           :label="`Item ${i + 1}`"
@@ -145,7 +145,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with icons and badge (responsive)</template>
 
-      <ui-menu class="bg-base-200 rounded-box lg:menu-horizontal w-64">
+      <ui-menu class="lg:menu-horizontal w-64">
         <ui-menu-item icon="house" label="Inbox" badge="99+" />
         <ui-menu-item icon="info-circle" label="Updates">
           <template #badge>
@@ -163,7 +163,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu without padding and border radius</template>
 
-      <ui-menu class="bg-base-200 w-56 p-0 [&_li>*]:rounded-none">
+      <ui-menu class="w-56 p-0 !rounded-none [&_li>*]:rounded-none">
         <ui-menu-item v-for="i in 3" :label="`item ${i}`" />
       </ui-menu>
     </component-preview>
@@ -171,7 +171,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with title</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-title label="Title" />
         <ui-menu-item v-for="i in 3" :label="`item ${i}`" />
       </ui-menu>
@@ -180,7 +180,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with title as parent</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-sub title="Title">
           <ui-menu-item v-for="i in 3" :label="`item ${i}`" />
         </ui-menu-sub>
@@ -190,7 +190,7 @@ const megeMenu = [
     <component-preview>
       <template #title>submenu</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-item label="Item 1" />
 
         <ui-menu-item label="Parent" />
@@ -210,7 +210,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Collapsible submenu</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-item label="Item 1" />
 
         <ui-menu-sub title="Parent" collapsible open>
@@ -228,7 +228,7 @@ const megeMenu = [
     <component-preview>
       <template #title>File tree</template>
 
-      <ui-menu class="bg-base-200 rounded-lg max-w-xs w-full">
+      <ui-menu class="rounded-lg max-w-xs w-full">
         <ui-menu-item icon="file-pdf" label="resume.pdf" />
 
         <ui-menu-sub title="My Files" icon="folder" collapsible open>
@@ -254,7 +254,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Menu with active item</template>
 
-      <ui-menu class="bg-base-200 w-56 rounded-box">
+      <ui-menu class="w-56">
         <ui-menu-item v-for="i in 3" :label="`Item ${i}`" :active="i == 2" />
       </ui-menu>
     </component-preview>
@@ -262,7 +262,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Horizontal menu</template>
 
-      <ui-menu class="bg-base-200 rounded-box" horizontal>
+      <ui-menu class=" " horizontal>
         <ui-menu-item v-for="i in 3" :label="`Item ${i}`" :active="i == 2" />
       </ui-menu>
     </component-preview>
@@ -270,7 +270,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Horizontal submenu</template>
 
-      <ui-menu class="bg-base-200 rounded-box" horizontal>
+      <ui-menu class=" " horizontal>
         <ui-menu-item label="Item 1" />
 
         <ui-menu-sub title="Parent">
@@ -284,7 +284,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Mega menu with submenu (responsive)</template>
 
-      <ui-menu class="xl:menu-horizontal lg:min-w-max bg-base-200 rounded-box">
+      <ui-menu class="xl:menu-horizontal lg:min-w-max">
         <ui-menu-sub v-for="item of megeMenu" :title="item.title" href="#">
           <template v-if="item.children">
             <ui-menu-sub v-for="child of item.children" :title="child.title" href="#">
@@ -299,7 +299,7 @@ const megeMenu = [
     <component-preview>
       <template #title>Collapsible with submenu (responsive)</template>
 
-      <ui-menu class="lg:menu-horizontal bg-base-200 rounded-box lg:mb-64">
+      <ui-menu class="lg:menu-horizontal lg:mb-64">
         <ui-menu-item label="Item 1" />
 
         <ui-menu-sub title="Parent item" collapsible open>
