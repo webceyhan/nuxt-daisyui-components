@@ -92,6 +92,14 @@ const spacings = {
       </ui-dropdown>
     </component-preview>
 
+    <component-preview>
+      <template #title>Disabled</template>
+
+      <ui-dropdown label="Disabled using attribute" disabled>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+    </component-preview>
+
     <h3 class="text-2xl">Positions</h3>
 
     <component-preview v-for="position of POSITIONS">
@@ -112,7 +120,7 @@ const spacings = {
     </component-preview>
 
     <component-preview>
-      <template #title>Dropdown on hover</template>
+      <template #title>Hoverable</template>
 
       <ui-dropdown class="mb-32" label="hover" hover>
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
