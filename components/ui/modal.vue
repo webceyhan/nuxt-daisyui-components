@@ -10,6 +10,7 @@ const VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
 
 <script setup lang="ts">
 interface Props {
+  title?: string;
   class?: string;
   open?: boolean;
   backdrop?: boolean;
@@ -38,7 +39,7 @@ withDefaults(defineProps<Props>(), {
 
       <!-- title -->
       <h3 class="font-bold text-lg">
-        <slot name="title" />
+        <slot name="title"> {{ title }} </slot>
       </h3>
 
       <!-- content -->

@@ -24,9 +24,7 @@ const verticalAlignedModels = reactive({
 
       <ui-button @click="showModel1 = true" label="open modal" />
 
-      <ui-modal v-model:open="showModel1">
-        <template #title>Hello!</template>
-
+      <ui-modal v-model:open="showModel1" title="Hello!">
         <p>Press ESC key or click the button below to close</p>
 
         <template #actions>
@@ -44,9 +42,7 @@ const verticalAlignedModels = reactive({
 
       <ui-button @click="showModel2 = true" label="open modal" />
 
-      <ui-modal v-model:open="showModel2" backdrop>
-        <template #title>Hello!</template>
-
+      <ui-modal v-model:open="showModel2" title="Hello!" backdrop>
         <p>Press ESC key or click the button below to close</p>
       </ui-modal>
     </component-preview>
@@ -56,9 +52,7 @@ const verticalAlignedModels = reactive({
 
       <ui-button @click="showModel3 = true" label="open modal" />
 
-      <ui-modal v-model:open="showModel3" dismissable>
-        <template #title>Hello!</template>
-
+      <ui-modal v-model:open="showModel3" title="Hello!" dismissable>
         <p>Press ESC key or click the button below to close</p>
       </ui-modal>
     </component-preview>
@@ -71,9 +65,7 @@ const verticalAlignedModels = reactive({
 
       <ui-button @click="showModel4 = true" label="open modal" />
 
-      <ui-modal v-model:open="showModel4" class="w-11/12 max-w-5xl">
-        <template #title>Hello!</template>
-
+      <ui-modal v-model:open="showModel4" title="Hello!" class="w-11/12 max-w-5xl">
         <p>Press ESC key or click the button below to close</p>
 
         <template #actions>
@@ -89,12 +81,11 @@ const verticalAlignedModels = reactive({
         <ui-button :label="alignment" @click="verticalAlignedModels[alignment] = true" />
 
         <ui-modal
+          title="Hello!"
           v-model:open="verticalAlignedModels[alignment]"
           :vertical-alignment="alignment"
           backdrop
         >
-          <template #title>Hello!</template>
-
           <p>Press ESC key or click the button below to close</p>
         </ui-modal>
       </template>
