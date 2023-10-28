@@ -231,32 +231,17 @@ const megeMenu = [
       <ui-menu class="bg-base-200 rounded-lg max-w-xs w-full">
         <ui-menu-item icon="file-pdf" label="resume.pdf" />
 
-        <ui-menu-sub collapsible open>
-          <template #title>
-            <ui-icon name="folder" />
-            My Files
-          </template>
-
+        <ui-menu-sub title="My Files" icon="folder" collapsible open>
           <ui-menu-item
             v-for="i in 2"
             icon="file-earmark"
             :label="`Project-final-${i}.psd`"
           />
 
-          <ui-menu-sub collapsible open>
-            <template #title>
-              <ui-icon name="folder" />
-              Images
-            </template>
-
+          <ui-menu-sub title="Images" icon="folder" collapsible open>
             <ui-menu-item v-for="i in 2" icon="image" :label="`Screenshot${i}.png`" />
 
-            <ui-menu-sub collapsible open>
-              <template #title>
-                <ui-icon name="folder" />
-                Others
-              </template>
-
+            <ui-menu-sub label="Others" icon="folder" collapsible open>
               <ui-menu-item icon="image" label="Screenshot3.png" />
             </ui-menu-sub>
           </ui-menu-sub>

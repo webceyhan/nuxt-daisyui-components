@@ -2,6 +2,7 @@
 interface Props {
   title?: string;
   href?: string;
+  icon?: string;
   open?: boolean;
   collapsible?: boolean;
 }
@@ -13,6 +14,10 @@ defineProps<Props>();
   <li>
     <details v-if="collapsible" :open="open">
       <summary>
+        <slot name="icon">
+          <ui-icon v-if="icon" :name="icon" />
+        </slot>
+
         <slot name="title"> {{ title }} </slot>
       </summary>
 
