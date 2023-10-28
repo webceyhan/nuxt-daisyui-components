@@ -22,6 +22,7 @@ const POSITION_CLASS_MAP: ClassMap<Position> = {
 
 <script setup lang="ts">
 interface Props {
+  as?: string;
   value: string;
   open?: boolean;
   color?: Color;
@@ -29,13 +30,15 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
+  as: "div",
   color: "default",
   position: "top",
 });
 </script>
 
 <template>
-  <div
+  <component
+    :is="as"
     :class="[
       'tooltip',
       COLOR_CLASS_MAP[color],
@@ -47,5 +50,5 @@ withDefaults(defineProps<Props>(), {
     :data-tip="value"
   >
     <slot />
-  </div>
+  </component>
 </template>
