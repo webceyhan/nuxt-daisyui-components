@@ -34,7 +34,13 @@ withDefaults(defineProps<Props>(), {
     <div class="modal-box" :class="class">
       <!-- top close button -->
       <form v-if="dismissable" method="dialog" novalidate>
-        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+        <ui-button
+          icon="x-lg"
+          size="sm"
+          color="ghost"
+          shape="circle"
+          class="absolute right-2 top-2"
+        />
       </form>
 
       <!-- title -->
