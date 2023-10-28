@@ -71,11 +71,11 @@ withDefaults(defineProps<Props>(), {
     ]"
   >
     <slot>
-      <ui-icon v-if="icon" :name="icon" class="text-[1.4em]" />
+      <ui-icon v-if="icon" :name="icon" class="text-[1.2em]" />
 
       <span v-if="label">{{ label }}</span>
 
-      <ui-icon v-if="iconEnd" :name="iconEnd" class="text-[1.4em]" />
+      <ui-icon v-if="iconEnd" :name="iconEnd" class="text-[1.2em]" />
     </slot>
   </component>
 </template>
