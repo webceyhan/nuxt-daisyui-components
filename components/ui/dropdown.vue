@@ -1,5 +1,5 @@
 <script lang="ts">
-import { ClassMap, Position } from "./types";
+import { ClassMap, Position, Size } from "./types";
 import { ButtonColor } from "./button.vue";
 
 const POSITION_CLASS_MAP: ClassMap<Position> = {
@@ -15,6 +15,7 @@ interface Props {
   label?: string;
   icon?: string;
   iconEnd?: string;
+  size?: Size;
   color?: ButtonColor;
   position?: Position;
   open?: boolean;
@@ -42,11 +43,11 @@ withDefaults(defineProps<Props>(), {
   >
     <!-- trigger button -->
     <slot name="trigger">
-      <ui-button v-bind="{ label, icon, iconEnd, color }" />
+      <ui-button v-bind="{ label, icon, iconEnd, color, size }" />
     </slot>
 
     <!-- dropdown content -->
-    <ui-menu tabindex="0" class="dropdown-content w-56 z-[1] shadow">
+    <ui-menu tabindex="0" class="dropdown-content w-56 z-[1] shadow" :size="size">
       <slot />
     </ui-menu>
   </div>

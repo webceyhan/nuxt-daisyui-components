@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BRAND_COLORS, POSITIONS } from "~/constants";
+import { BRAND_COLORS, POSITIONS, SIZES } from "~/constants";
 
 const spacings = {
   top: "mt-32",
@@ -16,7 +16,7 @@ const spacings = {
     <p>Dropdown can open a menu or any other element when the button is clicked.</p>
 
     <component-preview>
-      <template #title>Dropdown with/without label</template>
+      <template #title>Dropdown</template>
 
       <ui-dropdown class="mb-32">
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
@@ -31,6 +31,14 @@ const spacings = {
       </ui-dropdown>
 
       <ui-dropdown class="mb-32" label="no indicator" icon-end="none">
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Sizes</template>
+
+      <ui-dropdown v-for="size of SIZES" :label="size" :size="size" class="mb-32">
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
