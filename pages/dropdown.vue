@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { BRAND_COLORS, POSITIONS, SIZES } from "~/constants";
+import {
+  BRAND_COLORS,
+  BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
+  POSITIONS,
+  SIZES,
+  STATE_COLORS,
+} from "~/constants";
 
 const spacings = {
   top: "mt-32",
@@ -44,13 +50,43 @@ const spacings = {
     </component-preview>
 
     <component-preview>
-      <template #title>Dropdown with colors</template>
+      <template #title>Colors</template>
 
       <ui-dropdown
-        v-for="color of BRAND_COLORS"
+        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
+        :label="color"
+        :color="color"
+      >
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+
+      <div class="w-full" />
+
+      <ui-dropdown
+        v-for="color of STATE_COLORS"
         :label="color"
         :color="color"
         class="mb-32"
+      >
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Outlined</template>
+
+      <ui-dropdown v-for="color of BRAND_COLORS" :label="color" :color="color" outline>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+
+      <div class="w-full" />
+
+      <ui-dropdown
+        v-for="color of STATE_COLORS"
+        :label="color"
+        :color="color"
+        class="mb-32"
+        outline
       >
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>

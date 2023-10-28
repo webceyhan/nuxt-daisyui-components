@@ -18,6 +18,7 @@ interface Props {
   size?: Size;
   color?: ButtonColor;
   position?: Position;
+  outline?: boolean;
   open?: boolean;
   hover?: boolean;
   alignToEnd?: boolean;
@@ -43,7 +44,7 @@ withDefaults(defineProps<Props>(), {
   >
     <!-- trigger button -->
     <slot name="trigger">
-      <ui-button v-bind="{ label, icon, iconEnd, color, size }" />
+      <ui-button v-bind="{ label, icon, iconEnd, color, size, outline }" />
     </slot>
 
     <!-- dropdown content -->
