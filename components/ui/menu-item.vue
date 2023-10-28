@@ -1,26 +1,25 @@
 <script setup lang="ts">
 interface Props {
-  title?: string;
-  open?: boolean;
+  label?: string;
+  href?: string;
+  active?: boolean;
   disabled?: boolean;
-  collapsible?: boolean;
+  asTitle?: boolean;
 }
 
 defineProps<Props>();
 </script>
 
 <template>
-  <li :class="[{ disabled }]">
-    <details v-if="collapsible" :open="open">
-      <summary>
-        <slot name="title"> {{ title }} </slot>
-      </summary>
-      <slot />
-    </details>
+  <li v-if="asTitle">
+    <h2 class="menu-title">
+      <slot> {{ label }} </slot>
+    </h2>
+  </li>
 
-    <template v-else>
-      <h2 v-if="title" class="menu-title">{{ title }}</h2>
-      <slot />
-    </template>
+  <li v-else :class="{ disabled }">
+    <a :href="href" :class="{ active }">
+      <slot> {{ label }} </slot>
+    </a>
   </li>
 </template>
