@@ -22,13 +22,15 @@ const verticalAlignedModels = reactive({
     <component-preview>
       <template #title>Dialog modal</template>
 
-      <ui-button @click="showModel1 = true">open modal</ui-button>
+      <ui-button @click="showModel1 = true" label="open modal" />
 
       <ui-modal v-model:open="showModel1">
         <template #title>Hello!</template>
+
         <p>Press ESC key or click the button below to close</p>
+
         <template #actions>
-          <ui-button>close</ui-button>
+          <ui-button label="close" />
         </template>
       </ui-modal>
     </component-preview>
@@ -40,10 +42,11 @@ const verticalAlignedModels = reactive({
         close the modal when clicked outside
       </template>
 
-      <ui-button @click="showModel2 = true">open modal</ui-button>
+      <ui-button @click="showModel2 = true" label="open modal" />
 
       <ui-modal v-model:open="showModel2" backdrop>
         <template #title>Hello!</template>
+
         <p>Press ESC key or click the button below to close</p>
       </ui-modal>
     </component-preview>
@@ -51,10 +54,11 @@ const verticalAlignedModels = reactive({
     <component-preview>
       <template #title>Dialog modal with a close button at corner</template>
 
-      <ui-button @click="showModel3 = true">open modal</ui-button>
+      <ui-button @click="showModel3 = true" label="open modal" />
 
       <ui-modal v-model:open="showModel3" dismissable>
         <template #title>Hello!</template>
+
         <p>Press ESC key or click the button below to close</p>
       </ui-modal>
     </component-preview>
@@ -65,13 +69,15 @@ const verticalAlignedModels = reactive({
         You can use any w-* and max-w-* utility class to customize the width
       </template>
 
-      <ui-button @click="showModel4 = true">open modal</ui-button>
+      <ui-button @click="showModel4 = true" label="open modal" />
 
       <ui-modal v-model:open="showModel4" class="w-11/12 max-w-5xl">
         <template #title>Hello!</template>
+
         <p>Press ESC key or click the button below to close</p>
+
         <template #actions>
-          <ui-button>close</ui-button>
+          <ui-button label="close" />
         </template>
       </ui-modal>
     </component-preview>
@@ -80,10 +86,7 @@ const verticalAlignedModels = reactive({
       <template #title>Vertical alignments</template>
 
       <template v-for="alignment of VERTICAL_ALIGNMENTS">
-        <ui-button
-          :label="alignment"
-          @click="verticalAlignedModels[alignment] = true"
-        />
+        <ui-button :label="alignment" @click="verticalAlignedModels[alignment] = true" />
 
         <ui-modal
           v-model:open="verticalAlignedModels[alignment]"
@@ -91,6 +94,7 @@ const verticalAlignedModels = reactive({
           backdrop
         >
           <template #title>Hello!</template>
+
           <p>Press ESC key or click the button below to close</p>
         </ui-modal>
       </template>
