@@ -1,11 +1,6 @@
 <script lang="ts">
-import { ClassMap, Indicator } from "./types";
-
-const INDICATOR_CLASS_MAP: ClassMap<Indicator> = {
-  none: undefined, // default
-  arrow: "collapse-arrow",
-  plus: "collapse-plus",
-};
+import { Indicator } from "./types";
+import { COLLAPSE_INDICATOR_CLASS_MAP } from "./collapse.vue";
 </script>
 
 <script setup lang="ts">
@@ -21,7 +16,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['collapse bg-base-200', INDICATOR_CLASS_MAP[indicator]]">
+  <div :class="['collapse bg-base-200', COLLAPSE_INDICATOR_CLASS_MAP[indicator]]">
     <!-- internal toggle -->
     <input type="radio" :name="name" :checked="open" />
 
