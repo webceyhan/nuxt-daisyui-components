@@ -67,18 +67,12 @@ const colors = [
         </div>
 
         <div class="flex-none">
-          <ui-menu class="px-1" horizontal>
-            <ui-menu-item>
-              <a>Link</a>
-            </ui-menu-item>
+          <ui-menu class="!bg-transparent px-1" horizontal>
+            <ui-menu-item label="Link" />
 
-            <ui-menu-item title="Parent" collapsible>
-              <ul class="p-2 bg-base-100">
-                <ui-menu-item v-for="i in 2">
-                  <a>Link {{ i }}</a>
-                </ui-menu-item>
-              </ul>
-            </ui-menu-item>
+            <ui-menu-sub title="Parent" collapsible>
+              <ui-menu-item v-for="i in 2" :label="`Link ${i}`" />
+            </ui-menu-sub>
           </ui-menu>
         </div>
       </ui-navbar>
@@ -103,23 +97,18 @@ const colors = [
 
           <ui-dropdown align-to-end>
             <template #trigger>
-              <label tabindex="0" class="btn btn-ghost btn-circle">
+              <ui-button tabindex="0" color="ghost" shape="circle">
                 <ui-avatar>
                   <div class="w-10 rounded-full">
                     <img src="/img/avatar.jpg" alt="avatar" />
                   </div>
                 </ui-avatar>
-              </label>
+              </ui-button>
             </template>
 
-            <li>
-              <a class="justify-between">
-                Profile
-                <ui-badge color="primary">New</ui-badge>
-              </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
+            <ui-menu-item label="Profile" badge="New" />
+            <ui-menu-item label="Settings" />
+            <ui-menu-item label="Logout" />
           </ui-dropdown>
         </div>
       </ui-navbar>
@@ -158,23 +147,18 @@ const colors = [
 
           <ui-dropdown align-to-end>
             <template #trigger>
-              <label tabindex="0" class="btn btn-ghost btn-circle">
+              <ui-button tabindex="0" color="ghost" shape="circle">
                 <ui-avatar>
                   <div class="w-10 rounded-full">
                     <img src="/img/avatar.jpg" alt="avatar" />
                   </div>
                 </ui-avatar>
-              </label>
+              </ui-button>
             </template>
 
-            <li>
-              <a class="justify-between">
-                Profile
-                <ui-badge color="primary">New</ui-badge>
-              </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
+            <ui-menu-item label="Profile" badge="New" />
+            <ui-menu-item label="Settings" />
+            <ui-menu-item label="Logout" />
           </ui-dropdown>
         </div>
       </ui-navbar>
@@ -187,25 +171,21 @@ const colors = [
         <ui-navbar-section>
           <ui-dropdown>
             <template #trigger>
-              <label tabindex="0" class="btn btn-ghost btn-circle">
-                <ui-icon name="list" />
-              </label>
+              <ui-button tabindex="0" color="ghost" icon="list" shape="circle" />
             </template>
 
-            <li><a>Homepage</a></li>
-            <li><a>Portfolio</a></li>
-            <li><a>About</a></li>
+            <ui-menu-item label="Homepage" />
+            <ui-menu-item label="Portfolio" />
+            <ui-menu-item label="About" />
           </ui-dropdown>
         </ui-navbar-section>
 
         <ui-navbar-section alignment="center">
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button label="daisyUI" color="ghost" class="normal-case text-xl" />
         </ui-navbar-section>
 
         <ui-navbar-section alignment="end">
-          <ui-button color="ghost" circle>
-            <ui-icon name="search" />
-          </ui-button>
+          <ui-button color="ghost" icon="search" circle />
 
           <ui-button color="ghost" circle>
             <ui-indicator>
@@ -227,38 +207,35 @@ const colors = [
 
       <ui-navbar class="bg-base-100 mb-48 shadow-xl rounded-box">
         <ui-navbar-section>
-          <div class="dropdown">
-            <label tabindex="0" class="btn btn-ghost lg:hidden">
-              <ui-icon name="list" />
-            </label>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li><a>Item 1</a></li>
-              <li>
-                <a>Parent</a>
-                <ul class="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-              <li><a>Item 3</a></li>
-            </ul>
-          </div>
+          <ui-dropdown>
+            <template #trigger>
+              <ui-button
+                tabindex="0"
+                color="ghost"
+                icon="list"
+                shape="circle"
+                class="lg:hidden"
+              />
+            </template>
+
+            <ui-menu-item label="Item 1" />
+            <ui-menu-sub title="Parent">
+              <ui-menu-item label="Submenu 1" />
+              <ui-menu-item label="Submenu 2" />
+            </ui-menu-sub>
+            <ui-menu-item label="Item 3" />
+          </ui-dropdown>
           <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
         </ui-navbar-section>
 
         <ui-navbar-section alignment="center" class="hidden lg:flex">
-          <ui-menu class="px-1" horizontal>
-            <ui-menu-item><a>Item 1</a></ui-menu-item>
-            <ui-menu-item tabindex="0" title="Parent" collapsible>
-              <ul class="p-2">
-                <ui-menu-item><a>Submenu 1</a></ui-menu-item>
-                <ui-menu-item><a>Submenu 2</a></ui-menu-item>
-              </ul>
-            </ui-menu-item>
-            <li><a>Item 3</a></li>
+          <ui-menu tabindex="0" class="!bg-transparent px-1" horizontal>
+            <ui-menu-item label="Item 1" />
+            <ui-menu-sub title="Parent" collapsible>
+              <ui-menu-item label="Submenu 1" class="w-52" />
+              <ui-menu-item label="Submenu 2" class="w-52" />
+            </ui-menu-sub>
+            <ui-menu-item label="Item 3" />
           </ui-menu>
         </ui-navbar-section>
 
