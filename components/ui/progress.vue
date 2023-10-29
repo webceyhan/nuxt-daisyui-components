@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color } from "./types";
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+export const PROGRESS_COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "progress-primary",
   secondary: "progress-secondary",
@@ -28,5 +28,9 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <progress :class="['progress', COLOR_CLASS_MAP[color]]" :value="value" :max="max" />
+  <progress
+    :class="['progress', PROGRESS_COLOR_CLASS_MAP[color]]"
+    :value="value"
+    :max="max"
+  />
 </template>

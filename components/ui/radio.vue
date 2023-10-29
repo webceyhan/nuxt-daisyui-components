@@ -1,14 +1,14 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const RADIO_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "radio-xs",
   sm: "radio-sm",
   md: undefined, // default
   lg: "radio-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+export const RADIO_COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "radio-primary",
   secondary: "radio-secondary",
@@ -52,7 +52,7 @@ function onChange(event: Event) {
 <template>
   <input
     type="radio"
-    :class="['radio', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
+    :class="['radio', RADIO_SIZE_CLASS_MAP[size], RADIO_COLOR_CLASS_MAP[color]]"
     v-bind="{ name, value, checked: isChecked, disabled }"
     @change="onChange"
   />

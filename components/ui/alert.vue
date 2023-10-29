@@ -1,9 +1,9 @@
 <script lang="ts">
 import { ClassMap, StateColor } from "./types";
 
-type AlertColor = "default" | StateColor;
+export type AlertColor = "default" | StateColor;
 
-const COLOR_CLASS_MAP: ClassMap<AlertColor> = {
+export const ALERT_COLOR_CLASS_MAP: ClassMap<AlertColor> = {
   default: undefined, // default
   info: "alert-info",
   success: "alert-success",
@@ -23,7 +23,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['alert', COLOR_CLASS_MAP[color]]">
+  <div :class="['alert', ALERT_COLOR_CLASS_MAP[color]]">
     <slot />
   </div>
 </template>

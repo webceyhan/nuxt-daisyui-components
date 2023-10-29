@@ -1,16 +1,16 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type InputColor = Color | "ghost";
+export type TextInputColor = Color | "ghost";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TEXT_INPUT_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "input-xs",
   sm: "input-sm",
   md: undefined, // default
   lg: "input-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<InputColor> = {
+export const TEXT_INPUT_COLOR_CLASS_MAP: ClassMap<TextInputColor> = {
   default: undefined, // default
   primary: "input-primary",
   secondary: "input-secondary",
@@ -28,7 +28,7 @@ interface Props {
   modelValue?: string;
   size?: Size;
   placeholder?: string;
-  color?: InputColor;
+  color?: TextInputColor;
   bordered?: boolean;
   disabled?: boolean;
 }
@@ -46,8 +46,8 @@ withDefaults(defineProps<Props>(), {
     type="text"
     :class="[
       'input',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
+      TEXT_INPUT_SIZE_CLASS_MAP[size],
+      TEXT_INPUT_COLOR_CLASS_MAP[color],
       {
         'input-bordered': bordered,
       },

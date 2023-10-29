@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const MENU_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "menu-xs",
   sm: "menu-sm",
   md: undefined, // default
@@ -27,7 +27,7 @@ provide("menu", props);
   <ul
     :class="[
       'menu',
-      SIZE_CLASS_MAP[size],
+      MENU_SIZE_CLASS_MAP[size],
       {
         'menu-horizontal': horizontal,
       },

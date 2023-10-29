@@ -1,16 +1,16 @@
 <script lang="ts">
 import { Alignment, ClassMap, VerticalAlignment } from "./types";
 
-const ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+export const TOAST_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
   start: "toast-start",
   center: "toast-center",
-  end: "toast-end",
+  end: undefined, // default
 };
 
-const VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+export const TOAST_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
   top: "toast-top",
   middle: "toast-middle",
-  bottom: "toast-bottom",
+  bottom: undefined, // default
 };
 </script>
 
@@ -30,8 +30,8 @@ withDefaults(defineProps<Props>(), {
   <div
     :class="[
       'toast',
-      ALIGNMENT_CLASS_MAP[alignment],
-      VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
+      TOAST_ALIGNMENT_CLASS_MAP[alignment],
+      TOAST_VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
     ]"
   >
     <slot />

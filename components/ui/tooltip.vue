@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Color, Position } from "./types";
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+export const TOOLTIP_COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "tooltip-primary",
   secondary: "tooltip-secondary",
@@ -12,7 +12,7 @@ const COLOR_CLASS_MAP: ClassMap<Color> = {
   error: "tooltip-error",
 };
 
-const POSITION_CLASS_MAP: ClassMap<Position> = {
+export const TOOLTIP_POSITION_CLASS_MAP: ClassMap<Position> = {
   top: undefined, // default
   bottom: "tooltip-bottom",
   left: "tooltip-left",
@@ -39,8 +39,8 @@ interface Bindings {
 
 //   el.setAttribute("data-tip", text);
 //   el.classList.add("tooltip");
-//   el.classList.add(COLOR_CLASS_MAP[color ?? "default"]);
-//   el.classList.add(POSITION_CLASS_MAP[position ?? "top"]);
+//   el.classList.add(TOOLTIP_COLOR_CLASS_MAP[color ?? "default"]);
+//   el.classList.add(TOOLTIP_POSITION_CLASS_MAP[position ?? "top"]);
 //   open && el.classList.add("tooltip-open");
 // });
 </script>
@@ -66,8 +66,8 @@ withDefaults(defineProps<Props>(), {
     :is="as"
     :class="[
       'tooltip',
-      COLOR_CLASS_MAP[color],
-      POSITION_CLASS_MAP[position],
+      TOOLTIP_COLOR_CLASS_MAP[color],
+      TOOLTIP_POSITION_CLASS_MAP[position],
       {
         'tooltip-open': open,
       },

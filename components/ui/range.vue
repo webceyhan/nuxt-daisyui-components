@@ -1,14 +1,14 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const RANGE_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "range-xs",
   sm: "range-sm",
   md: undefined, // default
   lg: "range-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+export const RANGE_COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "range-primary",
   secondary: "range-secondary",
@@ -45,8 +45,8 @@ withDefaults(defineProps<Props>(), {
     type="range"
     :class="[
       'range',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
+      RANGE_SIZE_CLASS_MAP[size],
+      RANGE_COLOR_CLASS_MAP[color],
       {
         // patch default disabled style
         'cursor-not-allowed': disabled,

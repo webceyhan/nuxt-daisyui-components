@@ -1,14 +1,14 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TOGGLE_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "toggle-xs",
   sm: "toggle-sm",
   md: undefined, // default
   lg: "toggle-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+export const TOGGLE_COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "toggle-primary",
   secondary: "toggle-secondary",
@@ -39,7 +39,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <input
     type="checkbox"
-    :class="['toggle', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
+    :class="['toggle', TOGGLE_SIZE_CLASS_MAP[size], TOGGLE_COLOR_CLASS_MAP[color]]"
     @change="$emit('update:checked', ($event.target as HTMLInputElement).checked)"
     :checked="checked"
     :disabled="disabled"

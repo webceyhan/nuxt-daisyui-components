@@ -1,16 +1,16 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type SelectColor = Color | "ghost";
+export type SelectColor = Color | "ghost";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const SELECT_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "select-xs",
   sm: "select-sm",
   md: undefined, // default
   lg: "select-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<SelectColor> = {
+export const SELECT_COLOR_CLASS_MAP: ClassMap<SelectColor> = {
   default: undefined, // default
   primary: "select-primary",
   secondary: "select-secondary",
@@ -44,8 +44,8 @@ withDefaults(defineProps<Props>(), {
   <select
     :class="[
       'select w-full',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
+      SELECT_SIZE_CLASS_MAP[size],
+      SELECT_COLOR_CLASS_MAP[color],
       {
         'select-bordered': bordered,
       },

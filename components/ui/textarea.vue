@@ -1,16 +1,16 @@
 <script lang="ts">
 import { ClassMap, Color, Size } from "./types";
 
-type InputColor = Color | "ghost";
+export type TextareaColor = Color | "ghost";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TEXTAREA_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "textarea-xs",
   sm: "textarea-sm",
   md: undefined, // default
   lg: "textarea-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<InputColor> = {
+export const TEXTAREA_COLOR_CLASS_MAP: ClassMap<TextareaColor> = {
   default: undefined, // default
   primary: "textarea-primary",
   secondary: "textarea-secondary",
@@ -28,7 +28,7 @@ interface Props {
   modelValue?: string;
   placeholder?: string;
   size?: Size;
-  color?: InputColor;
+  color?: TextareaColor;
   bordered?: boolean;
   disabled?: boolean;
 }
@@ -54,8 +54,8 @@ const valueProxy = computed({
   <textarea
     :class="[
       'textarea',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
+      TEXTAREA_SIZE_CLASS_MAP[size],
+      TEXTAREA_COLOR_CLASS_MAP[color],
       {
         'textarea-bordered': bordered,
       },

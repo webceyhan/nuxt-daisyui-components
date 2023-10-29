@@ -1,7 +1,7 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "./types";
+import { ClassMap, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const KBD_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "kbd-xs",
   sm: "kbd-sm",
   md: undefined, // default
@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <kbd :class="['kbd', SIZE_CLASS_MAP[size]]">
+  <kbd :class="['kbd', KBD_SIZE_CLASS_MAP[size]]">
     <slot />
   </kbd>
 </template>

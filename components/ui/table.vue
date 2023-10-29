@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TABLE_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "table-xs",
   sm: "table-sm",
   md: undefined, // default
@@ -26,7 +26,7 @@ withDefaults(defineProps<Props>(), {
   <table
     :class="[
       'table',
-      SIZE_CLASS_MAP[size],
+      TABLE_SIZE_CLASS_MAP[size],
       {
         'table-zebra': zebra,
         'table-pin-rows': pinRows,

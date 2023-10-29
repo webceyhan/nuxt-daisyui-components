@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const BOTTOM_NAV_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "btm-nav-xs",
   sm: "btm-nav-sm",
   md: undefined, // default
@@ -20,7 +20,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['btm-nav', SIZE_CLASS_MAP[size]]">
+  <div :class="['btm-nav', BOTTOM_NAV_SIZE_CLASS_MAP[size]]">
     <slot />
   </div>
 </template>

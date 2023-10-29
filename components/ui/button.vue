@@ -3,14 +3,14 @@ import { ClassMap, Color, Size, Shape } from "./types";
 
 export type ButtonColor = Color | "neutral" | "ghost";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const BUTTON_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "btn-xs",
   sm: "btn-sm",
   md: undefined, // default
   lg: "btn-lg",
 };
 
-const COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
+export const BUTTON_COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
   default: undefined, // default
   primary: "btn-primary",
   secondary: "btn-secondary",
@@ -23,7 +23,7 @@ const COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
   ghost: "btn-ghost",
 };
 
-const SHAPE_CLASS_MAP: ClassMap<Shape> = {
+export const BUTTON_SHAPE_CLASS_MAP: ClassMap<Shape> = {
   rectangle: undefined, // default
   square: "btn-square",
   circle: "btn-circle",
@@ -59,9 +59,9 @@ withDefaults(defineProps<Props>(), {
     :href="href"
     :class="[
       'btn',
-      SIZE_CLASS_MAP[size],
-      SHAPE_CLASS_MAP[shape],
-      COLOR_CLASS_MAP[color],
+      BUTTON_SIZE_CLASS_MAP[size],
+      BUTTON_SHAPE_CLASS_MAP[shape],
+      BUTTON_COLOR_CLASS_MAP[color],
       {
         'btn-outline': outline,
         'btn-active': active,

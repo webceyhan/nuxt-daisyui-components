@@ -2,7 +2,7 @@
 import { ClassMap, Position, Size } from "./types";
 import { ButtonColor } from "./button.vue";
 
-const POSITION_CLASS_MAP: ClassMap<Position> = {
+export const DROPDOWN_POSITION_CLASS_MAP: ClassMap<Position> = {
   top: "dropdown-top",
   bottom: undefined, // default
   left: "dropdown-left",
@@ -39,7 +39,7 @@ const close = () => {
   <div
     :class="[
       'dropdown',
-      POSITION_CLASS_MAP[position],
+      DROPDOWN_POSITION_CLASS_MAP[position],
       {
         'dropdown-open': open,
         'dropdown-hover': hover,

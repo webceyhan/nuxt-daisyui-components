@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, Size } from "./types";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TAB_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "tab-xs",
   sm: "tab-sm",
   md: undefined, // default
@@ -27,7 +27,7 @@ withDefaults(defineProps<Props>(), {
   <button
     :class="[
       'tab',
-      SIZE_CLASS_MAP[size],
+      TAB_SIZE_CLASS_MAP[size],
       {
         'tab-active': active,
         'tab-lifted': lifted,

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { ClassMap, VerticalAlignment } from "./types";
 
-const VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
   top: "modal-top",
   middle: undefined, // default
   bottom: "modal-bottom",
@@ -28,7 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <dialog
     :open="open"
-    :class="['modal', VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
+    :class="['modal', MODAL_VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
     @close="$emit('update:open', false)"
   >
     <div :class="['modal-box', props.class]">

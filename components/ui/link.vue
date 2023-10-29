@@ -1,9 +1,9 @@
 <script lang="ts">
 import { ClassMap, Color } from "./types";
 
-type LinkColor = Color | "neutral";
+export type LinkColor = Color | "neutral";
 
-const COLOR_CLASS_MAP: ClassMap<LinkColor> = {
+export const LINK_COLOR_CLASS_MAP: ClassMap<LinkColor> = {
   default: undefined, // default
   primary: "link-primary",
   secondary: "link-secondary",
@@ -31,7 +31,7 @@ withDefaults(defineProps<Props>(), {
   <a
     :class="[
       'link',
-      COLOR_CLASS_MAP[color],
+      LINK_COLOR_CLASS_MAP[color],
       {
         'link-hover': hover,
       },

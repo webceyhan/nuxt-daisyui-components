@@ -1,9 +1,9 @@
 <script lang="ts">
 import { ClassMap, Color } from "./types";
 
-type StepColor = Color | "neutral";
+export type StepColor = Color | "neutral";
 
-const COLOR_CLASS_MAP: ClassMap<StepColor> = {
+export const STEP_COLOR_CLASS_MAP: ClassMap<StepColor> = {
   default: undefined, // default
   primary: "step-primary",
   secondary: "step-secondary",
@@ -27,7 +27,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <li :class="['step', COLOR_CLASS_MAP[color]]">
+  <li :class="['step', STEP_COLOR_CLASS_MAP[color]]">
     <slot />
   </li>
 </template>

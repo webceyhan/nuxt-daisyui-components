@@ -1,14 +1,14 @@
 <script lang="ts">
 import { Alignment, ClassMap, Color } from "./types";
 
-type ChatAlignment = Exclude<Alignment, "center">;
+export type ChatAlignment = Exclude<Alignment, "center">;
 
-const ALIGNMENT_CLASS_MAP: ClassMap<ChatAlignment> = {
+export const CHAT_ALIGNMENT_CLASS_MAP: ClassMap<ChatAlignment> = {
   start: "chat-start",
   end: "chat-end",
 };
 
-const COLOR_CLASS_MAP: ClassMap<Color> = {
+export const CHAT_COLOR_CLASS_MAP: ClassMap<Color> = {
   default: undefined, // default
   primary: "chat-bubble-primary",
   secondary: "chat-bubble-secondary",
@@ -33,7 +33,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['chat', ALIGNMENT_CLASS_MAP[alignment]]">
+  <div :class="['chat', CHAT_ALIGNMENT_CLASS_MAP[alignment]]">
     <!-- avatar -->
     <div v-if="$slots.avatar" class="chat-image avatar">
       <slot name="avatar" />
@@ -45,7 +45,7 @@ withDefaults(defineProps<Props>(), {
     </div>
 
     <!-- bubble -->
-    <div :class="['chat-bubble', COLOR_CLASS_MAP[color]]">
+    <div :class="['chat-bubble', CHAT_COLOR_CLASS_MAP[color]]">
       <slot />
     </div>
 

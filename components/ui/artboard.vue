@@ -1,9 +1,15 @@
 <script lang="ts">
 import { ClassMap } from "./types";
 
-type Size = "phone-1" | "phone-2" | "phone-3" | "phone-4" | "phone-5" | "phone-6";
+export type ArtboardSize =
+  | "phone-1"
+  | "phone-2"
+  | "phone-3"
+  | "phone-4"
+  | "phone-5"
+  | "phone-6";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const ARTBOARD_SIZE_CLASS_MAP: ClassMap<ArtboardSize> = {
   "phone-1": "phone-1",
   "phone-2": "phone-2",
   "phone-3": "phone-3",
@@ -12,7 +18,7 @@ const SIZE_CLASS_MAP: ClassMap<Size> = {
   "phone-6": "phone-6",
 };
 
-const DIMENSION_MAP: Record<Size, string> = {
+export const ARTBOARD_DIMENSION_MAP: Record<ArtboardSize, string> = {
   "phone-1": "320x568",
   "phone-2": "375x667",
   "phone-3": "414x736",
@@ -24,7 +30,7 @@ const DIMENSION_MAP: Record<Size, string> = {
 
 <script setup lang="ts">
 interface Props {
-  size?: Size;
+  size?: ArtboardSize;
   horizontal?: boolean;
 }
 
@@ -34,9 +40,15 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['artboard artboard-demo', SIZE_CLASS_MAP[size], {
-    'artboard-horizontal': horizontal,
-  }]">
-    <slot>{{ DIMENSION_MAP[size] }}</slot>
+  <div
+    :class="[
+      'artboard artboard-demo',
+      ARTBOARD_SIZE_CLASS_MAP[size],
+      {
+        'artboard-horizontal': horizontal,
+      },
+    ]"
+  >
+    <slot>{{ ARTBOARD_DIMENSION_MAP[size] }}</slot>
   </div>
 </template>

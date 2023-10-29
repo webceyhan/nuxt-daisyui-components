@@ -1,14 +1,14 @@
 <script lang="ts">
 import { Alignment, ClassMap, VerticalAlignment } from "./types";
 
-const ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+export const INDICATOR_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
   start: "indicator-start",
   center: "indicator-center",
-  end: "indicator-end",
+  end: undefined, // default
 };
 
-const VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
-  top: "indicator-top",
+export const INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+  top: undefined, // default
   middle: "indicator-middle",
   bottom: "indicator-bottom",
 };
@@ -33,8 +33,8 @@ withDefaults(defineProps<Props>(), {
     <span
       class="indicator-item"
       :class="[
-        ALIGNMENT_CLASS_MAP[alignment],
-        VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
+        INDICATOR_ALIGNMENT_CLASS_MAP[alignment],
+        INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
         itemClass,
       ]"
     >

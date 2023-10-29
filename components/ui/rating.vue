@@ -2,7 +2,7 @@
 import { ClassMap, Size, Mask } from "./types";
 import { MASK_CLASS_MAP } from "./mask.vue";
 
-const SIZE_CLASS_MAP: ClassMap<Size> = {
+export const RATING_SIZE_CLASS_MAP: ClassMap<Size> = {
   xs: "rating-xs",
   sm: "rating-sm",
   md: undefined, // default
@@ -36,7 +36,7 @@ const name = `rating-${count++}`;
 </script>
 
 <template>
-  <div :class="['rating', SIZE_CLASS_MAP[size]]">
+  <div :class="['rating', RATING_SIZE_CLASS_MAP[size]]">
     <input
       type="radio"
       v-for="i in max"

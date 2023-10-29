@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Alignment, ClassMap } from "./types";
 
-const ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+export const NAVBAR_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
   start: "navbar-start",
   center: "navbar-center",
   end: "navbar-end",
@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="[ALIGNMENT_CLASS_MAP[alignment]]">
+  <div :class="[NAVBAR_ALIGNMENT_CLASS_MAP[alignment]]">
     <slot />
   </div>
 </template>
