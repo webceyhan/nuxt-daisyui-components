@@ -37,7 +37,7 @@ const menu = inject<MenuProps>("menu");
         </slot>
 
         <slot name="badge">
-          <ui-badge v-if="badge" :label="badge" />
+          <ui-badge v-if="badge" :label="badge" color="primary" />
         </slot>
       </slot>
     </a>
