@@ -1,4 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {
+  ARTBOARD_SIZE_CLASS_MAP,
+  ArtboardSize,
+} from "~/components/ui/layout/artboard.vue";
+
+const SIZES = Object.keys(ARTBOARD_SIZE_CLASS_MAP) as ArtboardSize[];
+
+const props = [
+  { name: "size", type: "string", values: SIZES },
+  { name: "horizontal", type: "boolean", description: "Shows horizontal view" },
+];
+
+const slots = [{ name: "default", description: "Content of artboard" }];
+</script>
 
 <template>
   <div>
@@ -8,16 +22,19 @@
       Artboard provides fixed size container to display a demo content on mobile size.
     </p>
 
-    <component-preview v-for="i in 6">
-      <template #title>Artboard size {{ i }}</template>
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
-      <ui-artboard :size="`phone-${i}`" />
+    <component-preview v-for="size of SIZES">
+      <template #title>Artboard size {{ size }}</template>
+
+      <ui-artboard :size="size" />
     </component-preview>
 
-    <component-preview v-for="i in 6">
-      <template #title>Artboard horizontal size {{ i }}</template>
+    <component-preview v-for="size of SIZES">
+      <template #title>Artboard horizontal size {{ size }}</template>
 
-      <ui-artboard :size="`phone-${i}`" horizontal />
+      <ui-artboard :size="size" horizontal />
     </component-preview>
   </div>
 </template>
