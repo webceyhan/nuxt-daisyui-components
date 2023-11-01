@@ -31,7 +31,7 @@
         class="min-h-[30rem] rounded bg-base-200"
         content-class="flex-col lg:flex-row"
       >
-        <img src="img/spiderman.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+        <img src="/img/spiderman.jpg" class="max-w-sm rounded-lg shadow-2xl" />
         <div>
           <h1 class="text-5xl font-bold">Box Office News!</h1>
           <p class="py-6">
@@ -50,7 +50,7 @@
         class="min-h-[30rem] rounded bg-base-200"
         content-class="flex-col lg:flex-row-reverse"
       >
-        <img src="img/spiderman.jpg" class="max-w-sm rounded-lg shadow-2xl" />
+        <img src="/img/spiderman.jpg" class="max-w-sm rounded-lg shadow-2xl" />
         <div>
           <h1 class="text-5xl font-bold">Box Office News!</h1>
           <p class="py-6">
