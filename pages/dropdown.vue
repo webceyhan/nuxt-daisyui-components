@@ -7,6 +7,35 @@ import {
   STATE_COLORS,
 } from "~/constants";
 
+const props = [
+  { name: "label", type: "string", description: "Label of dropdown trigger" },
+  { name: "icon", type: "string", description: "Icon at start of dropdown trigger" },
+  { name: "icon-end", type: "string", description: "Icon at end of dropdown trigger" },
+  { name: "size", type: "string", values: SIZES },
+  { name: "color", type: "string", values: BRAND_COLORS_WITH_NEUTRAL_AND_GHOST },
+  {
+    name: "outline",
+    type: "boolean",
+    description: "Transparent trigger button with colored border",
+  },
+  { name: "position", type: "string", values: POSITIONS },
+  { name: "open", type: "boolean", description: "Force open" },
+  { name: "hover", type: "boolean", description: "Opens on hover too" },
+  { name: "disabled", type: "boolean", description: "Disable dropdown trigger" },
+  { name: "align-to-end", type: "boolean", description: "Aligns to end" },
+];
+
+const slots = [
+  {
+    name: "default",
+    description: "Content of menu",
+  },
+  {
+    name: "trigger",
+    description: "Trigger button",
+  },
+];
+
 const spacings = {
   top: "mt-32",
   bottom: "mb-32",
@@ -20,6 +49,9 @@ const spacings = {
     <h1 class="text-4xl font-bold mb-8">Dropdown</h1>
 
     <p>Dropdown can open a menu or any other element when the button is clicked.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Dropdown</template>
