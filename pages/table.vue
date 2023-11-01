@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { SIZES } from "~/constants";
-import { records, recordsWithVisuals, recordsXs, pinnedRows } from "./table-data";
+import { records, recordsWithVisuals, recordsXs, pinnedRows } from "../data/table-data";
 
 const columns = (rows: any[]) => Object.keys(rows[0]);
 
@@ -230,3 +230,4 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
     </component-preview>
   </div>
 </template>
+../table-data
