@@ -1,6 +1,34 @@
 <script setup lang="ts">
 import { VERTICAL_ALIGNMENTS } from "~/constants";
 
+const props = [
+  { name: "title", type: "string", description: "Title of modal" },
+  { name: "class", type: "string", description: "Custom classes for modal dialog box" },
+  {
+    name: "open",
+    type: "boolean",
+    description: "Open/close the modal using v-model:open",
+  },
+  {
+    name: "backdrop",
+    type: "boolean",
+    description:
+      "The backdrop that covers the back of modal so we can close the modal by clicking outside",
+  },
+  {
+    name: "dismissable",
+    type: "boolean",
+    description: "Show a close button at top right corner",
+  },
+  { name: "vertical-alignment", type: "string", values: VERTICAL_ALIGNMENTS },
+];
+
+const slots = [
+  { name: "default", description: "Content of modal" },
+  { name: "title", description: "Title content of modal" },
+  { name: "actions", description: "Container for modal action buttons" },
+];
+
 const showModel1 = ref(false);
 const showModel2 = ref(false);
 const showModel3 = ref(false);
@@ -18,6 +46,9 @@ const verticalAlignedModels = reactive({
     <h1 class="text-4xl font-bold mb-8">Modal</h1>
 
     <p>Modal is used to show a dialog or a box when you click a button.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Dialog modal</template>
