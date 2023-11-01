@@ -1,5 +1,16 @@
 <script setup lang="ts">
-import { COLLAPSE_INDICATORS } from '~/constants';
+import { COLLAPSE_INDICATORS } from "~/constants";
+
+const props = [
+  { name: "name", type: "string", description: "Group name of accordion items" },
+  { name: "open", type: "boolean", description: "Force open" },
+  { name: "indicator", type: "string", values: COLLAPSE_INDICATORS },
+];
+
+const slots = [
+  { name: "default", description: "Content of accordion" },
+  { name: "title", description: "Title content of accordion" },
+];
 </script>
 
 <template>
@@ -11,6 +22,9 @@ import { COLLAPSE_INDICATORS } from '~/constants';
       a time.
     </p>
 
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
     <component-preview>
       <template #title>Accordion using radio inputs</template>
 
@@ -21,7 +35,7 @@ import { COLLAPSE_INDICATORS } from '~/constants';
     </component-preview>
 
     <component-preview v-for="indicator of COLLAPSE_INDICATORS">
-      <template #title>Accordion with {{indicator}} indicator</template>
+      <template #title>Accordion with {{ indicator }} indicator</template>
 
       <ui-accordion
         name="my-accordion-2"
