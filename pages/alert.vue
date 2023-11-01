@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { STATE_COLORS } from "~/constants";
 
+const props = [
+  { name: "icon", type: "string", description: "Icon name" },
+  { name: "title", type: "string", description: "Title of alert" },
+  { name: "message", type: "string", description: "Message of alert" },
+  { name: "color", type: "string", values: STATE_COLORS },
+];
+
+const slots = [
+  { name: "default", description: "Content of alert" },
+  { name: "icon", description: "Icon content of alert" },
+  { name: "actions", description: "Actions content of alert" },
+];
+
 const statefulAlerts = [
   { icon: "info-circle", message: "New software update available." },
   { icon: "check-circle", message: "Your purchase has been confirmed!" },
@@ -14,6 +27,9 @@ const statefulAlerts = [
     <h1 class="text-4xl font-bold mb-8">Alert</h1>
 
     <p>Alert informs users about important events.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Alert</template>
