@@ -1,4 +1,27 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = [
+  {
+    name: "online",
+    type: "boolean",
+    description: "shows a green dot as online indicator",
+  },
+  {
+    name: "offline",
+    type: "boolean",
+    description: "shows a gray dot as offline indicator",
+  },
+  {
+    name: "placeholder",
+    type: "boolean",
+    description: "to show some letters as avatar placeholder",
+  },
+];
+
+const slots = [
+  { name: "default", description: "Content of avatar" },
+  { name: "indicator", description: "Content of indicator" },
+];
+</script>
 
 <template>
   <div>
@@ -8,6 +31,9 @@
       Avatars are used to show a thumbnail representation of an individual or business in
       the interface.
     </p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Avatar in custom sizes</template>
