@@ -7,6 +7,31 @@ import {
   STATE_COLORS,
   STATE_ICONS,
 } from "~/constants";
+
+const props = [
+  { name: "label", type: "string", description: "Label of button" },
+  { name: "href", type: "string", description: "Url of button to render as link" },
+  { name: "icon", type: "string", description: "Icon at start of button" },
+  { name: "icon-end", type: "string", description: "Icon at end of button" },
+  { name: "size", type: "string", values: SIZES },
+  { name: "shape", type: "string", values: SHAPES },
+  { name: "color", type: "string", values: BRAND_COLORS_WITH_NEUTRAL_AND_GHOST },
+  {
+    name: "outline",
+    type: "boolean",
+    description: "Transparent Button with colored border",
+  },
+  { name: "active", type: "boolean", description: "Force button to show active state" },
+  { name: "wide", type: "boolean", description: "Wide button (more horizontal padding)" },
+  { name: "block", type: "boolean", description: "Full width button" },
+];
+
+const slots = [
+  {
+    name: "default",
+    description: "Content of button",
+  },
+];
 </script>
 
 <template>
@@ -14,6 +39,9 @@ import {
     <h1 class="text-4xl font-bold mb-8">Button</h1>
 
     <p>Buttons allow the user to take actions or make choices.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Button</template>
@@ -106,8 +134,8 @@ import {
       <ui-button href="#" label="link" />
       <ui-button type="submit" label="submit" />
       <ui-button type="reset" label="reset" />
-      <input type="radio" aria-label="radio" class="btn"/>
-      <input type="checkbox" aria-label="checkbox" class="btn"/>
+      <input type="radio" aria-label="radio" class="btn" />
+      <input type="checkbox" aria-label="checkbox" class="btn" />
     </component-preview>
   </div>
 </template>
