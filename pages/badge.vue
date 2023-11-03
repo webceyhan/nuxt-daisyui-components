@@ -7,6 +7,21 @@ import {
   STATE_ICONS,
   TEXT_SIZES,
 } from "~/constants";
+
+const props = [
+  { name: "label", type: "string", description: "Label of badge" },
+  { name: "size", type: "string", values: SIZES },
+  { name: "color", type: "string", values: BRAND_COLORS_WITH_NEUTRAL_AND_GHOST },
+  {
+    name: "outline",
+    type: "boolean",
+    description: "Transparent badge with colored border",
+  },
+];
+
+const slots = [
+  { name: "default", description: "Content of button" }
+];
 </script>
 
 <template>
@@ -14,6 +29,9 @@ import {
     <h1 class="text-4xl font-bold mb-8">Badge</h1>
 
     <p>Badges are used to inform the user of the status of specific data.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Badge</template>
