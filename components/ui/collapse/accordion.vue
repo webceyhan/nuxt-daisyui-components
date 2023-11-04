@@ -3,8 +3,8 @@ import { INDICATOR_CLASS_MAP } from "./collapse.vue";
 
 export interface Props {
   name?: string;
-  open?: boolean;
   indicator?: keyof typeof INDICATOR_CLASS_MAP;
+  open?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
