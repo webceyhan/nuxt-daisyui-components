@@ -1,6 +1,26 @@
 <script setup lang="ts">
 import { COLORS } from "~/constants";
 
+const props = [
+  {
+    name: "value",
+    type: "number",
+    description: "Value of progress",
+  },
+  {
+    name: "max",
+    type: "number",
+    description: "Maximum value of progress",
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const steps = [0, 10, 40, 70, 100];
 </script>
 
@@ -12,6 +32,9 @@ const steps = [0, 10, 40, 70, 100];
       Progress bar can be used to show the progress of a task or to show the passing of
       time.
     </p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview v-for="color of COLORS">
       <template #title> {{ color }} color </template>

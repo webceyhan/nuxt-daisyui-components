@@ -1,6 +1,28 @@
 <script setup lang="ts">
 import { TEXT_COLORS } from "~/constants";
 
+const props = [
+  {
+    name: "value",
+    type: "number",
+    description: "Value of progress",
+  },
+  {
+    name: "size",
+    type: "string",
+    description: "Size of progress. default: 4rem",
+  },
+  {
+    name: "thickness",
+    type: "string",
+    description: "Thickness of progress. default: 10% of size",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of radial progress" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const values = [0, 20, 60, 80, 100];
 </script>
 
@@ -13,16 +35,8 @@ const values = [0, 20, 60, 80, 100];
       time.
     </p>
 
-    <br />
-
-    <p>
-      Radial progress needs `--value` CSS variable to work.
-      <br />
-      To change the size, use `--size` CSS variable which has a default value of `4rem`.
-      <br />
-      To change the thickness, use `--thickness` CSS variable which is 10% of the size by
-      default.
-    </p>
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title> Radial progress </template>
