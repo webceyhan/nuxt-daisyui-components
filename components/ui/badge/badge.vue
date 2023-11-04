@@ -8,6 +8,7 @@ export const SIZE_CLASS_MAP = {
 
 export const COLOR_CLASS_MAP = {
   default: undefined, // default
+  neutral: "badge-neutral",
   primary: "badge-primary",
   secondary: "badge-secondary",
   accent: "badge-accent",
@@ -15,7 +16,6 @@ export const COLOR_CLASS_MAP = {
   success: "badge-success",
   warning: "badge-warning",
   error: "badge-error",
-  neutral: "badge-neutral",
 };
 </script>
 

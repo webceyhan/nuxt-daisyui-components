@@ -1,6 +1,7 @@
 <script lang="ts">
 export const COLOR_CLASS_MAP = {
   default: undefined, // default
+  neutral: "step-neutral",
   primary: "step-primary",
   secondary: "step-secondary",
   accent: "step-accent",
@@ -8,7 +9,6 @@ export const COLOR_CLASS_MAP = {
   success: "step-success",
   warning: "step-warning",
   error: "step-error",
-  neutral: "step-neutral",
 };
 </script>
 

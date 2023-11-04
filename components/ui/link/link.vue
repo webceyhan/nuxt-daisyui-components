@@ -1,6 +1,7 @@
 <script lang="ts">
 export const COLOR_CLASS_MAP = {
   default: undefined, // default
+  neutral: "link-neutral",
   primary: "link-primary",
   secondary: "link-secondary",
   accent: "link-accent",
@@ -8,7 +9,6 @@ export const COLOR_CLASS_MAP = {
   success: "link-success",
   warning: "link-warning",
   error: "link-error",
-  neutral: "link-neutral",
 };
 </script>
 
