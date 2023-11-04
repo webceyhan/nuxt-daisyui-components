@@ -1,5 +1,30 @@
 <script setup lang="ts">
 import { COLLAPSE_INDICATORS } from "~/constants";
+
+const props = [
+  {
+    name: "open",
+    type: "boolean",
+    description: "Force open",
+  },
+  {
+    name: "toggle",
+    type: "boolean",
+    description: "Whether the collapse works with focus or checkbox",
+  },
+  {
+    name: "indicator",
+    type: "string",
+    values: COLLAPSE_INDICATORS,
+  },
+];
+
+const slots = [
+  { name: "title", description: "Title for the collapse" },
+  { name: "default", description: "Content for the collapse" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>
@@ -7,6 +32,9 @@ import { COLLAPSE_INDICATORS } from "~/constants";
     <h1 class="text-4xl font-bold mb-8">Collapse</h1>
 
     <p>Collapse is used for showing and hiding content.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Collapse with focus</template>
