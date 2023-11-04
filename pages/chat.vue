@@ -1,6 +1,28 @@
 <script setup lang="ts">
 import { COLORS } from "~/constants";
 
+const props = [
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "alignment",
+    type: "string",
+    values: ["start", "end"],
+  },
+];
+
+const slots = [
+  { name: "default", description: "Content of chat bubble" },
+  { name: "avatar", description: "Avatar image of chat bubble" },
+  { name: "header", description: "Header of chat bubble" },
+  { name: "footer", description: "Footer of chat bubble" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const bubbleWithColors = [
   { text: "Hey!" },
   { text: "What kind of nonsense is this" },
@@ -21,6 +43,9 @@ const bubbleWithColors = [
       Chat bubbles are used to show one line of conversation and all its data, including
       the author image, author name, time, etc.
     </p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>chat-start and chat-end</template>
