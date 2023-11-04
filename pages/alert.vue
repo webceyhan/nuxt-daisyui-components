@@ -14,6 +14,8 @@ const slots = [
   { name: "actions", description: "Actions content of alert" },
 ];
 
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const statefulAlerts = [
   { icon: "info-circle", message: "New software update available." },
   { icon: "check-circle", message: "Your purchase has been confirmed!" },

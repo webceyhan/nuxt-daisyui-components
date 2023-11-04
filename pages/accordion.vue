@@ -11,6 +11,8 @@ const slots = [
   { name: "default", description: "Content of accordion" },
   { name: "title", description: "Title content of accordion" },
 ];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>

@@ -2,6 +2,8 @@
 const props = [];
 
 const slots = [{ name: "default", description: "Content of breadcrumbs" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>

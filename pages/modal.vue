@@ -29,6 +29,8 @@ const slots = [
   { name: "actions", description: "Container for modal action buttons" },
 ];
 
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const showModel1 = ref(false);
 const showModel2 = ref(false);
 const showModel3 = ref(false);

@@ -12,6 +12,8 @@ const props = [
 ];
 
 const slots = [{ name: "default", description: "Content of artboard" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>

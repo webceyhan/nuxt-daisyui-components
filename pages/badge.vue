@@ -22,6 +22,8 @@ const props = [
 const slots = [
   { name: "default", description: "Content of button" }
 ];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>

@@ -21,6 +21,8 @@ const slots = [
   { name: "default", description: "Content of avatar" },
   { name: "indicator", description: "Content of indicator" },
 ];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>
