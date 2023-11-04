@@ -1,6 +1,51 @@
 <script setup lang="ts">
 import { SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "boxed",
+    type: "boolean",
+    description: "Whether the tabs should be boxed",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the tabs" }];
+
+const itemProps = [
+  {
+    name: "size",
+    type: "Size",
+    values: SIZES,
+  },
+  {
+    name: "active",
+    type: "boolean",
+    description: "Whether the tab is active",
+  },
+  {
+    name: "lifted",
+    type: "boolean",
+    description: "Whether the tab is lifted",
+  },
+  {
+    name: "bordered",
+    type: "boolean",
+    description: "Whether the tab is bordered",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the tab is disabled",
+  },
+];
+
+const itemSlots = [
+  { name: "default", description: "Content of the tab" },
+  { name: "indicator", description: "Indicator of the tab" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const links = [
   { label: "Tab 1", active: false },
   { label: "Tab 2", active: true },
@@ -13,6 +58,13 @@ const links = [
     <h1 class="text-4xl font-bold mb-8">Tabs</h1>
 
     <p>Tabs can be used to show a list of links in a tabbed format.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Tab Item</h3>
+    <component-props-table :props="itemProps" />
+    <component-slots-table :slots="itemSlots" />
 
     <component-preview>
       <template #title>Tabs</template>
