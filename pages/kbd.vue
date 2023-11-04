@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { SIZES } from "~/constants";
+
+const props = [{ name: "size", type: "string", values: SIZES }];
+
+const slots = [{ name: "default", description: "Content of kbd" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const sizes: any[] = ["lg", "md", "sm", "xs"];
 
 const keyboard = [
@@ -13,6 +21,9 @@ const keyboard = [
     <h1 class="text-4xl font-bold mb-8">Kbd</h1>
 
     <p>Kbd is used to display keyboard shortcuts.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Kbd</template>
