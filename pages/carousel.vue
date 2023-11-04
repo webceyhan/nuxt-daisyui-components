@@ -1,6 +1,25 @@
 <script setup lang="ts">
 import { ALIGNMENTS } from "~/constants";
 
+const props = [
+  {
+    name: "snap",
+    type: "string",
+    values: ALIGNMENTS,
+  },
+  {
+    name: "vertical",
+    type: "boolean",
+    description: "Snap vertically",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of carousel" }];
+
+const itemSlots = [{ name: "default", description: "Content of carousel item" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const items = [1, 2, 3, 4, 5, 6, 7];
 const wideItems = [1, 2, 3, 4];
 </script>
@@ -10,6 +29,12 @@ const wideItems = [1, 2, 3, 4];
     <h1 class="text-4xl font-bold mb-8">Carousel</h1>
 
     <p>Carousel show images or content in a scrollable area.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Carousel item</h3>
+    <component-slots-table :slots="itemSlots" />
 
     <component-preview v-for="snap of ALIGNMENTS">
       <template #title>Snap to {{ snap }}</template>
