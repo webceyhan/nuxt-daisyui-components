@@ -1,10 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = [];
+
+const slots = [{ name: "default", description: "Content of breadcrumbs" }];
+</script>
 
 <template>
   <div>
     <h1 class="text-4xl font-bold mb-8">Breadcrumbs</h1>
 
     <p>Breadcrumbs helps users to navigate through the website.</p>
+
+    <!-- <component-props-table :props="props" /> -->
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Breadcrumbs</template>
