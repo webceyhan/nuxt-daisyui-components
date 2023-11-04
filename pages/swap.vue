@@ -1,4 +1,35 @@
 <script setup lang="ts">
+const props = [
+  {
+    name: "flip",
+    description: "Flip the swap effect",
+    type: "boolean",
+  },
+  {
+    name: "rotate",
+    description: "Rotate the swap effect",
+    type: "boolean",
+  },
+  {
+    name: "modelValue",
+    description: "Whether the swap is on or off",
+    type: "string",
+  },
+];
+
+const slots = [
+  {
+    name: "on",
+    description: "Content for the on state",
+  },
+  {
+    name: "off",
+    description: "Content for the off state",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const swap1 = ref(false);
 </script>
 
@@ -11,6 +42,9 @@ const swap1 = ref(false);
       name.
     </p>
 
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
     <component-preview>
       <template #title>Swap text</template>
 
@@ -22,11 +56,11 @@ const swap1 = ref(false);
 
       <ui-swap v-model="swap1">
         <template #on>
-          <ui-icon name="volume-up" class="text-4xl"/>
+          <ui-icon name="volume-up" class="text-4xl" />
         </template>
 
         <template #off>
-          <ui-icon name="volume-mute" class="text-4xl"/>
+          <ui-icon name="volume-mute" class="text-4xl" />
         </template>
       </ui-swap>
     </component-preview>
@@ -36,11 +70,11 @@ const swap1 = ref(false);
 
       <ui-swap v-model="swap1" rotate>
         <template #on>
-          <ui-icon name="sun-fill" class="text-4xl"/>
+          <ui-icon name="sun-fill" class="text-4xl" />
         </template>
 
         <template #off>
-          <ui-icon name="moon-stars-fill" class="text-4xl"/>
+          <ui-icon name="moon-stars-fill" class="text-4xl" />
         </template>
       </ui-swap>
     </component-preview>
@@ -51,11 +85,11 @@ const swap1 = ref(false);
       <ui-button circle>
         <ui-swap v-model="swap1" rotate>
           <template #on>
-            <ui-icon name="list" class="text-4xl"/>
+            <ui-icon name="list" class="text-4xl" />
           </template>
 
           <template #off>
-            <ui-icon name="x" class="text-4xl"/>
+            <ui-icon name="x" class="text-4xl" />
           </template>
         </ui-swap>
       </ui-button>

@@ -1,6 +1,36 @@
 <script setup lang="ts">
 import { COLORS, SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the checkbox is disabled or not",
+  },
+  {
+    name: "bordered",
+    type: "boolean",
+    description: "Whether the checkbox has a border or not",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const value = ref("");
 </script>
 
@@ -9,6 +39,9 @@ const value = ref("");
     <h1 class="text-4xl font-bold mb-8">File Input</h1>
 
     <p>File Input is a an input field for uploading files.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>File input</template>

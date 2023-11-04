@@ -1,5 +1,45 @@
 <script setup lang="ts">
 import { COLORS, SIZES } from "~/constants";
+
+const props = [
+  {
+    name: "min",
+    type: "string",
+    description: "Minimum value",
+  },
+  {
+    name: "max",
+    type: "string",
+    description: "Maximum value",
+  },
+  {
+    name: "step",
+    type: "string",
+    description: "Step value",
+  },
+  {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the range is disabled or not",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>
@@ -7,6 +47,9 @@ import { COLORS, SIZES } from "~/constants";
     <h1 class="text-4xl font-bold mb-8">Range slider</h1>
 
     <p>Range slider is used to select a value by sliding a handle.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Range</template>

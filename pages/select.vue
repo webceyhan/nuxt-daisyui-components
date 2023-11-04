@@ -1,6 +1,38 @@
 <script setup lang="ts">
 import { COLORS, SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
+  {
+    name: "bordered",
+    type: "boolean",
+    description: "Whether the input has a border or not",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the input is disabled or not",
+  },
+];
+
+const slots = [{ name: "default", description: "Content for options" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const options: string[] = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
 const selected = ref(undefined);
 
@@ -12,6 +44,9 @@ const selectedFruit = ref(undefined);
     <h1 class="text-4xl font-bold mb-8">Select</h1>
 
     <p>Select is used to pick a value from a list of options.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Select</template>

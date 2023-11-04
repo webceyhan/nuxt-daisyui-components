@@ -1,6 +1,38 @@
 <script setup lang="ts">
 import { COLORS, SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the radio button",
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "checked",
+    type: "boolean",
+    description: "Whether the radio button is checked or not",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the radio button is disabled or not",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of button" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const sizeValue = ref("md");
 const colorValue = ref("red");
 </script>
@@ -10,6 +42,9 @@ const colorValue = ref("red");
     <h1 class="text-4xl font-bold mb-8">Radio</h1>
 
     <p>Radio buttons allow the user to select one option from a set.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Radio</template>

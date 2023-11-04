@@ -1,6 +1,41 @@
 <script setup lang="ts">
 import { COLORS, SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
+  {
+    name: "placeholder",
+    type: "string",
+    description: "Placeholder text",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "bordered",
+    type: "boolean",
+    description: "Whether the textarea has a border or not",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the textarea is disabled or not",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const value = ref("");
 </script>
 
@@ -9,6 +44,9 @@ const value = ref("");
     <h1 class="text-4xl font-bold mb-8">Textarea</h1>
 
     <p>Textarea allows users to enter text in multiple lines.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Textarea</template>

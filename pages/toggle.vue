@@ -1,6 +1,31 @@
 <script setup lang="ts">
 import { BRAND_COLORS, SIZES, STATE_COLORS } from "~/constants";
 
+const props = [
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: [...BRAND_COLORS, ...STATE_COLORS],
+  },
+  {
+    name: "checked",
+    type: "boolean",
+    description: "Whether the input is checked or not",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the input is disabled or not",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const checked = ref(true);
 </script>
 
@@ -9,6 +34,9 @@ const checked = ref(true);
     <h1 class="text-4xl font-bold mb-8">Toggle</h1>
 
     <p>Toggle is a checkbox that is styled to look like a switch button.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Toggle</template>

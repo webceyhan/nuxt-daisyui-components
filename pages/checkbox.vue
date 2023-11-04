@@ -1,6 +1,31 @@
 <script setup lang="ts">
 import { COLORS, SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "checked",
+    type: "boolean",
+    description: "Whether the checkbox is checked or not",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the checkbox is disabled or not",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const checked = ref(true);
 </script>
 
@@ -9,6 +34,9 @@ const checked = ref(true);
     <h1 class="text-4xl font-bold mb-8">Checkbox</h1>
 
     <p>Checkboxes are used to select or deselect a value.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Checkbox</template>

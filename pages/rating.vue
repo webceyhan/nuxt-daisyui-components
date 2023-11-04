@@ -1,6 +1,46 @@
 <script setup lang="ts">
 import { SIZES } from "~/constants";
 
+const props = [
+  {
+    name: "modelValue",
+    type: "number",
+    description: "Value of the rating",
+  },
+  {
+    name: "max",
+    type: "number",
+    description: "Maximum value",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "mask",
+    type: "string",
+    description: "Mask to use for the rating",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the rating is disabled or not",
+  },
+  {
+    name: "itemClass",
+    type: "string",
+    description: "Class to apply to each item",
+  },
+  {
+    name: "itemClasses",
+    type: "string[]",
+    description: "Classes to apply to each item",
+  },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const value = ref(3);
 </script>
 
@@ -9,6 +49,9 @@ const value = ref(3);
     <h1 class="text-4xl font-bold mb-8">Rating</h1>
 
     <p>Rating is a set of radio buttons that allow the user to rate something.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Rating</template>
