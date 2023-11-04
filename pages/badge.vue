@@ -1,17 +1,27 @@
 <script setup lang="ts">
-import {
-  BRAND_COLORS,
-  BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
-  SIZES,
-  STATE_COLORS,
-  STATE_ICONS,
-  TEXT_SIZES,
-} from "~/constants";
+import { COLORS, COLORS_WITH_NEUTRAL, SIZES, TEXT_SIZES } from "~/constants";
 
 const props = [
-  { name: "label", type: "string", description: "Label of badge" },
-  { name: "size", type: "string", values: SIZES },
-  { name: "color", type: "string", values: BRAND_COLORS_WITH_NEUTRAL_AND_GHOST },
+  {
+    name: "label",
+    type: "string",
+    description: "Label of badge",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS_WITH_NEUTRAL,
+  },
+  {
+    name: "ghost",
+    type: "boolean",
+    description: "No background",
+  },
   {
     name: "outline",
     type: "boolean",
@@ -19,9 +29,7 @@ const props = [
   },
 ];
 
-const slots = [
-  { name: "default", description: "Content of button" }
-];
+const slots = [{ name: "default", description: "Content of button" }];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -39,44 +47,43 @@ const slots = [
       <template #title>Badge</template>
 
       <ui-badge>Badge</ui-badge>
-      <ui-badge label="With Label" />
+
+      <ui-badge label="With label" />
+
+      <ui-badge>
+        <ui-icon name="info-circle" class="me-2" />
+        With icon
+      </ui-badge>
     </component-preview>
 
     <component-preview>
-      <template #title>Badge with brand colors</template>
-
-      <ui-badge
-        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
-        :label="color"
-        :color="color"
-      />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Outline badge</template>
-
-      <ui-badge v-for="color of BRAND_COLORS" :label="color" :color="color" outline />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Badge sizes</template>
+      <template #title>Sizes</template>
 
       <ui-badge v-for="size of SIZES" label="987,654" :size="size" />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Colors</template>
+
+      <ui-badge v-for="color of COLORS_WITH_NEUTRAL" :label="color" :color="color" />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Outlined</template>
+
+      <ui-badge v-for="(color, i) of COLORS" :label="color" :color="color" outline />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Ghost (no background)</template>
+
+      <ui-badge label="ghost badge" ghost />
     </component-preview>
 
     <component-preview>
       <template #title>Empty badge</template>
 
       <ui-badge v-for="size of SIZES" :size="size" color="primary" />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Badge with state colors</template>
-
-      <ui-badge v-for="(color, i) of STATE_COLORS" :color="color" class="gap-1">
-        <ui-icon :name="STATE_ICONS[i]" />
-        {{ color }}
-      </ui-badge>
     </component-preview>
 
     <component-preview>

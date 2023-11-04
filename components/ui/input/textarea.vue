@@ -15,7 +15,6 @@ export const COLOR_CLASS_MAP = {
   success: "textarea-success",
   warning: "textarea-warning",
   error: "textarea-error",
-  ghost: "textarea-ghost",
 };
 </script>
 
@@ -25,6 +24,7 @@ export interface Props {
   placeholder?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
+  ghost?: boolean;
   bordered?: boolean;
   disabled?: boolean;
 }
@@ -53,6 +53,7 @@ const valueProxy = computed({
       SIZE_CLASS_MAP[size],
       COLOR_CLASS_MAP[color],
       {
+        'textarea-ghost': ghost,
         'textarea-bordered': bordered,
       },
     ]"

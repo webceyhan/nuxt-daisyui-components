@@ -3,6 +3,11 @@ import { COLORS, SIZES } from "~/constants";
 
 const props = [
   {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
+  {
     name: "size",
     type: "string",
     values: SIZES,
@@ -13,9 +18,9 @@ const props = [
     values: COLORS,
   },
   {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the input",
+    name: "ghost",
+    type: "boolean",
+    description: "No background",
   },
   {
     name: "bordered",
@@ -50,41 +55,11 @@ const value = ref("");
     </component-preview>
 
     <component-preview>
-      <template #title>Text input with border</template>
-
-      <ui-text-input v-model="value" placeholder="Type here" class="w-full" bordered />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Ghost (no background)</template>
-
-      <ui-text-input
-        v-model="value"
-        placeholder="Type here"
-        class="w-full"
-        color="ghost"
-      />
-    </component-preview>
-
-    <component-preview>
       <template #title>With form-control and labels</template>
 
       <ui-form-control label="What is your name?" alt="Alt label" class="w-full">
         <ui-text-input v-model="value" class="w-full" bordered />
       </ui-form-control>
-    </component-preview>
-
-    <component-preview v-for="color of COLORS">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
-
-      <ui-text-input
-        :color="color"
-        v-model="value"
-        placeholder="Type here"
-        class="w-full"
-      />
     </component-preview>
 
     <component-preview>
@@ -100,6 +75,30 @@ const value = ref("");
           bordered
         />
       </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title> Colors </template>
+
+      <ui-text-input
+        v-for="color of COLORS"
+        :color="color"
+        v-model="value"
+        :placeholder="color"
+        class="w-full my-2"
+      />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Ghost (no background)</template>
+
+      <ui-text-input v-model="value" placeholder="Type here" class="w-full" ghost />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Bordered</template>
+
+      <ui-text-input v-model="value" placeholder="Type here" class="w-full" bordered />
     </component-preview>
 
     <component-preview>

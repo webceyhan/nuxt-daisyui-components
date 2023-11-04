@@ -1,29 +1,67 @@
 <script setup lang="ts">
-import {
-  BRAND_COLORS,
-  BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
-  SHAPES,
-  SIZES,
-  STATE_COLORS,
-  STATE_ICONS,
-} from "~/constants";
+import { COLORS, COLORS_WITH_NEUTRAL, SHAPES, SIZES } from "~/constants";
 
 const props = [
-  { name: "label", type: "string", description: "Label of button" },
-  { name: "href", type: "string", description: "Url of button to render as link" },
-  { name: "icon", type: "string", description: "Icon at start of button" },
-  { name: "icon-end", type: "string", description: "Icon at end of button" },
-  { name: "size", type: "string", values: SIZES },
-  { name: "shape", type: "string", values: SHAPES },
-  { name: "color", type: "string", values: BRAND_COLORS_WITH_NEUTRAL_AND_GHOST },
+  {
+    name: "label",
+    type: "string",
+    description: "Label of button",
+  },
+  {
+    name: "href",
+    type: "string",
+    description: "Url of button to render as link",
+  },
+  {
+    name: "icon",
+    type: "string",
+    description: "Icon at start of button",
+  },
+  {
+    name: "icon-end",
+    type: "string",
+    description: "Icon at end of button",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "shape",
+    type: "string",
+    values: SHAPES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS_WITH_NEUTRAL,
+  },
+  {
+    name: "ghost",
+    type: "boolean",
+    description: "No background",
+  },
   {
     name: "outline",
     type: "boolean",
-    description: "Transparent Button with colored border",
+    description: "Transparent button with colored border",
   },
-  { name: "active", type: "boolean", description: "Force button to show active state" },
-  { name: "wide", type: "boolean", description: "Wide button (more horizontal padding)" },
-  { name: "block", type: "boolean", description: "Full width button" },
+  {
+    name: "active",
+    type: "boolean",
+    description: "Force button to show active state",
+  },
+  {
+    name: "wide",
+    type: "boolean",
+    description: "Wide button (more horizontal padding)",
+  },
+  {
+    name: "block",
+    type: "boolean",
+    description: "Full width button",
+  },
 ];
 
 const slots = [
@@ -63,42 +101,25 @@ const slots = [
     <component-preview>
       <template #title>Colors</template>
 
-      <ui-button
-        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
-        :label="color"
-        :color="color"
-      />
-
-      <div class="w-full" />
-
-      <ui-button v-for="color of STATE_COLORS" :label="color" :color="color" />
+      <ui-button v-for="color of COLORS_WITH_NEUTRAL" :label="color" :color="color" />
     </component-preview>
 
     <component-preview>
       <template #title>Outlined</template>
 
-      <ui-button v-for="color of BRAND_COLORS" :label="color" :color="color" outline />
-
-      <div class="w-full" />
-
-      <ui-button
-        v-for="(color, i) of STATE_COLORS"
-        :label="color"
-        :color="color"
-        :icon="STATE_ICONS[i]"
-        outline
-      />
+      <ui-button v-for="(color, i) of COLORS" :label="color" :color="color" outline />
     </component-preview>
 
     <component-preview>
       <template #title>Active</template>
 
-      <ui-button
-        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
-        :label="color"
-        :color="color"
-        active
-      />
+      <ui-button v-for="color of COLORS" :label="color" :color="color" active />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Ghost (no background)</template>
+
+      <ui-button label="ghost button" ghost />
     </component-preview>
 
     <component-preview>

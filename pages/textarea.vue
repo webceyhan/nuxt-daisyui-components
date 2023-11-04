@@ -23,6 +23,11 @@ const props = [
     values: COLORS,
   },
   {
+    name: "ghost",
+    type: "boolean",
+    description: "No background",
+  },
+  {
     name: "bordered",
     type: "boolean",
     description: "Whether the textarea has a border or not",
@@ -55,31 +60,11 @@ const value = ref("");
     </component-preview>
 
     <component-preview>
-      <template #title>Textarea with border</template>
-
-      <ui-textarea v-model="value" placeholder="Bio" class="w-full" bordered />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Ghost (no background)</template>
-
-      <ui-textarea v-model="value" placeholder="Bio" class="w-full" color="ghost" />
-    </component-preview>
-
-    <component-preview>
       <template #title>With form-control and labels</template>
 
       <ui-form-control label="Your bio" alt="Alt label" class="w-full">
         <ui-textarea v-model="value" class="w-full" bordered />
       </ui-form-control>
-    </component-preview>
-
-    <component-preview v-for="color of COLORS">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
-
-      <ui-textarea :color="color" v-model="value" placeholder="Bio" class="w-full" />
     </component-preview>
 
     <component-preview>
@@ -95,6 +80,30 @@ const value = ref("");
           bordered
         />
       </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title> Colors </template>
+
+      <ui-textarea
+        v-for="color of COLORS"
+        :color="color"
+        v-model="value"
+        :placeholder="color"
+        class="w-full my-2"
+      />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Ghost (no background)</template>
+
+      <ui-textarea v-model="value" placeholder="Bio" class="w-full" ghost />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Bordered</template>
+
+      <ui-textarea v-model="value" placeholder="Bio" class="w-full" bordered />
     </component-preview>
 
     <component-preview>

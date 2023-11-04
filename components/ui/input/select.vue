@@ -15,15 +15,15 @@ export const COLOR_CLASS_MAP = {
   success: "select-success",
   warning: "select-warning",
   error: "select-error",
-  ghost: "select-ghost",
 };
 </script>
 
 <script setup lang="ts">
 export interface Props {
+  modelValue?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
-  modelValue?: string;
+  ghost?: boolean;
   bordered?: boolean;
   disabled?: boolean;
 }
@@ -43,6 +43,7 @@ withDefaults(defineProps<Props>(), {
       SIZE_CLASS_MAP[size],
       COLOR_CLASS_MAP[color],
       {
+        'select-ghost': ghost,
         'select-bordered': bordered,
       },
     ]"

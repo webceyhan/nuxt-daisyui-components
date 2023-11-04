@@ -16,7 +16,6 @@ export const COLOR_CLASS_MAP = {
   warning: "badge-warning",
   error: "badge-error",
   neutral: "badge-neutral",
-  ghost: "badge-ghost",
 };
 </script>
 
@@ -25,6 +24,7 @@ export interface Props {
   label?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
+  ghost?: boolean;
   outline?: boolean;
 }
 
@@ -41,6 +41,7 @@ withDefaults(defineProps<Props>(), {
       SIZE_CLASS_MAP[size],
       COLOR_CLASS_MAP[color],
       {
+        'badge-ghost': ghost,
         'badge-outline': outline,
       },
     ]"

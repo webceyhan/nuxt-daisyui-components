@@ -15,7 +15,6 @@ export const COLOR_CLASS_MAP = {
   success: "input-success",
   warning: "input-warning",
   error: "input-error",
-  ghost: "input-ghost",
 };
 </script>
 
@@ -25,6 +24,7 @@ export interface Props {
   placeholder?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
+  ghost?: boolean;
   bordered?: boolean;
   disabled?: boolean;
 }
@@ -45,6 +45,7 @@ withDefaults(defineProps<Props>(), {
       SIZE_CLASS_MAP[size],
       COLOR_CLASS_MAP[color],
       {
+        'input-ghost': ghost,
         'input-bordered': bordered,
       },
     ]"

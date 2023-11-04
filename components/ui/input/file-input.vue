@@ -15,17 +15,17 @@ export const COLOR_CLASS_MAP = {
   success: "file-input-success",
   warning: "file-input-warning",
   error: "file-input-error",
-  ghost: "file-input-ghost",
 };
 </script>
 
 <script setup lang="ts">
 export interface Props {
+  modelValue?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
-  modelValue?: string;
-  disabled?: boolean;
+  ghost?: boolean;
   bordered?: boolean;
+  disabled?: boolean;
 }
 
 defineEmits(["update:modelValue"]);
@@ -44,6 +44,7 @@ withDefaults(defineProps<Props>(), {
       SIZE_CLASS_MAP[size],
       COLOR_CLASS_MAP[color],
       {
+        'file-input-ghost': ghost,
         'file-input-bordered': bordered,
       },
     ]"

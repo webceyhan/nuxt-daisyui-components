@@ -3,9 +3,9 @@ import { COLORS, SIZES } from "~/constants";
 
 const props = [
   {
-    name: "color",
+    name: "modelValue",
     type: "string",
-    values: COLORS,
+    description: "Value of the input",
   },
   {
     name: "size",
@@ -13,19 +13,24 @@ const props = [
     values: SIZES,
   },
   {
-    name: "modelValue",
+    name: "color",
     type: "string",
-    description: "Value of the input",
+    values: COLORS,
   },
   {
-    name: "disabled",
+    name: "ghost",
     type: "boolean",
-    description: "Whether the checkbox is disabled or not",
+    description: "No background",
   },
   {
     name: "bordered",
     type: "boolean",
     description: "Whether the checkbox has a border or not",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the checkbox is disabled or not",
   },
 ];
 
@@ -51,31 +56,11 @@ const value = ref("");
     </component-preview>
 
     <component-preview>
-      <template #title>File input with border</template>
-
-      <ui-file-input bordered />
-    </component-preview>
-
-    <component-preview>
-      <template #title>Ghost (no background)</template>
-
-      <ui-file-input color="ghost" />
-    </component-preview>
-
-    <component-preview>
       <template #title>With form-control and labels</template>
 
       <ui-form-control label="Pick a file" alt="alt label">
         <ui-file-input bordered />
       </ui-form-control>
-    </component-preview>
-
-    <component-preview v-for="color of COLORS">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
-
-      <ui-file-input :color="color" bordered />
     </component-preview>
 
     <component-preview>
@@ -84,6 +69,24 @@ const value = ref("");
       <div class="flex flex-col items-center gap-2">
         <ui-file-input v-for="size of SIZES" :size="size" bordered />
       </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title> Colors </template>
+
+      <ui-file-input v-for="color of COLORS" :color="color" class="my-2" bordered />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Ghost (no background)</template>
+
+      <ui-file-input ghost />
+    </component-preview>
+
+    <component-preview>
+      <template #title>Bordered</template>
+
+      <ui-file-input bordered />
     </component-preview>
 
     <component-preview>

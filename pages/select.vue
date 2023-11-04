@@ -3,6 +3,11 @@ import { COLORS, SIZES } from "~/constants";
 
 const props = [
   {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
+  {
     name: "size",
     type: "string",
     values: SIZES,
@@ -13,9 +18,9 @@ const props = [
     values: COLORS,
   },
   {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the input",
+    name: "ghost",
+    type: "boolean",
+    description: "No background",
   },
   {
     name: "bordered",
@@ -62,24 +67,16 @@ const selectedFruit = ref(undefined);
     </component-preview>
 
     <component-preview>
-      <template #title>Select with border</template>
+      <template #title> Sizes</template>
 
-      <ui-select bordered>
-        <option disabled selected>Who shot first?</option>
-        <option>Han Solo</option>
-        <option>Greedo</option>
-      </ui-select>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Ghost (no background)</template>
-
-      <ui-select color="ghost">
-        <option disabled selected>Pick the best JS framework</option>
-        <option>Svelte</option>
-        <option>Vue</option>
-        <option>React</option>
-      </ui-select>
+      <div class="flex flex-col w-full items-center gap-2">
+        <ui-select v-for="size of SIZES" :size="size" bordered v-model="selectedFruit">
+          <option disabled selected>{{ size }}</option>
+          <option v-for="opt of ['apple', 'orange', 'tomato']" :value="opt">
+            {{ size }} {{ opt }}
+          </option>
+        </ui-select>
+      </div>
     </component-preview>
 
     <component-preview>
@@ -101,13 +98,11 @@ const selectedFruit = ref(undefined);
       </ui-form-control>
     </component-preview>
 
-    <component-preview v-for="color of COLORS">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
+    <component-preview>
+      <template #title> Colors </template>
 
-      <ui-select :color="color">
-        <option disabled selected>What is the best TV show?</option>
+      <ui-select v-for="color of COLORS" :color="color" class="my-2">
+        <option disabled selected>{{ color }}</option>
         <option>Game of Thrones</option>
         <option>Lost</option>
         <option>Breaking Bad</option>
@@ -116,16 +111,24 @@ const selectedFruit = ref(undefined);
     </component-preview>
 
     <component-preview>
-      <template #title> Sizes</template>
+      <template #title>Ghost (no background)</template>
 
-      <div class="flex flex-col w-full items-center gap-2">
-        <ui-select v-for="size of SIZES" :size="size" bordered v-model="selectedFruit">
-          <option disabled selected>{{ size }}</option>
-          <option v-for="opt of ['apple', 'orange', 'tomato']" :value="opt">
-            {{ size }} {{ opt }}
-          </option>
-        </ui-select>
-      </div>
+      <ui-select ghost>
+        <option disabled selected>Pick the best JS framework</option>
+        <option>Svelte</option>
+        <option>Vue</option>
+        <option>React</option>
+      </ui-select>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Bordered</template>
+
+      <ui-select bordered>
+        <option disabled selected>Who shot first?</option>
+        <option>Han Solo</option>
+        <option>Greedo</option>
+      </ui-select>
     </component-preview>
 
     <component-preview>

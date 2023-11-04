@@ -48,16 +48,13 @@ export const TEXT_COLORS: string[] = [
 
 export const COLORS: Color[] = [...BRAND_COLORS, ...STATE_COLORS];
 
-// for form input elements
-export const BRAND_COLORS_WITH_GHOST: any[] = [...BRAND_COLORS, 'ghost'];
-
-// for links and custom elements
-export const BRAND_COLORS_WITH_NEUTRAL: any[] = [...BRAND_COLORS, 'neutral'];
-
-// for hoverable elements (badge, button, etc)
-export const BRAND_COLORS_WITH_NEUTRAL_AND_GHOST: any[] = [
-    ...BRAND_COLORS_WITH_NEUTRAL,
-    'ghost',
+/**
+ * button, badge, link, step
+ */
+export const COLORS_WITH_NEUTRAL: any[] = [
+    'default',
+    'neutral',
+    ...COLORS.slice(1),
 ];
 
 export const COLLAPSE_INDICATORS: Indicator[] = ['none', 'arrow', 'plus'];

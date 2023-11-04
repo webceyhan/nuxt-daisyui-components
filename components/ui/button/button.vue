@@ -16,7 +16,6 @@ export const COLOR_CLASS_MAP = {
   warning: "btn-warning",
   error: "btn-error",
   neutral: "btn-neutral",
-  ghost: "btn-ghost",
 };
 
 export const SHAPE_CLASS_MAP = {
@@ -35,6 +34,7 @@ export interface Props {
   size?: keyof typeof SIZE_CLASS_MAP;
   shape?: keyof typeof SHAPE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
+  ghost?: boolean;
   outline?: boolean;
   active?: boolean;
   wide?: boolean;
@@ -59,6 +59,7 @@ withDefaults(defineProps<Props>(), {
       SHAPE_CLASS_MAP[shape],
       COLOR_CLASS_MAP[color],
       {
+        'btn-ghost': ghost,
         'btn-outline': outline,
         'btn-active': active,
         'btn-wide': wide,
