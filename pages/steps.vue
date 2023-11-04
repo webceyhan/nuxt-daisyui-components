@@ -1,4 +1,28 @@
 <script setup lang="ts">
+import { COLORS } from "~/constants";
+
+const props = [
+  {
+    name: "vertical",
+    type: "boolean",
+    description: "Display steps vertically",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the steps" }];
+
+const itemProps = [
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+];
+
+const itemSlots = [{ name: "default", description: "Content of the step" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const steps: any[] = [
   { label: "Register", color: "primary" },
   { label: "Choose plan", color: "primary" },
@@ -42,6 +66,13 @@ const scrollableColors: any = {
     <h1 class="text-4xl font-bold mb-8">Steps</h1>
 
     <p>Steps can be used to show a list of steps in a process.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Stat Item</h3>
+    <component-props-table :props="itemProps" />
+    <component-slots-table :slots="itemSlots" />
 
     <component-preview>
       <template #title>Horizontal</template>
