@@ -1,5 +1,110 @@
 <script setup lang="ts">
 import { SIZES } from "~/constants";
+const props = [
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "horizontal",
+    type: "boolean",
+    description: "Show menu horizontally",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of menu" }];
+
+const titleProps = [
+  {
+    name: "label",
+    type: "string",
+    description: "Label of menu title",
+  },
+];
+
+const titleSlots = [{ name: "default", description: "Content of menu title" }];
+
+const itemProps = [
+  {
+    name: "label",
+    type: "string",
+    description: "Label of menu item",
+  },
+  {
+    name: "href",
+    type: "string",
+    description: "Link of menu item",
+  },
+  {
+    name: "icon",
+    type: "string",
+    description: "Icon of menu item",
+  },
+  {
+    name: "badge",
+    type: "string",
+    description: "Badge of menu item",
+  },
+  {
+    name: "tooltip",
+    type: "string",
+    description: "Tooltip of menu item",
+  },
+  {
+    name: "active",
+    type: "boolean",
+    description: "Active state of menu item",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Disabled state of menu item",
+  },
+];
+
+const itemSlots = [
+  { name: "default", description: "Content of menu item" },
+  { name: "icon", description: "Icon of menu item" },
+  { name: "label", description: "Label of menu item" },
+  { name: "badge", description: "Badge of menu item" },
+];
+
+const subProps = [
+  {
+    name: "title",
+    type: "string",
+    description: "Title of submenu",
+  },
+  {
+    name: "href",
+    type: "string",
+    description: "Link of submenu",
+  },
+  {
+    name: "icon",
+    type: "string",
+    description: "Icon of submenu",
+  },
+  {
+    name: "open",
+    type: "boolean",
+    description: "Open state of submenu",
+  },
+  {
+    name: "collapsible",
+    type: "boolean",
+    description: "Collapsible state of submenu",
+  },
+];
+
+const subSlots = [
+  { name: "default", description: "Content of submenu" },
+  { name: "icon", description: "Icon of submenu" },
+  { name: "title", description: "Title of submenu" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
 const items = [
   { label: "Home", icon: "house" },
@@ -59,6 +164,21 @@ const megeMenu = [
     <h1 class="text-4xl font-bold mb-8">Menu</h1>
 
     <p>Menu is used to display a list of links vertically or horizontally.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Menu title</h3>
+    <component-props-table :props="titleProps" />
+    <component-slots-table :slots="titleSlots" />
+
+    <h3 class="text-lg font-bold">Menu item</h3>
+    <component-props-table :props="itemProps" />
+    <component-slots-table :slots="itemSlots" />
+
+    <h3 class="text-lg font-bold">Submenu</h3>
+    <component-props-table :props="subProps" />
+    <component-slots-table :slots="subSlots" />
 
     <component-preview>
       <template #title>Menu</template>
