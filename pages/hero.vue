@@ -1,4 +1,26 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = [
+  {
+    name: "overlayUrl",
+    type: "string",
+    description: "URL of the overlay image",
+  },
+  {
+    name: "overlayClass",
+    type: "string",
+    description: "Class of the overlay image",
+  },
+  {
+    name: "contentClass",
+    type: "string",
+    description: "Class of the content",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of hero" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 <template>
   <div>
@@ -8,6 +30,9 @@
       Hero is a component for displaying a large box or image with a title and
       description.
     </p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Centered hero</template>

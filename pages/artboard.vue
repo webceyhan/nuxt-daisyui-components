@@ -7,8 +7,16 @@ import {
 const SIZES = Object.keys(ARTBOARD_SIZE_CLASS_MAP) as ArtboardSize[];
 
 const props = [
-  { name: "size", type: "string", values: SIZES },
-  { name: "horizontal", type: "boolean", description: "Shows horizontal view" },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "horizontal",
+    type: "boolean",
+    description: "Shows horizontal view",
+  },
 ];
 
 const slots = [{ name: "default", description: "Content of artboard" }];

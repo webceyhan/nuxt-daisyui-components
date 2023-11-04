@@ -1,4 +1,32 @@
 <script setup lang="ts">
+import { ALIGNMENTS, VERTICAL_ALIGNMENTS } from "~/constants";
+
+const props = [
+  {
+    name: "item-class",
+    type: "string",
+    description: "Class for the indicator item",
+  },
+  {
+    name: "alignment",
+    type: "string",
+
+    values: ALIGNMENTS,
+  },
+  {
+    name: "vertical-alignment",
+    type: "string",
+    values: VERTICAL_ALIGNMENTS,
+  },
+];
+
+const slots = [
+  { name: "default", description: "Content of indicator" },
+  { name: "item", description: "Content of indicator item" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const positions = [
   {
     label: "indicator-top (default) indicator-start",
@@ -53,6 +81,9 @@ const positions = [
     <h1 class="text-4xl font-bold mb-8">Indicator</h1>
 
     <p>Indicators are used to place an element on the corner of another element.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Empty badge as indicator</template>

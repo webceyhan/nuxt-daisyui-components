@@ -1,4 +1,29 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = [
+  {
+    name: "id",
+    type: "string",
+    description: "ID of drawer",
+  },
+  {
+    name: "asideClass",
+    type: "string",
+    description: "Class of aside element",
+  },
+  {
+    name: "alignEnd",
+    type: "boolean",
+    description: "Align drawer to right side of page",
+  },
+];
+
+const slots = [
+  { name: "default", description: "Content of drawer" },
+  { name: "aside", description: "Content of aside element" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 <template>
   <div>
@@ -8,6 +33,9 @@
       Drawer is a grid layout that can show/hide a sidebar on the left or right side of
       the page.
     </p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Drawer </template>

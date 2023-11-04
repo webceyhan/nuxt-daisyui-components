@@ -1,10 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const slots = [{ name: "default", description: "Content of stack" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 <template>
   <div>
     <h1 class="text-4xl font-bold mb-8">Stack</h1>
 
     <p>Stack visually puts elements on top of each other.</p>
+
+    <!-- <component-props-table :props="props" /> -->
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>3 divs without stack</template>

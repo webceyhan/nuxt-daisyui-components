@@ -1,4 +1,26 @@
 <script setup lang="ts">
+const props = [
+  {
+    name: "shape",
+    type: "Mask",
+    description: "Shape of the mask",
+  },
+  {
+    name: "firstHalf",
+    type: "boolean",
+    description: "Display only the first half of the mask",
+  },
+  {
+    name: "lastHalf",
+    type: "boolean",
+    description: "Display only the last half of the mask",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the mask" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const shapes = [
   "squircle",
   "heart",
@@ -27,6 +49,9 @@ const shapes = [
     <h1 class="text-4xl font-bold mb-8">Mask</h1>
 
     <p>Mask crops the content of the element to common shapes.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview v-for="shape of shapes">
       <template #title>{{ shape }}</template>

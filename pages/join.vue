@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = [
+  {
+    name: "vertical",
+    type: "boolean",
+    description: "Display items vertically",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the group" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 <template>
   <div>
@@ -9,6 +21,9 @@
       inputs, or any other element. Join applies border radius to the first and last item.
       Join can be used to create a horizontal or vertical list of items.
     </p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Join</template>

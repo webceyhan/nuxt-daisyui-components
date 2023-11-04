@@ -1,4 +1,18 @@
 <script setup lang="ts">
+const props = [
+  {
+    name: "center",
+    type: "boolean",
+    description: "Center the content of the footer",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of footer" }];
+
+const titleSlots = [{ name: "default", description: "Content of title" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const navs = [
   {
     title: "Services",
@@ -63,6 +77,12 @@ const longNavs = [
     <h1 class="text-4xl font-bold mb-8">Footer</h1>
 
     <p>Footer can contain logo, copyright notice, and links to other pages.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Footer Title</h3>
+    <component-slots-table :slots="titleSlots" />
 
     <component-preview>
       <template #title>Footer</template>
@@ -253,10 +273,12 @@ const longNavs = [
         </nav>
       </ui-footer>
 
-      <ui-footer class="px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <ui-footer
+        class="px-10 py-4 border-t bg-base-200 text-base-content border-base-300"
+      >
         <aside class="items-center grid-flow-col">
           <ui-icon name="hash" class="text-4xl" />
-          <p>ACME Industries Ltd. <br/>Providing reliable tech since 1992</p>
+          <p>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
         </aside>
 
         <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
