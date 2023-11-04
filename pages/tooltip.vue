@@ -1,7 +1,37 @@
 <script setup lang="ts">
-import { COLORS } from "~/constants";
+import { COLORS, POSITIONS } from "~/constants";
 
-const positions: any[] = ["top", "bottom", "left", "right"];
+const props = [
+  {
+    name: "as",
+    type: "string",
+    description: "The element to render",
+  },
+  {
+    name: "text",
+    type: "string",
+    description: "The text to show in the tooltip",
+  },
+  {
+    name: "open",
+    type: "boolean",
+    description: "Whether the tooltip should be open",
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "position",
+    type: "string",
+    values: POSITIONS,
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the tooltip" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>
@@ -9,6 +39,9 @@ const positions: any[] = ["top", "bottom", "left", "right"];
     <h1 class="text-4xl font-bold mb-8">Tooltip</h1>
 
     <p>Tooltip can be used to show a message when hovering over an element.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Tooltip</template>
@@ -32,7 +65,7 @@ const positions: any[] = ["top", "bottom", "left", "right"];
 
     <h3 class="text-2xl">Positions</h3>
 
-    <component-preview v-for="position of positions">
+    <component-preview v-for="position of POSITIONS">
       <template #title>
         <span class="capitalize">{{ position }}</span>
       </template>
