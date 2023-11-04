@@ -1,5 +1,22 @@
 <script setup lang="ts">
 import { COLORS } from "~/constants";
+
+const props = [
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
+  {
+    name: "hover",
+    type: "boolean",
+    description: "Show underline only on hover",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of link" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>
@@ -7,6 +24,9 @@ import { COLORS } from "~/constants";
     <h1 class="text-4xl font-bold mb-8">Link</h1>
 
     <p>Link adds the missing underline style to links.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Link</template>
