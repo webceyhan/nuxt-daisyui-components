@@ -1,10 +1,21 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const slots = [
+  { name: "default", description: "Content of browser mockup" },
+  { name: "toolbar", description: "Content of toolbar" },
+  { name: "input", description: "Content of input" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+</script>
 
 <template>
   <div>
     <h1 class="text-4xl font-bold mb-8">Browser mockup</h1>
 
     <p>Browser mockup shows a box that looks like a browser window.</p>
+
+    <!-- <component-props-table :props="props" /> -->
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>browser mockup with border</template>
