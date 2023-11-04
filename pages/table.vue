@@ -2,6 +2,33 @@
 import { SIZES } from "~/constants";
 import { records, recordsWithVisuals, recordsXs, pinnedRows } from "../data/table-data";
 
+const props = [
+  {
+    name: "size",
+    type: "Size",
+    values: SIZES,
+  },
+  {
+    name: "zebra",
+    type: "boolean",
+    description: "Whether the table should have zebra striping",
+  },
+  {
+    name: "pin-rows",
+    type: "boolean",
+    description: "Whether the table should pin rows",
+  },
+  {
+    name: "pin-cols",
+    type: "boolean",
+    description: "Whether the table should pin columns",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the table" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const columns = (rows: any[]) => Object.keys(rows[0]);
 
 const tagFor = (key: string) => (key === "id" ? "th" : "td");
@@ -12,6 +39,9 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
     <h1 class="text-4xl font-bold mb-8">Table</h1>
 
     <p>Table can be used to show a list of data in a table format.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Table</template>
