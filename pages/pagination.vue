@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { SIZES } from "~/constants";
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
 
 <template>
@@ -10,6 +12,9 @@ import { SIZES } from "~/constants";
       Pagination is a group of buttons that allow the user to navigate between a set of
       related content.
     </p>
+
+    <!-- <component-props-table :props="props" /> -->
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Pagination with an active button</template>
@@ -33,9 +38,9 @@ import { SIZES } from "~/constants";
       <template #title>With a disabled button</template>
 
       <ui-join>
-        <ui-button v-for="i of [1, 2, '...', 99, 100]" :disabled="i == '...'">{{
-          i
-        }}</ui-button>
+        <ui-button v-for="i of [1, 2, '...', 99, 100]" :disabled="i == '...'">
+          {{ i }}
+        </ui-button>
       </ui-join>
     </component-preview>
 
