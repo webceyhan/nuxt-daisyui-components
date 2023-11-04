@@ -1,4 +1,23 @@
 <script setup lang="ts">
+import { ALIGNMENTS, VERTICAL_ALIGNMENTS } from "~/constants";
+
+const props = [
+  {
+    name: "alignment",
+    type: "string",
+    values: ALIGNMENTS,
+  },
+  {
+    name: "vertical-alignment",
+    type: "string",
+    values: VERTICAL_ALIGNMENTS,
+  },
+];
+
+const slots = [{ name: "default", description: "Content of toast" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const positions = [
   {
     label: "toast-top toast-start",
@@ -54,6 +73,9 @@ const positions = [
 
     <p>Toast is a wrapper to stack elements, positioned on the corner of page.</p>
 
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
     <component-preview>
       <template #title>toast with alert inside</template>
 
@@ -69,7 +91,7 @@ const positions = [
 
       <div class="w-full h-64 relative">
         <ui-toast
-        class="absolute"
+          class="absolute"
           :alignment="(position.alignment as any)"
           :vertical-alignment="(position.verticalAlignment as any)"
         >
@@ -82,7 +104,5 @@ const positions = [
         </ui-toast>
       </div>
     </component-preview>
-
-
   </div>
 </template>
