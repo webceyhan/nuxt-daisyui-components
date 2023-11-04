@@ -1,7 +1,27 @@
 <script setup lang="ts">
+import { LOADING_ANIMATION_CLASS_MAP } from "~/components/ui/loading/loading.vue";
 import { SIZES, TEXT_COLORS } from "~/constants";
 
-const animations: any[] = ["spinner", "dots", "ring", "ball", "bars", "infinity"];
+const ANIMATIONS = Object.keys(LOADING_ANIMATION_CLASS_MAP);
+
+const props = [
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "animation",
+    type: "string",
+    values: ANIMATIONS,
+  },
+];
+
+
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
+const animations: any[] = ANIMATIONS;
 </script>
 
 <template>
@@ -9,6 +29,9 @@ const animations: any[] = ["spinner", "dots", "ring", "ball", "bars", "infinity"
     <h1 class="text-4xl font-bold mb-8">Loading</h1>
 
     <p>Loading shows an animation to indicate that something is loading.</p>
+
+    <component-props-table :props="props" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview v-for="animation of animations">
       <template #title>Loading {{ animation }}</template>
