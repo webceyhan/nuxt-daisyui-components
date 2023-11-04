@@ -1,6 +1,21 @@
 <script setup lang="ts">
 import { SIZES, TEXT_COLORS } from "~/constants";
 
+const props = [{ name: "size", type: "string", values: SIZES }];
+
+const slots = [{ name: "default", description: "Content of navigation" }];
+
+const itemProps = [
+  { name: "icon", type: "string", description: "Icon name" },
+  { name: "label", type: "string", description: "Label text" },
+  { name: "active", type: "boolean", description: "Active state" },
+  { name: "disabled", type: "boolean", description: "Disabled state" },
+];
+
+const itemSlots = [{ name: "default", description: "Content of navigation item" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const items = [
   { label: "Home", icon: "house" },
   { label: "Warnings", icon: "info-circle", active: true },
@@ -19,6 +34,13 @@ const customColors = [
     <h1 class="text-4xl font-bold mb-8">Bottom navigation</h1>
 
     <p>Bottom navigation bar allows navigation between primary screens.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Bottom navigation item</h3>
+    <component-props-table :props="itemProps" />
+    <component-slots-table :slots="itemSlots" />
 
     <component-preview>
       <template #title>Bottom Navigation</template>
