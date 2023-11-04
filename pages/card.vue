@@ -1,10 +1,59 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = [
+  {
+    name: "compact",
+    type: "boolean",
+    description: "Reduce the padding of the card body",
+  },
+  {
+    name: "bodyClass",
+    type: "string",
+    description: "Add a class to the card body",
+  },
+  {
+    name: "coverOverlay",
+    type: "boolean",
+    description: "Make the cover image full width",
+  },
+  {
+    name: "coverAside",
+    type: "boolean",
+    description: "Make the cover image on the side",
+  },
+];
+
+const slots = [
+  {
+    name: "cover",
+    description: "Cover image",
+  },
+  {
+    name: "cover-bottom",
+    description: "Cover image at the bottom",
+  },
+  {
+    name: "title",
+    description: "Card title",
+  },
+  {
+    name: "actions",
+    description: "Card actions",
+  },
+  {
+    name: "default",
+    description: "Card content",
+  },
+];
+</script>
 
 <template>
   <div>
     <h1 class="text-4xl font-bold mb-8">Card</h1>
 
     <p>Cards are used to group and display content in a way that is easily readable.</p>
+
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Card</template>
