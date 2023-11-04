@@ -1,4 +1,16 @@
 <script setup lang="ts">
+const props = [
+  {
+    name: "value",
+    type: "number",
+    description: "Value of the countdown between 0 and 99",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the countdown" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const value = ref(60);
 
 onMounted(() => {
@@ -14,10 +26,8 @@ onMounted(() => {
 
     <br />
 
-    <p>
-      You need to change to `--value` CSS variable using JS. Value must be a number
-      between 0 and 99.
-    </p>
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
 
     <component-preview>
       <template #title>Countdown</template>
