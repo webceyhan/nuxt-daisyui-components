@@ -1,4 +1,20 @@
 <script setup lang="ts">
+import { ALIGNMENTS } from "~/constants";
+
+const slots = [{ name: "default", description: "Content of navbar" }];
+
+const sectionProps = [
+  {
+    name: "alignment",
+    type: "string",
+    values: ALIGNMENTS,
+  },
+];
+
+const sectionSlots = [{ name: "default", description: "Content of navbar section" }];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const colors = [
   "bg-neutral text-neutral-content",
   "bg-base-300",
@@ -11,6 +27,13 @@ const colors = [
     <h1 class="text-4xl font-bold mb-8">Navbar</h1>
 
     <p>Navbar is used to show a navigation bar on the top of the page.</p>
+
+    <!-- <component-props-table :props="props" /> -->
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Navbar section</h3>
+    <component-props-table :props="sectionProps" />
+    <component-slots-table :slots="sectionSlots" />
 
     <component-preview>
       <template #title>Navbar with title only</template>
