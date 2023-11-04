@@ -1,7 +1,5 @@
 <script lang="ts">
-import { Alignment, ClassMap } from "../types";
-
-export const NAVBAR_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+export const NAVBAR_ALIGNMENT_CLASS_MAP = {
   start: "navbar-start",
   center: "navbar-center",
   end: "navbar-end",
@@ -9,8 +7,8 @@ export const NAVBAR_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  alignment?: Alignment;
+export interface Props {
+  alignment?: keyof typeof NAVBAR_ALIGNMENT_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

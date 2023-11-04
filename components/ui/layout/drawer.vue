@@ -3,7 +3,7 @@ let count = 0;
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   id?: string;
   asideClass?: string;
   alignEnd?: boolean;

@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, VerticalAlignment } from "../types";
-
-export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP = {
   top: "modal-top",
   middle: undefined, // default
   bottom: "modal-bottom",
@@ -9,13 +7,13 @@ export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   title?: string;
   class?: string;
   open?: boolean;
   backdrop?: boolean;
   dismissable?: boolean;
-  verticalAlignment?: VerticalAlignment;
+  verticalAlignment?: keyof typeof MODAL_VERTICAL_ALIGNMENT_CLASS_MAP;
 }
 
 defineEmits(["update:open"]);

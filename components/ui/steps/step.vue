@@ -1,9 +1,5 @@
 <script lang="ts">
-import { ClassMap, Color } from "../types";
-
-export type StepColor = Color | "neutral";
-
-export const STEP_COLOR_CLASS_MAP: ClassMap<StepColor> = {
+export const STEP_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "step-primary",
   secondary: "step-secondary",
@@ -17,8 +13,8 @@ export const STEP_COLOR_CLASS_MAP: ClassMap<StepColor> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  color?: StepColor;
+export interface Props {
+  color?: keyof typeof STEP_COLOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

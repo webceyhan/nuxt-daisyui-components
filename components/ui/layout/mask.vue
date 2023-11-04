@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Mask } from "../types";
-
-export const MASK_CLASS_MAP: ClassMap<Mask> = {
+export const MASK_CLASS_MAP = {
   squircle: "mask-squircle",
   heart: "mask-heart",
   hexagon: "mask-hexagon",
@@ -25,8 +23,8 @@ export const MASK_CLASS_MAP: ClassMap<Mask> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  shape?: Mask;
+export interface Props {
+  shape?: keyof typeof MASK_CLASS_MAP;
   firstHalf?: boolean;
   lastHalf?: boolean;
 }

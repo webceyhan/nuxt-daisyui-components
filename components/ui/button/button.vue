@@ -1,16 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size, Shape } from "../types";
-
-export type ButtonColor = Color | "neutral" | "ghost";
-
-export const BUTTON_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const BUTTON_SIZE_CLASS_MAP = {
   xs: "btn-xs",
   sm: "btn-sm",
   md: undefined, // default
   lg: "btn-lg",
 };
 
-export const BUTTON_COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
+export const BUTTON_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "btn-primary",
   secondary: "btn-secondary",
@@ -23,7 +19,7 @@ export const BUTTON_COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
   ghost: "btn-ghost",
 };
 
-export const BUTTON_SHAPE_CLASS_MAP: ClassMap<Shape> = {
+export const BUTTON_SHAPE_CLASS_MAP = {
   rectangle: undefined, // default
   square: "btn-square",
   circle: "btn-circle",
@@ -31,14 +27,14 @@ export const BUTTON_SHAPE_CLASS_MAP: ClassMap<Shape> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   label?: string;
   href?: string;
   icon?: string;
   iconEnd?: string;
-  size?: Size;
-  shape?: Shape;
-  color?: ButtonColor;
+  size?: keyof typeof BUTTON_SIZE_CLASS_MAP;
+  shape?: keyof typeof BUTTON_SHAPE_CLASS_MAP;
+  color?: keyof typeof BUTTON_COLOR_CLASS_MAP;
   outline?: boolean;
   active?: boolean;
   wide?: boolean;

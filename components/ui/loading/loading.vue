@@ -1,16 +1,12 @@
 <script lang="ts">
-import { ClassMap, Size } from "../types";
-
-export type LoadingAnimation = "spinner" | "dots" | "ring" | "ball" | "bars" | "infinity";
-
-export const LOADING_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const LOADING_SIZE_CLASS_MAP = {
   xs: "loading-xs",
   sm: "loading-sm",
   md: undefined, // default
   lg: "loading-lg",
 };
 
-export const LOADING_ANIMATION_CLASS_MAP: ClassMap<LoadingAnimation> = {
+export const LOADING_ANIMATION_CLASS_MAP = {
   spinner: "loading-spinner", // default
   dots: "loading-dots",
   ring: "loading-ring",
@@ -21,9 +17,9 @@ export const LOADING_ANIMATION_CLASS_MAP: ClassMap<LoadingAnimation> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
-  animation?: LoadingAnimation;
+export interface Props {
+  size?: keyof typeof LOADING_SIZE_CLASS_MAP;
+  animation?: keyof typeof LOADING_ANIMATION_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

@@ -1,14 +1,10 @@
 <script lang="ts">
-import { Alignment, ClassMap, Color } from "../types";
-
-export type ChatAlignment = Exclude<Alignment, "center">;
-
-export const CHAT_ALIGNMENT_CLASS_MAP: ClassMap<ChatAlignment> = {
+export const CHAT_ALIGNMENT_CLASS_MAP = {
   start: "chat-start",
   end: "chat-end",
 };
 
-export const CHAT_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const CHAT_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "chat-bubble-primary",
   secondary: "chat-bubble-secondary",
@@ -21,14 +17,14 @@ export const CHAT_COLOR_CLASS_MAP: ClassMap<Color> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  color?: Color;
-  alignment?: ChatAlignment;
+export interface Props {
+  color?: keyof typeof CHAT_COLOR_CLASS_MAP;
+  alignment?: keyof typeof CHAT_ALIGNMENT_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
-  alignment: "start",
   color: "default",
+  alignment: "start",
 });
 </script>
 

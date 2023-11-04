@@ -1,13 +1,11 @@
 <script lang="ts">
-import { Alignment, ClassMap, VerticalAlignment } from "../types";
-
-export const TOAST_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+export const TOAST_ALIGNMENT_CLASS_MAP = {
   start: "toast-start",
   center: "toast-center",
   end: undefined, // default
 };
 
-export const TOAST_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+export const TOAST_VERTICAL_ALIGNMENT_CLASS_MAP = {
   top: "toast-top",
   middle: "toast-middle",
   bottom: undefined, // default
@@ -15,9 +13,9 @@ export const TOAST_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  alignment?: Alignment;
-  verticalAlignment?: VerticalAlignment;
+export interface Props {
+  alignment?: keyof typeof TOAST_ALIGNMENT_CLASS_MAP;
+  verticalAlignment?: keyof typeof TOAST_VERTICAL_ALIGNMENT_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

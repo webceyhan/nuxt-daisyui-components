@@ -1,14 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export const RADIO_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const RADIO_SIZE_CLASS_MAP = {
   xs: "radio-xs",
   sm: "radio-sm",
   md: undefined, // default
   lg: "radio-lg",
 };
 
-export const RADIO_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const RADIO_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "radio-primary",
   secondary: "radio-secondary",
@@ -21,12 +19,12 @@ export const RADIO_COLOR_CLASS_MAP: ClassMap<Color> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   name?: string;
   value?: string;
   modelValue?: string;
-  size?: Size;
-  color?: Color;
+  size?: keyof typeof RADIO_SIZE_CLASS_MAP;
+  color?: keyof typeof RADIO_COLOR_CLASS_MAP;
   checked?: boolean;
   disabled?: boolean;
 }

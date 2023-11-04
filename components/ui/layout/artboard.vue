@@ -1,15 +1,5 @@
 <script lang="ts">
-import { ClassMap } from "../types";
-
-export type ArtboardSize =
-  | "phone-1"
-  | "phone-2"
-  | "phone-3"
-  | "phone-4"
-  | "phone-5"
-  | "phone-6";
-
-export const ARTBOARD_SIZE_CLASS_MAP: ClassMap<ArtboardSize> = {
+export const ARTBOARD_SIZE_CLASS_MAP = {
   "phone-1": "phone-1",
   "phone-2": "phone-2",
   "phone-3": "phone-3",
@@ -18,7 +8,7 @@ export const ARTBOARD_SIZE_CLASS_MAP: ClassMap<ArtboardSize> = {
   "phone-6": "phone-6",
 };
 
-export const ARTBOARD_DIMENSION_MAP: Record<ArtboardSize, string> = {
+export const ARTBOARD_DIMENSION_MAP = {
   "phone-1": "320x568",
   "phone-2": "375x667",
   "phone-3": "414x736",
@@ -29,8 +19,8 @@ export const ARTBOARD_DIMENSION_MAP: Record<ArtboardSize, string> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: ArtboardSize;
+export interface Props {
+  size?: keyof typeof ARTBOARD_SIZE_CLASS_MAP;
   horizontal?: boolean;
 }
 

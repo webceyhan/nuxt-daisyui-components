@@ -1,5 +1,5 @@
 <script setup lang="ts">
-interface Props {
+export interface Props {
   overlayUrl?: string;
   overlayClass?: string;
   contentClass?: string;

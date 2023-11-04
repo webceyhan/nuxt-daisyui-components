@@ -1,13 +1,10 @@
-<script lang="ts">
-import { Indicator } from "../types";
-import { COLLAPSE_INDICATOR_CLASS_MAP } from "./collapse.vue";
-</script>
-
 <script setup lang="ts">
-interface Props {
+import { COLLAPSE_INDICATOR_CLASS_MAP } from "./collapse.vue";
+
+export interface Props {
   name?: string;
   open?: boolean;
-  indicator?: Indicator;
+  indicator?: keyof typeof COLLAPSE_INDICATOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

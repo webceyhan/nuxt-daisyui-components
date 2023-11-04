@@ -1,16 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export type FileInputColor = Color | "ghost";
-
-export const FILE_INPUT_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const FILE_INPUT_SIZE_CLASS_MAP = {
   xs: "file-input-xs",
   sm: "file-input-sm",
   md: undefined, // default
   lg: "file-input-lg",
 };
 
-export const FILE_INPUT_COLOR_CLASS_MAP: ClassMap<FileInputColor> = {
+export const FILE_INPUT_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "file-input-primary",
   secondary: "file-input-secondary",
@@ -24,9 +20,9 @@ export const FILE_INPUT_COLOR_CLASS_MAP: ClassMap<FileInputColor> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
-  color?: FileInputColor;
+export interface Props {
+  size?: keyof typeof FILE_INPUT_SIZE_CLASS_MAP;
+  color?: keyof typeof FILE_INPUT_COLOR_CLASS_MAP;
   modelValue?: string;
   disabled?: boolean;
   bordered?: boolean;

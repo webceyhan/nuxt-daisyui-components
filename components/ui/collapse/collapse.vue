@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Indicator } from "../types";
-
-export const COLLAPSE_INDICATOR_CLASS_MAP: ClassMap<Indicator> = {
+export const COLLAPSE_INDICATOR_CLASS_MAP = {
   none: undefined, // default
   arrow: "collapse-arrow",
   plus: "collapse-plus",
@@ -9,10 +7,10 @@ export const COLLAPSE_INDICATOR_CLASS_MAP: ClassMap<Indicator> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   open?: boolean;
   toggle?: boolean;
-  indicator?: Indicator;
+  indicator?: keyof typeof COLLAPSE_INDICATOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

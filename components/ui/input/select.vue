@@ -1,16 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export type SelectColor = Color | "ghost";
-
-export const SELECT_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const SELECT_SIZE_CLASS_MAP = {
   xs: "select-xs",
   sm: "select-sm",
   md: undefined, // default
   lg: "select-lg",
 };
 
-export const SELECT_COLOR_CLASS_MAP: ClassMap<SelectColor> = {
+export const SELECT_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "select-primary",
   secondary: "select-secondary",
@@ -24,9 +20,9 @@ export const SELECT_COLOR_CLASS_MAP: ClassMap<SelectColor> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
-  color?: SelectColor;
+export interface Props {
+  size?: keyof typeof SELECT_SIZE_CLASS_MAP;
+  color?: keyof typeof SELECT_COLOR_CLASS_MAP;
   modelValue?: string;
   bordered?: boolean;
   disabled?: boolean;

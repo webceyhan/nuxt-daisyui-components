@@ -1,21 +1,19 @@
 <script lang="ts">
-import { ClassMap, Size } from "../types";
-
-export const MENU_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const MENU_SIZE_CLASS_MAP = {
   xs: "menu-xs",
   sm: "menu-sm",
   md: undefined, // default
   lg: "menu-lg",
 };
-
-export interface MenuProps {
-  size?: Size;
-  horizontal?: boolean;
-}
 </script>
 
 <script setup lang="ts">
-const props = withDefaults(defineProps<MenuProps>(), {
+export interface Props {
+  size?: keyof typeof MENU_SIZE_CLASS_MAP;
+  horizontal?: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
   size: "md",
   color: "default",
 });

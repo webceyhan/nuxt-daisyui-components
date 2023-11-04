@@ -1,16 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export type TextInputColor = Color | "ghost";
-
-export const TEXT_INPUT_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TEXT_INPUT_SIZE_CLASS_MAP = {
   xs: "input-xs",
   sm: "input-sm",
   md: undefined, // default
   lg: "input-lg",
 };
 
-export const TEXT_INPUT_COLOR_CLASS_MAP: ClassMap<TextInputColor> = {
+export const TEXT_INPUT_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "input-primary",
   secondary: "input-secondary",
@@ -24,11 +20,11 @@ export const TEXT_INPUT_COLOR_CLASS_MAP: ClassMap<TextInputColor> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   modelValue?: string;
-  size?: Size;
   placeholder?: string;
-  color?: TextInputColor;
+  size?: keyof typeof TEXT_INPUT_SIZE_CLASS_MAP;
+  color?: keyof typeof TEXT_INPUT_COLOR_CLASS_MAP;
   bordered?: boolean;
   disabled?: boolean;
 }

@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Size } from "../types";
-
-export const TAB_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TAB_SIZE_CLASS_MAP = {
   xs: "tab-xs",
   sm: "tab-sm",
   md: undefined, // default
@@ -10,8 +8,8 @@ export const TAB_SIZE_CLASS_MAP: ClassMap<Size> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
+export interface Props {
+  size?: keyof typeof TAB_SIZE_CLASS_MAP;
   active?: boolean;
   lifted?: boolean;
   bordered?: boolean;

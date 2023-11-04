@@ -8,7 +8,7 @@ import {
     Size,
     StateColor,
     VerticalAlignment,
-} from './components/ui/types';
+} from './types';
 
 export const SIZES: Size[] = ['xs', 'sm', 'md', 'lg'];
 

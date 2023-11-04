@@ -1,5 +1,3 @@
-export type ClassMap<T extends string> = Record<T, string | undefined>;
-
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
 export type Shape = 'rectangle' | 'square' | 'circle';

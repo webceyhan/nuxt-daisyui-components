@@ -1,14 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export const CHECKBOX_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const CHECKBOX_SIZE_CLASS_MAP = {
   xs: "checkbox-xs",
   sm: "checkbox-sm",
   md: undefined, // default
   lg: "checkbox-lg",
 };
 
-export const CHECKBOX_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const CHECKBOX_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "checkbox-primary",
   secondary: "checkbox-secondary",
@@ -21,9 +19,9 @@ export const CHECKBOX_COLOR_CLASS_MAP: ClassMap<Color> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
-  color?: Color;
+export interface Props {
+  size?: keyof typeof CHECKBOX_SIZE_CLASS_MAP;
+  color?: keyof typeof CHECKBOX_COLOR_CLASS_MAP;
   checked?: boolean;
   disabled?: boolean;
 }

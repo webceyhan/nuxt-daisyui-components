@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Color, Position } from "../types";
-
-export const TOOLTIP_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const TOOLTIP_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "tooltip-primary",
   secondary: "tooltip-secondary",
@@ -12,19 +10,19 @@ export const TOOLTIP_COLOR_CLASS_MAP: ClassMap<Color> = {
   error: "tooltip-error",
 };
 
-export const TOOLTIP_POSITION_CLASS_MAP: ClassMap<Position> = {
+export const TOOLTIP_POSITION_CLASS_MAP = {
   top: undefined, // default
   bottom: "tooltip-bottom",
   left: "tooltip-left",
   right: "tooltip-right",
 };
 
-interface Bindings {
-  text?: string;
-  open?: boolean;
-  color?: Color;
-  position?: Position;
-}
+// interface Bindings {
+//   text?: string;
+//   open?: boolean;
+//   color?: keyof typeof TOOLTIP_COLOR_CLASS_MAP;
+//   position?: keyof typeof TOOLTIP_POSITION_CLASS_MAP;
+// }
 
 // not working because it's not auto registered
 // you should put it inside a plugin /  module
@@ -46,12 +44,12 @@ interface Bindings {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   as?: string;
   text: string;
   open?: boolean;
-  color?: Color;
-  position?: Position;
+  color?: keyof typeof TOOLTIP_COLOR_CLASS_MAP;
+  position?: keyof typeof TOOLTIP_POSITION_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

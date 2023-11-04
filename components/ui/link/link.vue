@@ -1,9 +1,5 @@
 <script lang="ts">
-import { ClassMap, Color } from "../types";
-
-export type LinkColor = Color | "neutral";
-
-export const LINK_COLOR_CLASS_MAP: ClassMap<LinkColor> = {
+export const LINK_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "link-primary",
   secondary: "link-secondary",
@@ -17,8 +13,8 @@ export const LINK_COLOR_CLASS_MAP: ClassMap<LinkColor> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  color?: LinkColor;
+export interface Props {
+  color?: keyof typeof LINK_COLOR_CLASS_MAP;
   hover?: boolean;
 }
 

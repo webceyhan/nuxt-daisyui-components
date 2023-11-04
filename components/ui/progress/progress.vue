@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Color } from "../types";
-
-export const PROGRESS_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const PROGRESS_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "progress-primary",
   secondary: "progress-secondary",
@@ -14,10 +12,10 @@ export const PROGRESS_COLOR_CLASS_MAP: ClassMap<Color> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   value?: number;
   max?: number;
-  color?: Color;
+  color?: keyof typeof PROGRESS_COLOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

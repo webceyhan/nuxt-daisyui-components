@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Size } from "../types";
-
-export const KBD_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const KBD_SIZE_CLASS_MAP = {
   xs: "kbd-xs",
   sm: "kbd-sm",
   md: undefined, // default
@@ -10,8 +8,8 @@ export const KBD_SIZE_CLASS_MAP: ClassMap<Size> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
+export interface Props {
+  size?: keyof typeof KBD_SIZE_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {

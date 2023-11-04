@@ -1,8 +1,7 @@
 <script lang="ts">
-import { ClassMap, Size, Mask } from "../types";
 import { MASK_CLASS_MAP } from "../layout/mask.vue";
 
-export const RATING_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const RATING_SIZE_CLASS_MAP = {
   xs: "rating-xs",
   sm: "rating-sm",
   md: undefined, // default
@@ -13,12 +12,12 @@ let count = 0;
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   value?: number;
   modelValue?: number;
   max?: number;
-  size?: Size;
-  mask?: Mask;
+  size?: keyof typeof RATING_SIZE_CLASS_MAP;
+  mask?: keyof typeof MASK_CLASS_MAP;
   disabled?: boolean;
   itemClass?: string;
   itemClasses?: string[];

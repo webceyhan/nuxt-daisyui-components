@@ -1,14 +1,12 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export const TOGGLE_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const TOGGLE_SIZE_CLASS_MAP = {
   xs: "toggle-xs",
   sm: "toggle-sm",
   md: undefined, // default
   lg: "toggle-lg",
 };
 
-export const TOGGLE_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const TOGGLE_COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "toggle-primary",
   secondary: "toggle-secondary",
@@ -21,9 +19,9 @@ export const TOGGLE_COLOR_CLASS_MAP: ClassMap<Color> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
-  size?: Size;
-  color?: Color;
+export interface Props {
+  size?: keyof typeof TOGGLE_SIZE_CLASS_MAP;
+  color?: keyof typeof TOGGLE_COLOR_CLASS_MAP;
   checked?: boolean;
   disabled?: boolean;
 }

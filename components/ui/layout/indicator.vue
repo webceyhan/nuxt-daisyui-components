@@ -1,13 +1,11 @@
 <script lang="ts">
-import { Alignment, ClassMap, VerticalAlignment } from "../types";
-
-export const INDICATOR_ALIGNMENT_CLASS_MAP: ClassMap<Alignment> = {
+export const INDICATOR_ALIGNMENT_CLASS_MAP = {
   start: "indicator-start",
   center: "indicator-center",
   end: undefined, // default
 };
 
-export const INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+export const INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP = {
   top: undefined, // default
   middle: "indicator-middle",
   bottom: "indicator-bottom",
@@ -15,10 +13,10 @@ export const INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment>
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   itemClass?: string;
-  alignment?: Alignment;
-  verticalAlignment?: VerticalAlignment;
+  alignment?: keyof typeof INDICATOR_ALIGNMENT_CLASS_MAP;
+  verticalAlignment?: keyof typeof INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
