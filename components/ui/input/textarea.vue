@@ -21,7 +21,6 @@ export const COLOR_CLASS_MAP = {
 <script setup lang="ts">
 export interface Props {
   modelValue?: string;
-  placeholder?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
   ghost?: boolean;
@@ -57,7 +56,6 @@ const valueProxy = computed({
         'textarea-bordered': bordered,
       },
     ]"
-    :placeholder="placeholder"
     :disabled="disabled"
     v-model="valueProxy"
   />

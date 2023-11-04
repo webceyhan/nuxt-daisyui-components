@@ -21,7 +21,6 @@ export const COLOR_CLASS_MAP = {
 <script setup lang="ts">
 export interface Props {
   modelValue?: string;
-  placeholder?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
   ghost?: boolean;
@@ -51,7 +50,6 @@ withDefaults(defineProps<Props>(), {
     ]"
     @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
     :value="modelValue"
-    :placeholder="placeholder"
     :disabled="disabled"
   />
 </template>

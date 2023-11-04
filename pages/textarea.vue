@@ -8,11 +8,6 @@ const props = [
     description: "Value of the input",
   },
   {
-    name: "placeholder",
-    type: "string",
-    description: "Placeholder text",
-  },
-  {
     name: "size",
     type: "string",
     values: SIZES,
