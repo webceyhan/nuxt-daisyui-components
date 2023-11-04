@@ -1,12 +1,12 @@
 <script lang="ts">
-export const RADIO_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "radio-xs",
   sm: "radio-sm",
   md: undefined, // default
   lg: "radio-lg",
 };
 
-export const RADIO_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "radio-primary",
   secondary: "radio-secondary",
@@ -23,8 +23,8 @@ export interface Props {
   name?: string;
   value?: string;
   modelValue?: string;
-  size?: keyof typeof RADIO_SIZE_CLASS_MAP;
-  color?: keyof typeof RADIO_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   checked?: boolean;
   disabled?: boolean;
 }
@@ -50,7 +50,7 @@ function onChange(event: Event) {
 <template>
   <input
     type="radio"
-    :class="['radio', RADIO_SIZE_CLASS_MAP[size], RADIO_COLOR_CLASS_MAP[color]]"
+    :class="['radio', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
     v-bind="{ name, value, checked: isChecked, disabled }"
     @change="onChange"
   />

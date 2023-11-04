@@ -1,5 +1,5 @@
 <script lang="ts">
-export const COLLAPSE_INDICATOR_CLASS_MAP = {
+export const INDICATOR_CLASS_MAP = {
   none: undefined, // default
   arrow: "collapse-arrow",
   plus: "collapse-plus",
@@ -10,7 +10,7 @@ export const COLLAPSE_INDICATOR_CLASS_MAP = {
 export interface Props {
   open?: boolean;
   toggle?: boolean;
-  indicator?: keyof typeof COLLAPSE_INDICATOR_CLASS_MAP;
+  indicator?: keyof typeof INDICATOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -24,7 +24,7 @@ withDefaults(defineProps<Props>(), {
     tabindex="0"
     :class="[
       'collapse bg-base-200',
-      COLLAPSE_INDICATOR_CLASS_MAP[indicator],
+      INDICATOR_CLASS_MAP[indicator],
       {
         // force open/close when toggle is not active
         'collapse-open': !toggle && open === true,

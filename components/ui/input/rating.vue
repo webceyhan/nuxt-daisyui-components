@@ -1,7 +1,7 @@
 <script lang="ts">
-import { MASK_CLASS_MAP } from "../layout/mask.vue";
+import { SHAPE_CLASS_MAP } from "../layout/mask.vue";
 
-export const RATING_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "rating-xs",
   sm: "rating-sm",
   md: undefined, // default
@@ -16,8 +16,8 @@ export interface Props {
   value?: number;
   modelValue?: number;
   max?: number;
-  size?: keyof typeof RATING_SIZE_CLASS_MAP;
-  mask?: keyof typeof MASK_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  mask?: keyof typeof SHAPE_CLASS_MAP;
   disabled?: boolean;
   itemClass?: string;
   itemClasses?: string[];
@@ -35,7 +35,7 @@ const name = `rating-${count++}`;
 </script>
 
 <template>
-  <div :class="['rating', RATING_SIZE_CLASS_MAP[size]]">
+  <div :class="['rating', SIZE_CLASS_MAP[size]]">
     <input
       type="radio"
       v-for="i in max"
@@ -43,7 +43,7 @@ const name = `rating-${count++}`;
       :name="name"
       :checked="i === (modelValue ?? value)"
       :disabled="disabled"
-      :class="['mask', MASK_CLASS_MAP[mask], itemClass, itemClasses?.[i - 1]]"
+      :class="['mask', SHAPE_CLASS_MAP[mask], itemClass, itemClasses?.[i - 1]]"
       @change="$emit('update:modelValue', i)"
     />
   </div>

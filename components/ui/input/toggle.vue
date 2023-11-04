@@ -1,12 +1,12 @@
 <script lang="ts">
-export const TOGGLE_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "toggle-xs",
   sm: "toggle-sm",
   md: undefined, // default
   lg: "toggle-lg",
 };
 
-export const TOGGLE_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "toggle-primary",
   secondary: "toggle-secondary",
@@ -20,8 +20,8 @@ export const TOGGLE_COLOR_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof TOGGLE_SIZE_CLASS_MAP;
-  color?: keyof typeof TOGGLE_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   checked?: boolean;
   disabled?: boolean;
 }
@@ -37,7 +37,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <input
     type="checkbox"
-    :class="['toggle', TOGGLE_SIZE_CLASS_MAP[size], TOGGLE_COLOR_CLASS_MAP[color]]"
+    :class="['toggle', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
     @change="$emit('update:checked', ($event.target as HTMLInputElement).checked)"
     :checked="checked"
     :disabled="disabled"

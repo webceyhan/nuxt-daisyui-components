@@ -1,12 +1,12 @@
 <script lang="ts">
-export const BUTTON_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "btn-xs",
   sm: "btn-sm",
   md: undefined, // default
   lg: "btn-lg",
 };
 
-export const BUTTON_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "btn-primary",
   secondary: "btn-secondary",
@@ -19,7 +19,7 @@ export const BUTTON_COLOR_CLASS_MAP = {
   ghost: "btn-ghost",
 };
 
-export const BUTTON_SHAPE_CLASS_MAP = {
+export const SHAPE_CLASS_MAP = {
   rectangle: undefined, // default
   square: "btn-square",
   circle: "btn-circle",
@@ -32,9 +32,9 @@ export interface Props {
   href?: string;
   icon?: string;
   iconEnd?: string;
-  size?: keyof typeof BUTTON_SIZE_CLASS_MAP;
-  shape?: keyof typeof BUTTON_SHAPE_CLASS_MAP;
-  color?: keyof typeof BUTTON_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  shape?: keyof typeof SHAPE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   outline?: boolean;
   active?: boolean;
   wide?: boolean;
@@ -55,9 +55,9 @@ withDefaults(defineProps<Props>(), {
     :href="href"
     :class="[
       'btn',
-      BUTTON_SIZE_CLASS_MAP[size],
-      BUTTON_SHAPE_CLASS_MAP[shape],
-      BUTTON_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      SHAPE_CLASS_MAP[shape],
+      COLOR_CLASS_MAP[color],
       {
         'btn-outline': outline,
         'btn-active': active,

@@ -1,5 +1,5 @@
 <script lang="ts">
-export const MENU_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "menu-xs",
   sm: "menu-sm",
   md: undefined, // default
@@ -9,7 +9,7 @@ export const MENU_SIZE_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof MENU_SIZE_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
   horizontal?: boolean;
 }
 
@@ -25,7 +25,7 @@ provide("menu", props);
   <ul
     :class="[
       'menu',
-      MENU_SIZE_CLASS_MAP[size],
+      SIZE_CLASS_MAP[size],
       {
         'menu-horizontal': horizontal,
       },

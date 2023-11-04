@@ -1,5 +1,5 @@
 <script lang="ts">
-export const ALERT_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   info: "alert-info",
   success: "alert-success",
@@ -13,7 +13,7 @@ export interface Props {
   icon?: string;
   title?: string;
   message?: string;
-  color?: keyof typeof ALERT_COLOR_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -27,7 +27,7 @@ const iconClasses = computed(() => ({
 </script>
 
 <template>
-  <div :class="['alert', ALERT_COLOR_CLASS_MAP[color]]">
+  <div :class="['alert', COLOR_CLASS_MAP[color]]">
     <slot name="icon">
       <ui-icon v-if="icon" :name="icon" :class="iconClasses" />
     </slot>

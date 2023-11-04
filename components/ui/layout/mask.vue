@@ -1,5 +1,5 @@
 <script lang="ts">
-export const MASK_CLASS_MAP = {
+export const SHAPE_CLASS_MAP = {
   squircle: "mask-squircle",
   heart: "mask-heart",
   hexagon: "mask-hexagon",
@@ -24,7 +24,7 @@ export const MASK_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  shape?: keyof typeof MASK_CLASS_MAP;
+  shape?: keyof typeof SHAPE_CLASS_MAP;
   firstHalf?: boolean;
   lastHalf?: boolean;
 }
@@ -38,7 +38,7 @@ withDefaults(defineProps<Props>(), {
   <div
     :class="[
       'mask',
-      MASK_CLASS_MAP[shape],
+      SHAPE_CLASS_MAP[shape],
       {
         'mask-half-1': firstHalf,
         'mask-half-2': lastHalf,

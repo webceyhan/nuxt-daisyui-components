@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { COLLAPSE_INDICATOR_CLASS_MAP } from "./collapse.vue";
+import { INDICATOR_CLASS_MAP } from "./collapse.vue";
 
 export interface Props {
   name?: string;
   open?: boolean;
-  indicator?: keyof typeof COLLAPSE_INDICATOR_CLASS_MAP;
+  indicator?: keyof typeof INDICATOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -13,7 +13,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['collapse bg-base-200', COLLAPSE_INDICATOR_CLASS_MAP[indicator]]">
+  <div :class="['collapse bg-base-200', INDICATOR_CLASS_MAP[indicator]]">
     <!-- internal toggle -->
     <input type="radio" :name="name" :checked="open" />
 

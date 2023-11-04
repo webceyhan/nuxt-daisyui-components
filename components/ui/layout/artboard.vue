@@ -1,5 +1,5 @@
 <script lang="ts">
-export const ARTBOARD_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   "phone-1": "phone-1",
   "phone-2": "phone-2",
   "phone-3": "phone-3",
@@ -8,7 +8,7 @@ export const ARTBOARD_SIZE_CLASS_MAP = {
   "phone-6": "phone-6",
 };
 
-export const ARTBOARD_DIMENSION_MAP = {
+export const DIMENSION_MAP = {
   "phone-1": "320x568",
   "phone-2": "375x667",
   "phone-3": "414x736",
@@ -20,7 +20,7 @@ export const ARTBOARD_DIMENSION_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof ARTBOARD_SIZE_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
   horizontal?: boolean;
 }
 
@@ -33,12 +33,12 @@ withDefaults(defineProps<Props>(), {
   <div
     :class="[
       'artboard artboard-demo',
-      ARTBOARD_SIZE_CLASS_MAP[size],
+      SIZE_CLASS_MAP[size],
       {
         'artboard-horizontal': horizontal,
       },
     ]"
   >
-    <slot>{{ ARTBOARD_DIMENSION_MAP[size] }}</slot>
+    <slot>{{ DIMENSION_MAP[size] }}</slot>
   </div>
 </template>

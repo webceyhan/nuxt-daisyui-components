@@ -1,11 +1,11 @@
 <script lang="ts">
-export const INDICATOR_ALIGNMENT_CLASS_MAP = {
+export const ALIGNMENT_CLASS_MAP = {
   start: "indicator-start",
   center: "indicator-center",
   end: undefined, // default
 };
 
-export const INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP = {
+export const VERTICAL_ALIGNMENT_CLASS_MAP = {
   top: undefined, // default
   middle: "indicator-middle",
   bottom: "indicator-bottom",
@@ -15,8 +15,8 @@ export const INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP = {
 <script setup lang="ts">
 export interface Props {
   itemClass?: string;
-  alignment?: keyof typeof INDICATOR_ALIGNMENT_CLASS_MAP;
-  verticalAlignment?: keyof typeof INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP;
+  alignment?: keyof typeof ALIGNMENT_CLASS_MAP;
+  verticalAlignment?: keyof typeof VERTICAL_ALIGNMENT_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -31,8 +31,8 @@ withDefaults(defineProps<Props>(), {
     <span
       class="indicator-item"
       :class="[
-        INDICATOR_ALIGNMENT_CLASS_MAP[alignment],
-        INDICATOR_VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
+        ALIGNMENT_CLASS_MAP[alignment],
+        VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
         itemClass,
       ]"
     >

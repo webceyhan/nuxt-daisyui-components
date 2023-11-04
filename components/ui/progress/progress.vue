@@ -1,5 +1,5 @@
 <script lang="ts">
-export const PROGRESS_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "progress-primary",
   secondary: "progress-secondary",
@@ -15,7 +15,7 @@ export const PROGRESS_COLOR_CLASS_MAP = {
 export interface Props {
   value?: number;
   max?: number;
-  color?: keyof typeof PROGRESS_COLOR_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -26,9 +26,5 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <progress
-    :class="['progress', PROGRESS_COLOR_CLASS_MAP[color]]"
-    :value="value"
-    :max="max"
-  />
+  <progress :class="['progress', COLOR_CLASS_MAP[color]]" :value="value" :max="max" />
 </template>

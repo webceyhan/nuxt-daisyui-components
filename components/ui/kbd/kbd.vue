@@ -1,5 +1,5 @@
 <script lang="ts">
-export const KBD_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "kbd-xs",
   sm: "kbd-sm",
   md: undefined, // default
@@ -9,7 +9,7 @@ export const KBD_SIZE_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof KBD_SIZE_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -18,7 +18,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <kbd :class="['kbd', KBD_SIZE_CLASS_MAP[size]]">
+  <kbd :class="['kbd', SIZE_CLASS_MAP[size]]">
     <slot />
   </kbd>
 </template>

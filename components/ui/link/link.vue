@@ -1,5 +1,5 @@
 <script lang="ts">
-export const LINK_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "link-primary",
   secondary: "link-secondary",
@@ -14,7 +14,7 @@ export const LINK_COLOR_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  color?: keyof typeof LINK_COLOR_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   hover?: boolean;
 }
 
@@ -27,7 +27,7 @@ withDefaults(defineProps<Props>(), {
   <a
     :class="[
       'link',
-      LINK_COLOR_CLASS_MAP[color],
+      COLOR_CLASS_MAP[color],
       {
         'link-hover': hover,
       },

@@ -1,5 +1,5 @@
 <script lang="ts">
-export const TOOLTIP_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "tooltip-primary",
   secondary: "tooltip-secondary",
@@ -10,7 +10,7 @@ export const TOOLTIP_COLOR_CLASS_MAP = {
   error: "tooltip-error",
 };
 
-export const TOOLTIP_POSITION_CLASS_MAP = {
+export const POSITION_CLASS_MAP = {
   top: undefined, // default
   bottom: "tooltip-bottom",
   left: "tooltip-left",
@@ -20,8 +20,8 @@ export const TOOLTIP_POSITION_CLASS_MAP = {
 // interface Bindings {
 //   text?: string;
 //   open?: boolean;
-//   color?: keyof typeof TOOLTIP_COLOR_CLASS_MAP;
-//   position?: keyof typeof TOOLTIP_POSITION_CLASS_MAP;
+//   color?: keyof typeof COLOR_CLASS_MAP;
+//   position?: keyof typeof POSITION_CLASS_MAP;
 // }
 
 // not working because it's not auto registered
@@ -37,8 +37,8 @@ export const TOOLTIP_POSITION_CLASS_MAP = {
 
 //   el.setAttribute("data-tip", text);
 //   el.classList.add("tooltip");
-//   el.classList.add(TOOLTIP_COLOR_CLASS_MAP[color ?? "default"]);
-//   el.classList.add(TOOLTIP_POSITION_CLASS_MAP[position ?? "top"]);
+//   el.classList.add(COLOR_CLASS_MAP[color ?? "default"]);
+//   el.classList.add(POSITION_CLASS_MAP[position ?? "top"]);
 //   open && el.classList.add("tooltip-open");
 // });
 </script>
@@ -48,8 +48,8 @@ export interface Props {
   as?: string;
   text: string;
   open?: boolean;
-  color?: keyof typeof TOOLTIP_COLOR_CLASS_MAP;
-  position?: keyof typeof TOOLTIP_POSITION_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
+  position?: keyof typeof POSITION_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -64,8 +64,8 @@ withDefaults(defineProps<Props>(), {
     :is="as"
     :class="[
       'tooltip',
-      TOOLTIP_COLOR_CLASS_MAP[color],
-      TOOLTIP_POSITION_CLASS_MAP[position],
+      COLOR_CLASS_MAP[color],
+      POSITION_CLASS_MAP[position],
       {
         'tooltip-open': open,
       },

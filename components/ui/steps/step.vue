@@ -1,5 +1,5 @@
 <script lang="ts">
-export const STEP_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "step-primary",
   secondary: "step-secondary",
@@ -14,7 +14,7 @@ export const STEP_COLOR_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  color?: keyof typeof STEP_COLOR_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -23,7 +23,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <li :class="['step', STEP_COLOR_CLASS_MAP[color]]">
+  <li :class="['step', COLOR_CLASS_MAP[color]]">
     <slot />
   </li>
 </template>

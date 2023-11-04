@@ -1,5 +1,5 @@
 <script lang="ts">
-export const TAB_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "tab-xs",
   sm: "tab-sm",
   md: undefined, // default
@@ -9,7 +9,7 @@ export const TAB_SIZE_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof TAB_SIZE_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
   active?: boolean;
   lifted?: boolean;
   bordered?: boolean;
@@ -25,7 +25,7 @@ withDefaults(defineProps<Props>(), {
   <button
     :class="[
       'tab',
-      TAB_SIZE_CLASS_MAP[size],
+      SIZE_CLASS_MAP[size],
       {
         'tab-active': active,
         'tab-lifted': lifted,

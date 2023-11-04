@@ -1,12 +1,12 @@
 <script lang="ts">
-export const RANGE_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "range-xs",
   sm: "range-sm",
   md: undefined, // default
   lg: "range-lg",
 };
 
-export const RANGE_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "range-primary",
   secondary: "range-secondary",
@@ -25,8 +25,8 @@ export interface Props {
   step?: string | number;
   value?: string | number;
   modelValue?: string | number;
-  size?: keyof typeof RANGE_SIZE_CLASS_MAP;
-  color?: keyof typeof RANGE_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   disabled?: boolean;
 }
 
@@ -43,8 +43,8 @@ withDefaults(defineProps<Props>(), {
     type="range"
     :class="[
       'range',
-      RANGE_SIZE_CLASS_MAP[size],
-      RANGE_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      COLOR_CLASS_MAP[color],
       {
         // patch default disabled style
         'cursor-not-allowed': disabled,

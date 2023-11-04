@@ -1,5 +1,5 @@
 <script lang="ts">
-export const BOTTOM_NAV_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "btm-nav-xs",
   sm: "btm-nav-sm",
   md: undefined, // default
@@ -9,7 +9,7 @@ export const BOTTOM_NAV_SIZE_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof BOTTOM_NAV_SIZE_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -18,7 +18,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['btm-nav', BOTTOM_NAV_SIZE_CLASS_MAP[size]]">
+  <div :class="['btm-nav', SIZE_CLASS_MAP[size]]">
     <slot />
   </div>
 </template>

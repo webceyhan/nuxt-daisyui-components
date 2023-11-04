@@ -1,5 +1,5 @@
 <script lang="ts">
-export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP = {
+export const VERTICAL_ALIGNMENT_CLASS_MAP = {
   top: "modal-top",
   middle: undefined, // default
   bottom: "modal-bottom",
@@ -13,7 +13,7 @@ export interface Props {
   open?: boolean;
   backdrop?: boolean;
   dismissable?: boolean;
-  verticalAlignment?: keyof typeof MODAL_VERTICAL_ALIGNMENT_CLASS_MAP;
+  verticalAlignment?: keyof typeof VERTICAL_ALIGNMENT_CLASS_MAP;
 }
 
 defineEmits(["update:open"]);
@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <dialog
     :open="open"
-    :class="['modal', MODAL_VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
+    :class="['modal', VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
     @close="$emit('update:open', false)"
   >
     <div :class="['modal-box', props.class]">

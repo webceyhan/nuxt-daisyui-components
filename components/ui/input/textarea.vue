@@ -1,12 +1,12 @@
 <script lang="ts">
-export const TEXTAREA_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "textarea-xs",
   sm: "textarea-sm",
   md: undefined, // default
   lg: "textarea-lg",
 };
 
-export const TEXTAREA_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "textarea-primary",
   secondary: "textarea-secondary",
@@ -23,8 +23,8 @@ export const TEXTAREA_COLOR_CLASS_MAP = {
 export interface Props {
   modelValue?: string;
   placeholder?: string;
-  size?: keyof typeof TEXTAREA_SIZE_CLASS_MAP;
-  color?: keyof typeof TEXTAREA_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   bordered?: boolean;
   disabled?: boolean;
 }
@@ -50,8 +50,8 @@ const valueProxy = computed({
   <textarea
     :class="[
       'textarea',
-      TEXTAREA_SIZE_CLASS_MAP[size],
-      TEXTAREA_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      COLOR_CLASS_MAP[color],
       {
         'textarea-bordered': bordered,
       },

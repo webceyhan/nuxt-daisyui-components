@@ -1,12 +1,12 @@
 <script lang="ts">
-export const FILE_INPUT_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "file-input-xs",
   sm: "file-input-sm",
   md: undefined, // default
   lg: "file-input-lg",
 };
 
-export const FILE_INPUT_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "file-input-primary",
   secondary: "file-input-secondary",
@@ -21,8 +21,8 @@ export const FILE_INPUT_COLOR_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof FILE_INPUT_SIZE_CLASS_MAP;
-  color?: keyof typeof FILE_INPUT_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   modelValue?: string;
   disabled?: boolean;
   bordered?: boolean;
@@ -41,8 +41,8 @@ withDefaults(defineProps<Props>(), {
     type="file"
     :class="[
       'file-input w-full',
-      FILE_INPUT_SIZE_CLASS_MAP[size],
-      FILE_INPUT_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      COLOR_CLASS_MAP[color],
       {
         'file-input-bordered': bordered,
       },

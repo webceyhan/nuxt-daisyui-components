@@ -1,12 +1,12 @@
 <script lang="ts">
-export const SELECT_SIZE_CLASS_MAP = {
+export const SIZE_CLASS_MAP = {
   xs: "select-xs",
   sm: "select-sm",
   md: undefined, // default
   lg: "select-lg",
 };
 
-export const SELECT_COLOR_CLASS_MAP = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "select-primary",
   secondary: "select-secondary",
@@ -21,8 +21,8 @@ export const SELECT_COLOR_CLASS_MAP = {
 
 <script setup lang="ts">
 export interface Props {
-  size?: keyof typeof SELECT_SIZE_CLASS_MAP;
-  color?: keyof typeof SELECT_COLOR_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
   modelValue?: string;
   bordered?: boolean;
   disabled?: boolean;
@@ -40,8 +40,8 @@ withDefaults(defineProps<Props>(), {
   <select
     :class="[
       'select w-full',
-      SELECT_SIZE_CLASS_MAP[size],
-      SELECT_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      COLOR_CLASS_MAP[color],
       {
         'select-bordered': bordered,
       },
