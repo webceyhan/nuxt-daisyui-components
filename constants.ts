@@ -2,7 +2,6 @@ import {
     Alignment,
     BrandColor,
     Color,
-    Indicator,
     Position,
     Shape,
     Size,
@@ -56,8 +55,6 @@ export const COLORS_WITH_NEUTRAL: any[] = [
     'neutral',
     ...COLORS.slice(1),
 ];
-
-export const COLLAPSE_INDICATORS: Indicator[] = ['none', 'arrow', 'plus'];
 
 export const ALIGNMENTS: Alignment[] = ['start', 'center', 'end'];
 

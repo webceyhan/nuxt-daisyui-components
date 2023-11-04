@@ -1,15 +1,35 @@
 <script setup lang="ts">
-import { COLLAPSE_INDICATORS } from "~/constants";
+import { INDICATOR_CLASS_MAP } from "~/components/ui/collapse/collapse.vue";
+
+const INDICATORS: any[] = Object.keys(INDICATOR_CLASS_MAP);
 
 const props = [
-  { name: "name", type: "string", description: "Group name of accordion items" },
-  { name: "open", type: "boolean", description: "Force open" },
-  { name: "indicator", type: "string", values: COLLAPSE_INDICATORS },
+  {
+    name: "name",
+    type: "string",
+    description: "Group name of accordion items",
+  },
+  {
+    name: "indicator",
+    type: "string",
+    values: INDICATORS,
+  },
+  {
+    name: "open",
+    type: "boolean",
+    description: "Force open",
+  },
 ];
 
 const slots = [
-  { name: "default", description: "Content of accordion" },
-  { name: "title", description: "Title content of accordion" },
+  {
+    name: "default",
+    description: "Content of accordion",
+  },
+  {
+    name: "title",
+    description: "Title content of accordion",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
@@ -30,20 +50,20 @@ const slots = [
     <component-preview>
       <template #title>Accordion using radio inputs</template>
 
-      <ui-accordion name="my-accordion-1" v-for="i of [1, 2, 3]" :open="i < 2">
+      <ui-accordion name="my-accordion-1" v-for="i in 3" :open="i == 1">
         <template #title>Click to open this one and close others</template>
         <p>hello</p>
       </ui-accordion>
     </component-preview>
 
-    <component-preview v-for="indicator of COLLAPSE_INDICATORS">
-      <template #title>Accordion with {{ indicator }} indicator</template>
+    <component-preview v-for="indicator of INDICATORS.slice(1)">
+      <template #title>With {{ indicator }} indicator</template>
 
       <ui-accordion
-        name="my-accordion-2"
-        v-for="i of [1, 2, 3]"
+        :name="`my-accordion-${indicator}`"
+        v-for="i in 3"
         :indicator="indicator"
-        :open="i < 2"
+        :open="i == 1"
       >
         <template #title>Click to open this one and close others</template>
         <p>hello</p>
@@ -57,12 +77,7 @@ const slots = [
       </template>
 
       <div class="join join-vertical w-full">
-        <ui-accordion
-          v-for="i of [1, 2, 3]"
-          name="my-accordion-4"
-          class="join-item"
-          icon="arrow"
-        >
+        <ui-accordion v-for="i in 3" name="my-accordion-4" class="join-item" icon="arrow">
           <template #title>Click to open this one and close others</template>
           <p>hello</p>
         </ui-accordion>

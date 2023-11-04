@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { COLLAPSE_INDICATORS } from "~/constants";
+import { INDICATOR_CLASS_MAP } from "~/components/ui/collapse/collapse.vue";
+
+const INDICATORS: any[] = Object.keys(INDICATOR_CLASS_MAP);
 
 const props = [
+  {
+    name: "indicator",
+    type: "string",
+    values: INDICATORS,
+  },
   {
     name: "open",
     type: "boolean",
@@ -12,16 +19,17 @@ const props = [
     type: "boolean",
     description: "Whether the collapse works with focus or checkbox",
   },
-  {
-    name: "indicator",
-    type: "string",
-    values: COLLAPSE_INDICATORS,
-  },
 ];
 
 const slots = [
-  { name: "title", description: "Title for the collapse" },
-  { name: "default", description: "Content for the collapse" },
+  {
+    name: "default",
+    description: "Content for the collapse",
+  },
+  {
+    name: "title",
+    description: "Title for the collapse",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
@@ -70,7 +78,7 @@ const slots = [
       </ui-collapse>
     </component-preview>
 
-    <component-preview v-for="indicator of COLLAPSE_INDICATORS">
+    <component-preview v-for="indicator of INDICATORS">
       <template #title>Collapse with {{ indicator }} indicator</template>
 
       <ui-collapse :indicator="indicator">
