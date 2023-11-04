@@ -65,6 +65,7 @@ const menus = [
       { label: "Mask", href: "/mask" },
       { label: "Stack", href: "/stack" },
       { label: "Toast", href: "/toast" },
+      { label: "Form Control", href: "/form-control" },
     ],
   },
   {
