@@ -1,5 +1,5 @@
 <script lang="ts">
-import { SHAPE_CLASS_MAP } from "../layout/mask.vue";
+import { MASK_CLASS_MAP } from "../layout/mask.vue";
 
 export const SIZE_CLASS_MAP = {
   xs: "rating-xs",
@@ -17,7 +17,7 @@ export interface Props {
   modelValue?: number;
   max?: number;
   size?: keyof typeof SIZE_CLASS_MAP;
-  mask?: keyof typeof SHAPE_CLASS_MAP;
+  mask?: keyof typeof MASK_CLASS_MAP;
   disabled?: boolean;
   itemClass?: string;
   itemClasses?: string[];
@@ -43,7 +43,7 @@ const name = `rating-${count++}`;
       :name="name"
       :checked="i === (modelValue ?? value)"
       :disabled="disabled"
-      :class="['mask', SHAPE_CLASS_MAP[mask], itemClass, itemClasses?.[i - 1]]"
+      :class="['mask', MASK_CLASS_MAP[mask], itemClass, itemClasses?.[i - 1]]"
       @change="$emit('update:modelValue', i)"
     />
   </div>
