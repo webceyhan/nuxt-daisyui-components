@@ -76,12 +76,12 @@ const slots = [
         to join the items together and handle border radius automatically
       </template>
 
-      <div class="join join-vertical w-full">
-        <ui-accordion v-for="i in 3" name="my-accordion-4" class="join-item" icon="arrow">
+      <ui-join class="w-full" vertical>
+        <ui-accordion v-for="i in 3" name="my-accordion-4" indicator="arrow">
           <template #title>Click to open this one and close others</template>
           <p>hello</p>
         </ui-accordion>
-      </div>
+      </ui-join>
     </component-preview>
   </div>
 </template>
