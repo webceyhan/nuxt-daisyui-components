@@ -1,4 +1,24 @@
 <script setup lang="ts">
+const props = [
+  {
+    name: "vertical",
+    type: "boolean",
+    description: "Display stats vertically",
+  },
+];
+
+const slots = [{ name: "default", description: "Content of the stats" }];
+
+const itemSlots = [
+  { name: "figure", description: "Figure of the stat" },
+  { name: "title", description: "Title of the stat" },
+  { name: "subtitle", description: "Subtitle of the stat" },
+  { name: "desc", description: "Description of the stat" },
+  { name: "actions", description: "Actions of the stat" },
+];
+
+// DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
+
 const stats = [
   { title: "Downlods", value: "310K", desc: "Jan 1st - Feb 1st", icon: "info-circle" },
   { title: "New Users", value: "4,200", desc: "↗︎ 400 (22%)", icon: "sliders2-vertical" },
@@ -12,7 +32,11 @@ const stats = [
 
     <p>Stat is used to show numbers and data in a box.</p>
 
-    <br />
+    <component-props-table :props="props" />
+    <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Stat Item</h3>
+    <component-slots-table :slots="itemSlots" />
 
     <component-preview>
       <template #title> Stat </template>
