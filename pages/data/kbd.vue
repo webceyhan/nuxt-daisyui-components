@@ -1,9 +1,22 @@
 <script setup lang="ts">
-import { SIZES } from "~/constants";
+import { SIZE_CLASS_MAP } from "~/components/ui/kbd/kbd.vue";
 
-const props = [{ name: "size", type: "string", values: SIZES }];
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
-const slots = [{ name: "default", description: "Content of kbd" }];
+const props = [
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+];
+
+const slots = [
+  {
+    name: "default",
+    description: "Content of kbd",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

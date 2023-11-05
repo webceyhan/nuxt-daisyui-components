@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { LOADING_ANIMATION_CLASS_MAP } from "~/components/ui/loading/loading.vue";
-import { SIZES, TEXT_COLORS } from "~/constants";
+import { TEXT_COLORS } from "~/constants";
+import { ANIMATION_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/loading/loading.vue";
 
-const ANIMATIONS = Object.keys(LOADING_ANIMATION_CLASS_MAP);
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const ANIMATIONS: any[] = Object.keys(ANIMATION_CLASS_MAP);
 
 const props = [
   {
@@ -17,11 +18,7 @@ const props = [
   },
 ];
 
-
-
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
-
-const animations: any[] = ANIMATIONS;
 </script>
 
 <template>
@@ -33,7 +30,7 @@ const animations: any[] = ANIMATIONS;
     <component-props-table :props="props" />
     <!-- <component-slots-table :slots="slots" /> -->
 
-    <component-preview v-for="animation of animations">
+    <component-preview v-for="animation of ANIMATIONS">
       <template #title>Loading {{ animation }}</template>
 
       <ui-loading v-for="size of SIZES" v-bind="{ animation, size }" />

@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { ALIGNMENTS } from "~/constants";
+import { SNAP_CLASS_MAP } from "~/components/ui/carousel/carousel.vue";
+
+const SNAPS: any[] = Object.keys(SNAP_CLASS_MAP);
 
 const props = [
   {
     name: "snap",
     type: "string",
-    values: ALIGNMENTS,
+    values: SNAPS,
   },
   {
     name: "vertical",
@@ -14,9 +16,19 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of carousel" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of carousel",
+  },
+];
 
-const itemSlots = [{ name: "default", description: "Content of carousel item" }];
+const itemSlots = [
+  {
+    name: "default",
+    description: "Content of carousel item",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -36,7 +48,7 @@ const wideItems = [1, 2, 3, 4];
     <h3 class="text-lg font-bold">Carousel item</h3>
     <component-slots-table :slots="itemSlots" />
 
-    <component-preview v-for="snap of ALIGNMENTS">
+    <component-preview v-for="snap of SNAPS">
       <template #title>Snap to {{ snap }}</template>
 
       <ui-carousel :snap="snap" class="rounded-box">

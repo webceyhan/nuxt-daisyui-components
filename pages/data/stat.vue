@@ -7,14 +7,34 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the stats" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the stats",
+  },
+];
 
 const itemSlots = [
-  { name: "figure", description: "Figure of the stat" },
-  { name: "title", description: "Title of the stat" },
-  { name: "subtitle", description: "Subtitle of the stat" },
-  { name: "desc", description: "Description of the stat" },
-  { name: "actions", description: "Actions of the stat" },
+  {
+    name: "figure",
+    description: "Figure of the stat",
+  },
+  {
+    name: "title",
+    description: "Title of the stat",
+  },
+  {
+    name: "subtitle",
+    description: "Subtitle of the stat",
+  },
+  {
+    name: "desc",
+    description: "Description of the stat",
+  },
+  {
+    name: "actions",
+    description: "Actions of the stat",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////

@@ -6,23 +6,27 @@ const props = [
     description: "Reduce the padding of the card body",
   },
   {
-    name: "bodyClass",
+    name: "body-class",
     type: "string",
     description: "Add a class to the card body",
   },
   {
-    name: "coverOverlay",
-    type: "boolean",
-    description: "Make the cover image full width",
-  },
-  {
-    name: "coverAside",
+    name: "cover-aside",
     type: "boolean",
     description: "Make the cover image on the side",
+  },
+  {
+    name: "cover-overlay",
+    type: "boolean",
+    description: "Make the cover image full width",
   },
 ];
 
 const slots = [
+  {
+    name: "default",
+    description: "Card content",
+  },
   {
     name: "cover",
     description: "Cover image",
@@ -38,10 +42,6 @@ const slots = [
   {
     name: "actions",
     description: "Card actions",
-  },
-  {
-    name: "default",
-    description: "Card content",
   },
 ];
 
@@ -204,7 +204,7 @@ const slots = [
 
         <template #actions>
           <ui-button color="primary">Accept</ui-button>
-          <ui-button color="ghost">Deny</ui-button>
+          <ui-button ghost>Deny</ui-button>
         </template>
       </ui-card>
     </component-preview>

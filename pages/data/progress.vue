@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { COLORS } from "~/constants";
+import { COLOR_CLASS_MAP } from "~/components/ui/progress/progress.vue";
+
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {

@@ -1,6 +1,6 @@
 <script lang="ts">
 export const ALIGNMENT_CLASS_MAP = {
-  start: "chat-start",
+  start: "chat-start", // default
   end: "chat-end",
 };
 

@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLORS } from "~/constants";
+import { ALIGNMENT_CLASS_MAP, COLOR_CLASS_MAP } from "~/components/ui/chat/chat.vue";
+
+const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -10,15 +13,27 @@ const props = [
   {
     name: "alignment",
     type: "string",
-    values: ["start", "end"],
+    values: ALIGNMENTS,
   },
 ];
 
 const slots = [
-  { name: "default", description: "Content of chat bubble" },
-  { name: "avatar", description: "Avatar image of chat bubble" },
-  { name: "header", description: "Header of chat bubble" },
-  { name: "footer", description: "Footer of chat bubble" },
+  {
+    name: "default",
+    description: "Content of chat bubble",
+  },
+  {
+    name: "avatar",
+    description: "Avatar image of chat bubble",
+  },
+  {
+    name: "header",
+    description: "Header of chat bubble",
+  },
+  {
+    name: "footer",
+    description: "Footer of chat bubble",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////

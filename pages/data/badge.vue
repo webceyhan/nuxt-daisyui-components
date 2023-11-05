@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { COLORS, COLORS_WITH_NEUTRAL, SIZES, TEXT_SIZES } from "~/constants";
+import { TEXT_SIZES } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/badge/badge.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -15,7 +19,7 @@ const props = [
   {
     name: "color",
     type: "string",
-    values: COLORS_WITH_NEUTRAL,
+    values: COLORS,
   },
   {
     name: "ghost",
@@ -29,7 +33,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of button" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of button",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -65,7 +74,7 @@ const slots = [{ name: "default", description: "Content of button" }];
     <component-preview>
       <template #title>Colors</template>
 
-      <ui-badge v-for="color of COLORS_WITH_NEUTRAL" :label="color" :color="color" />
+      <ui-badge v-for="color of COLORS" :label="color" :color="color" />
     </component-preview>
 
     <component-preview>

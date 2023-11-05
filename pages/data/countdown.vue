@@ -7,7 +7,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the countdown" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the countdown",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

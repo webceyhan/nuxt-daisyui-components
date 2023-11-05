@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import { SIZES } from "~/constants";
-import { records, recordsWithVisuals, recordsXs, pinnedRows } from "../data/table-data";
+import { SIZE_CLASS_MAP } from "~/components/ui/table/table.vue";
+import {
+  records,
+  recordsWithVisuals,
+  recordsXs,
+  pinnedRows,
+} from "../../data/table-data";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
 const props = [
   {
@@ -25,7 +32,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the table" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the table",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

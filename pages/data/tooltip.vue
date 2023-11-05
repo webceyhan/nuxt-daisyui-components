@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLORS, POSITIONS } from "~/constants";
+import { COLOR_CLASS_MAP, POSITION_CLASS_MAP } from "~/components/ui/tooltip/tooltip.vue";
+
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
+const POSITIONS: any[] = Object.keys(POSITION_CLASS_MAP);
 
 const props = [
   {
@@ -13,11 +16,6 @@ const props = [
     description: "The text to show in the tooltip",
   },
   {
-    name: "open",
-    type: "boolean",
-    description: "Whether the tooltip should be open",
-  },
-  {
     name: "color",
     type: "string",
     values: COLORS,
@@ -27,9 +25,19 @@ const props = [
     type: "string",
     values: POSITIONS,
   },
+  {
+    name: "open",
+    type: "boolean",
+    description: "Whether the tooltip should be open",
+  },
 ];
 
-const slots = [{ name: "default", description: "Content of the tooltip" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the tooltip",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -54,11 +62,11 @@ const slots = [{ name: "default", description: "Content of the tooltip" }];
     </component-preview>
 
     <component-preview>
-      <template #title>Force open</template>
+      <template #title> Colors </template>
 
-      <div class="my-6">
-        <ui-tooltip text="hello" open>
-          <ui-button>Force open</ui-button>
+      <div v-for="color of COLORS" class="m-6">
+        <ui-tooltip text="hello" :color="color" open>
+          <ui-button :color="color">{{ color }}</ui-button>
         </ui-tooltip>
       </div>
     </component-preview>
@@ -77,14 +85,12 @@ const slots = [{ name: "default", description: "Content of the tooltip" }];
       </div>
     </component-preview>
 
-    <component-preview v-for="color of COLORS">
-      <template #title>
-        <span class="capitalize">{{ color }}</span> color
-      </template>
+    <component-preview>
+      <template #title>Force open</template>
 
       <div class="my-6">
-        <ui-tooltip text="hello" :color="color" open>
-          <ui-button :color="color">{{ color }}</ui-button>
+        <ui-tooltip text="hello" open>
+          <ui-button>Force open</ui-button>
         </ui-tooltip>
       </div>
     </component-preview>

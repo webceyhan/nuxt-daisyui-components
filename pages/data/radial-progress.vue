@@ -19,7 +19,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of radial progress" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of radial progress",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
