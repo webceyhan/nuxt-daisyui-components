@@ -5,10 +5,10 @@ const menus = [
     icon: "cursor-fill",
     iconClass: "text-fuchsia-600",
     links: [
-      { label: "Button", href: "/button" },
-      { label: "Dropdown", href: "/dropdown" },
-      { label: "Modal", href: "/modal" },
-      { label: "Swap", href: "/swap" },
+      { label: "Button", href: "/actions/button" },
+      { label: "Dropdown", href: "/actions/dropdown" },
+      { label: "Modal", href: "/actions/modal" },
+      { label: "Swap", href: "/actions/swap" },
     ],
   },
   {

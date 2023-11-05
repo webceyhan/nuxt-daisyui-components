@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { COLORS, COLORS_WITH_NEUTRAL, SHAPES, SIZES } from "~/constants";
+import {
+  COLOR_CLASS_MAP,
+  SIZE_CLASS_MAP,
+  SHAPE_CLASS_MAP,
+} from "~/components/ui/button/button.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const SHAPES: any[] = Object.keys(SHAPE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -35,7 +43,7 @@ const props = [
   {
     name: "color",
     type: "string",
-    values: COLORS_WITH_NEUTRAL,
+    values: COLORS,
   },
   {
     name: "ghost",
@@ -99,9 +107,20 @@ const slots = [
     </component-preview>
 
     <component-preview>
+      <template #title>Shapes</template>
+
+      <div v-for="shape of SHAPES" class="flex flex-col gap-3 m-5">
+        {{ shape }}
+
+        <ui-button icon="x" class="text-2xl" :shape="shape" />
+        <ui-button icon="x" class="text-2xl" :shape="shape" outline />
+      </div>
+    </component-preview>
+
+    <component-preview>
       <template #title>Colors</template>
 
-      <ui-button v-for="color of COLORS_WITH_NEUTRAL" :label="color" :color="color" />
+      <ui-button v-for="color of COLORS" :label="color" :color="color" />
     </component-preview>
 
     <component-preview>
@@ -126,17 +145,6 @@ const slots = [
       <template #title>Disabled</template>
 
       <ui-button disabled>Disabled using attribute</ui-button>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Shapes</template>
-
-      <div v-for="shape of SHAPES" class="flex flex-col gap-3 m-5">
-        {{ shape }}
-
-        <ui-button icon="x" class="text-2xl" :shape="shape" />
-        <ui-button icon="x" class="text-2xl" :shape="shape" outline />
-      </div>
     </component-preview>
 
     <component-preview>

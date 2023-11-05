@@ -1,28 +1,67 @@
 <script setup lang="ts">
-import {
-  BRAND_COLORS,
-  BRAND_COLORS_WITH_NEUTRAL_AND_GHOST,
-  POSITIONS,
-  SIZES,
-  STATE_COLORS,
-} from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/button/button.vue";
+import { POSITION_CLASS_MAP } from "~/components/ui/dropdown/dropdown.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
+const POSITIONS: any[] = Object.keys(POSITION_CLASS_MAP);
 
 const props = [
-  { name: "label", type: "string", description: "Label of dropdown trigger" },
-  { name: "icon", type: "string", description: "Icon at start of dropdown trigger" },
-  { name: "icon-end", type: "string", description: "Icon at end of dropdown trigger" },
-  { name: "size", type: "string", values: SIZES },
-  { name: "color", type: "string", values: BRAND_COLORS_WITH_NEUTRAL_AND_GHOST },
+  {
+    name: "label",
+    type: "string",
+    description: "Label of dropdown trigger",
+  },
+  {
+    name: "icon",
+    type: "string",
+    description: "Icon at start of dropdown trigger",
+  },
+  {
+    name: "icon-end",
+    type: "string",
+    description: "Icon at end of dropdown trigger",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "color",
+    type: "string",
+    values: COLORS,
+  },
   {
     name: "outline",
     type: "boolean",
     description: "Transparent trigger button with colored border",
   },
-  { name: "position", type: "string", values: POSITIONS },
-  { name: "open", type: "boolean", description: "Force open" },
-  { name: "hover", type: "boolean", description: "Opens on hover too" },
-  { name: "disabled", type: "boolean", description: "Disable dropdown trigger" },
-  { name: "align-to-end", type: "boolean", description: "Aligns to end" },
+  {
+    name: "position",
+    type: "string",
+    values: POSITIONS,
+  },
+  {
+    name: "open",
+    type: "boolean",
+    description: "Force open",
+  },
+  {
+    name: "hover",
+    type: "boolean",
+    description: "Opens on hover too",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Disable dropdown trigger",
+  },
+  {
+    name: "align-to-end",
+    type: "boolean",
+    description: "Aligns to end",
+  },
 ];
 
 const slots = [
@@ -38,7 +77,7 @@ const slots = [
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
-const spacings = {
+const spacings: any = {
   top: "mt-32",
   bottom: "mb-32",
   right: "my-16 mr-16",
@@ -86,22 +125,7 @@ const spacings = {
     <component-preview>
       <template #title>Colors</template>
 
-      <ui-dropdown
-        v-for="color of BRAND_COLORS_WITH_NEUTRAL_AND_GHOST"
-        :label="color"
-        :color="color"
-      >
-        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
-      </ui-dropdown>
-
-      <div class="w-full" />
-
-      <ui-dropdown
-        v-for="color of STATE_COLORS"
-        :label="color"
-        :color="color"
-        class="mb-32"
-      >
+      <ui-dropdown v-for="color of COLORS" :label="color" :color="color" class="mb-20">
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
@@ -109,17 +133,11 @@ const spacings = {
     <component-preview>
       <template #title>Outlined</template>
 
-      <ui-dropdown v-for="color of BRAND_COLORS" :label="color" :color="color" outline>
-        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
-      </ui-dropdown>
-
-      <div class="w-full" />
-
       <ui-dropdown
-        v-for="color of STATE_COLORS"
+        v-for="color of COLORS"
         :label="color"
         :color="color"
-        class="mb-32"
+        class="mb-20"
         outline
       >
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
@@ -129,7 +147,7 @@ const spacings = {
     <component-preview>
       <template #title>Disabled</template>
 
-      <ui-dropdown label="Disabled using attribute" disabled>
+      <ui-dropdown label="Disabled using attribute" class="mb-20" disabled>
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>

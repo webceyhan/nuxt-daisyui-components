@@ -1,6 +1,11 @@
 <script setup lang="ts">
 const props = [
   {
+    name: "modelValue",
+    description: "Whether the swap is on or off",
+    type: "string",
+  },
+  {
     name: "flip",
     description: "Flip the swap effect",
     type: "boolean",
@@ -9,11 +14,6 @@ const props = [
     name: "rotate",
     description: "Rotate the swap effect",
     type: "boolean",
-  },
-  {
-    name: "modelValue",
-    description: "Whether the swap is on or off",
-    type: "string",
   },
 ];
 
