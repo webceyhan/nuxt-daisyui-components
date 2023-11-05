@@ -33,11 +33,11 @@ const props = withDefaults(defineProps<Props>(), {
       <!-- top close button -->
       <form v-if="dismissable" method="dialog" novalidate>
         <ui-button
+          class="absolute right-2 top-2"
+          shape="circle"
           icon="x-lg"
           size="sm"
-          color="ghost"
-          shape="circle"
-          class="absolute right-2 top-2"
+          ghost
         />
       </form>
 
