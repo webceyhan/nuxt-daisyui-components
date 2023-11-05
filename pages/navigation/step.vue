@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP } from "~/components/ui/steps/step.vue";
+import { COLOR_CLASS_MAP } from "~/components/ui/step/step.vue";
 
 const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
-const props = [
+const groupProps = [
   {
     name: "vertical",
     type: "boolean",
@@ -11,14 +11,14 @@ const props = [
   },
 ];
 
-const slots = [
+const groupSlots = [
   {
     name: "default",
     description: "Content of the steps",
   },
 ];
 
-const itemProps = [
+const props = [
   {
     name: "color",
     type: "string",
@@ -26,7 +26,7 @@ const itemProps = [
   },
 ];
 
-const itemSlots = [
+const slots = [
   {
     name: "default",
     description: "Content of the step",
@@ -82,28 +82,28 @@ const scrollableColors: any = {
     <component-props-table :props="props" />
     <component-slots-table :slots="slots" />
 
-    <h3 class="text-lg font-bold">Stat Item</h3>
-    <component-props-table :props="itemProps" />
-    <component-slots-table :slots="itemSlots" />
+    <h3 class="text-lg font-bold">Step Group</h3>
+    <component-props-table :props="groupProps" />
+    <component-slots-table :slots="groupSlots" />
 
     <component-preview>
       <template #title>Horizontal</template>
 
-      <ui-steps>
+      <ui-step-group>
         <ui-step v-for="step of steps" :color="step.color">
           {{ step.label }}
         </ui-step>
-      </ui-steps>
+      </ui-step-group>
     </component-preview>
 
     <component-preview>
       <template #title>Vertical</template>
 
-      <ui-steps vertical>
+      <ui-step-group vertical>
         <ui-step v-for="step of steps" :color="step.color">
           {{ step.label }}
         </ui-step>
-      </ui-steps>
+      </ui-step-group>
     </component-preview>
 
     <component-preview>
@@ -111,17 +111,17 @@ const scrollableColors: any = {
         responsive (vertical on small screen, horizontal on large screen)
       </template>
 
-      <ui-steps class="lg:steps-horizontal" vertical>
+      <ui-step-group class="lg:steps-horizontal" vertical>
         <ui-step v-for="step of steps" :color="step.color">
           {{ step.label }}
         </ui-step>
-      </ui-steps>
+      </ui-step-group>
     </component-preview>
 
     <component-preview>
       <template #title>With data-content</template>
 
-      <ui-steps>
+      <ui-step-group>
         <ui-step
           v-for="(step, i) of stepsWithContent"
           :data-content="step"
@@ -129,13 +129,13 @@ const scrollableColors: any = {
         >
           Step {{ i }}
         </ui-step>
-      </ui-steps>
+      </ui-step-group>
     </component-preview>
 
     <component-preview>
       <template #title>Custom colors</template>
 
-      <ui-steps>
+      <ui-step-group>
         <ui-step
           v-for="step of stepsWithCustomColors"
           :data-content="step.content"
@@ -143,17 +143,17 @@ const scrollableColors: any = {
         >
           {{ step.label }}
         </ui-step>
-      </ui-steps>
+      </ui-step-group>
     </component-preview>
 
     <component-preview>
       <template #title>With scrollable wrapper</template>
 
-      <ui-steps>
+      <ui-step-group>
         <ui-step v-for="i in 24" :color="scrollableColors[i]">
           {{ i == 1 ? "start" : i == 24 ? "end" : i }}
         </ui-step>
-      </ui-steps>
+      </ui-step-group>
     </component-preview>
   </div>
 </template>
