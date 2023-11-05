@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/tabs/tab.vue";
+import { SIZE_CLASS_MAP } from "~/components/ui/tab/tab.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
@@ -76,49 +76,49 @@ const links = [
     <component-preview>
       <template #title>Tabs</template>
 
-      <ui-tabs>
+      <ui-tab-nav>
         <ui-tab v-for="link of links" :active="link.active">{{ link.label }}</ui-tab>
-      </ui-tabs>
+      </ui-tab-nav>
     </component-preview>
 
     <component-preview>
       <template #title>Sizes</template>
 
       <div class="flex flex-col items-center gap-3">
-        <ui-tabs v-for="size of SIZES">
+        <ui-tab-nav v-for="size of SIZES">
           <ui-tab v-for="link of links" :active="link.active" lifted :size="size">
             {{ size }}
           </ui-tab>
-        </ui-tabs>
+        </ui-tab-nav>
       </div>
     </component-preview>
 
     <component-preview>
       <template #title>Bordered</template>
 
-      <ui-tabs>
+      <ui-tab-nav>
         <ui-tab v-for="link of links" :active="link.active" bordered>{{
           link.label
         }}</ui-tab>
-      </ui-tabs>
+      </ui-tab-nav>
     </component-preview>
 
     <component-preview>
       <template #title>Lifted</template>
 
-      <ui-tabs>
+      <ui-tab-nav>
         <ui-tab v-for="link of links" :active="link.active" lifted>{{
           link.label
         }}</ui-tab>
-      </ui-tabs>
+      </ui-tab-nav>
     </component-preview>
 
     <component-preview>
       <template #title>Boxed</template>
 
-      <ui-tabs boxed>
+      <ui-tab-nav boxed>
         <ui-tab v-for="link of links" :active="link.active">{{ link.label }}</ui-tab>
-      </ui-tabs>
+      </ui-tab-nav>
     </component-preview>
   </div>
 </template>

@@ -22,7 +22,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <button
+  <a
     :class="[
       'tab',
       SIZE_CLASS_MAP[size],
@@ -40,5 +40,5 @@ withDefaults(defineProps<Props>(), {
     </span>
 
     <slot />
-  </button>
+  </a>
 </template>

@@ -7,7 +7,7 @@ defineProps<Props>();
 </script>
 
 <template>
-  <button :class="['tabs', { 'tabs-boxed': boxed }]">
+  <div :class="['tabs', { 'tabs-boxed': boxed }]">
     <slot />
-  </button>
+  </div>
 </template>
