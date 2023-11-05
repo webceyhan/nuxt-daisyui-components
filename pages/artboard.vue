@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import {
-  ARTBOARD_SIZE_CLASS_MAP,
-  ArtboardSize,
-} from "~/components/ui/layout/artboard.vue";
+import { SIZE_CLASS_MAP } from "~/components/ui/layout/artboard.vue";
 
-const SIZES = Object.keys(ARTBOARD_SIZE_CLASS_MAP) as ArtboardSize[];
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
 const props = [
   {
@@ -19,7 +16,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of artboard" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of artboard",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
