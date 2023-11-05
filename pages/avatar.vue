@@ -18,8 +18,21 @@ const props = [
 ];
 
 const slots = [
-  { name: "default", description: "Content of avatar" },
-  { name: "indicator", description: "Content of indicator" },
+  {
+    name: "default",
+    description: "Content of avatar",
+  },
+  {
+    name: "indicator",
+    description: "Content of indicator",
+  },
+];
+
+const groupSlots = [
+  {
+    name: "default",
+    description: "Content of avatar group",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
@@ -36,6 +49,9 @@ const slots = [
 
     <component-props-table :props="props" />
     <component-slots-table :slots="slots" />
+
+    <h3 class="text-lg font-bold">Avatar group</h3>
+    <component-slots-table :slots="groupSlots" />
 
     <component-preview>
       <template #title>Avatar in custom sizes</template>
