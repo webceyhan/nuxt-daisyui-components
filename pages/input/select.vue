@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLORS, SIZES } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/select.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -34,7 +37,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content for options" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content for options",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,20 +75,7 @@ const selectedFruit = ref(undefined);
     </component-preview>
 
     <component-preview>
-      <template #title> Sizes</template>
-
-      <div class="flex flex-col w-full items-center gap-2">
-        <ui-select v-for="size of SIZES" :size="size" bordered v-model="selectedFruit">
-          <option disabled selected>{{ size }}</option>
-          <option v-for="opt of ['apple', 'orange', 'tomato']" :value="opt">
-            {{ size }} {{ opt }}
-          </option>
-        </ui-select>
-      </div>
-    </component-preview>
-
-    <component-preview>
-      <template #title>With form-control and labels</template>
+      <template #title>With form-control</template>
 
       <ui-form-control
         class="w-full"
@@ -96,6 +91,19 @@ const selectedFruit = ref(undefined);
           <option>Star Trek</option>
         </ui-select>
       </ui-form-control>
+    </component-preview>
+
+    <component-preview>
+      <template #title> Sizes</template>
+
+      <div class="flex flex-col w-full items-center gap-2">
+        <ui-select v-for="size of SIZES" :size="size" bordered v-model="selectedFruit">
+          <option disabled selected>{{ size }}</option>
+          <option v-for="opt of ['apple', 'orange', 'tomato']" :value="opt">
+            {{ size }} {{ opt }}
+          </option>
+        </ui-select>
+      </div>
     </component-preview>
 
     <component-preview>

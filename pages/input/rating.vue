@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { SIZES } from "~/constants";
+import { SIZE_CLASS_MAP } from "~/components/ui/input/rating.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
 const props = [
   {
@@ -13,19 +15,9 @@ const props = [
     description: "Maximum value",
   },
   {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
     name: "mask",
     type: "string",
     description: "Mask to use for the rating",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the rating is disabled or not",
   },
   {
     name: "itemClass",
@@ -36,6 +28,16 @@ const props = [
     name: "itemClasses",
     type: "string[]",
     description: "Classes to apply to each item",
+  },
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Whether the rating is disabled or not",
   },
 ];
 

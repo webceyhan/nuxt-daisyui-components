@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLORS, SIZES } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/radio.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -29,8 +32,6 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of button" }];
-
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
 const sizeValue = ref("md");
@@ -44,7 +45,7 @@ const colorValue = ref("red");
     <p>Radio buttons allow the user to select one option from a set.</p>
 
     <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
       <template #title>Radio</template>
@@ -53,16 +54,15 @@ const colorValue = ref("red");
     </component-preview>
 
     <component-preview>
-      <template #title> Colors </template>
+      <template #title>With form-control</template>
 
-      <div class="flex flex-col items-center gap-2" v-for="color of COLORS">
-        <ui-radio
-          v-for="(checked, i) of [true, false]"
-          :name="`radio-${color}`"
-          :checked="checked"
-          :color="color"
-        />
+      <div class="flex flex-col w-52">
+        <ui-form-control v-for="i in 2" :label="`label ${i}`" inline>
+          <ui-radio name="radio-with-label" :value="`${i}`" v-model="colorValue" />
+        </ui-form-control>
       </div>
+
+      <p class="p-10">{{ colorValue }}</p>
     </component-preview>
 
     <component-preview>
@@ -82,29 +82,22 @@ const colorValue = ref("red");
     </component-preview>
 
     <component-preview>
-      <template #title>Disabled</template>
+      <template #title> Colors </template>
 
-      <ui-radio disabled />
+      <div class="flex flex-col items-center gap-2" v-for="color of COLORS">
+        <ui-radio
+          v-for="(checked, i) of [true, false]"
+          :name="`radio-${color}`"
+          :checked="checked"
+          :color="color"
+        />
+      </div>
     </component-preview>
 
     <component-preview>
-      <template #title>With label and form-control and custom colors!</template>
+      <template #title>Disabled</template>
 
-      <div class="flex flex-col w-52">
-        <ui-form-control v-for="label of ['red', 'blue']" :label="`${label} pill`" inline>
-          <ui-radio
-            name="radio-with-label"
-            :class="{
-              'checked:bg-red-500': label === 'red',
-              'checked:bg-blue-500': label === 'blue',
-            }"
-            :value="label"
-            v-model="colorValue"
-          />
-        </ui-form-control>
-      </div>
-
-      <p class="p-10">{{ colorValue }}</p>
+      <ui-radio disabled />
     </component-preview>
   </div>
 </template>

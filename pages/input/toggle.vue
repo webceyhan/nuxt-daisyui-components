@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { BRAND_COLORS, SIZES, STATE_COLORS } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/toggle.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -10,7 +13,7 @@ const props = [
   {
     name: "color",
     type: "string",
-    values: [...BRAND_COLORS, ...STATE_COLORS],
+    values: COLORS,
   },
   {
     name: "checked",
@@ -45,7 +48,7 @@ const checked = ref(true);
     </component-preview>
 
     <component-preview>
-      <template #title>With label and form-control</template>
+      <template #title>With form-control</template>
 
       <ui-form-control label="Remember me" inline>
         <ui-toggle v-model:checked="checked" />
@@ -53,30 +56,20 @@ const checked = ref(true);
     </component-preview>
 
     <component-preview>
-      <template #title> Checkboxes with brand colors </template>
-
-      <div class="flex flex-col items-center gap-2">
-        <ui-form-control v-for="color of BRAND_COLORS" label="Remember me" inline>
-          <ui-toggle :color="color" v-model:checked="checked" />
-        </ui-form-control>
-      </div>
-    </component-preview>
-
-    <component-preview>
-      <template #title> Checkboxes with state colors </template>
-
-      <div class="flex flex-col items-center gap-2">
-        <ui-form-control v-for="color of STATE_COLORS" label="Remember me" inline>
-          <ui-toggle :color="color" v-model:checked="checked" />
-        </ui-form-control>
-      </div>
-    </component-preview>
-
-    <component-preview>
       <template #title> Sizes</template>
 
       <div class="flex flex-col items-center gap-2">
         <ui-toggle v-for="size of SIZES" :size="size" checked />
+      </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Colors </template>
+
+      <div class="flex flex-col items-center gap-2">
+        <ui-form-control v-for="color of COLORS" label="Remember me" inline>
+          <ui-toggle :color="color" v-model:checked="checked" />
+        </ui-form-control>
       </div>
     </component-preview>
 

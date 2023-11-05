@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLORS, SIZES } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/checkbox.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -46,7 +49,7 @@ const checked = ref(true);
     </component-preview>
 
     <component-preview>
-      <template #title>With label and form-control</template>
+      <template #title>With form-control</template>
 
       <ui-form-control label="Remember me" inline>
         <ui-checkbox v-model:checked="checked" />
@@ -54,19 +57,19 @@ const checked = ref(true);
     </component-preview>
 
     <component-preview>
-      <template #title> Colors </template>
-      <div class="flex flex-col">
-        <ui-form-control v-for="color of COLORS" label="Remember me" inline>
-          <ui-checkbox :color="color" v-model:checked="checked" />
-        </ui-form-control>
-      </div>
-    </component-preview>
-
-    <component-preview>
       <template #title> Sizes</template>
 
       <div class="flex flex-col items-center gap-2">
         <ui-checkbox v-for="size of SIZES" :size="size" checked />
+      </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title> Colors </template>
+      <div class="flex flex-col">
+        <ui-form-control v-for="color of COLORS" :label="color" inline>
+          <ui-checkbox :color="color" v-model:checked="checked" />
+        </ui-form-control>
       </div>
     </component-preview>
 

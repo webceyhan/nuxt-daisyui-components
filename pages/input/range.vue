@@ -1,7 +1,15 @@
 <script setup lang="ts">
-import { COLORS, SIZES } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/range.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
+  {
+    name: "modelValue",
+    type: "string",
+    description: "Value of the input",
+  },
   {
     name: "min",
     type: "string",
@@ -16,11 +24,6 @@ const props = [
     name: "step",
     type: "string",
     description: "Step value",
-  },
-  {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the input",
   },
   {
     name: "size",
@@ -70,14 +73,6 @@ const props = [
       </div>
     </component-preview>
 
-    <component-preview v-for="color of COLORS">
-      <template #title>
-        <span class="capitalize"> {{ color }} </span> color
-      </template>
-
-      <ui-range :color="color" value="40" />
-    </component-preview>
-
     <component-preview>
       <template #title> Sizes</template>
 
@@ -85,6 +80,14 @@ const props = [
         <ui-range v-for="(size, i) of SIZES" :size="size" :value="40 + i * 10" />
       </div>
     </component-preview>
+
+    <component-preview>
+      <template #title> Colors </template>
+
+      <ui-range v-for="color of COLORS" :color="color" value="40" class="my-2" />
+    </component-preview>
+
+
 
     <component-preview>
       <template #title>Disabled</template>

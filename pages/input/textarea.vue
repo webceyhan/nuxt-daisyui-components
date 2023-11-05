@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLORS, SIZES } from "~/constants";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/textarea.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -25,12 +28,12 @@ const props = [
   {
     name: "bordered",
     type: "boolean",
-    description: "Whether the checkbox has a border or not",
+    description: "Whether the textarea has a border or not",
   },
   {
     name: "disabled",
     type: "boolean",
-    description: "Whether the checkbox is disabled or not",
+    description: "Whether the textarea is disabled or not",
   },
 ];
 
@@ -41,58 +44,70 @@ const value = ref("");
 
 <template>
   <div>
-    <h1 class="text-4xl font-bold mb-8">File Input</h1>
+    <h1 class="text-4xl font-bold mb-8">Textarea</h1>
 
-    <p>File Input is a an input field for uploading files.</p>
+    <p>Textarea allows users to enter text in multiple lines.</p>
 
     <component-props-table :props="props" />
     <!-- <component-slots-table :slots="slots" /> -->
 
     <component-preview>
-      <template #title>File input</template>
+      <template #title>Textarea</template>
 
-      <ui-file-input v-model="value" />
-      <p class="text-xs text-base-content/50">{{ value }}</p>
+      <ui-textarea v-model="value" placeholder="Bio" class="w-full" />
     </component-preview>
 
     <component-preview>
       <template #title>With form-control and labels</template>
 
-      <ui-form-control label="Pick a file" alt="alt label">
-        <ui-file-input bordered />
+      <ui-form-control label="Your bio" alt="Alt label" class="w-full">
+        <ui-textarea v-model="value" class="w-full" bordered />
       </ui-form-control>
     </component-preview>
 
     <component-preview>
       <template #title> Sizes</template>
 
-      <div class="flex flex-col items-center gap-2">
-        <ui-file-input v-for="size of SIZES" :size="size" bordered />
+      <div class="flex flex-col w-full items-center gap-2">
+        <ui-textarea
+          v-for="size of SIZES"
+          :size="size"
+          class="w-full"
+          v-model="value"
+          placeholder="Bio"
+          bordered
+        />
       </div>
     </component-preview>
 
     <component-preview>
       <template #title> Colors </template>
 
-      <ui-file-input v-for="color of COLORS" :color="color" class="my-2" bordered />
+      <ui-textarea
+        v-for="color of COLORS"
+        :color="color"
+        v-model="value"
+        :placeholder="color"
+        class="w-full my-2"
+      />
     </component-preview>
 
     <component-preview>
       <template #title>Ghost (no background)</template>
 
-      <ui-file-input ghost />
+      <ui-textarea v-model="value" placeholder="Bio" class="w-full" ghost />
     </component-preview>
 
     <component-preview>
       <template #title>Bordered</template>
 
-      <ui-file-input bordered />
+      <ui-textarea v-model="value" placeholder="Bio" class="w-full" bordered />
     </component-preview>
 
     <component-preview>
       <template #title>Disabled</template>
 
-      <ui-file-input disabled />
+      <ui-textarea placeholder="You can't touch this" class="w-full" disabled />
     </component-preview>
   </div>
 </template>
