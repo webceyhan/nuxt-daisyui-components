@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = [
+const groupProps = [
   {
     name: "vertical",
     type: "boolean",
@@ -7,14 +7,14 @@ const props = [
   },
 ];
 
-const slots = [
+const groupSlots = [
   {
     name: "default",
     description: "Content of the stats",
   },
 ];
 
-const itemSlots = [
+const slots = [
   {
     name: "figure",
     description: "Figure of the stat",
@@ -52,28 +52,28 @@ const stats = [
 
     <p>Stat is used to show numbers and data in a box.</p>
 
-    <component-props-table :props="props" />
     <component-slots-table :slots="slots" />
 
-    <h3 class="text-lg font-bold">Stat Item</h3>
-    <component-slots-table :slots="itemSlots" />
+    <h3 class="text-lg font-bold">Stat Group</h3>
+    <component-props-table :props="groupProps" />
+    <component-slots-table :slots="groupSlots" />
 
     <component-preview>
       <template #title> Stat </template>
 
-      <ui-stats class="shadow">
+      <ui-stat-group class="shadow">
         <ui-stat>
           <template #title>Total Page Views</template>
           89,400
           <template #desc>21% more than last month</template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
 
     <component-preview>
       <template #title> Stat with icons or image</template>
 
-      <ui-stats class="shadow">
+      <ui-stat-group class="shadow">
         <ui-stat>
           <template #figure>
             <ui-icon name="heart" class="text-primary text-2xl" />
@@ -106,13 +106,13 @@ const stats = [
             <span class="text-secondary"> 31 tasks remaining </span>
           </template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
 
     <component-preview>
       <template #title> Aligned to start</template>
 
-      <ui-stats class="shadow">
+      <ui-stat-group class="shadow">
         <ui-stat v-for="(stat, i) of stats">
           <template #figure>
             <ui-icon :name="stat.icon" class="text-secondary text-2xl" />
@@ -121,13 +121,13 @@ const stats = [
           {{ stat.value }}
           <template #desc> {{ stat.desc }} </template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
 
     <component-preview>
       <template #title> Centered items</template>
 
-      <ui-stats class="shadow">
+      <ui-stat-group class="shadow">
         <ui-stat v-for="(stat, i) of stats" class="place-items-center">
           <template #figure>
             <ui-icon :name="stat.icon" class="text-secondary text-2xl" />
@@ -136,19 +136,19 @@ const stats = [
           {{ stat.value }}
           <template #desc> {{ stat.desc }} </template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
 
     <component-preview>
       <template #title> Vertical</template>
 
-      <ui-stats class="shadow" vertical>
+      <ui-stat-group class="shadow" vertical>
         <ui-stat v-for="(stat, i) of stats">
           <template #title>{{ stat.title }}</template>
           {{ stat.value }}
           <template #desc> {{ stat.desc }} </template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
 
     <component-preview>
@@ -156,19 +156,19 @@ const stats = [
         Responsive (vertical on small screen, horizontal on large screen)</template
       >
 
-      <ui-stats class="shadow lg:stats-horizontal" vertical>
+      <ui-stat-group class="shadow lg:stats-horizontal" vertical>
         <ui-stat v-for="(stat, i) of stats">
           <template #title>{{ stat.title }}</template>
           {{ stat.value }}
           <template #desc> {{ stat.desc }} </template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
 
     <component-preview>
       <template #title> With custom colors and button</template>
 
-      <ui-stats class="shadow bg-primary text-primary-content">
+      <ui-stat-group class="shadow bg-primary text-primary-content">
         <ui-stat>
           <template #title> Account Balance </template>
           $89,400
@@ -184,7 +184,7 @@ const stats = [
             <ui-button size="sm"> Deposit </ui-button>
           </template>
         </ui-stat>
-      </ui-stats>
+      </ui-stat-group>
     </component-preview>
   </div>
 </template>
