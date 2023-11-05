@@ -13,7 +13,6 @@ export const POSITION_CLASS_MAP = {
 export interface Props {
   label?: string;
   icon?: string;
-  iconEnd?: string;
   size?: ButtonProps["size"];
   color?: ButtonProps["color"];
   position?: keyof typeof POSITION_CLASS_MAP;
@@ -22,10 +21,10 @@ export interface Props {
   hover?: boolean;
   disabled?: boolean;
   alignToEnd?: boolean;
+  noIndicator?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
-  iconEnd: "chevron-down",
   position: "bottom",
 });
 
@@ -48,7 +47,9 @@ const close = () => {
   >
     <!-- trigger button -->
     <slot name="trigger">
-      <ui-button v-bind="{ label, icon, iconEnd, color, size, outline, disabled }" />
+      <ui-button v-bind="{ label, icon, color, size, outline, disabled }">
+        <ui-icon v-if="!noIndicator" name="chevron-down" />
+      </ui-button>
     </slot>
 
     <!-- dropdown content -->
