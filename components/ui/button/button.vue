@@ -8,6 +8,7 @@ export const SIZE_CLASS_MAP = {
 
 export const COLOR_CLASS_MAP = {
   default: undefined, // default
+  neutral: "btn-neutral",
   primary: "btn-primary",
   secondary: "btn-secondary",
   accent: "btn-accent",
@@ -15,7 +16,6 @@ export const COLOR_CLASS_MAP = {
   success: "btn-success",
   warning: "btn-warning",
   error: "btn-error",
-  neutral: "btn-neutral",
 };
 
 export const SHAPE_CLASS_MAP = {
