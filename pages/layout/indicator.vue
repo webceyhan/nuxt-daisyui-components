@@ -2,7 +2,7 @@
 import {
   ALIGNMENT_CLASS_MAP,
   VERTICAL_ALIGNMENT_CLASS_MAP,
-} from "~/components/ui/layout/indicator.vue";
+} from "~/components/ui/indicator.vue";
 
 const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
 const VERTICAL_ALIGNMENTS: any[] = Object.keys(VERTICAL_ALIGNMENT_CLASS_MAP);
@@ -133,7 +133,7 @@ const positions = [
     <component-preview>
       <template #title>for tab</template>
 
-      <ui-tabs>
+      <ui-tab-nav>
         <ui-tab lifted>Messages</ui-tab>
         <ui-tab lifted active>
           <template #indicator>
@@ -142,7 +142,7 @@ const positions = [
           Notifications
         </ui-tab>
         <ui-tab lifted>Requests</ui-tab>
-      </ui-tabs>
+      </ui-tab-nav>
     </component-preview>
 
     <component-preview>

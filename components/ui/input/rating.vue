@@ -1,5 +1,5 @@
 <script lang="ts">
-import { MASK_CLASS_MAP } from "../layout/mask.vue";
+import { MASK_CLASS_MAP } from "../mask.vue";
 
 export const SIZE_CLASS_MAP = {
   xs: "rating-xs",
