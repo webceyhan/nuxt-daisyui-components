@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Color } from "../types";
-
-export const PROGRESS_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "progress-primary",
   secondary: "progress-secondary",
@@ -11,13 +9,28 @@ export const PROGRESS_COLOR_CLASS_MAP: ClassMap<Color> = {
   warning: "progress-warning",
   error: "progress-error",
 };
+
+// this is for radial progress
+const TEXT_COLOR_CLASS_MAP = {
+  default: undefined, // default
+  primary: "text-primary",
+  secondary: "text-secondary",
+  accent: "text-accent",
+  info: "text-info",
+  success: "text-success",
+  warning: "text-warning",
+  error: "text-error",
+};
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   value?: number;
   max?: number;
-  color?: Color;
+  size?: string;
+  thickness?: string;
+  color?: keyof typeof COLOR_CLASS_MAP;
+  radial?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -28,8 +41,21 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
+  <div
+    v-if="radial"
+    :class="['radial-progress', TEXT_COLOR_CLASS_MAP[color]]"
+    :style="{
+      '--value': value,
+      '--size': size,
+      '--thickness': thickness,
+    }"
+  >
+    {{ value }}%
+  </div>
+
   <progress
-    :class="['progress', PROGRESS_COLOR_CLASS_MAP[color]]"
+    v-else
+    :class="['progress', COLOR_CLASS_MAP[color]]"
     :value="value"
     :max="max"
   />

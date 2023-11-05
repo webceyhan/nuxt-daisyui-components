@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { MenuProps } from "./menu.vue";
+import { Props as MenuProps } from "./menu.vue";
 
-interface Props {
+export interface Props {
   label?: string;
   href?: string;
   icon?: string;

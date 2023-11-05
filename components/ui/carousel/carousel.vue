@@ -1,16 +1,14 @@
 <script lang="ts">
-import { Alignment, ClassMap } from "../types";
-
-export const CAROUSEL_SNAP_CLASS_MAP: ClassMap<Alignment> = {
-  start: undefined,
+export const SNAP_CLASS_MAP = {
+  start: undefined, // default
   center: "carousel-center",
   end: "carousel-end",
 };
 </script>
 
 <script setup lang="ts">
-interface Props {
-  snap?: Alignment;
+export interface Props {
+  snap?: keyof typeof SNAP_CLASS_MAP;
   vertical?: boolean;
 }
 
@@ -23,7 +21,7 @@ withDefaults(defineProps<Props>(), {
   <div
     :class="[
       'carousel',
-      CAROUSEL_SNAP_CLASS_MAP[snap],
+      SNAP_CLASS_MAP[snap],
       {
         'carousel-vertical': vertical,
       },

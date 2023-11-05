@@ -1,9 +1,5 @@
 <script lang="ts">
-import { ClassMap, StateColor } from "../types";
-
-export type AlertColor = "default" | StateColor;
-
-export const ALERT_COLOR_CLASS_MAP: ClassMap<AlertColor> = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   info: "alert-info",
   success: "alert-success",
@@ -13,11 +9,11 @@ export const ALERT_COLOR_CLASS_MAP: ClassMap<AlertColor> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   icon?: string;
   title?: string;
   message?: string;
-  color?: AlertColor;
+  color?: keyof typeof COLOR_CLASS_MAP;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -31,7 +27,7 @@ const iconClasses = computed(() => ({
 </script>
 
 <template>
-  <div :class="['alert', ALERT_COLOR_CLASS_MAP[color]]">
+  <div :class="['alert', COLOR_CLASS_MAP[color]]">
     <slot name="icon">
       <ui-icon v-if="icon" :name="icon" :class="iconClasses" />
     </slot>

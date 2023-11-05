@@ -3,7 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.min.css";
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   name: string;
 }
 

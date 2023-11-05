@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, VerticalAlignment } from "../types";
-
-export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
+export const VERTICAL_ALIGNMENT_CLASS_MAP = {
   top: "modal-top",
   middle: undefined, // default
   bottom: "modal-bottom",
@@ -9,13 +7,13 @@ export const MODAL_VERTICAL_ALIGNMENT_CLASS_MAP: ClassMap<VerticalAlignment> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   title?: string;
   class?: string;
   open?: boolean;
   backdrop?: boolean;
   dismissable?: boolean;
-  verticalAlignment?: VerticalAlignment;
+  verticalAlignment?: keyof typeof VERTICAL_ALIGNMENT_CLASS_MAP;
 }
 
 defineEmits(["update:open"]);
@@ -28,18 +26,18 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <dialog
     :open="open"
-    :class="['modal', MODAL_VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
+    :class="['modal', VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
     @close="$emit('update:open', false)"
   >
     <div :class="['modal-box', props.class]">
       <!-- top close button -->
       <form v-if="dismissable" method="dialog" novalidate>
         <ui-button
+          class="absolute right-2 top-2"
+          shape="circle"
           icon="x-lg"
           size="sm"
-          color="ghost"
-          shape="circle"
-          class="absolute right-2 top-2"
+          ghost
         />
       </form>
 

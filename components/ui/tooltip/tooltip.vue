@@ -1,7 +1,5 @@
 <script lang="ts">
-import { ClassMap, Color, Position } from "../types";
-
-export const TOOLTIP_COLOR_CLASS_MAP: ClassMap<Color> = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
   primary: "tooltip-primary",
   secondary: "tooltip-secondary",
@@ -12,19 +10,19 @@ export const TOOLTIP_COLOR_CLASS_MAP: ClassMap<Color> = {
   error: "tooltip-error",
 };
 
-export const TOOLTIP_POSITION_CLASS_MAP: ClassMap<Position> = {
+export const POSITION_CLASS_MAP = {
   top: undefined, // default
   bottom: "tooltip-bottom",
   left: "tooltip-left",
   right: "tooltip-right",
 };
 
-interface Bindings {
-  text?: string;
-  open?: boolean;
-  color?: Color;
-  position?: Position;
-}
+// interface Bindings {
+//   text?: string;
+//   open?: boolean;
+//   color?: keyof typeof COLOR_CLASS_MAP;
+//   position?: keyof typeof POSITION_CLASS_MAP;
+// }
 
 // not working because it's not auto registered
 // you should put it inside a plugin /  module
@@ -39,19 +37,19 @@ interface Bindings {
 
 //   el.setAttribute("data-tip", text);
 //   el.classList.add("tooltip");
-//   el.classList.add(TOOLTIP_COLOR_CLASS_MAP[color ?? "default"]);
-//   el.classList.add(TOOLTIP_POSITION_CLASS_MAP[position ?? "top"]);
+//   el.classList.add(COLOR_CLASS_MAP[color ?? "default"]);
+//   el.classList.add(POSITION_CLASS_MAP[position ?? "top"]);
 //   open && el.classList.add("tooltip-open");
 // });
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   as?: string;
   text: string;
   open?: boolean;
-  color?: Color;
-  position?: Position;
+  color?: keyof typeof COLOR_CLASS_MAP;
+  position?: keyof typeof POSITION_CLASS_MAP;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -66,8 +64,8 @@ withDefaults(defineProps<Props>(), {
     :is="as"
     :class="[
       'tooltip',
-      TOOLTIP_COLOR_CLASS_MAP[color],
-      TOOLTIP_POSITION_CLASS_MAP[position],
+      COLOR_CLASS_MAP[color],
+      POSITION_CLASS_MAP[position],
       {
         'tooltip-open': open,
       },

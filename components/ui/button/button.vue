@@ -1,17 +1,14 @@
 <script lang="ts">
-import { ClassMap, Color, Size, Shape } from "../types";
-
-export type ButtonColor = Color | "neutral" | "ghost";
-
-export const BUTTON_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const SIZE_CLASS_MAP = {
   xs: "btn-xs",
   sm: "btn-sm",
   md: undefined, // default
   lg: "btn-lg",
 };
 
-export const BUTTON_COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
+  neutral: "btn-neutral",
   primary: "btn-primary",
   secondary: "btn-secondary",
   accent: "btn-accent",
@@ -19,11 +16,9 @@ export const BUTTON_COLOR_CLASS_MAP: ClassMap<ButtonColor> = {
   success: "btn-success",
   warning: "btn-warning",
   error: "btn-error",
-  neutral: "btn-neutral",
-  ghost: "btn-ghost",
 };
 
-export const BUTTON_SHAPE_CLASS_MAP: ClassMap<Shape> = {
+export const SHAPE_CLASS_MAP = {
   rectangle: undefined, // default
   square: "btn-square",
   circle: "btn-circle",
@@ -31,14 +26,15 @@ export const BUTTON_SHAPE_CLASS_MAP: ClassMap<Shape> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   label?: string;
   href?: string;
   icon?: string;
   iconEnd?: string;
-  size?: Size;
-  shape?: Shape;
-  color?: ButtonColor;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  shape?: keyof typeof SHAPE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
+  ghost?: boolean;
   outline?: boolean;
   active?: boolean;
   wide?: boolean;
@@ -59,10 +55,11 @@ withDefaults(defineProps<Props>(), {
     :href="href"
     :class="[
       'btn',
-      BUTTON_SIZE_CLASS_MAP[size],
-      BUTTON_SHAPE_CLASS_MAP[shape],
-      BUTTON_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      SHAPE_CLASS_MAP[shape],
+      COLOR_CLASS_MAP[color],
       {
+        'btn-ghost': ghost,
         'btn-outline': outline,
         'btn-active': active,
         'btn-wide': wide,

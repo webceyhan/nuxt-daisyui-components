@@ -1,0 +1,29 @@
+<script lang="ts">
+export const COLOR_CLASS_MAP = {
+  default: undefined, // default
+  neutral: "step-neutral",
+  primary: "step-primary",
+  secondary: "step-secondary",
+  accent: "step-accent",
+  info: "step-info",
+  success: "step-success",
+  warning: "step-warning",
+  error: "step-error",
+};
+</script>
+
+<script setup lang="ts">
+export interface Props {
+  color?: keyof typeof COLOR_CLASS_MAP;
+}
+
+withDefaults(defineProps<Props>(), {
+  color: "default",
+});
+</script>
+
+<template>
+  <li :class="['step', COLOR_CLASS_MAP[color]]">
+    <slot />
+  </li>
+</template>

@@ -1,8 +1,7 @@
 <script lang="ts">
-import { ClassMap, Position, Size } from "../types";
-import { ButtonColor } from "../button/button.vue";
+import { Props as ButtonProps } from "../button/button.vue";
 
-export const DROPDOWN_POSITION_CLASS_MAP: ClassMap<Position> = {
+export const POSITION_CLASS_MAP = {
   top: "dropdown-top",
   bottom: undefined, // default
   left: "dropdown-left",
@@ -11,13 +10,13 @@ export const DROPDOWN_POSITION_CLASS_MAP: ClassMap<Position> = {
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   label?: string;
   icon?: string;
   iconEnd?: string;
-  size?: Size;
-  color?: ButtonColor;
-  position?: Position;
+  size?: ButtonProps["size"];
+  color?: ButtonProps["color"];
+  position?: keyof typeof POSITION_CLASS_MAP;
   outline?: boolean;
   open?: boolean;
   hover?: boolean;
@@ -39,7 +38,7 @@ const close = () => {
   <div
     :class="[
       'dropdown',
-      DROPDOWN_POSITION_CLASS_MAP[position],
+      POSITION_CLASS_MAP[position],
       {
         'dropdown-open': open,
         'dropdown-hover': hover,

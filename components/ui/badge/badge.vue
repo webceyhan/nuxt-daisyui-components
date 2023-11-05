@@ -1,17 +1,14 @@
 <script lang="ts">
-import { ClassMap, Color, Size } from "../types";
-
-export type BadgeColor = Color | "neutral" | "ghost";
-
-export const BADGE_SIZE_CLASS_MAP: ClassMap<Size> = {
+export const SIZE_CLASS_MAP = {
   xs: "badge-xs",
   sm: "badge-sm",
   md: undefined, // default
   lg: "badge-lg",
 };
 
-export const BADGE_COLOR_CLASS_MAP: ClassMap<BadgeColor> = {
+export const COLOR_CLASS_MAP = {
   default: undefined, // default
+  neutral: "badge-neutral",
   primary: "badge-primary",
   secondary: "badge-secondary",
   accent: "badge-accent",
@@ -19,16 +16,15 @@ export const BADGE_COLOR_CLASS_MAP: ClassMap<BadgeColor> = {
   success: "badge-success",
   warning: "badge-warning",
   error: "badge-error",
-  neutral: "badge-neutral",
-  ghost: "badge-ghost",
 };
 </script>
 
 <script setup lang="ts">
-interface Props {
+export interface Props {
   label?: string;
-  size?: Size;
-  color?: BadgeColor;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  color?: keyof typeof COLOR_CLASS_MAP;
+  ghost?: boolean;
   outline?: boolean;
 }
 
@@ -42,9 +38,10 @@ withDefaults(defineProps<Props>(), {
   <span
     :class="[
       'badge',
-      BADGE_SIZE_CLASS_MAP[size],
-      BADGE_COLOR_CLASS_MAP[color],
+      SIZE_CLASS_MAP[size],
+      COLOR_CLASS_MAP[color],
       {
+        'badge-ghost': ghost,
         'badge-outline': outline,
       },
     ]"
