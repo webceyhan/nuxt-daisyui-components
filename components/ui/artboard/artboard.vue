@@ -9,12 +9,12 @@ export const SIZE_CLASS_MAP = {
 };
 
 export const DIMENSION_MAP = {
-  "phone-1": "320x568",
-  "phone-2": "375x667",
-  "phone-3": "414x736",
-  "phone-4": "375x812",
-  "phone-5": "414x896",
-  "phone-6": "320x1024",
+  "phone-1": ["320", "568"],
+  "phone-2": ["375", "667"],
+  "phone-3": ["414", "736"],
+  "phone-4": ["375", "812"],
+  "phone-5": ["414", "896"],
+  "phone-6": ["320", "1024"],
 };
 </script>
 
@@ -39,6 +39,14 @@ withDefaults(defineProps<Props>(), {
       },
     ]"
   >
-    <slot>{{ DIMENSION_MAP[size] }}</slot>
+    <slot>
+      <span v-if="horizontal">
+        {{ DIMENSION_MAP[size].reverse().join(" x ") }}
+      </span>
+
+      <span v-else>
+        {{ DIMENSION_MAP[size].join(" x ") }}
+      </span>
+    </slot>
   </div>
 </template>
