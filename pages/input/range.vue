@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/range.vue";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/range/range.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
@@ -86,8 +86,6 @@ const props = [
 
       <ui-range v-for="color of COLORS" :color="color" value="40" class="my-2" />
     </component-preview>
-
-
 
     <component-preview>
       <template #title>Disabled</template>

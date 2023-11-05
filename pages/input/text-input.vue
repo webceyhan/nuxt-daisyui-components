@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/text-input.vue";
+import {
+  COLOR_CLASS_MAP,
+  SIZE_CLASS_MAP,
+} from "~/components/ui/text-input/text-input.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);

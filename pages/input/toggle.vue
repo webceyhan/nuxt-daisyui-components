@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/input/toggle.vue";
+import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/toggle/toggle.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);

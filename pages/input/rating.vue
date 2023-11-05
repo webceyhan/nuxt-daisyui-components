@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/input/rating.vue";
+import { SIZE_CLASS_MAP } from "~/components/ui/rating/rating.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
