@@ -1,18 +1,53 @@
 <script setup lang="ts">
-import { SIZES, TEXT_COLORS } from "~/constants";
+import { TEXT_COLORS } from "~/constants";
+import { SIZE_CLASS_MAP } from "~/components/ui/bottom-nav/bottom-nav.vue";
 
-const props = [{ name: "size", type: "string", values: SIZES }];
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
-const slots = [{ name: "default", description: "Content of navigation" }];
-
-const itemProps = [
-  { name: "icon", type: "string", description: "Icon name" },
-  { name: "label", type: "string", description: "Label text" },
-  { name: "active", type: "boolean", description: "Active state" },
-  { name: "disabled", type: "boolean", description: "Disabled state" },
+const props = [
+  {
+    name: "size",
+    type: "string",
+    values: SIZES,
+  },
 ];
 
-const itemSlots = [{ name: "default", description: "Content of navigation item" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of navigation",
+  },
+];
+
+const itemProps = [
+  {
+    name: "label",
+    type: "string",
+    description: "Label text",
+  },
+  {
+    name: "icon",
+    type: "string",
+    description: "Icon name",
+  },
+  {
+    name: "active",
+    type: "boolean",
+    description: "Active state",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    description: "Disabled state",
+  },
+];
+
+const itemSlots = [
+  {
+    name: "default",
+    description: "Content of navigation item",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -55,19 +90,6 @@ const customColors = [
     </component-preview>
 
     <component-preview>
-      <template #title>Bottom Navigation with colors</template>
-
-      <ui-bottom-nav class="relative" v-for="color of TEXT_COLORS">
-        <ui-bottom-nav-item
-          v-for="item of items"
-          :icon="item.icon"
-          :active="item.active"
-          :class="color"
-        />
-      </ui-bottom-nav>
-    </component-preview>
-
-    <component-preview>
       <template #title>With title</template>
 
       <ui-bottom-nav class="relative">
@@ -76,6 +98,31 @@ const customColors = [
           :icon="item.icon"
           :active="item.active"
           :label="item.label"
+        />
+      </ui-bottom-nav>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Sizes</template>
+
+      <ui-bottom-nav class="relative" v-for="size of SIZES" :size="size">
+        <ui-bottom-nav-item
+          v-for="item of items"
+          :icon="item.icon"
+          :active="item.active"
+        />
+      </ui-bottom-nav>
+    </component-preview>
+
+    <component-preview>
+      <template #title>With colors</template>
+
+      <ui-bottom-nav class="relative" v-for="color of TEXT_COLORS">
+        <ui-bottom-nav-item
+          v-for="item of items"
+          :icon="item.icon"
+          :active="item.active"
+          :class="color"
         />
       </ui-bottom-nav>
     </component-preview>
@@ -95,19 +142,7 @@ const customColors = [
     </component-preview>
 
     <component-preview>
-      <template #title>Sizes</template>
-
-      <ui-bottom-nav class="relative" v-for="size of SIZES" :size="size">
-        <ui-bottom-nav-item
-          v-for="item of items"
-          :icon="item.icon"
-          :active="item.active"
-        />
-      </ui-bottom-nav>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Disabled button</template>
+      <template #title>Disabled</template>
 
       <ui-bottom-nav class="relative">
         <ui-bottom-nav-item

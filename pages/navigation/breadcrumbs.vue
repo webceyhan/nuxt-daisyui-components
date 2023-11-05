@@ -1,7 +1,10 @@
 <script setup lang="ts">
-const props = [];
-
-const slots = [{ name: "default", description: "Content of breadcrumbs" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of breadcrumbs",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -26,7 +29,7 @@ const slots = [{ name: "default", description: "Content of breadcrumbs" }];
     </component-preview>
 
     <component-preview>
-      <template #title>Breadcrumbs with icons</template>
+      <template #title>With icons</template>
 
       <ui-breadcrumbs>
         <a> <ui-icon name="folder" class="me-2" /> Home </a>
@@ -36,7 +39,7 @@ const slots = [{ name: "default", description: "Content of breadcrumbs" }];
     </component-preview>
 
     <component-preview>
-      <template #title>Breadcrumbs with max-width</template>
+      <template #title>With max-width</template>
       <template #description>
         If you set max-width or the list gets larger than the container it will scroll
       </template>

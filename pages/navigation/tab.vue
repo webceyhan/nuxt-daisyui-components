@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { SIZES } from "~/constants";
+import { SIZE_CLASS_MAP } from "~/components/ui/tabs/tab.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
 const props = [
   {
@@ -9,7 +11,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the tabs" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the tabs",
+  },
+];
 
 const itemProps = [
   {
@@ -75,6 +82,18 @@ const links = [
     </component-preview>
 
     <component-preview>
+      <template #title>Sizes</template>
+
+      <div class="flex flex-col items-center gap-3">
+        <ui-tabs v-for="size of SIZES">
+          <ui-tab v-for="link of links" :active="link.active" lifted :size="size">
+            {{ size }}
+          </ui-tab>
+        </ui-tabs>
+      </div>
+    </component-preview>
+
+    <component-preview>
       <template #title>Bordered</template>
 
       <ui-tabs>
@@ -100,18 +119,6 @@ const links = [
       <ui-tabs boxed>
         <ui-tab v-for="link of links" :active="link.active">{{ link.label }}</ui-tab>
       </ui-tabs>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Sizes</template>
-
-      <div class="flex flex-col items-center gap-3">
-        <ui-tabs v-for="size of SIZES">
-          <ui-tab v-for="link of links" :active="link.active" lifted :size="size">
-            {{ size }}
-          </ui-tab>
-        </ui-tabs>
-      </div>
     </component-preview>
   </div>
 </template>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { COLORS } from "~/constants";
+import { COLOR_CLASS_MAP } from "~/components/ui/link/link.vue";
+
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -14,7 +16,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of link" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of link",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

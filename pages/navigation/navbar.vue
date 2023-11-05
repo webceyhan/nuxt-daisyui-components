@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { ALIGNMENTS } from "~/constants";
+import { ALIGNMENT_CLASS_MAP } from "~/components/ui/navbar/navbar-section.vue";
 
-const slots = [{ name: "default", description: "Content of navbar" }];
+const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
+
+const slots = [
+  {
+    name: "default",
+    description: "Content of navbar",
+  },
+];
 
 const sectionProps = [
   {
@@ -11,7 +18,12 @@ const sectionProps = [
   },
 ];
 
-const sectionSlots = [{ name: "default", description: "Content of navbar section" }];
+const sectionSlots = [
+  {
+    name: "default",
+    description: "Content of navbar section",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -39,7 +51,7 @@ const colors = [
       <template #title>Navbar with title only</template>
 
       <ui-navbar class="bg-base-100 shadow-xl rounded-box">
-        <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+        <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
       </ui-navbar>
     </component-preview>
 
@@ -48,11 +60,11 @@ const colors = [
 
       <ui-navbar class="bg-base-100 shadow-xl rounded-box">
         <div class="flex-1">
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
         </div>
 
         <div class="flex-none">
-          <ui-button color="ghost" square>
+          <ui-button ghost square>
             <ui-icon name="three-dots" />
           </ui-button>
         </div>
@@ -64,17 +76,17 @@ const colors = [
 
       <ui-navbar class="bg-base-100 shadow-xl rounded-box">
         <div class="flex-none">
-          <ui-button color="ghost" square>
+          <ui-button ghost square>
             <ui-icon name="list" />
           </ui-button>
         </div>
 
         <div class="flex-1">
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
         </div>
 
         <div class="flex-none">
-          <ui-button color="ghost" square>
+          <ui-button ghost square>
             <ui-icon name="three-dots" />
           </ui-button>
         </div>
@@ -86,7 +98,7 @@ const colors = [
 
       <ui-navbar class="bg-base-100 mb-32 shadow-xl rounded-box">
         <div class="flex-1">
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
         </div>
 
         <div class="flex-none">
@@ -106,7 +118,7 @@ const colors = [
 
       <ui-navbar class="bg-base-100 mb-32 shadow-xl rounded-box">
         <div class="flex-1">
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
         </div>
 
         <div class="flex-none gap-2">
@@ -120,7 +132,7 @@ const colors = [
 
           <ui-dropdown align-to-end>
             <template #trigger>
-              <ui-button tabindex="0" color="ghost" shape="circle">
+              <ui-button tabindex="0" ghost shape="circle">
                 <ui-avatar>
                   <div class="w-10 rounded-full">
                     <img src="/img/avatar.jpg" alt="avatar" />
@@ -142,7 +154,7 @@ const colors = [
 
       <ui-navbar class="bg-base-100 mb-32 shadow-xl rounded-box">
         <div class="flex-1">
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
         </div>
 
         <div class="flex-none gap-2">
@@ -170,7 +182,7 @@ const colors = [
 
           <ui-dropdown align-to-end>
             <template #trigger>
-              <ui-button tabindex="0" color="ghost" shape="circle">
+              <ui-button tabindex="0" ghost shape="circle">
                 <ui-avatar>
                   <div class="w-10 rounded-full">
                     <img src="/img/avatar.jpg" alt="avatar" />
@@ -194,7 +206,7 @@ const colors = [
         <ui-navbar-section>
           <ui-dropdown>
             <template #trigger>
-              <ui-button tabindex="0" color="ghost" icon="list" shape="circle" />
+              <ui-button tabindex="0" ghost icon="list" shape="circle" />
             </template>
 
             <ui-menu-item label="Homepage" />
@@ -204,13 +216,13 @@ const colors = [
         </ui-navbar-section>
 
         <ui-navbar-section alignment="center">
-          <ui-button label="daisyUI" color="ghost" class="normal-case text-xl" />
+          <ui-button label="daisyUI" ghost class="normal-case text-xl" />
         </ui-navbar-section>
 
         <ui-navbar-section alignment="end">
-          <ui-button color="ghost" icon="search" circle />
+          <ui-button ghost icon="search" circle />
 
-          <ui-button color="ghost" circle>
+          <ui-button ghost circle>
             <ui-indicator>
               <template #item>
                 <ui-badge color="primary" size="xs" />
@@ -234,7 +246,7 @@ const colors = [
             <template #trigger>
               <ui-button
                 tabindex="0"
-                color="ghost"
+                ghost
                 icon="list"
                 shape="circle"
                 class="lg:hidden"
@@ -248,7 +260,7 @@ const colors = [
             </ui-menu-sub>
             <ui-menu-item label="Item 3" />
           </ui-dropdown>
-          <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+          <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
         </ui-navbar-section>
 
         <ui-navbar-section alignment="center" class="hidden lg:flex">
@@ -272,7 +284,7 @@ const colors = [
       <template #title>Navbar with colors</template>
 
       <ui-navbar v-for="color of colors" :class="[color, 'rounded-box']">
-        <ui-button color="ghost" class="normal-case text-xl">daisyUI</ui-button>
+        <ui-button ghost class="normal-case text-xl">daisyUI</ui-button>
       </ui-navbar>
     </component-preview>
   </div>

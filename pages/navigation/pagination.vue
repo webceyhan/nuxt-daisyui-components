@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { SIZES } from "~/constants";
+import { SIZE_CLASS_MAP } from "~/components/ui/button/button.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

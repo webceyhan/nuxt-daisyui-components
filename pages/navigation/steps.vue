@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { COLORS } from "~/constants";
+import { COLOR_CLASS_MAP } from "~/components/ui/steps/step.vue";
+
+const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
 
 const props = [
   {
@@ -9,7 +11,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the steps" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the steps",
+  },
+];
 
 const itemProps = [
   {
@@ -19,7 +26,12 @@ const itemProps = [
   },
 ];
 
-const itemSlots = [{ name: "default", description: "Content of the step" }];
+const itemSlots = [
+  {
+    name: "default",
+    description: "Content of the step",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

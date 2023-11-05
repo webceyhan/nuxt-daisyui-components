@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { SIZES } from "~/constants";
+import { SIZE_CLASS_MAP } from "~/components/ui/menu/menu.vue";
+
+const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+
 const props = [
   {
     name: "size",
@@ -13,7 +16,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of menu" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of menu",
+  },
+];
 
 const titleProps = [
   {
@@ -23,7 +31,12 @@ const titleProps = [
   },
 ];
 
-const titleSlots = [{ name: "default", description: "Content of menu title" }];
+const titleSlots = [
+  {
+    name: "default",
+    description: "Content of menu title",
+  },
+];
 
 const itemProps = [
   {
@@ -64,10 +77,22 @@ const itemProps = [
 ];
 
 const itemSlots = [
-  { name: "default", description: "Content of menu item" },
-  { name: "icon", description: "Icon of menu item" },
-  { name: "label", description: "Label of menu item" },
-  { name: "badge", description: "Badge of menu item" },
+  {
+    name: "default",
+    description: "Content of menu item",
+  },
+  {
+    name: "icon",
+    description: "Icon of menu item",
+  },
+  {
+    name: "label",
+    description: "Label of menu item",
+  },
+  {
+    name: "badge",
+    description: "Badge of menu item",
+  },
 ];
 
 const subProps = [
@@ -99,9 +124,18 @@ const subProps = [
 ];
 
 const subSlots = [
-  { name: "default", description: "Content of submenu" },
-  { name: "icon", description: "Icon of submenu" },
-  { name: "title", description: "Title of submenu" },
+  {
+    name: "default",
+    description: "Content of submenu",
+  },
+  {
+    name: "icon",
+    description: "Icon of submenu",
+  },
+  {
+    name: "title",
+    description: "Title of submenu",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
