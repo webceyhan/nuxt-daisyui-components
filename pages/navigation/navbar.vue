@@ -40,12 +40,12 @@ const colors = [
 
     <p>Navbar is used to show a navigation bar on the top of the page.</p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Navbar section</h3>
-    <component-props-table :props="sectionProps" />
-    <component-slots-table :slots="sectionSlots" />
+    <component-description name="navbar" :slots="slots" />
+    <component-description
+      name="navbar-section"
+      :props="sectionProps"
+      :slots="sectionSlots"
+    />
 
     <component-preview>
       <template #title>Navbar with title only</template>

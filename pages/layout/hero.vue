@@ -36,8 +36,7 @@ const slots = [
       description.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="hero" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Centered hero</template>

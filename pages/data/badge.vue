@@ -49,8 +49,7 @@ const slots = [
 
     <p>Badges are used to inform the user of the status of specific data.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="badge" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Badge</template>

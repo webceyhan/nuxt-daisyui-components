@@ -15,8 +15,7 @@ const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
       related content.
     </p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="pagination" />
 
     <component-preview>
       <template #title>Pagination with an active button</template>

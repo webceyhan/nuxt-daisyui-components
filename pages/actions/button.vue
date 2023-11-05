@@ -26,11 +26,6 @@ const props = [
     description: "Icon at start of button",
   },
   {
-    name: "icon-end",
-    type: "string",
-    description: "Icon at end of button",
-  },
-  {
     name: "size",
     type: "string",
     values: SIZES,
@@ -88,8 +83,7 @@ const slots = [
 
     <p>Buttons allow the user to take actions or make choices.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="button" :props="props" :slots="slots"/>
 
     <component-preview>
       <template #title>Button</template>
@@ -97,7 +91,6 @@ const slots = [
       <ui-button>Button</ui-button>
       <ui-button label="With Label" />
       <ui-button label="With Icon" icon="pen" />
-      <ui-button label="With Icon End" icon-end="pen" />
     </component-preview>
 
     <component-preview>

@@ -34,8 +34,7 @@ const slots = [
       Artboard provides fixed size container to display a demo content on mobile size.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="artboard" :props="props" :slots="slots" />
 
     <component-preview v-for="size of SIZES">
       <template #title>Artboard size {{ size }}</template>

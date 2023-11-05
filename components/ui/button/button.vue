@@ -30,7 +30,6 @@ export interface Props {
   label?: string;
   href?: string;
   icon?: string;
-  iconEnd?: string;
   size?: keyof typeof SIZE_CLASS_MAP;
   shape?: keyof typeof SHAPE_CLASS_MAP;
   color?: keyof typeof COLOR_CLASS_MAP;
@@ -67,12 +66,9 @@ withDefaults(defineProps<Props>(), {
       },
     ]"
   >
-    <slot>
-      <ui-icon v-if="icon" :name="icon" class="text-[1.2em]" />
+    <ui-icon v-if="icon" :name="icon" class="text-[1.2em]" />
 
-      <span v-if="label">{{ label }}</span>
-
-      <ui-icon v-if="iconEnd" :name="iconEnd" class="text-[1.2em]" />
-    </slot>
+    <span v-if="label">{{ label }}</span>
+    <slot />
   </component>
 </template>

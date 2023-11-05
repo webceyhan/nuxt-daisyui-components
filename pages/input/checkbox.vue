@@ -38,8 +38,7 @@ const checked = ref(true);
 
     <p>Checkboxes are used to select or deselect a value.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="checkbox" :props="props" />
 
     <component-preview>
       <template #title>Checkbox</template>

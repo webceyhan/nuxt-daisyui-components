@@ -54,8 +54,7 @@ const slots = [
 
     <p>Cards are used to group and display content in a way that is easily readable.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="card" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Card</template>

@@ -59,8 +59,7 @@ const bubbleWithColors = [
       the author image, author name, time, etc.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="chat" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>chat-start and chat-end</template>

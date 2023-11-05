@@ -23,8 +23,7 @@ const slots = [
 
     <p>Divider will be used to separate content vertically or horizontally.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="divider" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Divider </template>

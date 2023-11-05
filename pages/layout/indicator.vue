@@ -94,8 +94,7 @@ const positions = [
 
     <p>Indicators are used to place an element on the corner of another element.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="indicator" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Empty badge as indicator</template>

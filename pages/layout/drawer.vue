@@ -40,8 +40,7 @@ const slots = [
       the page.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="drawer" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Drawer </template>

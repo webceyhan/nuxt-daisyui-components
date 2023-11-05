@@ -71,8 +71,7 @@ const verticalAlignedModels = reactive({
 
     <p>Modal is used to show a dialog or a box when you click a button.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="modal" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Dialog modal</template>

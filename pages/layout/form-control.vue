@@ -38,8 +38,7 @@ const value = ref("");
       checkbox, radio, etc.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="form-control" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>With Text Input</template>

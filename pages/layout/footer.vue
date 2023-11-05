@@ -88,11 +88,8 @@ const longNavs = [
 
     <p>Footer can contain logo, copyright notice, and links to other pages.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Footer Title</h3>
-    <component-slots-table :slots="titleSlots" />
+    <component-description name="footer" :props="props" :slots="slots" />
+    <component-description name="footer-title" :slots="titleSlots" />
 
     <component-preview>
       <template #title>Footer</template>

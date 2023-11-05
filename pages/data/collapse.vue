@@ -41,8 +41,7 @@ const slots = [
 
     <p>Collapse is used for showing and hiding content.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="collapse" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Collapse with focus</template>

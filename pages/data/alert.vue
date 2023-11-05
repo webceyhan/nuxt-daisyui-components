@@ -73,8 +73,7 @@ const statefulAlerts: any[] = [
 
     <p>Alert informs users about important events.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="alert" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Alert</template>

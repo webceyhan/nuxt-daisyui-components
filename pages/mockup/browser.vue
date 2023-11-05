@@ -23,8 +23,7 @@ const slots = [
 
     <p>Browser mockup shows a box that looks like a browser window.</p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <component-slots-table :slots="slots" />
+    <component-description name="mockup-browser" :slots="slots" />
 
     <component-preview>
       <template #title>browser mockup with border</template>

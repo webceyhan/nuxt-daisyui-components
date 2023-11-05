@@ -18,11 +18,6 @@ const props = [
     description: "Icon at start of dropdown trigger",
   },
   {
-    name: "icon-end",
-    type: "string",
-    description: "Icon at end of dropdown trigger",
-  },
-  {
     name: "size",
     type: "string",
     values: SIZES,
@@ -62,6 +57,11 @@ const props = [
     type: "boolean",
     description: "Aligns to end",
   },
+  {
+    name: "no-indicator",
+    type: "boolean",
+    description: "No indicator icon",
+  },
 ];
 
 const slots = [
@@ -91,8 +91,7 @@ const spacings: any = {
 
     <p>Dropdown can open a menu or any other element when the button is clicked.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="dropdown" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Dropdown</template>
@@ -109,7 +108,7 @@ const spacings: any = {
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" icon="pen" />
       </ui-dropdown>
 
-      <ui-dropdown class="mb-32" label="no indicator" icon-end="none">
+      <ui-dropdown class="mb-32" label="no indicator" no-indicator>
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>
@@ -144,14 +143,6 @@ const spacings: any = {
       </ui-dropdown>
     </component-preview>
 
-    <component-preview>
-      <template #title>Disabled</template>
-
-      <ui-dropdown label="Disabled using attribute" class="mb-20" disabled>
-        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
-      </ui-dropdown>
-    </component-preview>
-
     <h3 class="text-2xl">Positions</h3>
 
     <component-preview v-for="position of POSITIONS">
@@ -172,6 +163,14 @@ const spacings: any = {
     </component-preview>
 
     <component-preview>
+      <template #title>Force open</template>
+
+      <ui-dropdown class="mb-32" label="button" open>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+    </component-preview>
+
+    <component-preview>
       <template #title>Hoverable</template>
 
       <ui-dropdown class="mb-32" label="hover" hover>
@@ -180,9 +179,9 @@ const spacings: any = {
     </component-preview>
 
     <component-preview>
-      <template #title>Force open</template>
+      <template #title>Disabled</template>
 
-      <ui-dropdown class="mb-32" label="button" open>
+      <ui-dropdown label="Disabled using attribute" class="mb-20" disabled>
         <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
       </ui-dropdown>
     </component-preview>

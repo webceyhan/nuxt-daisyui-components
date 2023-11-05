@@ -58,8 +58,7 @@ const selectedFruit = ref(undefined);
 
     <p>Select is used to pick a value from a list of options.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="select" :props="props" />
 
     <component-preview>
       <template #title>Select</template>

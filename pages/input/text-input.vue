@@ -51,8 +51,7 @@ const value = ref("");
 
     <p>Text Input is a simple input field.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="text-input" :props="props" />
 
     <component-preview>
       <template #title>Text input</template>

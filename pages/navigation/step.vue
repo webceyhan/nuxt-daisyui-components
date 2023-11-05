@@ -79,12 +79,8 @@ const scrollableColors: any = {
 
     <p>Steps can be used to show a list of steps in a process.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Step Group</h3>
-    <component-props-table :props="groupProps" />
-    <component-slots-table :slots="groupSlots" />
+    <component-description name="step-group" :props="groupProps" :slots="groupSlots" />
+    <component-description name="step" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Horizontal</template>

@@ -31,8 +31,7 @@ onMounted(() => {
 
     <br />
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="countdown" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Countdown</template>

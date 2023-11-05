@@ -32,8 +32,7 @@ const slots = [
 
     <p>Link adds the missing underline style to links.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="link" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Link</template>

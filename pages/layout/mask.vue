@@ -55,8 +55,7 @@ const shapes = [
 
     <p>Mask crops the content of the element to common shapes.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="mask" :props="props" :slots="slots" />
 
     <component-preview v-for="shape of shapes">
       <template #title>{{ shape }}</template>
