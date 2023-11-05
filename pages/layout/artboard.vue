@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/layout/artboard.vue";
+import { SIZE_CLASS_MAP } from "~/components/ui/artboard/artboard.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
