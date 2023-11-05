@@ -70,12 +70,8 @@ const customColors = [
 
     <p>Bottom navigation bar allows navigation between primary screens.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Bottom navigation item</h3>
-    <component-props-table :props="itemProps" />
-    <component-slots-table :slots="itemSlots" />
+    <component-description name="bottom-nav" :props="props" />
+    <component-description name="bottom-nav-item" :props="itemProps" />
 
     <component-preview>
       <template #title>Bottom Navigation</template>

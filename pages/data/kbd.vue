@@ -35,8 +35,7 @@ const keyboard = [
 
     <p>Kbd is used to display keyboard shortcuts.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="kbd" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Kbd</template>

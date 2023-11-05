@@ -50,8 +50,7 @@ const steps = [0, 10, 40, 70, 100];
       time.
     </p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="progress" :props="props" />
 
     <component-preview>
       <template #title> Default </template>

@@ -84,8 +84,7 @@ const positions = [
 
     <p>Toast is a wrapper to stack elements, positioned on the corner of page.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="toast" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>toast with alert inside</template>

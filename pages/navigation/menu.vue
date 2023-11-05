@@ -199,20 +199,10 @@ const megeMenu = [
 
     <p>Menu is used to display a list of links vertically or horizontally.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Menu title</h3>
-    <component-props-table :props="titleProps" />
-    <component-slots-table :slots="titleSlots" />
-
-    <h3 class="text-lg font-bold">Menu item</h3>
-    <component-props-table :props="itemProps" />
-    <component-slots-table :slots="itemSlots" />
-
-    <h3 class="text-lg font-bold">Submenu</h3>
-    <component-props-table :props="subProps" />
-    <component-slots-table :slots="subSlots" />
+    <component-description name="menu" :props="props" :slots="slots" />
+    <component-description name="menu-title" :props="titleProps" :slots="titleSlots" />
+    <component-description name="menu-item" :props="itemProps" :slots="itemSlots" />
+    <component-description name="menu-sub" :props="subProps" :slots="subSlots" />
 
     <component-preview>
       <template #title>Menu</template>

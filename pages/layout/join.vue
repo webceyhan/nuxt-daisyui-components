@@ -27,8 +27,7 @@ const slots = [
       Join can be used to create a horizontal or vertical list of items.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="join" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Join</template>

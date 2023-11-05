@@ -83,8 +83,7 @@ const slots = [
 
     <p>Buttons allow the user to take actions or make choices.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="button" :props="props" :slots="slots"/>
 
     <component-preview>
       <template #title>Button</template>

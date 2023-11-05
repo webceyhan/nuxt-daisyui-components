@@ -17,8 +17,7 @@ const slots = [
       Code mockup is used to show a block of code in a box that looks like a code editor.
     </p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <component-slots-table :slots="slots" />
+    <component-description name="mockup-code" :slots="slots" />
 
     <component-preview>
       <template #title>mockup code with line prefix</template>

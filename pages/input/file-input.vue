@@ -51,8 +51,7 @@ const value = ref("");
 
     <p>File Input is a an input field for uploading files.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="file-input" :props="props" />
 
     <component-preview>
       <template #title>File input</template>

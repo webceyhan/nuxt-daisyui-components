@@ -15,8 +15,7 @@ const slots = [
 
     <p>Stack visually puts elements on top of each other.</p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <component-slots-table :slots="slots" />
+    <component-description name="stack" :slots="slots" />
 
     <component-preview>
       <template #title>3 divs without stack</template>

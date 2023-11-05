@@ -38,8 +38,7 @@ const checked = ref(true);
 
     <p>Toggle is a checkbox that is styled to look like a switch button.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="toggle" :props="props" />
 
     <component-preview>
       <template #title>Toggle</template>

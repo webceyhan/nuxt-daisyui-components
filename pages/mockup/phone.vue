@@ -15,8 +15,7 @@ const slots = [
 
     <p>Phone mockup shows a mockup of an iPhone.</p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <component-slots-table :slots="slots" />
+    <component-description name="mockup-phone" :slots="slots" />
 
     <component-preview>
       <template #title> iPhone mockup</template>

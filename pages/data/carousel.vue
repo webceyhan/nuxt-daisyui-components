@@ -42,11 +42,8 @@ const wideItems = [1, 2, 3, 4];
 
     <p>Carousel show images or content in a scrollable area.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Carousel item</h3>
-    <component-slots-table :slots="itemSlots" />
+    <component-description name="carousel" :props="props" :slots="slots" />
+    <component-description name="carousel-item" :slots="itemSlots" />
 
     <component-preview v-for="snap of SNAPS">
       <template #title>Snap to {{ snap }}</template>

@@ -27,8 +27,7 @@ const props = [
 
     <p>Loading shows an animation to indicate that something is loading.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="loading" :props="props" />
 
     <component-preview v-for="animation of ANIMATIONS">
       <template #title>Loading {{ animation }}</template>

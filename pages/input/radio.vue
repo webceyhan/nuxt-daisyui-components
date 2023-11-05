@@ -44,8 +44,7 @@ const colorValue = ref("red");
 
     <p>Radio buttons allow the user to select one option from a set.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="radio" :props="props" />
 
     <component-preview>
       <template #title>Radio</template>

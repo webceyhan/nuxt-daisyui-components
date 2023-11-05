@@ -3,7 +3,7 @@ import { SIZE_CLASS_MAP } from "~/components/ui/tab/tab.vue";
 
 const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
 
-const props = [
+const navProps = [
   {
     name: "boxed",
     type: "boolean",
@@ -11,14 +11,14 @@ const props = [
   },
 ];
 
-const slots = [
+const navSlots = [
   {
     name: "default",
     description: "Content of the tabs",
   },
 ];
 
-const itemProps = [
+const props = [
   {
     name: "size",
     type: "Size",
@@ -46,7 +46,7 @@ const itemProps = [
   },
 ];
 
-const itemSlots = [
+const slots = [
   { name: "default", description: "Content of the tab" },
   { name: "indicator", description: "Indicator of the tab" },
 ];
@@ -66,12 +66,8 @@ const links = [
 
     <p>Tabs can be used to show a list of links in a tabbed format.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Tab Item</h3>
-    <component-props-table :props="itemProps" />
-    <component-slots-table :slots="itemSlots" />
+    <component-description name="tab-nav" :props="navProps" :slots="navSlots" />
+    <component-description name="tab" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Tabs</template>

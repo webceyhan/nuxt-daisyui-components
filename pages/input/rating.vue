@@ -52,8 +52,7 @@ const value = ref(3);
 
     <p>Rating is a set of radio buttons that allow the user to rate something.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="rating" :props="props" />
 
     <component-preview>
       <template #title>Rating</template>

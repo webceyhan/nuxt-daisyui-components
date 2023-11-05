@@ -47,11 +47,8 @@ const groupSlots = [
       the interface.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Avatar group</h3>
-    <component-slots-table :slots="groupSlots" />
+    <component-description name="avatar" :props="props" :slots="slots" />
+    <component-description name="avatar-group" :slots="groupSlots" />
 
     <component-preview>
       <template #title>Avatar in custom sizes</template>

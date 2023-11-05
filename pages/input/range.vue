@@ -51,8 +51,7 @@ const props = [
 
     <p>Range slider is used to select a value by sliding a handle.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="range" :props="props" />
 
     <component-preview>
       <template #title>Range</template>

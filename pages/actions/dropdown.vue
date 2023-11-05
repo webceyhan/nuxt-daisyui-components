@@ -91,8 +91,7 @@ const spacings: any = {
 
     <p>Dropdown can open a menu or any other element when the button is clicked.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="dropdown" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Dropdown</template>

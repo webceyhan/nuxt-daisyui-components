@@ -52,11 +52,8 @@ const stats = [
 
     <p>Stat is used to show numbers and data in a box.</p>
 
-    <component-slots-table :slots="slots" />
-
-    <h3 class="text-lg font-bold">Stat Group</h3>
-    <component-props-table :props="groupProps" />
-    <component-slots-table :slots="groupSlots" />
+    <component-description name="stat-group" :props="groupProps" :slots="groupSlots" />
+    <component-description name="stat" :slots="slots" />
 
     <component-preview>
       <template #title> Stat </template>

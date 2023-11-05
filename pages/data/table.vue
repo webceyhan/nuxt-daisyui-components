@@ -52,8 +52,7 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
 
     <p>Table can be used to show a list of data in a table format.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="table" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Table</template>

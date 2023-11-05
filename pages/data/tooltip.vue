@@ -48,8 +48,7 @@ const slots = [
 
     <p>Tooltip can be used to show a message when hovering over an element.</p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="tooltip" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Tooltip</template>

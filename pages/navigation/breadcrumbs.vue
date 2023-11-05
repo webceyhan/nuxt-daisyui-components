@@ -15,8 +15,7 @@ const slots = [
 
     <p>Breadcrumbs helps users to navigate through the website.</p>
 
-    <!-- <component-props-table :props="props" /> -->
-    <component-slots-table :slots="slots" />
+    <component-description name="breadcrumbs" :slots="slots" />
 
     <component-preview>
       <template #title>Breadcrumbs</template>

@@ -44,8 +44,7 @@ const slots = [
       a time.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="accordion" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Accordion using radio inputs</template>

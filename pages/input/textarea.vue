@@ -48,8 +48,7 @@ const value = ref("");
 
     <p>Textarea allows users to enter text in multiple lines.</p>
 
-    <component-props-table :props="props" />
-    <!-- <component-slots-table :slots="slots" /> -->
+    <component-description name="textarea" :props="props" />
 
     <component-preview>
       <template #title>Textarea</template>

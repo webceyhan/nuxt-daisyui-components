@@ -42,8 +42,7 @@ const swap1 = ref(false);
       name.
     </p>
 
-    <component-props-table :props="props" />
-    <component-slots-table :slots="slots" />
+    <component-description name="swap" :props="props" :slots="slots" />
 
     <component-preview>
       <template #title>Swap text</template>
