@@ -88,10 +88,10 @@ const menus = [
     icon: "phone",
     iconClass: "text-lime-600",
     links: [
-      { label: "Browser", href: "/mockup-browser" },
-      { label: "Code", href: "/mockup-code" },
-      { label: "Phone", href: "/mockup-phone" },
-      { label: "Window", href: "/mockup-window" },
+      { label: "Browser", href: "/mockup/browser" },
+      { label: "Code", href: "/mockup/code" },
+      { label: "Phone", href: "/mockup/phone" },
+      { label: "Window", href: "/mockup/window" },
     ],
   },
 ];

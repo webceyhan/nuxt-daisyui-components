@@ -1,8 +1,17 @@
 <script setup lang="ts">
 const slots = [
-  { name: "default", description: "Content of browser mockup" },
-  { name: "toolbar", description: "Content of toolbar" },
-  { name: "input", description: "Content of input" },
+  {
+    name: "default",
+    description: "Content of browser mockup",
+  },
+  {
+    name: "toolbar",
+    description: "Content of toolbar",
+  },
+  {
+    name: "input",
+    description: "Content of input",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////

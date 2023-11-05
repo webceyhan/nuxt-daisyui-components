@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const slots = [{ name: "default", description: "Content of code mockup" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of code mockup",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
