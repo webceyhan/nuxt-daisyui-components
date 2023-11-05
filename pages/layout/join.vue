@@ -7,7 +7,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the group" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the group",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

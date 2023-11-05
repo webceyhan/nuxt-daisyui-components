@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { COLORS, SIZES } from "~/constants";
-
 const props = [
   {
     name: "label",
@@ -19,7 +17,12 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of form control" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of form control",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

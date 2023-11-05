@@ -6,20 +6,26 @@ const props = [
     description: "ID of drawer",
   },
   {
-    name: "asideClass",
+    name: "aside-class",
     type: "string",
     description: "Class of aside element",
   },
   {
-    name: "alignEnd",
+    name: "align-end",
     type: "boolean",
     description: "Align drawer to right side of page",
   },
 ];
 
 const slots = [
-  { name: "default", description: "Content of drawer" },
-  { name: "aside", description: "Content of aside element" },
+  {
+    name: "default",
+    description: "Content of drawer",
+  },
+  {
+    name: "aside",
+    description: "Content of aside element",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////

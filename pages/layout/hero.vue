@@ -1,23 +1,28 @@
 <script setup lang="ts">
 const props = [
   {
-    name: "overlayUrl",
+    name: "overlay-url",
     type: "string",
     description: "URL of the overlay image",
   },
   {
-    name: "overlayClass",
+    name: "overlay-class",
     type: "string",
     description: "Class of the overlay image",
   },
   {
-    name: "contentClass",
+    name: "content-class",
     type: "string",
     description: "Class of the content",
   },
 ];
 
-const slots = [{ name: "default", description: "Content of hero" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of hero",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -141,7 +146,7 @@ const slots = [{ name: "default", description: "Content of hero" }];
 
       <ui-hero
         class="min-h-[30rem] rounded"
-        overlay-url="img/caro-wide1.jpeg"
+        overlay-url="/img/caro-wide1.jpeg"
         overlay-class="bg-opacity-60"
         content-class="text-center text-neutral-content"
       >

@@ -1,5 +1,10 @@
 <script setup lang="ts">
-const slots = [{ name: "default", description: "Content of stack" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of stack",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

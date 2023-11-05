@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const props = [
   {
     name: "horizontal",
@@ -9,7 +8,10 @@ const props = [
 ];
 
 const slots = [
-  { name: "default", description: "Content of button" }
+  {
+    name: "default",
+    description: "Content of button",
+  },
 ];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////

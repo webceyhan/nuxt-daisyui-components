@@ -7,9 +7,19 @@ const props = [
   },
 ];
 
-const slots = [{ name: "default", description: "Content of footer" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of footer",
+  },
+];
 
-const titleSlots = [{ name: "default", description: "Content of title" }];
+const titleSlots = [
+  {
+    name: "default",
+    description: "Content of title",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

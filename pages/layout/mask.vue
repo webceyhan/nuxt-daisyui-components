@@ -6,18 +6,23 @@ const props = [
     description: "Shape of the mask",
   },
   {
-    name: "firstHalf",
+    name: "first-half",
     type: "boolean",
     description: "Display only the first half of the mask",
   },
   {
-    name: "lastHalf",
+    name: "last-half",
     type: "boolean",
     description: "Display only the last half of the mask",
   },
 ];
 
-const slots = [{ name: "default", description: "Content of the mask" }];
+const slots = [
+  {
+    name: "default",
+    description: "Content of the mask",
+  },
+];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
