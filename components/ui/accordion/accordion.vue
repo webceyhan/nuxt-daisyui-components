@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { INDICATOR_CLASS_MAP } from "./collapse.vue";
+import { INDICATOR_CLASS_MAP } from "../collapse/collapse.vue";
 
 export interface Props {
   name?: string;
