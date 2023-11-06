@@ -10,6 +10,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'shape',
                 type: 'string',
+                default: 'squircle',
                 values: SHAPES,
             },
             {

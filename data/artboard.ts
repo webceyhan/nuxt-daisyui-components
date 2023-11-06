@@ -10,6 +10,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'size',
                 type: 'string',
+                default: 'phone-1',
                 values: SIZES,
             },
             {

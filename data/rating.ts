@@ -1,7 +1,9 @@
 import { Description } from '~/components/component-description.vue';
 import { SIZE_CLASS_MAP } from '~/components/ui/rating/rating.vue';
+import { MASK_CLASS_MAP } from '~/components/ui/mask.vue';
 
 export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+export const MASKS: any[] = Object.keys(MASK_CLASS_MAP);
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -18,23 +20,25 @@ export const DESCRIPTIONS: Description[] = [
                 description: 'Maximum value',
             },
             {
-                name: 'mask',
-                type: 'string',
-                description: 'Mask to use for the rating',
-            },
-            {
-                name: 'itemClass',
+                name: 'item-class',
                 type: 'string',
                 description: 'Class to apply to each item',
             },
             {
-                name: 'itemClasses',
+                name: 'item-classes',
                 type: 'string[]',
                 description: 'Classes to apply to each item',
             },
             {
+                name: 'mask',
+                type: 'string',
+                default: 'star',
+                values: MASKS,
+            },
+            {
                 name: 'size',
                 type: 'string',
+                default: 'md',
                 values: SIZES,
             },
             {

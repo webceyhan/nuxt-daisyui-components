@@ -14,6 +14,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'as',
                 type: 'string',
+                default: 'div',
                 description: 'The element to render',
             },
             {
@@ -24,11 +25,13 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
+                default: 'default',
                 values: COLORS,
             },
             {
                 name: 'position',
                 type: 'string',
+                default: 'top',
                 values: POSITIONS,
             },
             {

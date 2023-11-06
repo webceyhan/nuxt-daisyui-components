@@ -5,14 +5,14 @@ export const DESCRIPTIONS: Description[] = [
         name: 'card',
         props: [
             {
-                name: 'compact',
-                type: 'boolean',
-                description: 'Reduce the padding of the card body',
-            },
-            {
                 name: 'body-class',
                 type: 'string',
                 description: 'Add a class to the card body',
+            },
+            {
+                name: 'compact',
+                type: 'boolean',
+                description: 'Reduce the padding of the card body',
             },
             {
                 name: 'cover-aside',

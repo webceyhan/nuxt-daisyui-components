@@ -12,14 +12,16 @@ export const DESCRIPTIONS: Description[] = [
         name: 'checkbox',
         props: [
             {
-                name: 'color',
-                type: 'string',
-                values: COLORS,
-            },
-            {
                 name: 'size',
                 type: 'string',
+                default: 'md',
                 values: SIZES,
+            },
+            {
+                name: 'color',
+                type: 'string',
+                default: 'default',
+                values: COLORS,
             },
             {
                 name: 'checked',

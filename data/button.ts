@@ -31,16 +31,19 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'size',
                 type: 'string',
+                default: 'md',
                 values: SIZES,
             },
             {
-                name: 'shape',
+                name: 'shape',                
                 type: 'string',
+                default: 'rectangle',
                 values: SHAPES,
             },
             {
                 name: 'color',
                 type: 'string',
+                default: 'default',
                 values: COLORS,
             },
             {

@@ -10,6 +10,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'size',
                 type: 'string',
+                default: 'md',
                 values: SIZES,
             },
             {

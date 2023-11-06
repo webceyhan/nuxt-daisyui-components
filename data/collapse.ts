@@ -8,30 +8,32 @@ export const DESCRIPTIONS: Description[] = [
         name: 'collapse',
         props: [
             {
-                name: "indicator",
-                type: "string",
+                name: 'indicator',
+                type: 'string',
+                default: 'none',
                 values: INDICATORS,
-              },
-              {
-                name: "open",
-                type: "boolean",
-                description: "Force open",
-              },
-              {
-                name: "toggle",
-                type: "boolean",
-                description: "Whether the collapse works with focus or checkbox",
-              },
+            },
+            {
+                name: 'open',
+                type: 'boolean',
+                description: 'Force open',
+            },
+            {
+                name: 'toggle',
+                type: 'boolean',
+                description:
+                    'Whether the collapse works with focus or checkbox',
+            },
         ],
         slots: [
             {
-                name: "default",
-                description: "Content for the collapse",
-              },
-              {
-                name: "title",
-                description: "Title for the collapse",
-              },
+                name: 'default',
+                description: 'Content for the collapse',
+            },
+            {
+                name: 'title',
+                description: 'Title for the collapse',
+            },
         ],
     },
 ];
