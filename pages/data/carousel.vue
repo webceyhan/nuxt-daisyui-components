@@ -1,34 +1,5 @@
 <script setup lang="ts">
-import { SNAP_CLASS_MAP } from "~/components/ui/carousel/carousel.vue";
-
-const SNAPS: any[] = Object.keys(SNAP_CLASS_MAP);
-
-const props = [
-  {
-    name: "snap",
-    type: "string",
-    values: SNAPS,
-  },
-  {
-    name: "vertical",
-    type: "boolean",
-    description: "Snap vertically",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of carousel",
-  },
-];
-
-const itemSlots = [
-  {
-    name: "default",
-    description: "Content of carousel item",
-  },
-];
+import { DESCRIPTIONS, SNAPS } from "~/data/carousel";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,8 +13,7 @@ const wideItems = [1, 2, 3, 4];
 
     <p>Carousel show images or content in a scrollable area.</p>
 
-    <component-description name="carousel" :props="props" :slots="slots" />
-    <component-description name="carousel-item" :slots="itemSlots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview v-for="snap of SNAPS">
       <template #title>Snap to {{ snap }}</template>

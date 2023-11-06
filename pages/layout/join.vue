@@ -1,18 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "vertical",
-    type: "boolean",
-    description: "Display items vertically",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of the group",
-  },
-];
+import { DESCRIPTIONS } from "~/data/join";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -27,7 +14,7 @@ const slots = [
       Join can be used to create a horizontal or vertical list of items.
     </p>
 
-    <component-description name="join" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Join</template>

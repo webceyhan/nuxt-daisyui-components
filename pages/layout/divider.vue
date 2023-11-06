@@ -1,18 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "horizontal",
-    type: "boolean",
-    description: "Whether the divider is horizontal or vertical",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of button",
-  },
-];
+import { DESCRIPTIONS } from "~/data/divider";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -23,7 +10,7 @@ const slots = [
 
     <p>Divider will be used to separate content vertically or horizontally.</p>
 
-    <component-description name="divider" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Divider </template>

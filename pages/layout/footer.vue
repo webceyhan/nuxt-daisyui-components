@@ -1,25 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "center",
-    type: "boolean",
-    description: "Center the content of the footer",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of footer",
-  },
-];
-
-const titleSlots = [
-  {
-    name: "default",
-    description: "Content of title",
-  },
-];
+import { DESCRIPTIONS } from "~/data/footer";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -88,8 +68,7 @@ const longNavs = [
 
     <p>Footer can contain logo, copyright notice, and links to other pages.</p>
 
-    <component-description name="footer" :props="props" :slots="slots" />
-    <component-description name="footer-title" :slots="titleSlots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Footer</template>

@@ -1,49 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "compact",
-    type: "boolean",
-    description: "Reduce the padding of the card body",
-  },
-  {
-    name: "body-class",
-    type: "string",
-    description: "Add a class to the card body",
-  },
-  {
-    name: "cover-aside",
-    type: "boolean",
-    description: "Make the cover image on the side",
-  },
-  {
-    name: "cover-overlay",
-    type: "boolean",
-    description: "Make the cover image full width",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Card content",
-  },
-  {
-    name: "cover",
-    description: "Cover image",
-  },
-  {
-    name: "cover-bottom",
-    description: "Cover image at the bottom",
-  },
-  {
-    name: "title",
-    description: "Card title",
-  },
-  {
-    name: "actions",
-    description: "Card actions",
-  },
-];
+import { DESCRIPTIONS } from "~/data/card";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -54,7 +10,7 @@ const slots = [
 
     <p>Cards are used to group and display content in a way that is easily readable.</p>
 
-    <component-description name="card" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Card</template>

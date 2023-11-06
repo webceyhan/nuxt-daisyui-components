@@ -1,37 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP } from "~/components/ui/step/step.vue";
-
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const groupProps = [
-  {
-    name: "vertical",
-    type: "boolean",
-    description: "Display steps vertically",
-  },
-];
-
-const groupSlots = [
-  {
-    name: "default",
-    description: "Content of the steps",
-  },
-];
-
-const props = [
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of the step",
-  },
-];
+import { DESCRIPTIONS, COLORS } from "~/data/step";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,8 +47,7 @@ const scrollableColors: any = {
 
     <p>Steps can be used to show a list of steps in a process.</p>
 
-    <component-description name="step-group" :props="groupProps" :slots="groupSlots" />
-    <component-description name="step" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Horizontal</template>

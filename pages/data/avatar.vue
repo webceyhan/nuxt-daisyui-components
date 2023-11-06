@@ -1,39 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "online",
-    type: "boolean",
-    description: "shows a green dot as online indicator",
-  },
-  {
-    name: "offline",
-    type: "boolean",
-    description: "shows a gray dot as offline indicator",
-  },
-  {
-    name: "placeholder",
-    type: "boolean",
-    description: "to show some letters as avatar placeholder",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of avatar",
-  },
-  {
-    name: "indicator",
-    description: "Content of indicator",
-  },
-];
-
-const groupSlots = [
-  {
-    name: "default",
-    description: "Content of avatar group",
-  },
-];
+import { DESCRIPTIONS } from "~/data/avatar";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -47,8 +13,7 @@ const groupSlots = [
       the interface.
     </p>
 
-    <component-description name="avatar" :props="props" :slots="slots" />
-    <component-description name="avatar-group" :slots="groupSlots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Avatar in custom sizes</template>

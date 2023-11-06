@@ -1,32 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "id",
-    type: "string",
-    description: "ID of drawer",
-  },
-  {
-    name: "aside-class",
-    type: "string",
-    description: "Class of aside element",
-  },
-  {
-    name: "align-end",
-    type: "boolean",
-    description: "Align drawer to right side of page",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of drawer",
-  },
-  {
-    name: "aside",
-    description: "Content of aside element",
-  },
-];
+import { DESCRIPTIONS } from "~/data/drawer";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -40,7 +13,7 @@ const slots = [
       the page.
     </p>
 
-    <component-description name="drawer" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Drawer </template>

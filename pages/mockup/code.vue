@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const slots = [
-  {
-    name: "default",
-    description: "Content of code mockup",
-  },
-];
+import { DESCRIPTIONS } from "~/data/mockup-code";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -17,7 +12,7 @@ const slots = [
       Code mockup is used to show a block of code in a box that looks like a code editor.
     </p>
 
-    <component-description name="mockup-code" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>mockup code with line prefix</template>

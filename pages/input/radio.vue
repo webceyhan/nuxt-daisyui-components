@@ -1,36 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/radio/radio.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the radio button",
-  },
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "checked",
-    type: "boolean",
-    description: "Whether the radio button is checked or not",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the radio button is disabled or not",
-  },
-];
+import { DESCRIPTIONS, COLORS, SIZES } from "~/data/radio";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -44,7 +13,7 @@ const colorValue = ref("red");
 
     <p>Radio buttons allow the user to select one option from a set.</p>
 
-    <component-description name="radio" :props="props" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Radio</template>

@@ -1,41 +1,5 @@
 <script setup lang="ts">
-const groupProps = [
-  {
-    name: "vertical",
-    type: "boolean",
-    description: "Display stats vertically",
-  },
-];
-
-const groupSlots = [
-  {
-    name: "default",
-    description: "Content of the stats",
-  },
-];
-
-const slots = [
-  {
-    name: "figure",
-    description: "Figure of the stat",
-  },
-  {
-    name: "title",
-    description: "Title of the stat",
-  },
-  {
-    name: "subtitle",
-    description: "Subtitle of the stat",
-  },
-  {
-    name: "desc",
-    description: "Description of the stat",
-  },
-  {
-    name: "actions",
-    description: "Actions of the stat",
-  },
-];
+import { DESCRIPTIONS } from "~/data/stat";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,8 +16,7 @@ const stats = [
 
     <p>Stat is used to show numbers and data in a box.</p>
 
-    <component-description name="stat-group" :props="groupProps" :slots="groupSlots" />
-    <component-description name="stat" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title> Stat </template>

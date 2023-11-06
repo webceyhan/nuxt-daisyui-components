@@ -1,41 +1,5 @@
 <script setup lang="ts">
-import {
-  ALIGNMENT_CLASS_MAP,
-  VERTICAL_ALIGNMENT_CLASS_MAP,
-} from "~/components/ui/indicator.vue";
-
-const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
-const VERTICAL_ALIGNMENTS: any[] = Object.keys(VERTICAL_ALIGNMENT_CLASS_MAP);
-
-const props = [
-  {
-    name: "item-class",
-    type: "string",
-    description: "Class for the indicator item",
-  },
-  {
-    name: "alignment",
-    type: "string",
-
-    values: ALIGNMENTS,
-  },
-  {
-    name: "vertical-alignment",
-    type: "string",
-    values: VERTICAL_ALIGNMENTS,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of indicator",
-  },
-  {
-    name: "item",
-    description: "Content of indicator item",
-  },
-];
+import { DESCRIPTIONS, ALIGNMENTS, VERTICAL_ALIGNMENTS } from "~/data/indicator";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -94,7 +58,7 @@ const positions = [
 
     <p>Indicators are used to place an element on the corner of another element.</p>
 
-    <component-description name="indicator" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Empty badge as indicator</template>
