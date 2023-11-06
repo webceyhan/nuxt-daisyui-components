@@ -13,14 +13,14 @@ let count = 0;
 
 <script setup lang="ts">
 export interface Props {
-  value?: number;
   modelValue?: number;
+  value?: number;
   max?: number;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  mask?: keyof typeof MASK_CLASS_MAP;
-  disabled?: boolean;
   itemClass?: string;
   itemClasses?: string[];
+  mask?: keyof typeof MASK_CLASS_MAP;
+  size?: keyof typeof SIZE_CLASS_MAP;
+  disabled?: boolean;
 }
 
 defineEmits(["update:modelValue"]);

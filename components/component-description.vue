@@ -4,6 +4,7 @@ export interface Description {
   props?: {
     name: string;
     type: string;
+    default?: string | number | boolean;
     values?: string[];
     description?: string;
   }[];
@@ -28,12 +29,9 @@ defineProps<Description>();
       <table v-if="props" class="table table-xs md:table-sm table-pin-rows w-full mb-4">
         <thead>
           <tr class="border-b-0">
-            <th
-              class="bg-base-200 rounded-l-box flex items-center gap-2 normal-case lg:py-3"
-            >
-              <span>Prop name</span>
-            </th>
+            <th class="bg-base-200 normal-case lg:py-3">Prop name</th>
             <th class="bg-base-200 normal-case lg:py-3">Type</th>
+            <th class="bg-base-200 normal-case lg:py-3">Default</th>
             <th class="bg-base-200 rounded-r-box lg:py-3"></th>
           </tr>
         </thead>
@@ -51,7 +49,12 @@ defineProps<Description>();
                 </span>
               </div>
             </td>
-            <td class="w-8/12 min-w-[20rem]">
+            <td class="w-1/12">
+              <span class="whitespace-nowrap kbd kbd-xs">
+                {{ prop?.default ?? (prop.type === "boolean" ? "false" : "") }}
+              </span>
+            </td>
+            <td class="w-7/12 min-w-[20rem]">
               {{ prop.description }}
 
               <div class="space-x-1">
@@ -68,17 +71,13 @@ defineProps<Description>();
       <table v-if="slots" class="table table-xs md:table-sm table-pin-rows w-full">
         <thead>
           <tr class="border-b-0">
-            <th
-              class="bg-base-200 rounded-l-box flex items-center gap-2 normal-case lg:py-3"
-            >
-              <span>Slot name</span>
-            </th>
+            <th class="bg-base-200 normal-case lg:py-3">Slot name</th>
             <th class="bg-base-200 rounded-r-box lg:py-3"></th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="slot of slots">
-            <th class="w-3/12 font-normal">
+            <th class="w-4/12 font-normal">
               <span class="whitespace-nowrap font-mono lowercase">
                 {{ slot.name }}
               </span>

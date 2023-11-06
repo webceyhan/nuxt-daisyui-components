@@ -10,26 +10,31 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'value',
                 type: 'number',
+                default: 0,
                 description: 'Value of progress',
             },
             {
                 name: 'max',
                 type: 'number',
+                default: 100,
                 description: 'Maximum value of progress',
             },
             {
                 name: 'size',
                 type: 'string',
-                description: 'Size of progress. default: 4rem',
+                default: '4rem',
+                description: 'Size of progress.',
             },
             {
                 name: 'thickness',
                 type: 'string',
-                description: 'Thickness of progress. default: 10% of size',
+                default: '10%',
+                description: 'Thickness of progress.',
             },
             {
                 name: 'color',
                 type: 'string',
+                default: 'default',
                 values: COLORS,
             },
             {
@@ -37,9 +42,6 @@ export const DESCRIPTIONS: Description[] = [
                 type: 'boolean',
                 description: 'Whether to use radial progress',
             },
-        ],
-        slots: [
-            //
         ],
     },
 ];

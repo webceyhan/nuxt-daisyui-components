@@ -15,6 +15,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'indicator',
                 type: 'string',
+                default: 'none',
                 values: INDICATORS,
             },
             {

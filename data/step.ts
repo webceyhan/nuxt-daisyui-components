@@ -26,6 +26,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
+                default: 'default',
                 values: COLORS,
             },
         ],

@@ -21,12 +21,13 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'alignment',
                 type: 'string',
-
+                default: 'end',
                 values: ALIGNMENTS,
             },
             {
                 name: 'vertical-alignment',
                 type: 'string',
+                default: 'top',
                 values: VERTICAL_ALIGNMENTS,
             },
         ],

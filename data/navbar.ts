@@ -19,6 +19,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'alignment',
                 type: 'string',
+                default: 'start',
                 values: ALIGNMENTS,
             },
         ],

@@ -26,6 +26,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'size',
                 type: 'Size',
+                default: 'md',
                 values: SIZES,
             },
             {

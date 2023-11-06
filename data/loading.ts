@@ -14,11 +14,13 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'size',
                 type: 'string',
+                default: 'md',
                 values: SIZES,
             },
             {
                 name: 'animation',
                 type: 'string',
+                default: 'spinner',
                 values: ANIMATIONS,
             },
         ],

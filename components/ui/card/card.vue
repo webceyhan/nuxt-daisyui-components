@@ -1,7 +1,7 @@
 <script setup lang="ts">
 export interface Props {
-  compact?: boolean;
   bodyClass?: string;
+  compact?: boolean;
   coverOverlay?: boolean;
   coverAside?: boolean;
 }

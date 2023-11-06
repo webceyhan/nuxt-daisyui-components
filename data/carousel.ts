@@ -10,6 +10,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'snap',
                 type: 'string',
+                default: 'start',
                 values: SNAPS,
             },
             {

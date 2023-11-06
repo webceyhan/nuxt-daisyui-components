@@ -14,11 +14,13 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
+                default: 'default',
                 values: COLORS,
             },
             {
                 name: 'alignment',
                 type: 'string',
+                default: 'start',
                 values: ALIGNMENTS,
             },
         ],

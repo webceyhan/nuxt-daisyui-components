@@ -1,6 +1,6 @@
 <script lang="ts">
 export const ALIGNMENT_CLASS_MAP = {
-  start: "navbar-start",
+  start: "navbar-start", // default
   center: "navbar-center",
   end: "navbar-end",
 };
