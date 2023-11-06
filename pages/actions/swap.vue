@@ -1,32 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "modelValue",
-    description: "Whether the swap is on or off",
-    type: "string",
-  },
-  {
-    name: "flip",
-    description: "Flip the swap effect",
-    type: "boolean",
-  },
-  {
-    name: "rotate",
-    description: "Rotate the swap effect",
-    type: "boolean",
-  },
-];
-
-const slots = [
-  {
-    name: "on",
-    description: "Content for the on state",
-  },
-  {
-    name: "off",
-    description: "Content for the off state",
-  },
-];
+import { DESCRIPTIONS } from "~/data/swap";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,7 +15,7 @@ const swap1 = ref(false);
       name.
     </p>
 
-    <component-description name="swap" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Swap text</template>

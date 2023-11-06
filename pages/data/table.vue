@@ -1,43 +1,11 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/table/table.vue";
+import { DESCRIPTIONS, SIZES } from "~/data/table";
 import {
   records,
   recordsWithVisuals,
   recordsXs,
   pinnedRows,
 } from "../../data/table-data";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-
-const props = [
-  {
-    name: "size",
-    type: "Size",
-    values: SIZES,
-  },
-  {
-    name: "zebra",
-    type: "boolean",
-    description: "Whether the table should have zebra striping",
-  },
-  {
-    name: "pin-rows",
-    type: "boolean",
-    description: "Whether the table should pin rows",
-  },
-  {
-    name: "pin-cols",
-    type: "boolean",
-    description: "Whether the table should pin columns",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of the table",
-  },
-];
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,7 +20,7 @@ const tagFor = (key: string) => (key === "id" ? "th" : "td");
 
     <p>Table can be used to show a list of data in a table format.</p>
 
-    <component-description name="table" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Table</template>

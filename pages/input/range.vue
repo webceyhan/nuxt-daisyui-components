@@ -1,46 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/range/range.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the input",
-  },
-  {
-    name: "min",
-    type: "string",
-    description: "Minimum value",
-  },
-  {
-    name: "max",
-    type: "string",
-    description: "Maximum value",
-  },
-  {
-    name: "step",
-    type: "string",
-    description: "Step value",
-  },
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the range is disabled or not",
-  },
-];
+import { DESCRIPTIONS, COLORS, SIZES } from "~/data/range";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -51,7 +10,7 @@ const props = [
 
     <p>Range slider is used to select a value by sliding a handle.</p>
 
-    <component-description name="range" :props="props" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Range</template>

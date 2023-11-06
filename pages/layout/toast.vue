@@ -1,31 +1,5 @@
 <script setup lang="ts">
-import {
-  ALIGNMENT_CLASS_MAP,
-  VERTICAL_ALIGNMENT_CLASS_MAP,
-} from "~/components/ui/toast/toast.vue";
-
-const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
-const VERTICAL_ALIGNMENTS: any[] = Object.keys(VERTICAL_ALIGNMENT_CLASS_MAP);
-
-const props = [
-  {
-    name: "alignment",
-    type: "string",
-    values: ALIGNMENTS,
-  },
-  {
-    name: "vertical-alignment",
-    type: "string",
-    values: VERTICAL_ALIGNMENTS,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of toast",
-  },
-];
+import { DESCRIPTIONS, ALIGNMENTS, VERTICAL_ALIGNMENTS } from "~/data/toast";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -84,7 +58,7 @@ const positions = [
 
     <p>Toast is a wrapper to stack elements, positioned on the corner of page.</p>
 
-    <component-description name="toast" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>toast with alert inside</template>

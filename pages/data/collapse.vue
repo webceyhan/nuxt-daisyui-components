@@ -1,36 +1,5 @@
 <script setup lang="ts">
-import { INDICATOR_CLASS_MAP } from "~/components/ui/collapse/collapse.vue";
-
-const INDICATORS: any[] = Object.keys(INDICATOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "indicator",
-    type: "string",
-    values: INDICATORS,
-  },
-  {
-    name: "open",
-    type: "boolean",
-    description: "Force open",
-  },
-  {
-    name: "toggle",
-    type: "boolean",
-    description: "Whether the collapse works with focus or checkbox",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content for the collapse",
-  },
-  {
-    name: "title",
-    description: "Title for the collapse",
-  },
-];
+import { DESCRIPTIONS, INDICATORS } from "~/data/collapse";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -41,7 +10,7 @@ const slots = [
 
     <p>Collapse is used for showing and hiding content.</p>
 
-    <component-description name="collapse" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Collapse with focus</template>

@@ -1,24 +1,22 @@
+<script lang="ts">
+export interface Description {
+  name: string;
+  props?: {
+    name: string;
+    type: string;
+    values?: string[];
+    description?: string;
+  }[];
+  slots?: {
+    name: string;
+    props?: string[];
+    description?: string;
+  }[];
+}
+</script>
+
 <script setup lang="ts">
-interface ComponentProp {
-  name: string;
-  type: string;
-  values?: string[];
-  description?: string;
-}
-
-interface ComponentSlot {
-  name: string;
-  props?: string[];
-  description?: string;
-}
-
-interface Props {
-  name: string;
-  props?: ComponentProp[];
-  slots?: ComponentSlot[];
-}
-
-defineProps<Props>();
+defineProps<Description>();
 </script>
 
 <template>

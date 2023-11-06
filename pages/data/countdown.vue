@@ -1,18 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "value",
-    type: "number",
-    description: "Value of the countdown between 0 and 99",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of the countdown",
-  },
-];
+import { DESCRIPTIONS } from "~/data/countdown";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -31,7 +18,7 @@ onMounted(() => {
 
     <br />
 
-    <component-description name="countdown" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Countdown</template>

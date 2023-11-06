@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const slots = [
-  {
-    name: "default",
-    description: "Content of breadcrumbs",
-  },
-];
+import { DESCRIPTIONS } from "~/data/breadcrumbs";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -15,7 +10,7 @@ const slots = [
 
     <p>Breadcrumbs helps users to navigate through the website.</p>
 
-    <component-description name="breadcrumbs" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Breadcrumbs</template>

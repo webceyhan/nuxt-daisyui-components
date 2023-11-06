@@ -1,22 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/kbd/kbd.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-
-const props = [
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of kbd",
-  },
-];
+import { DESCRIPTIONS } from "~/data/kbd";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,7 +18,7 @@ const keyboard = [
 
     <p>Kbd is used to display keyboard shortcuts.</p>
 
-    <component-description name="kbd" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Kbd</template>

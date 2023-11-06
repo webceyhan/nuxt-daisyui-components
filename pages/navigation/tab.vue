@@ -1,55 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/tab/tab.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-
-const navProps = [
-  {
-    name: "boxed",
-    type: "boolean",
-    description: "Whether the tabs should be boxed",
-  },
-];
-
-const navSlots = [
-  {
-    name: "default",
-    description: "Content of the tabs",
-  },
-];
-
-const props = [
-  {
-    name: "size",
-    type: "Size",
-    values: SIZES,
-  },
-  {
-    name: "active",
-    type: "boolean",
-    description: "Whether the tab is active",
-  },
-  {
-    name: "lifted",
-    type: "boolean",
-    description: "Whether the tab is lifted",
-  },
-  {
-    name: "bordered",
-    type: "boolean",
-    description: "Whether the tab is bordered",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the tab is disabled",
-  },
-];
-
-const slots = [
-  { name: "default", description: "Content of the tab" },
-  { name: "indicator", description: "Indicator of the tab" },
-];
+import { DESCRIPTIONS, SIZES } from "~/data/tab";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,8 +16,7 @@ const links = [
 
     <p>Tabs can be used to show a list of links in a tabbed format.</p>
 
-    <component-description name="tab-nav" :props="navProps" :slots="navSlots" />
-    <component-description name="tab" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Tabs</template>

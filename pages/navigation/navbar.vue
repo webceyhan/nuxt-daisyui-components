@@ -1,29 +1,5 @@
 <script setup lang="ts">
-import { ALIGNMENT_CLASS_MAP } from "~/components/ui/navbar/navbar-section.vue";
-
-const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of navbar",
-  },
-];
-
-const sectionProps = [
-  {
-    name: "alignment",
-    type: "string",
-    values: ALIGNMENTS,
-  },
-];
-
-const sectionSlots = [
-  {
-    name: "default",
-    description: "Content of navbar section",
-  },
-];
+import { DESCRIPTIONS, ALIGNMENTS } from "~/data/navbar";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,12 +16,7 @@ const colors = [
 
     <p>Navbar is used to show a navigation bar on the top of the page.</p>
 
-    <component-description name="navbar" :slots="slots" />
-    <component-description
-      name="navbar-section"
-      :props="sectionProps"
-      :slots="sectionSlots"
-    />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Navbar with title only</template>

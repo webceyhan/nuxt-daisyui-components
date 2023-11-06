@@ -1,36 +1,5 @@
 <script setup lang="ts">
-import { INDICATOR_CLASS_MAP } from "~/components/ui/collapse/collapse.vue";
-
-const INDICATORS: any[] = Object.keys(INDICATOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "name",
-    type: "string",
-    description: "Group name of accordion items",
-  },
-  {
-    name: "indicator",
-    type: "string",
-    values: INDICATORS,
-  },
-  {
-    name: "open",
-    type: "boolean",
-    description: "Force open",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of accordion",
-  },
-  {
-    name: "title",
-    description: "Title content of accordion",
-  },
-];
+import { DESCRIPTIONS, INDICATORS } from "~/data/accordion";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -44,7 +13,7 @@ const slots = [
       a time.
     </p>
 
-    <component-description name="accordion" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Accordion using radio inputs</template>

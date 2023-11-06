@@ -1,28 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "overlay-url",
-    type: "string",
-    description: "URL of the overlay image",
-  },
-  {
-    name: "overlay-class",
-    type: "string",
-    description: "Class of the overlay image",
-  },
-  {
-    name: "content-class",
-    type: "string",
-    description: "Class of the content",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of hero",
-  },
-];
+import { DESCRIPTIONS } from "~/data/hero";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -36,7 +13,7 @@ const slots = [
       description.
     </p>
 
-    <component-description name="hero" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Centered hero</template>

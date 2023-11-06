@@ -1,55 +1,5 @@
 <script setup lang="ts">
-import { VERTICAL_ALIGNMENT_CLASS_MAP } from "~/components/ui/modal/modal.vue";
-
-const VERTICAL_ALIGNMENTS: any[] = Object.keys(VERTICAL_ALIGNMENT_CLASS_MAP);
-
-const props = [
-  {
-    name: "title",
-    type: "string",
-    description: "Title of modal",
-  },
-  {
-    name: "class",
-    type: "string",
-    description: "Custom classes for modal dialog box",
-  },
-  {
-    name: "vertical-alignment",
-    type: "string",
-    values: VERTICAL_ALIGNMENTS,
-  },
-  {
-    name: "open",
-    type: "boolean",
-    description: "Open/close the modal using v-model:open",
-  },
-  {
-    name: "backdrop",
-    type: "boolean",
-    description: "The backdrop of modal to close it when clicked outside",
-  },
-  {
-    name: "dismissable",
-    type: "boolean",
-    description: "Show a close button at top right corner",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of modal",
-  },
-  {
-    name: "title",
-    description: "Title content of modal",
-  },
-  {
-    name: "actions",
-    description: "Container for modal action buttons",
-  },
-];
+import { DESCRIPTIONS, VERTICAL_ALIGNMENTS } from "~/data/modal";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +21,7 @@ const verticalAlignedModels = reactive({
 
     <p>Modal is used to show a dialog or a box when you click a button.</p>
 
-    <component-description name="modal" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Dialog modal</template>

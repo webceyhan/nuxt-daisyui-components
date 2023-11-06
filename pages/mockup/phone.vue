@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const slots = [
-  {
-    name: "default",
-    description: "Content of phone mockup",
-  },
-];
+import { DESCRIPTIONS } from "~/data/mockup-phone";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -15,7 +10,7 @@ const slots = [
 
     <p>Phone mockup shows a mockup of an iPhone.</p>
 
-    <component-description name="mockup-phone" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title> iPhone mockup</template>

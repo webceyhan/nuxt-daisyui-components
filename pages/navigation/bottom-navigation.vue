@@ -1,53 +1,6 @@
 <script setup lang="ts">
 import { TEXT_COLORS } from "~/constants";
-import { SIZE_CLASS_MAP } from "~/components/ui/bottom-nav/bottom-nav.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-
-const props = [
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of navigation",
-  },
-];
-
-const itemProps = [
-  {
-    name: "label",
-    type: "string",
-    description: "Label text",
-  },
-  {
-    name: "icon",
-    type: "string",
-    description: "Icon name",
-  },
-  {
-    name: "active",
-    type: "boolean",
-    description: "Active state",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Disabled state",
-  },
-];
-
-const itemSlots = [
-  {
-    name: "default",
-    description: "Content of navigation item",
-  },
-];
+import { DESCRIPTIONS, SIZES } from "~/data/bottom-nav";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -70,8 +23,7 @@ const customColors = [
 
     <p>Bottom navigation bar allows navigation between primary screens.</p>
 
-    <component-description name="bottom-nav" :props="props" />
-    <component-description name="bottom-nav-item" :props="itemProps" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Bottom Navigation</template>

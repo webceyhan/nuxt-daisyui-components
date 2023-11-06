@@ -1,31 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/checkbox/checkbox.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "checked",
-    type: "boolean",
-    description: "Whether the checkbox is checked or not",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the checkbox is disabled or not",
-  },
-];
+import { DESCRIPTIONS, COLORS, SIZES } from "~/data/checkbox";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -38,7 +12,7 @@ const checked = ref(true);
 
     <p>Checkboxes are used to select or deselect a value.</p>
 
-    <component-description name="checkbox" :props="props" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Checkbox</template>

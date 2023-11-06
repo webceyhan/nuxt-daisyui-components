@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/button/button.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+import { DESCRIPTIONS, SIZES } from "~/data/pagination";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -15,7 +13,7 @@ const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
       related content.
     </p>
 
-    <component-description name="pagination" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Pagination with an active button</template>

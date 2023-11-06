@@ -1,48 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/select/select.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the input",
-  },
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "ghost",
-    type: "boolean",
-    description: "No background",
-  },
-  {
-    name: "bordered",
-    type: "boolean",
-    description: "Whether the input has a border or not",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the input is disabled or not",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content for options",
-  },
-];
+import { DESCRIPTIONS, COLORS, SIZES } from "~/data/select";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -58,7 +15,7 @@ const selectedFruit = ref(undefined);
 
     <p>Select is used to pick a value from a list of options.</p>
 
-    <component-description name="select" :props="props" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Select</template>

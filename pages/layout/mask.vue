@@ -1,52 +1,7 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "shape",
-    type: "Mask",
-    description: "Shape of the mask",
-  },
-  {
-    name: "first-half",
-    type: "boolean",
-    description: "Display only the first half of the mask",
-  },
-  {
-    name: "last-half",
-    type: "boolean",
-    description: "Display only the last half of the mask",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of the mask",
-  },
-];
+import { DESCRIPTIONS, SHAPES } from "~/data/mask";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
-
-const shapes = [
-  "squircle",
-  "heart",
-  "hexagon",
-  "hexagon-2",
-  "decagon",
-  "pentagon",
-  "diamond",
-  "square",
-  "circle",
-  "parallelogram",
-  "parallelogram-2",
-  "parallelogram-3",
-  "parallelogram-4",
-  "star",
-  "star-2",
-  "triangle",
-  "triangle-2",
-  "triangle-3",
-  "triangle-4",
-];
 </script>
 
 <template>
@@ -55,9 +10,9 @@ const shapes = [
 
     <p>Mask crops the content of the element to common shapes.</p>
 
-    <component-description name="mask" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
-    <component-preview v-for="shape of shapes">
+    <component-preview v-for="shape of SHAPES">
       <template #title>{{ shape }}</template>
 
       <ui-mask :shape="(shape as any)">

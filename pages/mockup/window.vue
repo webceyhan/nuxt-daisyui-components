@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const slots = [
-  {
-    name: "default",
-    description: "Content of window mockup",
-  },
-];
+import { DESCRIPTIONS } from "~/data/mockup-window";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -15,7 +10,7 @@ const slots = [
 
     <p>Window mockup shows a box that looks like an operating system window.</p>
 
-    <component-description name="mockup-window" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>window mockup with border</template>

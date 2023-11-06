@@ -1,10 +1,5 @@
 <script setup lang="ts">
-const slots = [
-  {
-    name: "default",
-    description: "Content of stack",
-  },
-];
+import { DESCRIPTIONS } from "~/data/stack";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -15,7 +10,7 @@ const slots = [
 
     <p>Stack visually puts elements on top of each other.</p>
 
-    <component-description name="stack" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>3 divs without stack</template>

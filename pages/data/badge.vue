@@ -1,44 +1,6 @@
 <script setup lang="ts">
 import { TEXT_SIZES } from "~/constants";
-import { COLOR_CLASS_MAP, SIZE_CLASS_MAP } from "~/components/ui/badge/badge.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "label",
-    type: "string",
-    description: "Label of badge",
-  },
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "ghost",
-    type: "boolean",
-    description: "No background",
-  },
-  {
-    name: "outline",
-    type: "boolean",
-    description: "Transparent badge with colored border",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of button",
-  },
-];
+import { DESCRIPTIONS, SIZES, COLORS } from "~/data/badge";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -49,7 +11,7 @@ const slots = [
 
     <p>Badges are used to inform the user of the status of specific data.</p>
 
-    <component-description name="badge" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Badge</template>

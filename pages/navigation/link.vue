@@ -1,27 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP } from "~/components/ui/link/link.vue";
-
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "hover",
-    type: "boolean",
-    description: "Show underline only on hover",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of link",
-  },
-];
+import { DESCRIPTIONS, COLORS } from "~/data/link";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -32,7 +10,7 @@ const slots = [
 
     <p>Link adds the missing underline style to links.</p>
 
-    <component-description name="link" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Link</template>

@@ -1,44 +1,5 @@
 <script setup lang="ts">
-import {
-  COLOR_CLASS_MAP,
-  SIZE_CLASS_MAP,
-} from "~/components/ui/file-input/file-input.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "modelValue",
-    type: "string",
-    description: "Value of the input",
-  },
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "ghost",
-    type: "boolean",
-    description: "No background",
-  },
-  {
-    name: "bordered",
-    type: "boolean",
-    description: "Whether the checkbox has a border or not",
-  },
-  {
-    name: "disabled",
-    type: "boolean",
-    description: "Whether the checkbox is disabled or not",
-  },
-];
+import { DESCRIPTIONS, COLORS, SIZES } from "~/data/file-input";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -51,7 +12,7 @@ const value = ref("");
 
     <p>File Input is a an input field for uploading files.</p>
 
-    <component-description name="file-input" :props="props" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>File input</template>

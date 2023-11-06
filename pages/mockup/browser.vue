@@ -1,18 +1,5 @@
 <script setup lang="ts">
-const slots = [
-  {
-    name: "default",
-    description: "Content of browser mockup",
-  },
-  {
-    name: "toolbar",
-    description: "Content of toolbar",
-  },
-  {
-    name: "input",
-    description: "Content of input",
-  },
-];
+import { DESCRIPTIONS } from "~/data/mockup-browser";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -23,7 +10,7 @@ const slots = [
 
     <p>Browser mockup shows a box that looks like a browser window.</p>
 
-    <component-description name="mockup-browser" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>browser mockup with border</template>

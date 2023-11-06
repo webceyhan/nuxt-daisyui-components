@@ -1,28 +1,5 @@
 <script setup lang="ts">
-const props = [
-  {
-    name: "label",
-    type: "string",
-    description: "Label text",
-  },
-  {
-    name: "alt",
-    type: "string",
-    description: "Alternative label text",
-  },
-  {
-    name: "inline",
-    type: "boolean",
-    description: "Display label and input inline",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of form control",
-  },
-];
+import { DESCRIPTIONS } from "~/data/form-control";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -38,7 +15,7 @@ const value = ref("");
       checkbox, radio, etc.
     </p>
 
-    <component-description name="form-control" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>With Text Input</template>

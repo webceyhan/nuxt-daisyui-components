@@ -1,45 +1,5 @@
 <script setup lang="ts">
-import { COLOR_CLASS_MAP } from "~/components/ui/alert/alert.vue";
-
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "title",
-    type: "string",
-    description: "Title of alert",
-  },
-  {
-    name: "message",
-    type: "string",
-    description: "Message of alert",
-  },
-  {
-    name: "icon",
-    type: "string",
-    description: "Icon name",
-  },
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of alert",
-  },
-  {
-    name: "icon",
-    description: "Icon content of alert",
-  },
-  {
-    name: "actions",
-    description: "Actions content of alert",
-  },
-];
+import { DESCRIPTIONS, COLORS } from "~/data/alert";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,7 +33,7 @@ const statefulAlerts: any[] = [
 
     <p>Alert informs users about important events.</p>
 
-    <component-description name="alert" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>Alert</template>

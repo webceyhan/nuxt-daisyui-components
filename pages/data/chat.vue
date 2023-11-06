@@ -1,40 +1,5 @@
 <script setup lang="ts">
-import { ALIGNMENT_CLASS_MAP, COLOR_CLASS_MAP } from "~/components/ui/chat/chat.vue";
-
-const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
-const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-
-const props = [
-  {
-    name: "color",
-    type: "string",
-    values: COLORS,
-  },
-  {
-    name: "alignment",
-    type: "string",
-    values: ALIGNMENTS,
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of chat bubble",
-  },
-  {
-    name: "avatar",
-    description: "Avatar image of chat bubble",
-  },
-  {
-    name: "header",
-    description: "Header of chat bubble",
-  },
-  {
-    name: "footer",
-    description: "Footer of chat bubble",
-  },
-];
+import { DESCRIPTIONS, COLORS, ALIGNMENTS } from "~/data/chat";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,7 +24,7 @@ const bubbleWithColors = [
       the author image, author name, time, etc.
     </p>
 
-    <component-description name="chat" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview>
       <template #title>chat-start and chat-end</template>

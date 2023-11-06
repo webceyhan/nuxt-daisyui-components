@@ -1,27 +1,5 @@
 <script setup lang="ts">
-import { SIZE_CLASS_MAP } from "~/components/ui/artboard/artboard.vue";
-
-const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-
-const props = [
-  {
-    name: "size",
-    type: "string",
-    values: SIZES,
-  },
-  {
-    name: "horizontal",
-    type: "boolean",
-    description: "Shows horizontal view",
-  },
-];
-
-const slots = [
-  {
-    name: "default",
-    description: "Content of artboard",
-  },
-];
+import { DESCRIPTIONS, SIZES } from "~/data/artboard";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -34,7 +12,7 @@ const slots = [
       Artboard provides fixed size container to display a demo content on mobile size.
     </p>
 
-    <component-description name="artboard" :props="props" :slots="slots" />
+    <component-description v-for="desc of DESCRIPTIONS" v-bind="desc" />
 
     <component-preview v-for="size of SIZES">
       <template #title>Artboard size {{ size }}</template>
