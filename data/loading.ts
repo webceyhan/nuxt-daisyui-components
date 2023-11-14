@@ -1,11 +1,17 @@
 import { Description } from '~/components/component-description.vue';
-import {
-    ANIMATION_CLASS_MAP,
-    SIZE_CLASS_MAP,
-} from '~/components/ui/loading/loading.vue';
+import { Animation } from '~/components/ui/loading/loading.vue';
+import { SIZES } from '~/constants';
 
-export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-export const ANIMATIONS: any[] = Object.keys(ANIMATION_CLASS_MAP);
+export { SIZES };
+
+export const ANIMATIONS: Animation[] = [
+    'spinner',
+    'dots',
+    'ring',
+    'ball',
+    'bars',
+    'infinity',
+];
 
 export const DESCRIPTIONS: Description[] = [
     {

@@ -1,7 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { MASK_CLASS_MAP } from '~/components/ui/mask.vue';
+import { MASKS as SHAPES } from '~/constants';
 
-export const SHAPES: any[] = Object.keys(MASK_CLASS_MAP);
+export { SHAPES };
 
 export const DESCRIPTIONS: Description[] = [
     {

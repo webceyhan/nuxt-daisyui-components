@@ -1,7 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { SIZE_CLASS_MAP } from '~/components/ui/kbd/kbd.vue';
+import { SIZES } from '~/constants';
 
-export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
+export { SIZES };
 
 export const DESCRIPTIONS: Description[] = [
     {

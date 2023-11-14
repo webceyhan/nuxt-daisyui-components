@@ -1,7 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { COLOR_CLASS_MAP } from '~/components/ui/progress/progress.vue';
+import { COLORS } from '~/constants';
 
-export const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
+export { COLORS };
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -34,7 +34,6 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
-                default: 'default',
                 values: COLORS,
             },
             {

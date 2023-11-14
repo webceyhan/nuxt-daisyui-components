@@ -1,7 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { ALIGNMENT_CLASS_MAP } from '~/components/ui/navbar/navbar-section.vue';
+import { ALIGNMENTS } from '~/constants';
 
-export const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
+export { ALIGNMENTS };
 
 export const DESCRIPTIONS: Description[] = [
     {

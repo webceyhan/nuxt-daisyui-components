@@ -1,11 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import {
-    ALIGNMENT_CLASS_MAP,
-    COLOR_CLASS_MAP,
-} from '~/components/ui/chat/chat.vue';
+import { ALIGNMENTS, COLORS } from '~/constants';
 
-export const ALIGNMENTS: any[] = Object.keys(ALIGNMENT_CLASS_MAP);
-export const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
+export { ALIGNMENTS, COLORS };
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -14,7 +10,6 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
-                default: 'default',
                 values: COLORS,
             },
             {

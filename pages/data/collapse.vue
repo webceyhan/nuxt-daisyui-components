@@ -31,7 +31,7 @@ import { DESCRIPTIONS, INDICATORS } from "~/data/collapse";
         to get closed.
       </template>
 
-      <ui-collapse toggle open>
+      <ui-collapse toggle>
         <template #title>Click me to show/hide content</template>
         <p>hello</p>
       </ui-collapse>
@@ -60,15 +60,6 @@ import { DESCRIPTIONS, INDICATORS } from "~/data/collapse";
 
       <ui-collapse open>
         <template #title>I have collapse-open class</template>
-        <p>tabindex="0" attribute is necessary to make the div focusable</p>
-      </ui-collapse>
-    </component-preview>
-
-    <component-preview>
-      <template #title>Force close</template>
-
-      <ui-collapse :open="false">
-        <template #title>I have collapse-close class</template>
         <p>tabindex="0" attribute is necessary to make the div focusable</p>
       </ui-collapse>
     </component-preview>

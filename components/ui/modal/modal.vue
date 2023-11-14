@@ -1,32 +1,37 @@
-<script lang="ts">
-export const VERTICAL_ALIGNMENT_CLASS_MAP = {
-  top: "modal-top",
-  middle: undefined, // default
-  bottom: "modal-bottom",
-};
-</script>
-
 <script setup lang="ts">
+import { VerticalAlignment } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * VerticalAlignment:
+ * - modal-top
+ * - modal-middle // default
+ * - modal-bottom
+ */
 export interface Props {
   title?: string;
   class?: string;
   open?: boolean;
   backdrop?: boolean;
   dismissable?: boolean;
-  verticalAlignment?: keyof typeof VERTICAL_ALIGNMENT_CLASS_MAP;
+  verticalAlignment?: VerticalAlignment;
 }
 
 defineEmits(["update:open"]);
 
-const props = withDefaults(defineProps<Props>(), {
-  verticalAlignment: "middle",
-});
+const props = defineProps<Props>();
 </script>
 
 <template>
   <dialog
     :open="open"
-    :class="['modal', VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment]]"
+    :class="[
+      'modal',
+      {
+        [`modal-${verticalAlignment}`]: verticalAlignment,
+      },
+    ]"
     @close="$emit('update:open', false)"
   >
     <div :class="['modal-box', props.class]">

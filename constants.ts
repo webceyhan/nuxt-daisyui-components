@@ -2,6 +2,8 @@ import {
     Alignment,
     BrandColor,
     Color,
+    ColorWithNeural,
+    Mask,
     Position,
     Shape,
     Size,
@@ -18,14 +20,9 @@ export const TEXT_SIZES: string[] = [
     'text-xl',
 ];
 
-export const SHAPES: Shape[] = ['rectangle', 'square', 'circle'];
+export const SHAPES: Shape[] = ['square', 'circle'];
 
-export const BRAND_COLORS: BrandColor[] = [
-    'default',
-    'primary',
-    'secondary',
-    'accent',
-];
+export const BRAND_COLORS: BrandColor[] = ['primary', 'secondary', 'accent'];
 
 export const STATE_COLORS: StateColor[] = [
     'info',
@@ -50,11 +47,7 @@ export const COLORS: Color[] = [...BRAND_COLORS, ...STATE_COLORS];
 /**
  * button, badge, link, step
  */
-export const COLORS_WITH_NEUTRAL: any[] = [
-    'default',
-    'neutral',
-    ...COLORS.slice(1),
-];
+export const COLORS_WITH_NEUTRAL: ColorWithNeural[] = ['neutral', ...COLORS];
 
 export const ALIGNMENTS: Alignment[] = ['start', 'center', 'end'];
 
@@ -71,4 +64,26 @@ export const STATE_ICONS: string[] = [
     'check-circle',
     'exclamation-triangle',
     'x-circle',
+];
+
+export const MASKS: Mask[] = [
+    'squircle',
+    'heart',
+    'hexagon',
+    'hexagon-2',
+    'decagon',
+    'pentagon',
+    'diamond',
+    'square',
+    'circle',
+    'parallelogram',
+    'parallelogram-2',
+    'parallelogram-3',
+    'parallelogram-4',
+    'star',
+    'star-2',
+    'triangle',
+    'triangle-2',
+    'triangle-3',
+    'triangle-4',
 ];

@@ -1,9 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { VERTICAL_ALIGNMENT_CLASS_MAP } from '~/components/ui/modal/modal.vue';
+import { VERTICAL_ALIGNMENTS } from '~/constants';
 
-export const VERTICAL_ALIGNMENTS: any[] = Object.keys(
-    VERTICAL_ALIGNMENT_CLASS_MAP
-);
+export { VERTICAL_ALIGNMENTS };
 
 export const DESCRIPTIONS: Description[] = [
     {

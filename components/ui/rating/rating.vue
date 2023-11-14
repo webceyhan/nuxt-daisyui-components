@@ -1,25 +1,27 @@
 <script lang="ts">
-import { MASK_CLASS_MAP } from "../mask.vue";
-
-export const SIZE_CLASS_MAP = {
-  xs: "rating-xs",
-  sm: "rating-sm",
-  md: undefined, // default
-  lg: "rating-lg",
-};
-
 let count = 0;
 </script>
 
 <script setup lang="ts">
+import { Mask, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - rating-xs
+ * - rating-sm
+ * - rating-md // default
+ * - rating-lg
+ */
 export interface Props {
   modelValue?: number;
   value?: number;
   max?: number;
   itemClass?: string;
   itemClasses?: string[];
-  mask?: keyof typeof MASK_CLASS_MAP;
-  size?: keyof typeof SIZE_CLASS_MAP;
+  mask?: Mask;
+  size?: Size;
   disabled?: boolean;
 }
 
@@ -27,7 +29,6 @@ defineEmits(["update:modelValue"]);
 
 withDefaults(defineProps<Props>(), {
   max: 5,
-  size: "md",
   mask: "star",
 });
 
@@ -35,7 +36,14 @@ const name = `rating-${count++}`;
 </script>
 
 <template>
-  <div :class="['rating', SIZE_CLASS_MAP[size]]">
+  <div
+    :class="[
+      'rating',
+      {
+        [`rating-${size}`]: size,
+      },
+    ]"
+  >
     <input
       type="radio"
       v-for="i in max"
@@ -43,7 +51,14 @@ const name = `rating-${count++}`;
       :name="name"
       :checked="i === (modelValue ?? value)"
       :disabled="disabled"
-      :class="['mask', MASK_CLASS_MAP[mask], itemClass, itemClasses?.[i - 1]]"
+      :class="[
+        'mask',
+        {
+          [`mask-${mask}`]: mask,
+        },
+        itemClass,
+        itemClasses?.[i - 1],
+      ]"
       @change="$emit('update:modelValue', i)"
     />
   </div>

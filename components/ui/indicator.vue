@@ -1,28 +1,26 @@
-<script lang="ts">
-export const ALIGNMENT_CLASS_MAP = {
-  start: "indicator-start",
-  center: "indicator-center",
-  end: undefined, // default
-};
-
-export const VERTICAL_ALIGNMENT_CLASS_MAP = {
-  top: undefined, // default
-  middle: "indicator-middle",
-  bottom: "indicator-bottom",
-};
-</script>
-
 <script setup lang="ts">
+import { Alignment, VerticalAlignment } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Alignment:
+ * - indicator-start
+ * - indicator-center
+ * - indicator-end // default
+ *
+ * Vertical Alignment:
+ * - indicator-top // default
+ * - indicator-middle
+ * - indicator-bottom
+ */
 export interface Props {
   itemClass?: string;
-  alignment?: keyof typeof ALIGNMENT_CLASS_MAP;
-  verticalAlignment?: keyof typeof VERTICAL_ALIGNMENT_CLASS_MAP;
+  alignment?: Alignment;
+  verticalAlignment?: VerticalAlignment;
 }
 
-withDefaults(defineProps<Props>(), {
-  alignment: "end",
-  verticalAlignment: "top",
-});
+defineProps<Props>();
 </script>
 
 <template>
@@ -31,8 +29,10 @@ withDefaults(defineProps<Props>(), {
     <span
       class="indicator-item"
       :class="[
-        ALIGNMENT_CLASS_MAP[alignment],
-        VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
+        {
+          [`indicator-${alignment}`]: alignment,
+          [`indicator-${verticalAlignment}`]: verticalAlignment,
+        },
         itemClass,
       ]"
     >

@@ -1,7 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { INDICATOR_CLASS_MAP } from '~/components/ui/collapse/collapse.vue';
+import { Indicator } from '~/components/ui/collapse/collapse.vue';
 
-export const INDICATORS: any[] = Object.keys(INDICATOR_CLASS_MAP);
+export const INDICATORS: Indicator[] = ['arrow', 'plus'];
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -10,7 +10,6 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'indicator',
                 type: 'string',
-                default: 'none',
                 values: INDICATORS,
             },
             {

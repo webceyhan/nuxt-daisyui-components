@@ -1,22 +1,20 @@
-<script lang="ts">
-export const INDICATOR_CLASS_MAP = {
-  none: undefined, // default
-  arrow: "collapse-arrow",
-  plus: "collapse-plus",
-};
-</script>
-
 <script setup lang="ts">
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Indicator:
+ * - collapse-arrow
+ * - collapse-plus
+ */
+export type Indicator = "arrow" | "plus";
+
 export interface Props {
   open?: boolean;
   toggle?: boolean;
-  indicator?: keyof typeof INDICATOR_CLASS_MAP;
+  indicator?: Indicator;
 }
 
-withDefaults(defineProps<Props>(), {
-  open: undefined,
-  indicator: "none",
-});
+defineProps<Props>();
 </script>
 
 <template>
@@ -24,16 +22,15 @@ withDefaults(defineProps<Props>(), {
     tabindex="0"
     :class="[
       'collapse bg-base-200',
-      INDICATOR_CLASS_MAP[indicator],
       {
-        // force open/close when toggle is not active
-        'collapse-open': !toggle && open === true,
-        'collapse-close': !toggle && open === false,
+        // force open when toggle is not active
+        'collapse-open': open && !toggle,
+        [`collapse-${indicator}`]: indicator,
       },
     ]"
   >
     <!-- internal toggle -->
-    <input v-if="toggle" type="checkbox" class="toggle" :checked="open" />
+    <input v-if="toggle" type="checkbox" :checked="open" />
 
     <!-- title -->
     <div class="collapse-title text-xl font-medium">

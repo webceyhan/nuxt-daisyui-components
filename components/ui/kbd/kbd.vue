@@ -1,24 +1,31 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "kbd-xs",
-  sm: "kbd-sm",
-  md: undefined, // default
-  lg: "kbd-lg",
-};
-</script>
-
 <script setup lang="ts">
+import { Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - kbd-xs
+ * - kbd-sm
+ * - kbd-md // default
+ * - kbd-lg
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
+  size?: Size;
 }
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-});
+defineProps<Props>();
 </script>
 
 <template>
-  <kbd :class="['kbd', SIZE_CLASS_MAP[size]]">
+  <kbd
+    :class="[
+      'kbd',
+      {
+        [`kbd-${size}`]: size,
+      },
+    ]"
+  >
     <slot />
   </kbd>
 </template>

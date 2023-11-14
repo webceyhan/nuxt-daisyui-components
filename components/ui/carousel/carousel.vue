@@ -1,28 +1,28 @@
-<script lang="ts">
-export const SNAP_CLASS_MAP = {
-  start: undefined, // default
-  center: "carousel-center",
-  end: "carousel-end",
-};
-</script>
-
 <script setup lang="ts">
+import { Alignment } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Snap:
+ * - carousel-start // default
+ * - carousel-center
+ * - carousel-end
+ */
 export interface Props {
-  snap?: keyof typeof SNAP_CLASS_MAP;
+  snap?: Alignment;
   vertical?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  snap: "start",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <div
     :class="[
       'carousel',
-      SNAP_CLASS_MAP[snap],
       {
+        [`carousel-${snap}`]: snap,
         'carousel-vertical': vertical,
       },
     ]"

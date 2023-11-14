@@ -1,41 +1,38 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "range-xs",
-  sm: "range-sm",
-  md: undefined, // default
-  lg: "range-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "range-primary",
-  secondary: "range-secondary",
-  accent: "range-accent",
-  info: "range-info",
-  success: "range-success",
-  warning: "range-warning",
-  error: "range-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - range-xs
+ * - range-sm
+ * - range-md // default
+ * - range-lg
+ *
+ * Color:
+ * - range-primary
+ * - range-secondary
+ * - range-accent
+ * - range-info
+ * - range-success
+ * - range-warning
+ * - range-error
+ */
 export interface Props {
   min?: string | number;
   max?: string | number;
   step?: string | number;
   value?: string | number;
   modelValue?: string | number;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: Color;
   disabled?: boolean;
 }
 
 defineEmits(["update:modelValue"]);
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
@@ -43,9 +40,9 @@ withDefaults(defineProps<Props>(), {
     type="range"
     :class="[
       'range',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
       {
+        [`range-${size}`]: size,
+        [`range-${color}`]: color,
         // patch default disabled style
         'cursor-not-allowed': disabled,
       },

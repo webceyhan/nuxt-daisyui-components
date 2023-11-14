@@ -1,7 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { SNAP_CLASS_MAP } from '~/components/ui/carousel/carousel.vue';
+import { ALIGNMENTS as SNAPS } from '~/constants';
 
-export const SNAPS: any[] = Object.keys(SNAP_CLASS_MAP);
+export { SNAPS };
 
 export const DESCRIPTIONS: Description[] = [
     {
