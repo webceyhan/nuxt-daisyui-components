@@ -1,33 +1,39 @@
-<script lang="ts">
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  info: "alert-info",
-  success: "alert-success",
-  warning: "alert-warning",
-  error: "alert-error",
-};
-</script>
-
 <script setup lang="ts">
+import { StateColor } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Color:
+ * - alert-info
+ * - alert-success
+ * - alert-warning
+ * - alert-error
+ */
 export interface Props {
   icon?: string;
   title?: string;
   message?: string;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  color?: StateColor;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  color: "default",
-});
+const props = defineProps<Props>();
 
 const iconClasses = computed(() => ({
   "text-3xl": props.title,
-  "text-info": props.color === "default",
+  "text-info": !props.color,
 }));
 </script>
 
 <template>
-  <div :class="['alert', COLOR_CLASS_MAP[color]]">
+  <div
+    :class="[
+      'alert',
+      {
+        [`alert-${color}`]: color,
+      },
+    ]"
+  >
     <slot name="icon">
       <ui-icon v-if="icon" :name="icon" :class="iconClasses" />
     </slot>

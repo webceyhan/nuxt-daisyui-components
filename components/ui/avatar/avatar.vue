@@ -10,7 +10,15 @@ defineProps<Props>();
 
 <template>
   <div
-    :class="['avatar', { online, offline, placeholder, indicator: !!$slots.indicator }]"
+    :class="[
+      'avatar',
+      {
+        online,
+        offline,
+        placeholder,
+        indicator: !!$slots.indicator,
+      },
+    ]"
   >
     <span v-if="$slots.indicator" class="indicator-item">
       <slot name="indicator" />

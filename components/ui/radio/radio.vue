@@ -1,40 +1,37 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "radio-xs",
-  sm: "radio-sm",
-  md: undefined, // default
-  lg: "radio-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "radio-primary",
-  secondary: "radio-secondary",
-  accent: "radio-accent",
-  info: "radio-info",
-  success: "radio-success",
-  warning: "radio-warning",
-  error: "radio-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - radio-xs
+ * - radio-sm
+ * - radio-md // default
+ * - radio-lg
+ *
+ * Color:
+ * - radio-primary
+ * - radio-secondary
+ * - radio-accent
+ * - radio-info
+ * - radio-success
+ * - radio-warning
+ * - radio-error
+ */
 export interface Props {
   name?: string;
   value?: string;
   modelValue?: string;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: Color;
   checked?: boolean;
   disabled?: boolean;
 }
 
 const emit = defineEmits(["update:checked", "update:modelValue"]);
 
-const props = withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+const props = defineProps<Props>();
 
 const isChecked = computed(() => {
   return props.modelValue === props.value ?? props.checked;
@@ -50,7 +47,13 @@ function onChange(event: Event) {
 <template>
   <input
     type="radio"
-    :class="['radio', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
+    :class="[
+      'radio',
+      {
+        [`radio-${size}`]: size,
+        [`radio-${color}`]: color,
+      },
+    ]"
     v-bind="{ name, value, checked: isChecked, disabled }"
     @change="onChange"
   />

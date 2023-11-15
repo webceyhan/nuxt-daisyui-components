@@ -1,13 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import {
-    COLOR_CLASS_MAP,
-    SIZE_CLASS_MAP,
-    SHAPE_CLASS_MAP,
-} from '~/components/ui/button/button.vue';
+import { COLORS_WITH_NEUTRAL as COLORS, SHAPES, SIZES } from '~/constants';
 
-export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-export const SHAPES: any[] = Object.keys(SHAPE_CLASS_MAP);
-export const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
+export { COLORS, SHAPES, SIZES };
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -35,15 +29,13 @@ export const DESCRIPTIONS: Description[] = [
                 values: SIZES,
             },
             {
-                name: 'shape',                
+                name: 'shape',
                 type: 'string',
-                default: 'rectangle',
                 values: SHAPES,
             },
             {
                 name: 'color',
                 type: 'string',
-                default: 'default',
                 values: COLORS,
             },
             {

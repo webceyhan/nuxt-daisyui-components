@@ -1,29 +1,35 @@
-<script lang="ts">
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  neutral: "step-neutral",
-  primary: "step-primary",
-  secondary: "step-secondary",
-  accent: "step-accent",
-  info: "step-info",
-  success: "step-success",
-  warning: "step-warning",
-  error: "step-error",
-};
-</script>
-
 <script setup lang="ts">
+import { ColorWithNeural } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Color:
+ * - step-neutral
+ * - step-primary
+ * - step-secondary
+ * - step-accent
+ * - step-info
+ * - step-success
+ * - step-warning
+ * - step-error
+ */
 export interface Props {
-  color?: keyof typeof COLOR_CLASS_MAP;
+  color?: ColorWithNeural;
 }
 
-withDefaults(defineProps<Props>(), {
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
-  <li :class="['step', COLOR_CLASS_MAP[color]]">
+  <li
+    :class="[
+      'step',
+      {
+        [`step-${color}`]: color,
+      },
+    ]"
+  >
     <slot />
   </li>
 </template>

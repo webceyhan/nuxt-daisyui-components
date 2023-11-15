@@ -1,46 +1,43 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "badge-xs",
-  sm: "badge-sm",
-  md: undefined, // default
-  lg: "badge-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  neutral: "badge-neutral",
-  primary: "badge-primary",
-  secondary: "badge-secondary",
-  accent: "badge-accent",
-  info: "badge-info",
-  success: "badge-success",
-  warning: "badge-warning",
-  error: "badge-error",
-};
-</script>
-
 <script setup lang="ts">
+import { ColorWithNeural, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - badge-xs
+ * - badge-sm
+ * - badge-md // default
+ * - badge-lg
+ *
+ * Color:
+ * - badge-neutral
+ * - badge-primary
+ * - badge-secondary
+ * - badge-accent
+ * - badge-info
+ * - badge-success
+ * - badge-warning
+ * - badge-error
+ */
 export interface Props {
   label?: string;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: ColorWithNeural;
   ghost?: boolean;
   outline?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <span
     :class="[
       'badge',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
       {
+        [`badge-${size}`]: size,
+        [`badge-${color}`]: color,
         'badge-ghost': ghost,
         'badge-outline': outline,
       },

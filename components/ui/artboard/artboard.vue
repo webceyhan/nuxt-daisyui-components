@@ -1,31 +1,40 @@
 <script lang="ts">
-export const SIZE_CLASS_MAP = {
-  "phone-1": "phone-1",
-  "phone-2": "phone-2",
-  "phone-3": "phone-3",
-  "phone-4": "phone-4",
-  "phone-5": "phone-5",
-  "phone-6": "phone-6",
+import { Size } from "~/types";
+
+const SIZE_CLASS_MAP: Record<Size, string> = {
+  xs: "phone-1",
+  sm: "phone-2",
+  md: "phone-3", // default
+  lg: "phone-4",
 };
 
-export const DIMENSION_MAP = {
-  "phone-1": ["320", "568"],
-  "phone-2": ["375", "667"],
-  "phone-3": ["414", "736"],
-  "phone-4": ["375", "812"],
-  "phone-5": ["414", "896"],
-  "phone-6": ["320", "1024"],
+const DIMENSION_MAP: Record<Size, number[]> = {
+  xs: [320, 568],
+  sm: [375, 667],
+  md: [414, 736], // default
+  lg: [375, 812],
 };
 </script>
 
 <script setup lang="ts">
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - phone-1
+ * - phone-2
+ * - phone-3
+ * - phone-4
+ * - phone-5
+ * - phone-6
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
+  size?: Size;
   horizontal?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
-  size: "phone-1",
+  size: "md",
 });
 </script>
 

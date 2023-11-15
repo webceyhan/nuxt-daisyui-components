@@ -1,24 +1,31 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "btm-nav-xs",
-  sm: "btm-nav-sm",
-  md: undefined, // default
-  lg: "btm-nav-lg",
-};
-</script>
-
 <script setup lang="ts">
+import { Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - btm-nav-xs
+ * - btm-nav-sm
+ * - btm-nav-md // default
+ * - btm-nav-lg
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
+  size?: Size;
 }
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-});
+defineProps<Props>();
 </script>
 
 <template>
-  <div :class="['btm-nav', SIZE_CLASS_MAP[size]]">
+  <div
+    :class="[
+      'btm-nav',
+      {
+        [`btm-nav-${size}`]: size,
+      },
+    ]"
+  >
     <slot />
   </div>
 </template>

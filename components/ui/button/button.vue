@@ -1,38 +1,36 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "btn-xs",
-  sm: "btn-sm",
-  md: undefined, // default
-  lg: "btn-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  neutral: "btn-neutral",
-  primary: "btn-primary",
-  secondary: "btn-secondary",
-  accent: "btn-accent",
-  info: "btn-info",
-  success: "btn-success",
-  warning: "btn-warning",
-  error: "btn-error",
-};
-
-export const SHAPE_CLASS_MAP = {
-  rectangle: undefined, // default
-  square: "btn-square",
-  circle: "btn-circle",
-};
-</script>
-
 <script setup lang="ts">
+import { ColorWithNeural, Shape, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - btn-xs
+ * - btn-sm
+ * - btn-md // default
+ * - btn-lg
+ *
+ * Color:
+ * - btn-neutral
+ * - btn-primary
+ * - btn-secondary
+ * - btn-accent
+ * - btn-info
+ * - btn-success
+ * - btn-warning
+ * - btn-error
+ *
+ * Shape:
+ * - btn-square
+ * - btn-circle
+ */
 export interface Props {
   label?: string;
   href?: string;
   icon?: string;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  shape?: keyof typeof SHAPE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  shape?: Shape;
+  color?: ColorWithNeural;
   ghost?: boolean;
   outline?: boolean;
   active?: boolean;
@@ -40,11 +38,7 @@ export interface Props {
   block?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-  shape: "rectangle",
-});
+defineProps<Props>();
 </script>
 
 <template>
@@ -54,10 +48,10 @@ withDefaults(defineProps<Props>(), {
     :href="href"
     :class="[
       'btn',
-      SIZE_CLASS_MAP[size],
-      SHAPE_CLASS_MAP[shape],
-      COLOR_CLASS_MAP[color],
       {
+        [`btn-${size}`]: size,
+        [`btn-${shape}`]: shape,
+        [`btn-${color}`]: color,
         'btn-ghost': ghost,
         'btn-outline': outline,
         'btn-active': active,

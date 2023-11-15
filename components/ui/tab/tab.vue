@@ -1,32 +1,32 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "tab-xs",
-  sm: "tab-sm",
-  md: undefined, // default
-  lg: "tab-lg",
-};
-</script>
-
 <script setup lang="ts">
+import { Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - tab-xs
+ * - tab-sm
+ * - tab-md // default
+ * - tab-lg
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
+  size?: Size;
   active?: boolean;
   lifted?: boolean;
   bordered?: boolean;
   disabled?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <a
     :class="[
       'tab',
-      SIZE_CLASS_MAP[size],
       {
+        [`tab-${size}`]: size,
         'tab-active': active,
         'tab-lifted': lifted,
         'tab-bordered': bordered,

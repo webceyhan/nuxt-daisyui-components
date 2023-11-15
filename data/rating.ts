@@ -1,9 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { SIZE_CLASS_MAP } from '~/components/ui/rating/rating.vue';
-import { MASK_CLASS_MAP } from '~/components/ui/mask.vue';
+import { SIZES, MASKS } from '~/constants';
 
-export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-export const MASKS: any[] = Object.keys(MASK_CLASS_MAP);
+export { SIZES, MASKS };
 
 export const DESCRIPTIONS: Description[] = [
     {

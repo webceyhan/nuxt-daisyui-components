@@ -1,28 +1,28 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "file-input-xs",
-  sm: "file-input-sm",
-  md: undefined, // default
-  lg: "file-input-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "file-input-primary",
-  secondary: "file-input-secondary",
-  accent: "file-input-accent",
-  info: "file-input-info",
-  success: "file-input-success",
-  warning: "file-input-warning",
-  error: "file-input-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - file-input-xs
+ * - file-input-sm
+ * - file-input-md // default
+ * - file-input-lg
+ *
+ * Color:
+ * - file-input-primary
+ * - file-input-secondary
+ * - file-input-accent
+ * - file-input-info
+ * - file-input-success
+ * - file-input-warning
+ * - file-input-error
+ */
 export interface Props {
   modelValue?: string;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: Color;
   ghost?: boolean;
   bordered?: boolean;
   disabled?: boolean;
@@ -30,10 +30,7 @@ export interface Props {
 
 defineEmits(["update:modelValue"]);
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
@@ -41,9 +38,9 @@ withDefaults(defineProps<Props>(), {
     type="file"
     :class="[
       'file-input w-full',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
       {
+        [`file-input-${size}`]: size,
+        [`file-input-${color}`]: color,
         'file-input-ghost': ghost,
         'file-input-bordered': bordered,
       },

@@ -1,43 +1,46 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "checkbox-xs",
-  sm: "checkbox-sm",
-  md: undefined, // default
-  lg: "checkbox-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "checkbox-primary",
-  secondary: "checkbox-secondary",
-  accent: "checkbox-accent",
-  info: "checkbox-info",
-  success: "checkbox-success",
-  warning: "checkbox-warning",
-  error: "checkbox-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - checkbox-xs
+ * - checkbox-sm
+ * - checkbox-md // default
+ * - checkbox-lg
+ *
+ * Color:
+ * - checkbox-primary
+ * - checkbox-secondary
+ * - checkbox-accent
+ * - checkbox-info
+ * - checkbox-success
+ * - checkbox-warning
+ * - checkbox-error
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: Color;
   checked?: boolean;
   disabled?: boolean;
 }
 
 defineEmits(["update:checked"]);
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <input
     type="checkbox"
-    :class="['checkbox', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
+    :class="[
+      'checkbox',
+      {
+        [`checkbox-${size}`]: size,
+        [`checkbox-${color}`]: color,
+      },
+    ]"
     @change="$emit('update:checked', ($event.target as HTMLInputElement).checked)"
     :checked="checked"
     :disabled="disabled"

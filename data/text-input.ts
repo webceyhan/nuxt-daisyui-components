@@ -1,11 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import {
-    COLOR_CLASS_MAP,
-    SIZE_CLASS_MAP,
-} from '~/components/ui/text-input/text-input.vue';
+import { COLORS, SIZES } from '~/constants';
 
-export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-export const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
+export { COLORS, SIZES };
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -25,7 +21,6 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
-                default: 'default',
                 values: COLORS,
             },
             {

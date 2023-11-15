@@ -1,35 +1,40 @@
-<script lang="ts">
-export const ALIGNMENT_CLASS_MAP = {
-  start: "chat-start", // default
-  end: "chat-end",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "chat-bubble-primary",
-  secondary: "chat-bubble-secondary",
-  accent: "chat-bubble-accent",
-  info: "chat-bubble-info",
-  success: "chat-bubble-success",
-  warning: "chat-bubble-warning",
-  error: "chat-bubble-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Alignment, Color } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Alignment:
+ * - chat-start // default
+ * - chat-end
+ * - chat-center
+ *
+ * Color:
+ * - chat-bubble-primary
+ * - chat-bubble-secondary
+ * - chat-bubble-accent
+ * - chat-bubble-info
+ * - chat-bubble-success
+ * - chat-bubble-warning
+ * - chat-bubble-error
+ */
 export interface Props {
-  color?: keyof typeof COLOR_CLASS_MAP;
-  alignment?: keyof typeof ALIGNMENT_CLASS_MAP;
+  color?: Color;
+  alignment?: Alignment;
 }
 
-withDefaults(defineProps<Props>(), {
-  color: "default",
-  alignment: "start",
-});
+defineProps<Props>();
 </script>
 
 <template>
-  <div :class="['chat', ALIGNMENT_CLASS_MAP[alignment]]">
+  <div
+    :class="[
+      'chat',
+      {
+        [`chat-${alignment}`]: alignment,
+      },
+    ]"
+  >
     <!-- avatar -->
     <div v-if="$slots.avatar" class="chat-image avatar">
       <slot name="avatar" />
@@ -41,7 +46,14 @@ withDefaults(defineProps<Props>(), {
     </div>
 
     <!-- bubble -->
-    <div :class="['chat-bubble', COLOR_CLASS_MAP[color]]">
+    <div
+      :class="[
+        'chat-bubble',
+        {
+          [`chat-bubble-${color}`]: color,
+        },
+      ]"
+    >
       <slot />
     </div>
 

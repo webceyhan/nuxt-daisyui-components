@@ -1,49 +1,51 @@
-<script lang="ts">
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "progress-primary",
-  secondary: "progress-secondary",
-  accent: "progress-accent",
-  info: "progress-info",
-  success: "progress-success",
-  warning: "progress-warning",
-  error: "progress-error",
-};
-
-// this is for radial progress
-const TEXT_COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "text-primary",
-  secondary: "text-secondary",
-  accent: "text-accent",
-  info: "text-info",
-  success: "text-success",
-  warning: "text-warning",
-  error: "text-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Color:
+ * - progress-primary
+ * - progress-secondary
+ * - progress-accent
+ * - progress-info
+ * - progress-success
+ * - progress-warning
+ * - progress-error
+ *
+ * Text Color: (for radial progress)
+ * - text-primary
+ * - text-secondary
+ * - text-accent
+ * - text-info
+ * - text-success
+ * - text-warning
+ * - text-error
+ */
 export interface Props {
   value?: number;
   max?: number;
   size?: string;
   thickness?: string;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  color?: Color;
   radial?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
   value: 0,
   max: 100,
-  color: "default",
 });
 </script>
 
 <template>
   <div
     v-if="radial"
-    :class="['radial-progress', TEXT_COLOR_CLASS_MAP[color]]"
+    :class="[
+      'radial-progress',
+      {
+        [`text-${color}`]: color,
+      },
+    ]"
     :style="{
       '--value': value,
       '--size': size,
@@ -55,7 +57,12 @@ withDefaults(defineProps<Props>(), {
 
   <progress
     v-else
-    :class="['progress', COLOR_CLASS_MAP[color]]"
+    :class="[
+      'progress',
+      {
+        [`progress-${color}`]: color,
+      },
+    ]"
     :value="value"
     :max="max"
   />

@@ -1,22 +1,21 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "menu-xs",
-  sm: "menu-sm",
-  md: undefined, // default
-  lg: "menu-lg",
-};
-</script>
-
 <script setup lang="ts">
+import { Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - menu-xs
+ * - menu-sm
+ * - menu-md // default
+ * - menu-lg
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
+  size?: Size;
   horizontal?: boolean;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+const props = defineProps<Props>();
 
 provide("menu", props);
 </script>
@@ -25,8 +24,8 @@ provide("menu", props);
   <ul
     :class="[
       'menu',
-      SIZE_CLASS_MAP[size],
       {
+        [`menu-${size}`]: size,
         'menu-horizontal': horizontal,
       },
       // pre-styling

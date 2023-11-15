@@ -1,43 +1,46 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "toggle-xs",
-  sm: "toggle-sm",
-  md: undefined, // default
-  lg: "toggle-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "toggle-primary",
-  secondary: "toggle-secondary",
-  accent: "toggle-accent",
-  info: "toggle-info",
-  success: "toggle-success",
-  warning: "toggle-warning",
-  error: "toggle-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - toggle-xs
+ * - toggle-sm
+ * - toggle-md // default
+ * - toggle-lg
+ *
+ * Color:
+ * - toggle-primary
+ * - toggle-secondary
+ * - toggle-accent
+ * - toggle-info
+ * - toggle-success
+ * - toggle-warning
+ * - toggle-error
+ */
 export interface Props {
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: Color;
   checked?: boolean;
   disabled?: boolean;
 }
 
 defineEmits(["update:checked"]);
 
-withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <input
     type="checkbox"
-    :class="['toggle', SIZE_CLASS_MAP[size], COLOR_CLASS_MAP[color]]"
+    :class="[
+      'toggle',
+      {
+        [`toggle-${size}`]: size,
+        [`toggle-${color}`]: color,
+      },
+    ]"
     @change="$emit('update:checked', ($event.target as HTMLInputElement).checked)"
     :checked="checked"
     :disabled="disabled"

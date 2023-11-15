@@ -1,21 +1,21 @@
-<script lang="ts">
-import { Props as ButtonProps } from "../button/button.vue";
-
-export const POSITION_CLASS_MAP = {
-  top: "dropdown-top",
-  bottom: undefined, // default
-  left: "dropdown-left",
-  right: "dropdown-right",
-};
-</script>
-
 <script setup lang="ts">
+import { ColorWithNeural, Position, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Position:
+ * - dropdown-top
+ * - dropdown-bottom // default
+ * - dropdown-left
+ * - dropdown-right
+ */
 export interface Props {
   label?: string;
   icon?: string;
-  size?: ButtonProps["size"];
-  color?: ButtonProps["color"];
-  position?: keyof typeof POSITION_CLASS_MAP;
+  size?: Size;
+  color?: ColorWithNeural;
+  position?: Position;
   outline?: boolean;
   open?: boolean;
   hover?: boolean;
@@ -24,9 +24,7 @@ export interface Props {
   noIndicator?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  position: "bottom",
-});
+defineProps<Props>();
 
 const close = () => {
   (document.activeElement as HTMLElement)?.blur();
@@ -37,8 +35,8 @@ const close = () => {
   <div
     :class="[
       'dropdown',
-      POSITION_CLASS_MAP[position],
       {
+        [`dropdown-${position}`]: position,
         'dropdown-open': open,
         'dropdown-hover': hover,
         'dropdown-end': alignToEnd,

@@ -1,35 +1,35 @@
-<script lang="ts">
-export const ALIGNMENT_CLASS_MAP = {
-  start: "toast-start",
-  center: "toast-center",
-  end: undefined, // default
-};
-
-export const VERTICAL_ALIGNMENT_CLASS_MAP = {
-  top: "toast-top",
-  middle: "toast-middle",
-  bottom: undefined, // default
-};
-</script>
-
 <script setup lang="ts">
+import { Alignment, VerticalAlignment } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Alignment:
+ * - toast-start
+ * - toast-center
+ * - toast-end // default
+ *
+ * Vertical Alignment:
+ * - toast-top
+ * - toast-middle
+ * - toast-bottom // default
+ */
 export interface Props {
-  alignment?: keyof typeof ALIGNMENT_CLASS_MAP;
-  verticalAlignment?: keyof typeof VERTICAL_ALIGNMENT_CLASS_MAP;
+  alignment?: Alignment;
+  verticalAlignment?: VerticalAlignment;
 }
 
-withDefaults(defineProps<Props>(), {
-  alignment: "end",
-  verticalAlignment: "bottom",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <div
     :class="[
       'toast',
-      ALIGNMENT_CLASS_MAP[alignment],
-      VERTICAL_ALIGNMENT_CLASS_MAP[verticalAlignment],
+      {
+        [`toast-${alignment}`]: alignment,
+        [`toast-${verticalAlignment}`]: verticalAlignment,
+      },
     ]"
   >
     <slot />

@@ -1,28 +1,28 @@
-<script lang="ts">
-export const SIZE_CLASS_MAP = {
-  xs: "textarea-xs",
-  sm: "textarea-sm",
-  md: undefined, // default
-  lg: "textarea-lg",
-};
-
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  primary: "textarea-primary",
-  secondary: "textarea-secondary",
-  accent: "textarea-accent",
-  info: "textarea-info",
-  success: "textarea-success",
-  warning: "textarea-warning",
-  error: "textarea-error",
-};
-</script>
-
 <script setup lang="ts">
+import { Color, Size } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Size:
+ * - textarea-xs
+ * - textarea-sm
+ * - textarea-md // default
+ * - textarea-lg
+ *
+ * Color:
+ * - textarea-primary
+ * - textarea-secondary
+ * - textarea-accent
+ * - textarea-info
+ * - textarea-success
+ * - textarea-warning
+ * - textarea-error
+ */
 export interface Props {
   modelValue?: string;
-  size?: keyof typeof SIZE_CLASS_MAP;
-  color?: keyof typeof COLOR_CLASS_MAP;
+  size?: Size;
+  color?: Color;
   ghost?: boolean;
   bordered?: boolean;
   disabled?: boolean;
@@ -30,10 +30,7 @@ export interface Props {
 
 const emit = defineEmits(["update:modelValue"]);
 
-const props = withDefaults(defineProps<Props>(), {
-  size: "md",
-  color: "default",
-});
+const props = defineProps<Props>();
 
 const valueProxy = computed({
   get() {
@@ -49,9 +46,9 @@ const valueProxy = computed({
   <textarea
     :class="[
       'textarea',
-      SIZE_CLASS_MAP[size],
-      COLOR_CLASS_MAP[color],
       {
+        [`textarea-${size}`]: size,
+        [`textarea-${color}`]: color,
         'textarea-ghost': ghost,
         'textarea-bordered': bordered,
       },

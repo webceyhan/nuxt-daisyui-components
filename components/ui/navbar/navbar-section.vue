@@ -1,14 +1,16 @@
-<script lang="ts">
-export const ALIGNMENT_CLASS_MAP = {
-  start: "navbar-start", // default
-  center: "navbar-center",
-  end: "navbar-end",
-};
-</script>
-
 <script setup lang="ts">
+import { Alignment } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Alignment:
+ * - navbar-start // default
+ * - navbar-center
+ * - navbar-end
+ */
 export interface Props {
-  alignment?: keyof typeof ALIGNMENT_CLASS_MAP;
+  alignment?: Alignment;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -17,7 +19,13 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="[ALIGNMENT_CLASS_MAP[alignment]]">
+  <div
+    :class="[
+      {
+        [`navbar-${alignment}`]: alignment,
+      },
+    ]"
+  >
     <slot />
   </div>
 </template>

@@ -1,13 +1,7 @@
 import { Description } from '~/components/component-description.vue';
-import { POSITION_CLASS_MAP } from '~/components/ui/dropdown/dropdown.vue';
-import {
-    COLOR_CLASS_MAP,
-    SIZE_CLASS_MAP,
-} from '~/components/ui/button/button.vue';
+import { COLORS_WITH_NEUTRAL as COLORS, POSITIONS, SIZES } from '~/constants';
 
-export const SIZES: any[] = Object.keys(SIZE_CLASS_MAP);
-export const COLORS: any[] = Object.keys(COLOR_CLASS_MAP);
-export const POSITIONS: any[] = Object.keys(POSITION_CLASS_MAP);
+export { COLORS, POSITIONS, SIZES };
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -32,7 +26,6 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'color',
                 type: 'string',
-                default: 'default',
                 values: COLORS,
             },
             {

@@ -1,30 +1,32 @@
-<script lang="ts">
-export const MASK_CLASS_MAP = {
-  squircle: "mask-squircle",
-  heart: "mask-heart",
-  hexagon: "mask-hexagon",
-  "hexagon-2": "mask-hexagon-2",
-  decagon: "mask-decagon",
-  pentagon: "mask-pentagon",
-  diamond: "mask-diamond",
-  square: "mask-square",
-  circle: "mask-circle",
-  parallelogram: "mask-parallelogram",
-  "parallelogram-2": "mask-parallelogram-2",
-  "parallelogram-3": "mask-parallelogram-3",
-  "parallelogram-4": "mask-parallelogram-4",
-  star: "mask-star",
-  "star-2": "mask-star-2",
-  triangle: "mask-triangle",
-  "triangle-2": "mask-triangle-2",
-  "triangle-3": "mask-triangle-3",
-  "triangle-4": "mask-triangle-4",
-};
-</script>
-
 <script setup lang="ts">
+import { Mask } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Shape:
+ * - mask-squircle // default
+ * - mask-heart
+ * - mask-hexagon
+ * - mask-hexagon-2
+ * - mask-decagon
+ * - mask-pentagon
+ * - mask-diamond
+ * - mask-square
+ * - mask-circle
+ * - mask-parallelogram
+ * - mask-parallelogram-2
+ * - mask-parallelogram-3
+ * - mask-parallelogram-4
+ * - mask-star
+ * - mask-star-2
+ * - mask-triangle
+ * - mask-triangle-2
+ * - mask-triangle-3
+ * - mask-triangle-4
+ */
 export interface Props {
-  shape?: keyof typeof MASK_CLASS_MAP;
+  shape?: Mask;
   firstHalf?: boolean;
   lastHalf?: boolean;
 }
@@ -38,8 +40,8 @@ withDefaults(defineProps<Props>(), {
   <div
     :class="[
       'mask',
-      MASK_CLASS_MAP[shape],
       {
+        [`mask-${shape}`]: shape,
         'mask-half-1': firstHalf,
         'mask-half-2': lastHalf,
       },

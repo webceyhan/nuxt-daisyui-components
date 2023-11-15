@@ -1,34 +1,33 @@
-<script lang="ts">
-export const COLOR_CLASS_MAP = {
-  default: undefined, // default
-  neutral: "link-neutral",
-  primary: "link-primary",
-  secondary: "link-secondary",
-  accent: "link-accent",
-  info: "link-info",
-  success: "link-success",
-  warning: "link-warning",
-  error: "link-error",
-};
-</script>
-
 <script setup lang="ts">
+import { ColorWithNeural } from "~/types";
+
+/**
+ * DaisyUI classes to be included in the bundle!
+ *
+ * Color:
+ * - link-neutral
+ * - link-primary
+ * - link-secondary
+ * - link-accent
+ * - link-info
+ * - link-success
+ * - link-warning
+ * - link-error
+ */
 export interface Props {
-  color?: keyof typeof COLOR_CLASS_MAP;
+  color?: ColorWithNeural;
   hover?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
-  color: "default",
-});
+defineProps<Props>();
 </script>
 
 <template>
   <a
     :class="[
       'link',
-      COLOR_CLASS_MAP[color],
       {
+        [`link-${color}`]: color,
         'link-hover': hover,
       },
     ]"
