@@ -19,6 +19,16 @@ const MENU_DEFINITIONS: Record<string, Menu> = {
     icon: "window",
     links: [],
   },
+  navigation: {
+    title: "Navigation",
+    icon: "link-45deg",
+    links: [],
+  },
+  feedback: {
+    title: "Feedback",
+    icon: "chat-square-dots",
+    links: [],
+  },
   input: {
     title: "Data input",
     icon: "pencil-square",
@@ -27,16 +37,6 @@ const MENU_DEFINITIONS: Record<string, Menu> = {
   layout: {
     title: "Layout",
     icon: "grid-fill",
-    links: [],
-  },
-  feedback: {
-    title: "Feedback",
-    icon: "chat-square-dots",
-    links: [],
-  },
-  navigation: {
-    title: "Navigation",
-    icon: "link-45deg",
     links: [],
   },
   mockup: {
