@@ -66,6 +66,7 @@
 
     <!-- main content -->
     <main class="w-full max-w-4xl px-6 pb-16 xl:pr-2">
+      <div class="h-4" />
       <NuxtPage />
     </main>
   </ui-drawer>
