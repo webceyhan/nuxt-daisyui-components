@@ -19,6 +19,16 @@ const MENU_DEFINITIONS: Record<string, Menu> = {
     icon: "window",
     links: [],
   },
+  navigation: {
+    title: "Navigation",
+    icon: "link-45deg",
+    links: [],
+  },
+  feedback: {
+    title: "Feedback",
+    icon: "chat-square-dots",
+    links: [],
+  },
   input: {
     title: "Data input",
     icon: "pencil-square",
@@ -27,11 +37,6 @@ const MENU_DEFINITIONS: Record<string, Menu> = {
   layout: {
     title: "Layout",
     icon: "grid-fill",
-    links: [],
-  },
-  navigation: {
-    title: "Navigation",
-    icon: "link-45deg",
     links: [],
   },
   mockup: {
@@ -52,7 +57,7 @@ useRouter()
     const [menuName, pageName] = path.split("/").slice(1);
 
     MENU_DEFINITIONS[menuName].links.push({
-      label: pageName,
+      label: pageName.replace(/-/g, " "),
       href: path,
     });
   });
