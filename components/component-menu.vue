@@ -29,6 +29,11 @@ const MENU_DEFINITIONS: Record<string, Menu> = {
     icon: "grid-fill",
     links: [],
   },
+  feedback: {
+    title: "Feedback",
+    icon: "chat-square-dots",
+    links: [],
+  },
   navigation: {
     title: "Navigation",
     icon: "link-45deg",
