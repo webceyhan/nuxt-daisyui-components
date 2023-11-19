@@ -49,6 +49,8 @@
 
           <!-- logo -->
           <daisyui-logo class="lg:hidden" />
+
+          <component-search class="hidden w-full max-w-sm lg:flex" />
         </div>
 
         <div class="flex-0">
