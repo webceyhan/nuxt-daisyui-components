@@ -77,11 +77,15 @@ useRouter()
 
     <!-- links -->
     <div class="collapse-content">
-      <ul class="menu menu-md px-4 py-0">
-        <li v-for="link of menu.links">
-          <NuxtLink :href="link.href" active-class="active">
-            <span class="capitalize">{{ link.label }}</span>
-          </NuxtLink>
+      <ul class="menu menu-md py-0">
+        <li>
+          <ul class="m-0">
+            <li v-for="link of menu.links">
+              <NuxtLink :href="link.href" active-class="active">
+                <span class="capitalize">{{ link.label }}</span>
+              </NuxtLink>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
