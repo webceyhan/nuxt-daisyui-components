@@ -1,13 +1,14 @@
 <script setup lang="ts">
+import { PAGES } from "~/data/pages";
+
 const query = ref("");
-const links = usePageLinks();
 const searchInput = ref<HTMLInputElement>(null!);
 
 const results = computed(() => {
   if (!query.value) return [];
   const term = query.value.toLowerCase();
 
-  return links.filter(({ label }) => label.includes(term)).slice(0, 5);
+  return PAGES.filter(({ tags }) => tags.includes(term)).slice(0, 5);
 });
 
 const onSelect = (label: string) => {
@@ -59,8 +60,8 @@ onMounted(() => {
       v-if="results.length > 0"
     >
       <li v-for="link of results">
-        <NuxtLink :href="link.href" active-class="active" @click="onSelect(link.label)">
-          <span class="capitalize">{{ link.label }}</span>
+        <NuxtLink :href="link.href" active-class="active" @click="onSelect(link.name)">
+          <span class="capitalize">{{ link.name }}</span>
         </NuxtLink>
       </li>
     </ul>
