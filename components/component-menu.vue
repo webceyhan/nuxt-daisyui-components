@@ -66,28 +66,30 @@ useRouter()
 </script>
 
 <template>
-  <details v-for="menu of MENU_DEFINITIONS" class="collapse collapse-arrow">
-    <!-- title -->
-    <summary class="collapse-title border-t border-neutral">
-      <div class="flex items-center gap-4">
-        <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
-        <span>{{ menu.title }}</span>
-      </div>
-    </summary>
+  <div>
+    <details v-for="menu of MENU_DEFINITIONS" class="collapse collapse-arrow">
+      <!-- title -->
+      <summary class="collapse-title">
+        <div class="flex items-center gap-4">
+          <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
+          <span>{{ menu.title }}</span>
+        </div>
+      </summary>
 
-    <!-- links -->
-    <div class="collapse-content">
-      <ul class="menu menu-md py-0">
-        <li>
-          <ul class="m-0">
-            <li v-for="link of menu.links">
-              <NuxtLink :href="link.href" active-class="active">
-                <span class="capitalize">{{ link.label }}</span>
-              </NuxtLink>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </details>
+      <!-- links -->
+      <div class="collapse-content">
+        <ul class="menu menu-md py-0">
+          <li>
+            <ul class="m-0">
+              <li v-for="link of menu.links">
+                <NuxtLink :href="link.href" active-class="active">
+                  <span class="capitalize">{{ link.label }}</span>
+                </NuxtLink>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </div>
 </template>
