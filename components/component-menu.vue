@@ -52,7 +52,7 @@ useRouter()
     const [menuName, pageName] = path.split("/").slice(1);
 
     MENU_DEFINITIONS[menuName].links.push({
-      label: pageName,
+      label: pageName.replace(/-/g, " "),
       href: path,
     });
   });
