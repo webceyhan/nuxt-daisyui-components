@@ -21,3 +21,9 @@
     <i class="text-lg font-serif opacity-50">for Nuxt</i>
   </div>
 </template>
+
+<style scoped>
+.font-title {
+  font-family: Figtree, Noto Sans JP, Noto Sans, Vazirmatn, sans-serif;
+}
+</style>
