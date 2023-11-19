@@ -2,7 +2,6 @@
 type Menu = {
   title: string;
   icon: string;
-  iconClass: string;
   links: {
     label: string;
     href: string;
@@ -13,37 +12,31 @@ const MENU_DEFINITIONS: Record<string, Menu> = {
   actions: {
     title: "Actions",
     icon: "cursor-fill",
-    iconClass: "text-fuchsia-600",
     links: [],
   },
   data: {
     title: "Data display",
     icon: "window",
-    iconClass: "text-teal-600",
     links: [],
   },
   input: {
     title: "Data input",
     icon: "pencil-square",
-    iconClass: "text-rose-600",
     links: [],
   },
   layout: {
     title: "Layout",
     icon: "grid-fill",
-    iconClass: "text-blue-600",
     links: [],
   },
   navigation: {
     title: "Navigation",
     icon: "link-45deg",
-    iconClass: "text-cyan-600",
     links: [],
   },
   mockup: {
     title: "Mockup",
     icon: "phone",
-    iconClass: "text-lime-600",
     links: [],
   },
 };
@@ -80,7 +73,7 @@ const activeMenuName = computed(() => {
       <!-- title -->
       <summary class="collapse-title min-h-0 py-2">
         <div class="flex items-center">
-          <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
+          <ui-icon :name="menu.icon" class="text-lg" />
           <span class="menu-title">{{ menu.title }}</span>
         </div>
       </summary>
