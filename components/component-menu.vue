@@ -63,11 +63,20 @@ useRouter()
       href: path,
     });
   });
+
+const activeMenuName = computed(() => {
+  const { path } = useRouter().currentRoute.value;
+  return path.split("/")[1] ?? "actions";
+});
 </script>
 
 <template>
   <div>
-    <details v-for="menu of MENU_DEFINITIONS" class="collapse collapse-arrow">
+    <details
+      v-for="(menu, name) of MENU_DEFINITIONS"
+      class="collapse collapse-arrow"
+      :open="name == activeMenuName"
+    >
       <!-- title -->
       <summary class="collapse-title">
         <div class="flex items-center gap-4">
