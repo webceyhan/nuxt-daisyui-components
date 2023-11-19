@@ -58,8 +58,7 @@ useRouter()
   });
 
 const activeMenuName = computed(() => {
-  const { path } = useRouter().currentRoute.value;
-  return path.split("/")[1] ?? "actions";
+  return useRouter().currentRoute.value.path.split("/")[1];
 });
 </script>
 
