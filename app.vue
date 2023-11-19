@@ -1,138 +1,41 @@
-<script setup lang="ts">
-const menus = [
-  {
-    title: "Actions",
-    icon: "cursor-fill",
-    iconClass: "text-fuchsia-600",
-    links: [
-      { label: "Button", href: "/actions/button" },
-      { label: "Dropdown", href: "/actions/dropdown" },
-      { label: "Modal", href: "/actions/modal" },
-      { label: "Swap", href: "/actions/swap" },
-    ],
-  },
-  {
-    title: "Data display",
-    icon: "window",
-    iconClass: "text-teal-600",
-    links: [
-      { label: "Accordion", href: "/data/accordion" },
-      { label: "Alert", href: "/data/alert" },
-      { label: "Avatar", href: "/data/avatar" },
-      { label: "Badge", href: "/data/badge" },
-      { label: "Card", href: "/data/card" },
-      { label: "Carousel", href: "/data/carousel" },
-      { label: "Chat bubble", href: "/data/chat" },
-      { label: "Collapse", href: "/data/collapse" },
-      { label: "Countdown", href: "/data/countdown" },
-      { label: "Kbd", href: "/data/kbd" },
-      { label: "Loading", href: "/data/loading" },
-      { label: "Progress", href: "/data/progress" },
-      { label: "Stat", href: "/data/stat" },
-      { label: "Table", href: "/data/table" },
-      { label: "Tooltip", href: "/data/tooltip" },
-    ],
-  },
-  {
-    title: "Data input",
-    icon: "pencil-square",
-    iconClass: "text-rose-600",
-    links: [
-      { label: "Checkbox", href: "/input/checkbox" },
-      { label: "File input", href: "/input/file-input" },
-      { label: "Radio", href: "/input/radio" },
-      { label: "Range", href: "/input/range" },
-      { label: "Rating", href: "/input/rating" },
-      { label: "Select", href: "/input/select" },
-      { label: "Text input", href: "/input/text-input" },
-      { label: "Textarea", href: "/input/textarea" },
-      { label: "Toggle", href: "/input/toggle" },
-    ],
-  },
-  {
-    title: "Layout",
-    icon: "grid-fill",
-    iconClass: "text-blue-600",
-    links: [
-      { label: "Artboard", href: "/layout/artboard" },
-      { label: "Divider", href: "/layout/divider" },
-      { label: "Drawer", href: "/layout/drawer" },
-      { label: "Footer", href: "/layout/footer" },
-      { label: "Hero", href: "/layout/hero" },
-      { label: "Indicator", href: "/layout/indicator" },
-      { label: "Join", href: "/layout/join" },
-      { label: "Mask", href: "/layout/mask" },
-      { label: "Stack", href: "/layout/stack" },
-      { label: "Toast", href: "/layout/toast" },
-      { label: "Form Control", href: "/layout/form-control" },
-    ],
-  },
-  {
-    title: "Navigation",
-    icon: "link-45deg",
-    iconClass: "text-cyan-600",
-    links: [
-      { label: "Breadcrumbs", href: "/navigation/breadcrumbs" },
-      { label: "Bottom navigation", href: "/navigation/bottom-navigation" },
-      { label: "Link", href: "/navigation/link" },
-      { label: "Menu", href: "/navigation/menu" },
-      { label: "Navbar", href: "/navigation/navbar" },
-      { label: "Pagination", href: "/navigation/pagination" },
-      { label: "Step", href: "/navigation/step" },
-      { label: "Tab", href: "/navigation/tab" },
-    ],
-  },
-  {
-    title: "Mockup",
-    icon: "phone",
-    iconClass: "text-lime-600",
-    links: [
-      { label: "Browser", href: "/mockup/browser" },
-      { label: "Code", href: "/mockup/code" },
-      { label: "Phone", href: "/mockup/phone" },
-      { label: "Window", href: "/mockup/window" },
-    ],
-  },
-];
-</script>
-
 <template>
   <ui-drawer id="app-drawer" class="lg:drawer-open" aside-class="z-40">
     <template #aside>
-      <div class="bg-base-100 w-80">
+      <div class="bg-base-100 min-h-screen w-80">
         <!-- logo -->
         <daisyui-logo class="sticky top-0 z-20" />
 
+        <div class="h-4" />
+
         <!-- navigation -->
-        <ul v-for="(menu, i) of menus" :key="i" class="menu menu-md px-4 py-0">
-          <!-- divider -->
-          <li />
-
-          <!-- menu title -->
-          <li class="menu-title flex flex-row items-center gap-4">
-            <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
-            <span>{{ menu.title }}</span>
-          </li>
-
-          <!-- menu links -->
-          <li v-for="(link, i) of menu.links" :key="i">
-            <NuxtLink :href="link.href" active-class="active">
-              <span>{{ link.label }}</span>
-            </NuxtLink>
-          </li>
-        </ul>
+        <component-menu />
       </div>
     </template>
 
     <div
-      class="bg-base-100 text-base-content sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 shadow-sm">
+      class="bg-base-100 text-base-content sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 shadow-sm"
+    >
       <nav class="navbar w-full">
         <div class="flex flex-1 md:gap-1 lg:gap-2">
           <!-- drawer toggle -->
-          <label for="app-drawer" class="btn btn-square btn-ghost drawer-button lg:hidden">
-            <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <label
+            for="app-drawer"
+            class="btn btn-square btn-ghost drawer-button lg:hidden"
+          >
+            <svg
+              width="20"
+              height="20"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              class="inline-block h-5 w-5 stroke-current md:h-6 md:w-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
             </svg>
           </label>
 
@@ -141,11 +44,18 @@ const menus = [
         </div>
 
         <div class="flex-0">
-          <span class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
-            data-tip="GitHub">
+          <span
+            class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
+            data-tip="GitHub"
+          >
             <div class="flex-none items-center">
-              <a aria-label="Github" target="_blank" href="https://github.com/webceyhan/nuxt-daisy-demo"
-                rel="noopener, noreferrer" class="btn btn-ghost drawer-button btn-square normal-case">
+              <a
+                aria-label="Github"
+                target="_blank"
+                href="https://github.com/webceyhan/nuxt-daisy-demo"
+                rel="noopener, noreferrer"
+                class="btn btn-ghost drawer-button btn-square normal-case"
+              >
                 <ui-icon name="github" class="text-2xl" />
               </a>
             </div>
@@ -156,6 +66,7 @@ const menus = [
 
     <!-- main content -->
     <main class="w-full max-w-4xl px-6 pb-16 xl:pr-2">
+      <div class="h-4" />
       <NuxtPage />
     </main>
   </ui-drawer>
