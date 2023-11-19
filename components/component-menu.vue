@@ -66,21 +66,24 @@ useRouter()
 </script>
 
 <template>
-  <ul v-for="menu of MENU_DEFINITIONS" class="menu menu-md px-4 py-0">
-    <!-- divider -->
-    <li />
+  <details v-for="menu of MENU_DEFINITIONS" class="collapse collapse-arrow">
+    <!-- title -->
+    <summary class="collapse-title border-t border-neutral">
+      <div class="flex items-center gap-4">
+        <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
+        <span>{{ menu.title }}</span>
+      </div>
+    </summary>
 
-    <!-- menu title -->
-    <li class="menu-title flex flex-row items-center gap-4">
-      <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
-      <span>{{ menu.title }}</span>
-    </li>
-
-    <!-- menu links -->
-    <li v-for="link of menu.links">
-      <NuxtLink :href="link.href" active-class="active">
-        <span class="capitalize">{{ link.label }}</span>
-      </NuxtLink>
-    </li>
-  </ul>
+    <!-- links -->
+    <div class="collapse-content">
+      <ul class="menu menu-md px-4 py-0">
+        <li v-for="link of menu.links">
+          <NuxtLink :href="link.href" active-class="active">
+            <span class="capitalize">{{ link.label }}</span>
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
+  </details>
 </template>
