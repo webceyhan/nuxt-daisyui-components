@@ -1,9 +1,11 @@
 <template>
   <ui-drawer id="app-drawer" class="lg:drawer-open" aside-class="z-40">
     <template #aside>
-      <div class="bg-base-100 w-80">
+      <div class="bg-base-100 min-h-screen w-80">
         <!-- logo -->
         <daisyui-logo class="sticky top-0 z-20" />
+
+        <div class="h-4" />
 
         <!-- navigation -->
         <component-menu />
