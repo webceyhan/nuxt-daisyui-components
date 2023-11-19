@@ -71,17 +71,17 @@ const activeMenuName = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="px-4 py-0">
     <details
       v-for="(menu, name) of MENU_DEFINITIONS"
       class="collapse collapse-arrow"
       :open="name == activeMenuName"
     >
       <!-- title -->
-      <summary class="collapse-title">
-        <div class="flex items-center gap-4">
+      <summary class="collapse-title min-h-0 py-2">
+        <div class="flex items-center">
           <ui-icon :name="menu.icon" :class="['text-lg', menu.iconClass]" />
-          <span>{{ menu.title }}</span>
+          <span class="menu-title">{{ menu.title }}</span>
         </div>
       </summary>
 
