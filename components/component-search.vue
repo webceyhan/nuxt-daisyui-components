@@ -28,7 +28,7 @@ onMounted(() => {
 
 <template>
   <div class="dropdown">
-    <label class="searchbox relative mx-3 w-full max-w-xs">
+    <label class="searchbox relative w-full">
       <ui-icon
         name="search"
         class="pointer-events-none absolute z-10 my-1.5 ms-3.5 stroke-current opacity-60 text-base-content"
@@ -55,7 +55,8 @@ onMounted(() => {
 
     <ul
       tabindex="0"
-      class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-full max-w-xs mt-10"
+      class="dropdown-content z-[1] menu p-2 shadow bg-base-200 rounded-box w-full mt-3 lg:mt-10"
+      v-if="results.length > 0"
     >
       <li v-for="link of results">
         <NuxtLink :href="link.href" active-class="active" @click="onSelect(link.label)">

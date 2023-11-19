@@ -11,7 +11,12 @@
     <template #aside>
       <div class="bg-base-100 min-h-screen w-80">
         <!-- logo -->
-        <daisyui-logo class="sticky top-0 z-20" />
+        <daisyui-logo class="max-lg:hidden sticky top-0 z-20" />
+
+        <!-- search -->
+        <div class="lg:hidden sticky top-0 z-20 w-full px-6 py-4 bg-base-100">
+          <component-search class="w-full" />
+        </div>
 
         <div class="h-4" />
 
