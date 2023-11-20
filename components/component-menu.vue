@@ -1,84 +1,28 @@
 <script setup lang="ts">
-type Menu = {
-  title: string;
-  icon: string;
-  links: {
-    label: string;
-    href: string;
-  }[];
-};
+import { PAGES_BY_GROUP } from "~/data/pages";
 
-const MENU_DEFINITIONS: Record<string, Menu> = {
-  actions: {
-    title: "Actions",
-    icon: "cursor-fill",
-    links: [],
-  },
-  data: {
-    title: "Data display",
-    icon: "window",
-    links: [],
-  },
-  navigation: {
-    title: "Navigation",
-    icon: "link-45deg",
-    links: [],
-  },
-  feedback: {
-    title: "Feedback",
-    icon: "chat-square-dots",
-    links: [],
-  },
-  input: {
-    title: "Data input",
-    icon: "pencil-square",
-    links: [],
-  },
-  layout: {
-    title: "Layout",
-    icon: "grid-fill",
-    links: [],
-  },
-  mockup: {
-    title: "Mockup",
-    icon: "phone",
-    links: [],
-  },
-};
+const activeGroupName = computed(() => {
+  const { path } = useRouter().currentRoute.value;
 
-// populate the menu links
-useRouter()
-  .getRoutes()
-  .forEach(({ path }) => {
-    // skip the root path
-    if (path === "/") return;
-
-    // split the path into menu and page names
-    const [menuName, pageName] = path.split("/").slice(1);
-
-    MENU_DEFINITIONS[menuName].links.push({
-      label: pageName.replace(/-/g, " "),
-      href: path,
-    });
-  });
-
-const activeMenuName = computed(() => {
-  return useRouter().currentRoute.value.path.split("/")[1];
+  for (const group of PAGES_BY_GROUP) {
+    const found = group.items.find((item) => item.href === path);
+    if (found) return group.name;
+  }
 });
 </script>
 
 <template>
   <div class="px-4 py-0">
     <details
-      v-for="(menu, name) of MENU_DEFINITIONS"
+      v-for="group of PAGES_BY_GROUP"
       class="collapse collapse-arrow"
-      :open="name == activeMenuName"
+      :open="group.name == activeGroupName"
     >
       <!-- title -->
       <summary class="collapse-title min-h-0 py-2">
         <div class="flex items-center">
-          <ui-icon :name="menu.icon" class="text-lg" />
-          <span class="menu-title">{{ menu.title }}</span>
+          <span v-html="group.icon" />
+          <span class="menu-title">{{ group.name }}</span>
         </div>
       </summary>
 
@@ -87,9 +31,9 @@ const activeMenuName = computed(() => {
         <ul class="menu menu-md py-0">
           <li>
             <ul class="m-0">
-              <li v-for="link of menu.links">
+              <li v-for="link of group.items">
                 <NuxtLink :href="link.href" active-class="active">
-                  <span class="capitalize">{{ link.label }}</span>
+                  <span class="capitalize">{{ link.name }}</span>
                 </NuxtLink>
               </li>
             </ul>
