@@ -34,7 +34,7 @@ const themes = [
   // 'sunset',
 ];
 
-const activeTheme = ref("light");
+const activeTheme = ref("dark");
 
 const onChange = (theme: string) => {
   // append data-theme to html
