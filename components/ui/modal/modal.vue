@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VerticalAlignment } from "~/types";
+import type { VerticalAlignment } from "~/types";
 
 /**
  * DaisyUI classes to be included in the bundle!

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Size } from "~/types";
+import type { Size } from "~/types";
 
 export type Animation = "spinner" | "dots" | "ring" | "ball" | "bars" | "infinity";
 

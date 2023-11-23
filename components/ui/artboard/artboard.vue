@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Size } from "~/types";
+import type { Size } from "~/types";
 
 const SIZE_CLASS_MAP: Record<Size, string> = {
   xs: "phone-1",

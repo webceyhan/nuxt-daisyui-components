@@ -1,4 +1,4 @@
-import { Description } from '~/components/component-description.vue';
+import type { Description } from '~/components/component-description.vue';
 import { COLORS_WITH_NEUTRAL as COLORS, SHAPES, SIZES } from '~/constants';
 
 export { COLORS, SHAPES, SIZES };

@@ -1,5 +1,5 @@
-import { Description } from '~/components/component-description.vue';
-import { Indicator } from '~/components/ui/collapse/collapse.vue';
+import type { Description } from '~/components/component-description.vue';
+import type { Indicator } from '~/components/ui/collapse/collapse.vue';
 
 export const INDICATORS: Indicator[] = ['arrow', 'plus'];
 
