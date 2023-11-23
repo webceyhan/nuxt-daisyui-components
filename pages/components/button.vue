@@ -16,8 +16,9 @@ import { DESCRIPTIONS, COLORS, SIZES, SHAPES } from "~/data/button";
       <template #title>Button</template>
 
       <ui-button>Button</ui-button>
-      <ui-button label="With Label" />
-      <ui-button label="With Icon" icon="pen" />
+      <ui-button label="With label" />
+      <ui-button label="With icon" icon="pen" />
+      <ui-button label="With loading" loading />
     </component-preview>
 
     <component-preview>

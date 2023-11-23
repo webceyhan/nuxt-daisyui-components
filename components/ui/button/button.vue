@@ -36,6 +36,7 @@ export interface Props {
   active?: boolean;
   wide?: boolean;
   block?: boolean;
+  loading?: boolean;
 }
 
 defineProps<Props>();
@@ -60,6 +61,8 @@ defineProps<Props>();
       },
     ]"
   >
+    <ui-loading v-if="loading" />
+
     <ui-icon v-if="icon" :name="icon" class="text-[1.2em]" />
 
     <span v-if="label">{{ label }}</span>

@@ -63,6 +63,11 @@ export const DESCRIPTIONS: Description[] = [
                 type: 'boolean',
                 description: 'Full width button',
             },
+            {
+                name: 'loading',
+                type: 'boolean',
+                description: 'Show loading spinner',
+            }
         ],
         slots: [
             {
