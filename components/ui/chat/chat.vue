@@ -23,7 +23,9 @@ export interface Props {
   alignment?: Alignment;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  alignment: "start",
+});
 </script>
 
 <template>
