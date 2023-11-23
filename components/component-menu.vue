@@ -33,7 +33,10 @@ const activeGroupName = computed(() => {
             <ul class="m-0">
               <li v-for="link of group.items">
                 <NuxtLink :href="link.href" active-class="active">
-                  <span class="capitalize">{{ link.name }}</span>
+                  <span>{{ link.name }}</span>
+                  <span v-if="link.badge" class="badge badge-sm font-mono">
+                    {{ link.badge }}
+                  </span>
                 </NuxtLink>
               </li>
             </ul>

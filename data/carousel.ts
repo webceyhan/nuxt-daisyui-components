@@ -1,4 +1,4 @@
-import { Description } from '~/components/component-description.vue';
+import type { Description } from '~/components/component-description.vue';
 import { ALIGNMENTS as SNAPS } from '~/constants';
 
 export { SNAPS };

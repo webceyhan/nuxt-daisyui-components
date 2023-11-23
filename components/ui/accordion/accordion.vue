@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Indicator } from "../collapse/collapse.vue";
+import type { Indicator } from "../collapse/collapse.vue";
 
 export interface Props {
   name?: string;

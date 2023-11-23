@@ -1,5 +1,6 @@
 <script lang="ts">
-import { VNode, h } from "vue";
+import { h } from "vue";
+import type { VNode } from "vue";
 
 export interface Props {
   vertical?: boolean;

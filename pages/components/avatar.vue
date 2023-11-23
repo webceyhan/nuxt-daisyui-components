@@ -67,7 +67,7 @@ import { DESCRIPTIONS } from "~/data/avatar";
           </div>
         </ui-avatar>
         <ui-avatar placeholder>
-          <div class="w-12 bg-neutral-focus text-neutral-content">
+          <div class="w-12 bg-neutral text-neutral-content">
             <span>+99</span>
           </div>
         </ui-avatar>
@@ -103,25 +103,25 @@ import { DESCRIPTIONS } from "~/data/avatar";
       <template #title>Avatar placeholder</template>
 
       <ui-avatar placeholder>
-        <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
+        <div class="bg-neutral text-neutral-content rounded-full w-24">
           <span class="text-3xl">K</span>
         </div>
       </ui-avatar>
 
       <ui-avatar online placeholder>
-        <div class="bg-neutral-focus text-neutral-content rounded-full w-16">
+        <div class="bg-neutral text-neutral-content rounded-full w-16">
           <span class="text-xl">JO</span>
         </div>
       </ui-avatar>
 
       <ui-avatar placeholder>
-        <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
+        <div class="bg-neutral text-neutral-content rounded-full w-12">
           <span>MX</span>
         </div>
       </ui-avatar>
 
       <ui-avatar placeholder>
-        <div class="bg-neutral-focus text-neutral-content rounded-full w-8">
+        <div class="bg-neutral text-neutral-content rounded-full w-8">
           <span class="text-xs">AA</span>
         </div>
       </ui-avatar>

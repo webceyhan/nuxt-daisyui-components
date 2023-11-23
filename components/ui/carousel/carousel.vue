@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Alignment } from "~/types";
+import type { Alignment } from "~/types";
 
 /**
  * DaisyUI classes to be included in the bundle!

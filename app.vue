@@ -59,6 +59,8 @@
         </div>
 
         <div class="flex-0">
+          <theme-selector />
+
           <span
             class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
             data-tip="GitHub"

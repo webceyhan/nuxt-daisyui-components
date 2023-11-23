@@ -1,5 +1,5 @@
-import { Description } from '~/components/component-description.vue';
-import { Animation } from '~/components/ui/loading/loading.vue';
+import type { Description } from '~/components/component-description.vue';
+import type { Animation } from '~/components/ui/loading/loading.vue';
 import { SIZES } from '~/constants';
 
 export { SIZES };

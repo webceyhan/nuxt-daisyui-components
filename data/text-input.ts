@@ -1,4 +1,4 @@
-import { Description } from '~/components/component-description.vue';
+import type { Description } from '~/components/component-description.vue';
 import { COLORS, SIZES } from '~/constants';
 
 export { COLORS, SIZES };

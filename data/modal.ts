@@ -1,4 +1,4 @@
-import { Description } from '~/components/component-description.vue';
+import type { Description } from '~/components/component-description.vue';
 import { VERTICAL_ALIGNMENTS } from '~/constants';
 
 export { VERTICAL_ALIGNMENTS };

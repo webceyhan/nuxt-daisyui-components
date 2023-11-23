@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Alignment, Color } from "~/types";
+import type { Alignment, Color } from "~/types";
 
 /**
  * DaisyUI classes to be included in the bundle!
@@ -23,7 +23,9 @@ export interface Props {
   alignment?: Alignment;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  alignment: "start",
+});
 </script>
 
 <template>
