@@ -42,7 +42,7 @@
 
         <br />
 
-        <NuxtLink href="/actions/button" class="btn btn-primary">Get Started</NuxtLink>
+        <NuxtLink href="/components/button" class="btn btn-primary">Get Started</NuxtLink>
       </div>
     </div>
   </div>
