@@ -21,7 +21,9 @@ defineProps<Props>();
 
     <!-- preview -->
     <div class="grid">
-      <div class="bg-base-300 border border-base-300 rounded-box relative overflow-x-auto">
+      <div
+        class="bg-base-300 border border-base-300 rounded-box relative overflow-x-auto"
+      >
         <div
           class="flex min-h-[6rem] min-w-[18rem] max-w-4xl flex-wrap items-center justify-center gap-2 overflow-x-hidden p-4"
           :class="{
@@ -40,11 +42,12 @@ defineProps<Props>();
 .preview-pattern {
   background-image: repeating-linear-gradient(
     45deg,
-    hsl(var(--b1)),
-    hsl(var(--b1)) 13px,
-    hsl(var(--b2)) 13px,
-    hsl(var(--b2)) 14px
+    var(--fallback-b1, oklch(var(--b1))),
+    var(--fallback-b1, oklch(var(--b1))) 13px,
+    var(--fallback-b2, oklch(var(--b2))) 13px,
+    var(--fallback-b2, oklch(var(--b2))) 14px
   );
+  background-size: 40px 40px;
 }
 
 .preview-background {
