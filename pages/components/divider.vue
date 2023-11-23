@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS } from "~/data/divider";
+import { DESCRIPTIONS, COLORS, ALIGNMENTS } from "~/data/divider";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -27,7 +27,27 @@ import { DESCRIPTIONS } from "~/data/divider";
     </component-preview>
 
     <component-preview>
-      <template #title>Divider horizontal</template>
+      <template #title> Colors </template>
+
+      <div class="flex flex-col w-full">
+        <ui-divider v-for="color of COLORS" :color="color">
+          {{ color }}
+        </ui-divider>
+      </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title> Text Alignments </template>
+
+      <div class="flex flex-col w-full">
+        <ui-divider v-for="alignment of ALIGNMENTS" :alignment="alignment">
+          {{ alignment }}
+        </ui-divider>
+      </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Horizontal</template>
 
       <div class="flex w-full">
         <div class="grid h-20 flex-grow card bg-base-300 rounded-box place-items-center">
@@ -41,7 +61,17 @@ import { DESCRIPTIONS } from "~/data/divider";
     </component-preview>
 
     <component-preview>
-      <template #title>Divider with no text</template>
+      <template #title>Horizontal Text Alignments</template>
+
+      <div class="flex w-full justify-center h-52">
+        <ui-divider v-for="alignment of ALIGNMENTS" :alignment="alignment" horizontal>
+          {{ alignment }}
+        </ui-divider>
+      </div>
+    </component-preview>
+
+    <component-preview>
+      <template #title>With no text</template>
 
       <div class="flex flex-col w-full border-opacity-50">
         <div class="grid h-20 card bg-base-300 rounded-box place-items-center">
