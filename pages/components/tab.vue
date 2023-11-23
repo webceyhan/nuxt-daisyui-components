@@ -30,8 +30,8 @@ const links = [
       <template #title>Sizes</template>
 
       <div class="flex flex-col items-center gap-3">
-        <ui-tab-nav v-for="size of SIZES">
-          <ui-tab v-for="link of links" :active="link.active" lifted :size="size">
+        <ui-tab-nav v-for="size of SIZES" :size="size" lifted>
+          <ui-tab v-for="link of links" :active="link.active">
             {{ size }}
           </ui-tab>
         </ui-tab-nav>
@@ -41,20 +41,16 @@ const links = [
     <component-preview>
       <template #title>Bordered</template>
 
-      <ui-tab-nav>
-        <ui-tab v-for="link of links" :active="link.active" bordered>{{
-          link.label
-        }}</ui-tab>
+      <ui-tab-nav bordered>
+        <ui-tab v-for="link of links" :active="link.active">{{ link.label }}</ui-tab>
       </ui-tab-nav>
     </component-preview>
 
     <component-preview>
       <template #title>Lifted</template>
 
-      <ui-tab-nav>
-        <ui-tab v-for="link of links" :active="link.active" lifted>{{
-          link.label
-        }}</ui-tab>
+      <ui-tab-nav lifted>
+        <ui-tab v-for="link of links" :active="link.active">{{ link.label }}</ui-tab>
       </ui-tab-nav>
     </component-preview>
 
@@ -63,6 +59,17 @@ const links = [
 
       <ui-tab-nav boxed>
         <ui-tab v-for="link of links" :active="link.active">{{ link.label }}</ui-tab>
+      </ui-tab-nav>
+    </component-preview>
+
+    <component-preview>
+      <template #title>Radio with content</template>
+
+      <ui-tab-nav bordered>
+        <template v-for="link of links">
+          <ui-tab-radio name="my-radio-tabs" :label="link.label" :checked="link.active" />
+          <ui-tab-content>{{ link.label }} content</ui-tab-content>
+        </template>
       </ui-tab-nav>
     </component-preview>
   </div>

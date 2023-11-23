@@ -8,9 +8,25 @@ export const DESCRIPTIONS: Description[] = [
         name: 'tab-nav',
         props: [
             {
+                name: 'size',
+                type: 'Size',
+                default: 'md',
+                values: SIZES,
+            },
+            {
                 name: 'boxed',
                 type: 'boolean',
                 description: 'Whether the tabs should be boxed',
+            },
+            {
+                name: 'bordered',
+                type: 'boolean',
+                description: 'Whether the tabs should be bordered',
+            },
+            {
+                name: 'lifted',
+                type: 'boolean',
+                description: 'Whether the tabs should be lifted',
             },
         ],
         slots: [
@@ -24,25 +40,9 @@ export const DESCRIPTIONS: Description[] = [
         name: 'tab',
         props: [
             {
-                name: 'size',
-                type: 'Size',
-                default: 'md',
-                values: SIZES,
-            },
-            {
                 name: 'active',
                 type: 'boolean',
                 description: 'Whether the tab is active',
-            },
-            {
-                name: 'lifted',
-                type: 'boolean',
-                description: 'Whether the tab is lifted',
-            },
-            {
-                name: 'bordered',
-                type: 'boolean',
-                description: 'Whether the tab is bordered',
             },
             {
                 name: 'disabled',
@@ -58,6 +58,25 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'indicator',
                 description: 'Indicator of the tab',
+            },
+        ],
+    },
+    {
+        name: 'tab-radio',
+        props: [
+            {
+                name: 'label',
+                type: 'string',
+                description: 'Label text',
+            },
+        ],
+    },
+    {
+        name: 'tab-content',
+        slots: [
+            {
+                name: 'default',
+                description: 'Content of the tab',
             },
         ],
     },
