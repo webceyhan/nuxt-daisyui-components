@@ -28,7 +28,7 @@ const activeGroupName = computed(() => {
 
       <!-- links -->
       <div class="collapse-content">
-        <ul class="menu menu-md py-0">
+        <ul class="menu menu-md py-0 pr-0">
           <li>
             <ul class="m-0">
               <li v-for="link of group.items">
