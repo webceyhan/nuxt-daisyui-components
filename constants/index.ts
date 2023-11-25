@@ -8,7 +8,7 @@ import type {
     Size,
     StateColor,
     VerticalAlignment,
-} from '~/types';
+} from '~/components/ui/types';
 
 export * from './pages';
 

@@ -3,7 +3,7 @@ let count = 0;
 </script>
 
 <script setup lang="ts">
-import type { Mask, Size } from "~/types";
+import type { Mask, Size } from "../types";
 
 /**
  * DaisyUI classes to be included in the bundle!

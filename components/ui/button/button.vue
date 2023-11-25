@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColorWithNeural, Size } from "~/types";
+import type { ColorWithNeural, Size } from "../types";
 
 /**
  * DaisyUI classes to be included in the bundle!
