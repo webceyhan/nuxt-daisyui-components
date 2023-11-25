@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TEXT_COLORS } from "~/constants";
-import { DESCRIPTIONS, SIZES } from "~/data/bottom-nav";
+import { DESCRIPTIONS, SIZES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -102,3 +102,4 @@ const customColors = [
     </component-preview>
   </div>
 </template>
+~/pages/components/bottom-navigation/bottom-nav

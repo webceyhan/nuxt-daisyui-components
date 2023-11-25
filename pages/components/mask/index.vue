@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, SHAPES } from "~/data/mask";
+import { DESCRIPTIONS, SHAPES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

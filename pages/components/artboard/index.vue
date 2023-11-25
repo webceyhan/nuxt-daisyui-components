@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, SIZES } from "~/data/artboard";
+import { DESCRIPTIONS, SIZES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, ALIGNMENTS, VERTICAL_ALIGNMENTS } from "~/data/indicator";
+import { DESCRIPTIONS, ALIGNMENTS, VERTICAL_ALIGNMENTS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

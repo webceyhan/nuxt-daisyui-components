@@ -1,0 +1,3 @@
+# ignore everything starting with an underscore
+pages/**/_*
+  

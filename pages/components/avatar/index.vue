@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS } from "~/data/avatar";
+import { DESCRIPTIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -128,3 +128,4 @@ import { DESCRIPTIONS } from "~/data/avatar";
     </component-preview>
   </div>
 </template>
+~/pages/components/avatar/avatar

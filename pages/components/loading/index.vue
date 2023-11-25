@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TEXT_COLORS } from "~/constants";
-import { DESCRIPTIONS, ANIMATIONS, SIZES } from "~/data/loading";
+import { DESCRIPTIONS, ANIMATIONS, SIZES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

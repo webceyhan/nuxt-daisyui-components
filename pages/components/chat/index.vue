@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, COLORS, ALIGNMENTS } from "~/data/chat";
+import { DESCRIPTIONS, COLORS, ALIGNMENTS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -148,3 +148,4 @@ const bubbleWithColors = [
     </component-preview>
   </div>
 </template>
+~/pages/components/chat/chat

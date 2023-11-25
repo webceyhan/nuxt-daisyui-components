@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS } from "~/data/mockup-code";
+import { DESCRIPTIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

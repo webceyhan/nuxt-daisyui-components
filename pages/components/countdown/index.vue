@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS } from "~/data/countdown";
+import { DESCRIPTIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

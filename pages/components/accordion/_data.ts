@@ -1,5 +1,5 @@
 import type { Description } from '~/components/component-description.vue';
-import { INDICATORS } from './collapse';
+import { INDICATORS } from '~/pages/components/collapse/_data';
 
 export { INDICATORS };
 

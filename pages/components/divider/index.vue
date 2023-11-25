@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, COLORS, ALIGNMENTS } from "~/data/divider";
+import { DESCRIPTIONS, COLORS, ALIGNMENTS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

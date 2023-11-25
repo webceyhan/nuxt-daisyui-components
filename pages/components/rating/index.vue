@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, SIZES } from "~/data/rating";
+import { DESCRIPTIONS, SIZES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

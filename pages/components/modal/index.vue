@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, VERTICAL_ALIGNMENTS } from "~/data/modal";
+import { DESCRIPTIONS, VERTICAL_ALIGNMENTS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

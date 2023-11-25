@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, SIZES, COLORS, POSITIONS } from "~/data/dropdown";
+import { DESCRIPTIONS, SIZES, COLORS, POSITIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

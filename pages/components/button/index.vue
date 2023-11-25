@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, COLORS, SIZES, SHAPES } from "~/data/button";
+import { DESCRIPTIONS, COLORS, SIZES, SHAPES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

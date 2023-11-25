@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS } from "~/data/breadcrumbs";
+import { DESCRIPTIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -44,3 +44,4 @@ import { DESCRIPTIONS } from "~/data/breadcrumbs";
     </component-preview>
   </div>
 </template>
+~/pages/components/breadcrumbs/breadcrumbs

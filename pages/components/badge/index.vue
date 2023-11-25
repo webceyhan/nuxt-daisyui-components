@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { TEXT_SIZES } from "~/constants";
-import { DESCRIPTIONS, SIZES, COLORS } from "~/data/badge";
+import { DESCRIPTIONS, SIZES, COLORS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

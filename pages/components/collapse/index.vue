@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, INDICATORS } from "~/data/collapse";
+import { DESCRIPTIONS, INDICATORS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

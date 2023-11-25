@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, ALIGNMENTS } from "~/data/navbar";
+import { DESCRIPTIONS, ALIGNMENTS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

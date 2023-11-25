@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS } from "~/data/card";
+import { DESCRIPTIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>
@@ -257,3 +257,4 @@ import { DESCRIPTIONS } from "~/data/card";
     </component-preview>
   </div>
 </template>
+~/pages/components/card/card

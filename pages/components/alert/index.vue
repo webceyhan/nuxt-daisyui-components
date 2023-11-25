@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, COLORS } from "~/data/alert";
+import { DESCRIPTIONS, COLORS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

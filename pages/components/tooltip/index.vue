@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, COLORS, POSITIONS } from "~/data/tooltip";
+import { DESCRIPTIONS, COLORS, POSITIONS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 </script>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, SIZES } from "~/data/tab";
+import { DESCRIPTIONS, SIZES } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 

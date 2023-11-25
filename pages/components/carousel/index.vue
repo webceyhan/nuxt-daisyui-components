@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DESCRIPTIONS, SNAPS } from "~/data/carousel";
+import { DESCRIPTIONS, SNAPS } from "./_data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
