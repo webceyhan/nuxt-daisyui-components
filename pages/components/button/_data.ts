@@ -1,7 +1,10 @@
+import type { Shape } from '~/components/ui/button/button.vue';
 import type { Description } from '~/components/component-description.vue';
-import { COLORS_WITH_NEUTRAL as COLORS, SHAPES, SIZES } from '~/constants';
+import { COLORS_WITH_NEUTRAL as COLORS, SIZES } from '~/constants';
 
-export { COLORS, SHAPES, SIZES };
+export { COLORS, SIZES };
+
+export const SHAPES: Shape[] = ['square', 'circle'];
 
 export const DESCRIPTIONS: Description[] = [
     {
@@ -67,7 +70,7 @@ export const DESCRIPTIONS: Description[] = [
                 name: 'loading',
                 type: 'boolean',
                 description: 'Show loading spinner',
-            }
+            },
         ],
         slots: [
             {

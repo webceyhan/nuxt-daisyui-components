@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColorWithNeural, Shape, Size } from "~/types";
+import type { ColorWithNeural, Size } from "~/types";
 
 /**
  * DaisyUI classes to be included in the bundle!
@@ -24,6 +24,8 @@ import type { ColorWithNeural, Shape, Size } from "~/types";
  * - btn-square
  * - btn-circle
  */
+export type Shape = 'square' | 'circle';
+ 
 export interface Props {
   label?: string;
   href?: string;

@@ -5,11 +5,10 @@ import type {
     ColorWithNeural,
     Mask,
     Position,
-    Shape,
     Size,
     StateColor,
     VerticalAlignment,
-} from './types';
+} from '~/types';
 
 export * from './pages';
 
@@ -21,8 +20,6 @@ export const TEXT_SIZES: string[] = [
     'text-lg',
     'text-xl',
 ];
-
-export const SHAPES: Shape[] = ['square', 'circle'];
 
 export const BRAND_COLORS: BrandColor[] = ['primary', 'secondary', 'accent'];
 

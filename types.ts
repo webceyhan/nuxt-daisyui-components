@@ -1,7 +1,5 @@
 export type Size = 'xs' | 'sm' | 'md' | 'lg';
 
-export type Shape = 'square' | 'circle';
-
 export type Position = 'top' | 'bottom' | 'left' | 'right';
 
 export type Alignment = 'start' | 'center' | 'end';
