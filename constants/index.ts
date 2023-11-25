@@ -11,6 +11,8 @@ import type {
     VerticalAlignment,
 } from './types';
 
+export * from './pages';
+
 export const SIZES: Size[] = ['xs', 'sm', 'md', 'lg'];
 
 export const TEXT_SIZES: string[] = [

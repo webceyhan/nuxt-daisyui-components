@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PAGES } from "~/data/pages";
+import { PAGES } from "~/constants";
 
 const query = ref("");
 const searchInput = ref<HTMLInputElement>(null!);

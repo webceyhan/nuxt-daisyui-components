@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PAGES_BY_GROUP } from "~/data/pages";
+import { PAGES_BY_GROUP } from "~/constants";
 
 const activeGroupName = computed(() => {
   const { path } = useRouter().currentRoute.value;
