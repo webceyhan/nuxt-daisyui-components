@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { DESCRIPTIONS, SIZES } from "~/data/table";
-import {
-  records,
-  recordsWithVisuals,
-  recordsXs,
-  pinnedRows,
-} from "../../data/table-data";
+import { records, recordsWithVisuals, recordsXs, pinnedRows } from "~/data/table-data";
 
 // DEMO DATA ///////////////////////////////////////////////////////////////////////////////////////
 
