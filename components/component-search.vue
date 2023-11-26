@@ -1,15 +1,7 @@
 <script setup lang="ts">
-import { PAGES } from "~/constants";
+const { query, results } = useSearch();
 
-const query = ref("");
 const searchInput = ref<HTMLInputElement>(null!);
-
-const results = computed(() => {
-  if (!query.value) return [];
-  const term = query.value.toLowerCase();
-
-  return PAGES.filter(({ tags }) => tags.includes(term)).slice(0, 5);
-});
 
 const onSelect = (label: string) => {
   query.value = label;
