@@ -88,3 +88,22 @@
     </main>
   </ui-drawer>
 </template>
+
+<style>
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(86, 86, 86, 0.3);
+  border-radius: 5px;
+}
+</style>
