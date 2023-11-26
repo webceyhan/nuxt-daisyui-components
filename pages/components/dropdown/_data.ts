@@ -29,6 +29,11 @@ export const DESCRIPTIONS: Description[] = [
                 values: COLORS,
             },
             {
+                name: 'ghost',
+                type: 'boolean',
+                description: 'No background',
+            },
+            {
                 name: 'outline',
                 type: 'boolean',
                 description: 'Transparent trigger button with colored border',

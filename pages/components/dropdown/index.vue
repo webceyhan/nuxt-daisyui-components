@@ -69,6 +69,14 @@ const spacings: any = {
       </ui-dropdown>
     </component-preview>
 
+    <component-preview>
+      <template #title>Ghost (no background)</template>
+
+      <ui-dropdown label="ghost button" class="mb-20" ghost>
+        <ui-menu-item v-for="i in 2" :label="`Item ${i}`" />
+      </ui-dropdown>
+    </component-preview>
+
     <h3 class="text-2xl">Positions</h3>
 
     <component-preview v-for="position of POSITIONS">

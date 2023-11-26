@@ -16,6 +16,7 @@ export interface Props {
   size?: Size;
   color?: ColorWithNeural;
   position?: Position;
+  ghost?: boolean;
   outline?: boolean;
   open?: boolean;
   hover?: boolean;
@@ -45,7 +46,7 @@ const close = () => {
   >
     <!-- trigger button -->
     <slot name="trigger">
-      <ui-button v-bind="{ label, icon, color, size, outline, disabled }">
+      <ui-button v-bind="{ label, icon, size, color, ghost, outline, disabled }">
         <ui-icon v-if="!noIndicator" name="chevron-down" />
       </ui-button>
     </slot>
