@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ColorWithNeural, Position, Size } from "~/types";
+import type { ColorWithNeural, Position, Size } from "../types";
 
 /**
  * DaisyUI classes to be included in the bundle!
@@ -16,6 +16,7 @@ export interface Props {
   size?: Size;
   color?: ColorWithNeural;
   position?: Position;
+  ghost?: boolean;
   outline?: boolean;
   open?: boolean;
   hover?: boolean;
@@ -45,7 +46,7 @@ const close = () => {
   >
     <!-- trigger button -->
     <slot name="trigger">
-      <ui-button v-bind="{ label, icon, color, size, outline, disabled }">
+      <ui-button v-bind="{ label, icon, size, color, ghost, outline, disabled }">
         <ui-icon v-if="!noIndicator" name="chevron-down" />
       </ui-button>
     </slot>
@@ -53,7 +54,7 @@ const close = () => {
     <!-- dropdown content -->
     <ui-menu
       tabindex="0"
-      class="dropdown-content w-56 z-[1] shadow"
+      class="dropdown-content flex-nowrap w-56 max-h-96 overflow-y-auto z-[1] shadow"
       :size="size"
       @click.native="close"
     >

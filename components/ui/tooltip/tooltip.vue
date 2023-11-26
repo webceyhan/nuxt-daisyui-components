@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Color, Position } from "~/types";
+import type { Color, Position } from "../types";
 
 /**
  * DaisyUI classes to be included in the bundle!

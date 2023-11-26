@@ -6,6 +6,7 @@ export interface Props {
   href?: string;
   icon?: string;
   badge?: string;
+  target?: string;
   tooltip?: string;
   active?: boolean;
   disabled?: boolean;
@@ -20,6 +21,7 @@ const menu = inject<MenuProps>("menu");
   <li :class="{ disabled }">
     <a
       :href="href"
+      :target="target"
       :data-tip="tooltip"
       :class="{
         active,
