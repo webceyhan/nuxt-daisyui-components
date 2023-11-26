@@ -54,7 +54,7 @@ const close = () => {
     <!-- dropdown content -->
     <ui-menu
       tabindex="0"
-      class="dropdown-content w-56 z-[1] shadow"
+      class="dropdown-content flex-nowrap w-56 max-h-96 overflow-y-auto z-[1] shadow"
       :size="size"
       @click.native="close"
     >
