@@ -1,14 +1,5 @@
 <script setup lang="ts">
-import { PAGES_BY_GROUP } from "~/constants";
-
-const activeGroupName = computed(() => {
-  const { path } = useRouter().currentRoute.value;
-
-  for (const group of PAGES_BY_GROUP) {
-    const found = group.items.find((item) => item.href === path);
-    if (found) return group.name;
-  }
-});
+const { activeGroupName, PAGES_BY_GROUP } = useMenu();
 </script>
 
 <template>
