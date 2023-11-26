@@ -50,6 +50,11 @@ export const DESCRIPTIONS: Description[] = [
                 description: 'Badge of menu item',
             },
             {
+                name: 'target',
+                type: 'string',
+                description: 'Target of menu link',
+            },
+            {
                 name: 'tooltip',
                 type: 'string',
                 description: 'Tooltip of menu item',
