@@ -9,7 +9,7 @@ defineProps<Props>();
 <template>
   <div class="text-base-content my-6 lg:my-12">
     <!-- title -->
-    <h4 class="pb-2 text-sm font-bold capitalize">
+    <h4 class="pb-2 text-sm font-bold">
       <span class="opacity-20 mr-1">#</span>
       <slot name="title" />
     </h4>

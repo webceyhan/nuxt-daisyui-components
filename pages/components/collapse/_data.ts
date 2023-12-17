@@ -8,6 +8,21 @@ export const DESCRIPTIONS: Description[] = [
         name: 'collapse',
         props: [
             {
+                name: 'title',
+                type: 'string',
+                description: 'Title of the collapse',
+            },
+            {
+                name: 'icon',
+                type: 'string',
+                description: 'Icon at start of collapse title',
+            },
+            {
+                name: 'name',
+                type: 'string',
+                description: 'Group name of accordion',
+            },
+            {
                 name: 'indicator',
                 type: 'string',
                 values: INDICATORS,
@@ -20,8 +35,7 @@ export const DESCRIPTIONS: Description[] = [
             {
                 name: 'toggle',
                 type: 'boolean',
-                description:
-                    'Whether the collapse works with focus or checkbox',
+                description: 'Toggle by clicking instead of focus',
             },
         ],
         slots: [
