@@ -9,6 +9,9 @@
 export type Indicator = "arrow" | "plus";
 
 export interface Props {
+  title?: string;
+  icon?: string;
+  name?: string;
   open?: boolean;
   toggle?: boolean;
   indicator?: Indicator;
@@ -23,18 +26,24 @@ defineProps<Props>();
     :class="[
       'collapse bg-base-200',
       {
-        // force open when toggle is not active
-        'collapse-open': open && !toggle,
+        // force open when toggle is not provided
+        'collapse-open': open && !toggle && !name,
         [`collapse-${indicator}`]: indicator,
       },
     ]"
   >
-    <!-- internal toggle -->
-    <input v-if="toggle" type="checkbox" :checked="open" />
+    <!-- accordion toggle -->
+    <input v-if="name" type="radio" :name="name" :checked="open" />
+
+    <!-- collapse toggle -->
+    <input v-else-if="toggle" type="checkbox" :checked="open" />
 
     <!-- title -->
     <div class="collapse-title text-xl font-medium">
-      <slot name="title" />
+      <slot name="title">
+        <ui-icon v-if="icon" :name="icon" class="mr-2" />
+        {{ title }}
+      </slot>
     </div>
 
     <!-- content -->
