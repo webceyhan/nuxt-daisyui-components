@@ -1,0 +1,29 @@
+name: Build and Deploy
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Setup bun
+              uses: oven-sh/setup-bun@v1
+
+            - name: Install and Build
+              env:
+                  # '/<repository>/' i.e. '/github-repo-name/'
+                  NUXT_APP_BASE_URL: ${{ secrets.NUXT_APP_BASE_URL }}
+              run: |
+                  bun install
+                  bun run generate
+                  rm -f .output/public/200.html
+
+            - name: Deploy
+              uses: JamesIves/github-pages-deploy-action@v4.4.3
+              with:
+                  branch: gh-pages # The branch the action should deploy to.
+                  folder: .output/public # The folder the action should deploy.
