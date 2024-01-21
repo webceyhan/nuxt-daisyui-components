@@ -7,7 +7,7 @@
     />
   </Head>
 
-  <ui-drawer id="app-drawer" class="lg:drawer-open" aside-class="z-40">
+  <ui-drawer id="app-drawer" class="lg:drawer-open" aside-class="overflow-y-scroll z-40">
     <template #aside>
       <div class="bg-base-100 min-h-screen w-80">
         <!-- logo -->
@@ -97,7 +97,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  /*background: rgba(0, 0, 0, 0.1);*/
   border-radius: 5px;
 }
 
