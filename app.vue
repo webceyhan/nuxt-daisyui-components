@@ -7,8 +7,8 @@
     />
   </Head>
 
-  <ui-drawer id="app-drawer" class="lg:drawer-open" aside-class="overflow-y-scroll z-40">
-    <template #aside>
+  <ui-drawer class="lg:drawer-open">
+    <ui-drawer-side class="overflow-y-scroll z-40">
       <div class="bg-base-100 min-h-screen w-80">
         <!-- logo -->
         <daisyui-logo class="max-lg:hidden sticky top-0 z-20" />
@@ -23,55 +23,53 @@
         <!-- navigation -->
         <component-menu />
       </div>
-    </template>
+    </ui-drawer-side>
 
-    <div
-      class="bg-base-100 text-base-content sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 shadow-sm"
-    >
-      <nav class="navbar w-full">
-        <div class="flex flex-1 md:gap-1 lg:gap-2">
-          <!-- drawer toggle -->
-          <label
-            for="app-drawer"
-            class="btn btn-square btn-ghost drawer-button lg:hidden"
-          >
-            <svg-icon name="menu-toggle" class="h-5 w-5 md:h-6 md:w-6" />
-          </label>
+    <ui-drawer-content>
+      <div
+        class="bg-base-100 text-base-content sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 shadow-sm"
+      >
+        <nav class="navbar w-full">
+          <div class="flex flex-1 md:gap-1 lg:gap-2">
+            <ui-drawer-button class="btn-square btn-ghost lg:hidden">
+              <svg-icon name="menu-toggle" class="h-5 w-5 md:h-6 md:w-6" />
+            </ui-drawer-button>
 
-          <!-- logo -->
-          <daisyui-logo class="lg:hidden" />
+            <!-- logo -->
+            <daisyui-logo class="lg:hidden" />
 
-          <component-search class="hidden w-full max-w-sm lg:flex" />
-        </div>
+            <component-search class="hidden w-full max-w-sm lg:flex" />
+          </div>
 
-        <div class="flex-0">
-          <theme-selector />
+          <div class="flex-0">
+            <theme-selector />
 
-          <span
-            class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
-            data-tip="GitHub"
-          >
-            <div class="flex-none items-center">
-              <a
-                aria-label="Github"
-                target="_blank"
-                href="https://github.com/webceyhan/nuxt-daisy-demo"
-                rel="noopener, noreferrer"
-                class="btn btn-ghost drawer-button btn-square normal-case"
-              >
-                <ui-icon name="github" class="text-2xl" />
-              </a>
-            </div>
-          </span>
-        </div>
-      </nav>
-    </div>
+            <span
+              class="tooltip tooltip-bottom before:text-xs before:content-[attr(data-tip)]"
+              data-tip="GitHub"
+            >
+              <div class="flex-none items-center">
+                <a
+                  aria-label="Github"
+                  target="_blank"
+                  href="https://github.com/webceyhan/nuxt-daisy-demo"
+                  rel="noopener, noreferrer"
+                  class="btn btn-ghost drawer-button btn-square normal-case"
+                >
+                  <ui-icon name="github" class="text-2xl" />
+                </a>
+              </div>
+            </span>
+          </div>
+        </nav>
+      </div>
 
-    <!-- main content -->
-    <main class="w-full max-w-4xl px-6 pb-16 xl:pr-2">
-      <div class="h-4" />
-      <NuxtPage />
-    </main>
+      <!-- main content -->
+      <main class="w-full max-w-4xl px-6 pb-16 xl:pr-2">
+        <div class="h-4" />
+        <NuxtPage />
+      </main>
+    </ui-drawer-content>
   </ui-drawer>
 </template>
 
