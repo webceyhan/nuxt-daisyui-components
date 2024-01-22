@@ -8,6 +8,6 @@ defineProps<Props>();
 
 <template>
   <svg class="fill-current stroke-current">
-    <use :xlink:href="`/icons.svg#icon-${name}`" />
+    <use :xlink:href="`/icons.svg#${name}`" />
   </svg>
 </template>
