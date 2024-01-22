@@ -12,7 +12,7 @@ const { activeGroupName, PAGES_BY_GROUP } = useMenu();
       <!-- title -->
       <summary class="collapse-title min-h-0 py-2">
         <div class="flex items-center">
-          <span v-html="group.icon" />
+          <svg-icon :name="group.icon" class="w-5 h-5"/>
           <span class="menu-title">{{ group.name }}</span>
         </div>
       </summary>

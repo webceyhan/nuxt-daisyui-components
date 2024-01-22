@@ -15,8 +15,8 @@
           <br />
           <br />
 
-          You can easily copy & paste each component to your project.
-          There is no need to install any additional dependencies except
+          You can easily copy & paste each component to your project. There is no need to
+          install any additional dependencies except
           <a href="https://tailwindcss.com/" class="link" target="_blank">Tailwind CSS</a>
           and daisyUI.
 
@@ -24,7 +24,9 @@
           <br />
 
           Do not forget to install
-          <a href="https://icons.getbootstrap.com/" class="link" target="_blank">Bootstrap Icons</a>
+          <a href="https://icons.getbootstrap.com/" class="link" target="_blank">
+            Bootstrap Icons
+          </a>
           if you want to use icons.
         </p>
 
