@@ -56,7 +56,7 @@
                   rel="noopener, noreferrer"
                   class="btn btn-ghost drawer-button btn-square normal-case"
                 >
-                  <ui-icon name="github" class="text-2xl" />
+                  <ui-icon name="github" />
                 </a>
               </div>
             </span>

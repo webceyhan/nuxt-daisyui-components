@@ -36,7 +36,7 @@ const stats = [
       <ui-stat-group class="shadow">
         <ui-stat>
           <template #figure>
-            <ui-icon name="heart" class="text-primary text-2xl" />
+            <ui-icon name="heart" class="text-primary" size="lg" />
           </template>
           <template #title>Total Likes</template>
           <span class="text-primary">25.6K</span>
@@ -45,7 +45,7 @@ const stats = [
 
         <ui-stat>
           <template #figure>
-            <ui-icon name="lightning-charge" class="text-secondary text-2xl" />
+            <ui-icon name="lightning-charge" class="text-secondary" size="lg" />
           </template>
           <template #title>Page Views</template>
           <span class="text-secondary">2.6M</span>
@@ -75,7 +75,7 @@ const stats = [
       <ui-stat-group class="shadow">
         <ui-stat v-for="(stat, i) of stats">
           <template #figure>
-            <ui-icon :name="stat.icon" class="text-secondary text-2xl" />
+            <ui-icon :name="stat.icon" class="text-secondary" size="lg" />
           </template>
           <template #title>{{ stat.title }}</template>
           {{ stat.value }}
@@ -90,7 +90,7 @@ const stats = [
       <ui-stat-group class="shadow">
         <ui-stat v-for="(stat, i) of stats" class="place-items-center">
           <template #figure>
-            <ui-icon :name="stat.icon" class="text-secondary text-2xl" />
+            <ui-icon :name="stat.icon" class="text-secondary" size="lg" />
           </template>
           <template #title>{{ stat.title }}</template>
           {{ stat.value }}

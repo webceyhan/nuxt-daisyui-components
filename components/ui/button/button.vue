@@ -24,8 +24,8 @@ import type { ColorWithNeural, Size } from "../types";
  * - btn-square
  * - btn-circle
  */
-export type Shape = 'square' | 'circle';
- 
+export type Shape = "square" | "circle";
+
 export interface Props {
   label?: string;
   href?: string;
@@ -65,7 +65,7 @@ defineProps<Props>();
   >
     <ui-loading v-if="loading" />
 
-    <ui-icon v-if="icon" :name="icon" class="text-[1.2em]" />
+    <ui-icon v-if="icon" :name="icon" :size="size" />
 
     <span v-if="label">{{ label }}</span>
     <slot />

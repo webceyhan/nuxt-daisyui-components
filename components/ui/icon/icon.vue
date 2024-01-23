@@ -1,15 +1,28 @@
 <script lang="ts">
-import "bootstrap-icons/font/bootstrap-icons.min.css";
+import IconsSvg from "bootstrap-icons/bootstrap-icons.svg";
+import type { Size } from "../types";
+
+const SIZES: Record<Size, string> = {
+  xs: "size-3",
+  sm: "size-4",
+  md: "size-5",
+  lg: "size-6",
+};
 </script>
 
 <script setup lang="ts">
 export interface Props {
   name: string;
+  size?: Size;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  size: "md",
+});
 </script>
 
 <template>
-  <i :class="['bi', `bi-${name}`]" />
+  <svg :class="['fill-current', SIZES[size]]">
+    <use :xlink:href="`${IconsSvg}#${name}`" />
+  </svg>
 </template>
