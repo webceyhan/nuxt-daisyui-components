@@ -6,7 +6,7 @@ const { active, change, THEMES } = useTheme();
   <ui-dropdown align-to-end>
     <template #trigger>
       <ui-button ghost>
-        <svg-icon name="color-swatch" class="h-5 w-5 md:hidden" />
+        <ui-icon name="palette2" class="md:hidden" />
         <span class="hidden md:inline">Theme</span>
         <ui-icon name="chevron-down" class="hidden sm:inline-block" />
       </ui-button>

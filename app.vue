@@ -32,7 +32,7 @@
         <nav class="navbar w-full">
           <div class="flex flex-1 md:gap-1 lg:gap-2">
             <ui-drawer-button class="btn-square btn-ghost lg:hidden">
-              <svg-icon name="menu-toggle" class="h-5 w-5 md:h-6 md:w-6" />
+              <ui-icon name="list" class="md:size-6" />
             </ui-drawer-button>
 
             <!-- logo -->

@@ -59,7 +59,7 @@ import { DESCRIPTIONS } from "./_data";
           <div class="w-full navbar bg-base-300">
             <div class="flex-none">
               <ui-drawer-button class="btn-square btn-ghost">
-                <svg-icon name="menu-toggle" class="w-6 h-6" />
+                <ui-icon name="list" size="lg" />
               </ui-drawer-button>
             </div>
             <div class="flex-1 px-2 mx-2">Navbar Title</div>
