@@ -1,5 +1,5 @@
 <script lang="ts">
-import IconsSvg from "bootstrap-icons/bootstrap-icons.svg";
+import IconsSvg from "~/assets/icons.svg";
 import type { Size } from "../types";
 
 const SIZES: Record<Size, string> = {
