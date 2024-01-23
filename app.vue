@@ -31,9 +31,7 @@
       >
         <nav class="navbar w-full">
           <div class="flex flex-1 md:gap-1 lg:gap-2">
-            <ui-drawer-button class="btn-square btn-ghost lg:hidden">
-              <ui-icon name="list" class="md:size-6" />
-            </ui-drawer-button>
+            <ui-drawer-button class="btn-ghost lg:hidden" />
 
             <!-- logo -->
             <daisyui-logo class="lg:hidden" />

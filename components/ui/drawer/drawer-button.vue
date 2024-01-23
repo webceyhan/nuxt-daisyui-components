@@ -4,6 +4,8 @@ const id = inject<string>("drawer-id", "drawer-0");
 
 <template>
   <label :for="id" class="btn drawer-button">
-    <slot> Open </slot>
+    <slot>
+      <ui-icon name="list" size="lg" />
+    </slot>
   </label>
 </template>
