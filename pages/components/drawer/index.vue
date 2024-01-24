@@ -58,7 +58,7 @@ import { DESCRIPTIONS } from "./_data";
           <!-- Navbar -->
           <div class="w-full navbar bg-base-300">
             <div class="flex-none">
-              <ui-drawer-button class="btn-ghost" />
+              <ui-drawer-button ghost />
             </div>
             <div class="flex-1 px-2 mx-2">Navbar Title</div>
             <div class="flex-none hidden lg:block">
