@@ -15,17 +15,10 @@
           <br />
           <br />
 
-          You can easily copy & paste each component to your project.
-          There is no need to install any additional dependencies except
+          You can easily copy & paste each component to your project. There is no need to
+          install any additional dependencies except
           <a href="https://tailwindcss.com/" class="link" target="_blank">Tailwind CSS</a>
           and daisyUI.
-
-          <br />
-          <br />
-
-          Do not forget to install
-          <a href="https://icons.getbootstrap.com/" class="link" target="_blank">Bootstrap Icons</a>
-          if you want to use icons.
         </p>
 
         <div class="mockup-code text-left">
@@ -34,10 +27,6 @@
 
         <div class="mockup-code text-left">
           <pre data-prefix="$"><code>npm install -D daisyui@latest</code></pre>
-        </div>
-
-        <div class="mockup-code text-left">
-          <pre data-prefix="$"><code>npm install -D bootstrap-icons</code></pre>
         </div>
 
         <br />

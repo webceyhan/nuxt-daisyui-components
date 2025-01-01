@@ -24,7 +24,8 @@ onMounted(() => {
     <label class="searchbox relative w-full">
       <ui-icon
         name="search"
-        class="pointer-events-none absolute z-10 my-1.5 ms-3.5 stroke-current opacity-60 text-base-content"
+        size="sm"
+        class="pointer-events-none absolute z-10 my-2.5 ms-3.5 stroke-current opacity-60 text-base-content"
       />
 
       <input

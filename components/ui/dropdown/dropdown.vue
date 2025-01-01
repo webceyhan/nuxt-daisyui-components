@@ -47,7 +47,7 @@ const close = () => {
     <!-- trigger button -->
     <slot name="trigger">
       <ui-button v-bind="{ label, icon, size, color, ghost, outline, disabled }">
-        <ui-icon v-if="!noIndicator" name="chevron-down" />
+        <ui-icon v-if="!noIndicator" name="chevron-down" :size="size" />
       </ui-button>
     </slot>
 

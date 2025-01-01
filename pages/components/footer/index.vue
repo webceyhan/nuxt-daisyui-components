@@ -86,7 +86,7 @@ const longNavs = [
 
       <ui-footer class="p-10 bg-base-200 text-base-content">
         <aside>
-          <ui-icon name="hash" class="text-7xl" />
+          <ui-icon name="hash" class="size-16" />
           <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
         </aside>
 
@@ -132,7 +132,7 @@ const longNavs = [
 
       <ui-footer class="p-10 bg-neutral text-neutral-content">
         <aside>
-          <ui-icon name="hash" class="text-7xl" />
+          <ui-icon name="hash" class="size-16" />
           <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
         </aside>
 
@@ -140,7 +140,7 @@ const longNavs = [
           <ui-footer-title>Social</ui-footer-title>
           <div class="grid grid-flow-col gap-4">
             <a v-for="link of socialLinks" class="link link-hover">
-              <ui-icon :name="link.icon" class="text-2xl" />
+              <ui-icon :name="link.icon" size="lg" />
             </a>
           </div>
         </nav>
@@ -162,13 +162,13 @@ const longNavs = [
 
       <ui-footer class="items-center p-4 bg-neutral text-neutral-content">
         <aside class="items-center grid-flow-col">
-          <ui-icon name="hash" class="text-4xl" />
+          <ui-icon name="hash" class="size-9" />
           <p>Copyright © 2023 - All right reserved</p>
         </aside>
 
         <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
           <a v-for="link of socialLinks" class="link link-hover">
-            <ui-icon :name="link.icon" class="text-2xl" />
+            <ui-icon :name="link.icon" size="lg" />
           </a>
         </nav>
       </ui-footer>
@@ -187,7 +187,7 @@ const longNavs = [
           <ui-footer-title>Social</ui-footer-title>
           <div class="grid grid-flow-col gap-4">
             <a v-for="link of socialLinks" class="link link-hover">
-              <ui-icon :name="link.icon" class="text-2xl" />
+              <ui-icon :name="link.icon" size="lg" />
             </a>
           </div>
         </nav>
@@ -210,7 +210,7 @@ const longNavs = [
 
       <ui-footer class="p-10 bg-primary text-primary-content" center>
         <aside>
-          <ui-icon name="hash" class="text-7xl" />
+          <ui-icon name="hash" class="size-16" />
           <p class="font-bold">
             ACME Industries Ltd. <br />Providing reliable tech since 1992
           </p>
@@ -220,7 +220,7 @@ const longNavs = [
         <nav>
           <div class="grid grid-flow-col gap-4">
             <a v-for="link of socialLinks" class="link link-hover">
-              <ui-icon :name="link.icon" class="text-2xl" />
+              <ui-icon :name="link.icon" size="lg" />
             </a>
           </div>
         </nav>
@@ -238,7 +238,7 @@ const longNavs = [
         <nav>
           <div class="grid grid-flow-col gap-4">
             <a v-for="link of socialLinks" class="link link-hover">
-              <ui-icon :name="link.icon" class="text-2xl" />
+              <ui-icon :name="link.icon" size="lg" />
             </a>
           </div>
         </nav>
@@ -263,13 +263,13 @@ const longNavs = [
         class="px-10 py-4 border-t bg-base-200 text-base-content border-base-300"
       >
         <aside class="items-center grid-flow-col">
-          <ui-icon name="hash" class="text-4xl" />
+          <ui-icon name="hash" class="size-9" />
           <p>ACME Industries Ltd. <br />Providing reliable tech since 1992</p>
         </aside>
 
         <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
           <a v-for="link of socialLinks" class="link link-hover">
-            <ui-icon :name="link.icon" class="text-2xl" />
+            <ui-icon :name="link.icon" size="lg" />
           </a>
         </nav>
       </ui-footer>

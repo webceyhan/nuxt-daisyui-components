@@ -28,11 +28,11 @@ const swap1 = ref(false);
 
       <ui-swap v-model="swap1">
         <template #on>
-          <ui-icon name="volume-up" class="text-4xl" />
+          <ui-icon name="volume-up" class="size-9" />
         </template>
 
         <template #off>
-          <ui-icon name="volume-mute" class="text-4xl" />
+          <ui-icon name="volume-mute" class="size-9" />
         </template>
       </ui-swap>
     </component-preview>
@@ -42,11 +42,11 @@ const swap1 = ref(false);
 
       <ui-swap v-model="swap1" rotate>
         <template #on>
-          <ui-icon name="sun-fill" class="text-4xl" />
+          <ui-icon name="sun-fill" class="size-9" />
         </template>
 
         <template #off>
-          <ui-icon name="moon-stars-fill" class="text-4xl" />
+          <ui-icon name="moon-stars-fill" class="size-9" />
         </template>
       </ui-swap>
     </component-preview>
@@ -57,11 +57,11 @@ const swap1 = ref(false);
       <ui-button circle>
         <ui-swap v-model="swap1" rotate>
           <template #on>
-            <ui-icon name="list" class="text-4xl" />
+            <ui-icon name="list" class="size-9" />
           </template>
 
           <template #off>
-            <ui-icon name="x" class="text-4xl" />
+            <ui-icon name="x" class="size-9" />
           </template>
         </ui-swap>
       </ui-button>

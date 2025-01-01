@@ -17,12 +17,7 @@ export interface Props {
   color?: StateColor;
 }
 
-const props = defineProps<Props>();
-
-const iconClasses = computed(() => ({
-  "text-3xl": props.title,
-  "text-info": !props.color,
-}));
+defineProps<Props>();
 </script>
 
 <template>
@@ -35,7 +30,7 @@ const iconClasses = computed(() => ({
     ]"
   >
     <slot name="icon">
-      <ui-icon v-if="icon" :name="icon" :class="iconClasses" />
+      <ui-icon v-if="icon" :name="icon" :class="{ 'text-info': !color }" />
     </slot>
 
     <div v-if="title">

@@ -10,9 +10,9 @@ export const DESCRIPTIONS: Description[] = [
                 description: 'ID of drawer',
             },
             {
-                name: 'aside-class',
-                type: 'string',
-                description: 'Class of aside element',
+                name: 'open',
+                type: 'boolean',
+                description: 'Force drawer to stay open',
             },
             {
                 name: 'align-end',
@@ -25,9 +25,32 @@ export const DESCRIPTIONS: Description[] = [
                 name: 'default',
                 description: 'Content of drawer',
             },
+        ],
+    },
+    {
+        name: 'drawer-side',
+        slots: [
             {
-                name: 'aside',
-                description: 'Content of aside element',
+                name: 'default',
+                description: 'Content of drawer sidebar',
+            },
+        ],
+    },
+    {
+        name: 'drawer-content',
+        slots: [
+            {
+                name: 'default',
+                description: 'Content of drawer content',
+            },
+        ],
+    },
+    {
+        name: 'drawer-button',
+        slots: [
+            {
+                name: 'default',
+                description: 'Content of drawer toggle button',
             },
         ],
     },
